@@ -10,7 +10,7 @@
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a style="border-radius: 15px; background-color: #3A1CA6;" class="nav-link collapsed" data-bs-target="#components-nav"  href="index.php">
+        <a style="border-radius: 15px; background-color: #3A1CA6;" class="nav-link collapsed" data-bs-target="#components-nav"  href="acercadenosotros.php">
           <i style="color: white;" class="bi bi-menu-button-wide"></i><span style="color: white;">Acerca De Nosotros</span></i>
         </a>
       </li><!-- End Components Nav -->
