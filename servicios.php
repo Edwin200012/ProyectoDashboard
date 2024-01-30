@@ -12,6 +12,11 @@
     include_once ("plantilla/nav.php");
 ?>
 
+<!-- ======= Sidebar ======= -->
+<?php
+    include_once ("plantilla/sidebar.php");
+?>
+
 <main id="main" class="main">
 
 <!-- ======= Titulo de inicio ======= -->
