@@ -1,3 +1,24 @@
+<style>
+  span:hover{
+   transition-delay:.15s;
+   
+   font-size: 16.5px;
+
+   text-shadow: 0 1px 0 #ccc, 
+                0 1px 0 #c9c9c9,
+                0 1px 0 #bbb,
+                0 1px 0 #b9b9b9,
+                0 1px 0 #aaa,
+                0 1px 1px rgba(0,0,0,.1),
+                0 0 1px rgba(0,0,0,.1),
+                0 1px 1px rgba(0,0,0,.1),
+                0 1px 1px rgba(0,0,0,.1),
+                0 1px 1px rgba(0,0,0,.2),
+                0 1px 1px rgba(0,0,0,.1),
+                0 1px 1px rgba(0,0,0,.1);   
+  }
+
+</style>
 <aside id="sidebar" class="sidebar" style="border-style: ridge; background-color: #3A1CA6; border-color: aliceblue;  border-width: 0.3px;">
 
     <ul class="sidebar-nav" id="sidebar-nav">
