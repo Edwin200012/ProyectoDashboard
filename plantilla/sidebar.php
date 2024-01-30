@@ -1,10 +1,3 @@
-<style>
-#span1:hover {
-  color: yellow;
-}
-
-</style>
-
 <aside id="sidebar" class="sidebar" style="border-style: ridge; background-color: #3A1CA6; border-color: aliceblue;  border-width: 0.3px;">
 
     <ul class="sidebar-nav" id="sidebar-nav">
