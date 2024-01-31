@@ -20,7 +20,7 @@
 
 <!-- ======= Titulo de inicio ======= -->
 <?php
-    $titulo = "Acerca De Nostros";
+    $titulo = "Acerca De Nosotros";
     include_once ("plantilla/titulo.php");
 ?>
 
