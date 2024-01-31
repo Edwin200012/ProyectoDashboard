@@ -25,7 +25,7 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+              <a class="dropdown-item d-flex align-items-center" href="miperfil.php">
                 <i class="bi bi-person"></i>
                 <span>Mi Perfil</span>
               </a>
