@@ -80,7 +80,7 @@
       
 
       <li style="margin-top: 20px;" class="nav-item">
-        <a  id="sidebarmenu6" style="border-radius: 15px; background-color: #3A1CA6;  margin-top: -10px;" class="nav-link collapsed" data-bs-target="#charts-nav" href="users-profile.html">
+        <a  id="sidebarmenu6" style="border-radius: 15px; background-color: #3A1CA6;  margin-top: -10px;" class="nav-link collapsed" data-bs-target="#charts-nav" href="miperfil.php">
         <i style="color: white;" class="bi bi-person"></i><span id="span5" style="color: white;">Mi Perfil</span></i>
 
         </a>
