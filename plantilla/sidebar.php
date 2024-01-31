@@ -17,12 +17,12 @@
                 0 1px 1px rgba(0,0,0,.1);
   }
 
-  #sidebarmenu1, #sidebarmenu2, #sidebarmenu3, #sidebarmenu4, #sidebarmenu5 {
+  #sidebarmenu1, #sidebarmenu2, #sidebarmenu3, #sidebarmenu4, #sidebarmenu5, #sidebarmenu6 {
   background: rgb(6,14,131);
   background: linear-gradient(0deg, rgba(6,14,131,1) 0%, rgba(12,25,180,1) 100%);
   border: none;
 }
-#sidebarmenu1:hover, #sidebarmenu2:hover, #sidebarmenu3:hover, #sidebarmenu4:hover, #sidebarmenu5:hover {
+#sidebarmenu1:hover, #sidebarmenu2:hover, #sidebarmenu3:hover, #sidebarmenu4:hover, #sidebarmenu5:hover, #sidebarmenu6:hover {
    
    /* background: rgb(0,3,255); */
    /* background: linear-gradient(0deg, rgba(0,3,255,1) 0%, rgba(2,126,251,1) 100%); */
@@ -30,6 +30,9 @@
   background: rgb(0,3,255);
   background: linear-gradient(-90deg, rgb(255,255,255) -10%, rgba(2,126,251,1) 90%);
 
+}
+#divconfiguracion{
+  margin-top: 10%;
 }
 
 </style>
@@ -70,6 +73,20 @@
         </a>
         
       </li><!-- End Charts Nav -->
+      <hr style="color:white; margin-top: 5px;">
+      <div id="divconfiguracion">
+      <span style="color: white;">Configuración</span>
+      </div>
+      
+
+      <li style="margin-top: 20px;" class="nav-item">
+        <a  id="sidebarmenu6" style="border-radius: 15px; background-color: #3A1CA6;  margin-top: -15px;" class="nav-link collapsed" data-bs-target="#charts-nav" href="users-profile.html">
+        <i style="color: white;" class="bi bi-person"></i><span id="span5" style="color: white;">Mi Perfil</span></i>
+
+        </a>
+        
+      </li>
+
       <hr style="color:white; margin-top: 5px;">
       <!-- <button id="btn-1">Boton 1</button> -->
     </ul>
