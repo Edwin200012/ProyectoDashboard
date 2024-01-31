@@ -87,7 +87,7 @@
         
       </li>
 
-      <hr style="color:white; margin-top: 5px;">
+      <hr style="color:white; margin-top: 10px;">
       <!-- <button id="btn-1">Boton 1</button> -->
     </ul>
 
