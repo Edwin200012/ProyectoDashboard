@@ -25,14 +25,14 @@
 ?>
 
 <section class="section dashboard">
-      <div class="row">
+      <!-- <div class="row"> -->
 
         <!-- Left side columns -->
-        <div class="col-lg-8">
-          <div class="row">
+        <!-- <div class="col-lg-8">
+          <div class="row"> -->
 
             <!-- Sales Card -->
-            <div class="col-xxl-4 col-md-6">
+            <!-- <div class="col-xxl-4 col-md-6">
               <div class="card info-card sales-card">
 
                 <div class="filter">
@@ -63,11 +63,12 @@
                   </div>
                 </div>
 
-              </div>
-            </div><!-- End Sales Card -->
+              </div> -->
+            <!-- </div> -->
+            <!-- End Sales Card -->
 
             <!-- Revenue Card -->
-            <div class="col-xxl-4 col-md-6">
+            <!-- <div class="col-xxl-4 col-md-6">
               <div class="card info-card revenue-card">
 
                 <div class="filter">
@@ -95,11 +96,12 @@
                     </div>
                   </div>
                 </div>
-              </div>
-            </div><!-- End Revenue Card -->
+              </div> -->
+            <!-- </div> -->
+            <!-- End Revenue Card -->
 
             <!-- Customers Card -->
-            <div class="col-xxl-4 col-xl-12">
+            <!-- <div class="col-xxl-4 col-xl-12">
 
               <div class="card info-card customers-card">
 
@@ -131,22 +133,25 @@
                   </div>
 
                 </div>
-              </div>
+              </div> -->
 
-            </div><!-- End Customers Card -->
+            <!-- </div> -->
+            <!-- End Customers Card -->
 
             
 
-          </div>
-        </div><!-- End Left side columns -->
+          <!-- </div>
+        </div> -->
+        <!-- End Left side columns -->
 
         <!-- Right side columns -->
-        <div class="col-lg-4">
+        <!-- <div class="col-lg-4"> -->
 
 
-        </div><!-- End Right side columns -->
+        <!-- </div> -->
+        <!-- End Right side columns -->
 
-      </div>
+      <!-- </div> -->
     </section>
 
   </main><!-- End #main -->
