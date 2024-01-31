@@ -29,8 +29,7 @@
             <div class="col-xxl-4 col-md-6">
               <div class="card info-card sales-card">
                 <div class="card-body">
-                <?php $fcha = date("d-m-Y");?>
-                  <h5 class="card-title">Contacto <span>| <?php echo $fcha;?></span></h5>
+                  <h5 class="card-title">Contacto</span></h5>
                 </div>
               </div>
             </div>
