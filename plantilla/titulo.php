@@ -1,14 +1,16 @@
 <div class="pagetitle">
-<?php $fcha = date("d-m-Y");?>
+<?php 
+$fecha = date("d-m-Y");
+?>
 
       <h1>
         <?php echo $titulo;?> 
       </h1>
 
       <h1 style="margin-left: 90%; margin-top:0.5%; opacity: 0.5; font-size: 18px;">
-        <?php echo $fcha;?>  
+        <?php echo $fecha;?>  
       </h1>
-      
+
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.php">Inicio</a></li>
