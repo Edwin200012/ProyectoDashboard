@@ -5,7 +5,7 @@
         <img src="assets/img/nuevo_logo.png" alt="">
         <!-- <span class="d-none d-lg-block">NiceAdmin</span> -->
       </a>
-      <i style="color: white;" class="bi bi-list toggle-sidebar-btn"></i>
+      <i style="color: white; margin-bottom: 22px;" class="bi bi-list toggle-sidebar-btn"></i>
     </div>
 
     <nav class="header-nav ms-auto">
