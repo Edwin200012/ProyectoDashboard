@@ -37,17 +37,17 @@
                     <p class="text-center small">Ingrese su usuario & contraseña</p>
                   </div>
 
-                  <form action="controllers/usuario.php" class="row g-3 needs-validation" novalidate method="POST">
+                  <form action="controllers/loginusuario.php" class="row g-3 needs-validation" novalidate method="POST">
 
                     <div class="col-12">
                       <label for="yourUsername" class="form-label">Usuario</label>
-                        <input style="border-radius: 15px;" type="text" name="username" class="form-control" id="yourUsername" required>
+                        <input style="border-radius: 15px;" type="text" name="usuario" class="form-control" id="yourUsername" required>
                         <div class="invalid-feedback">Por favor, ingrese su usuario.</div>
                     </div>
 
                     <div class="col-12">
                       <label for="yourPassword" class="form-label">Contraseña</label>
-                      <input style="border-radius: 15px;" type="password" name="password" class="form-control" id="yourPassword" required>
+                      <input style="border-radius: 15px;" type="password" name="contrasena" class="form-control" id="yourPassword" required>
                       <div class="invalid-feedback">Por favor, ingrese su contraseña.</div>
                     </div>
 

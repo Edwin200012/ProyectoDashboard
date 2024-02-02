@@ -37,28 +37,28 @@
                     <p class="text-center small">Ingrese sus datos personales</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate>
+                  <form action="controllers/crearcuentausuario.php" class="row g-3 needs-validation" novalidate method="POST">
                     <div class="col-12">
                       <label for="yourName" class="form-label">Nombre</label>
-                      <input style="border-radius: 15px;" type="text" name="name" class="form-control" id="yourName" required>
+                      <input style="border-radius: 15px;" type="text" name="nombre" class="form-control" id="yourName" required>
                       <div class="invalid-feedback">Por favor, ingrese su nombre.</div>
                     </div>
 
                     <div class="col-12">
                       <label for="yourEmail" class="form-label">Correo</label>
-                      <input style="border-radius: 15px;" type="email" name="email" class="form-control" id="yourEmail" required>
+                      <input style="border-radius: 15px;" type="email" name="correo" class="form-control" id="yourEmail" required>
                       <div class="invalid-feedback">Por favor, ingrese su correo.</div>
                     </div>
 
                     <div class="col-12">
                       <label for="yourUsername" class="form-label">Usuario</label>
-                        <input style="border-radius: 15px;" type="text" name="username" class="form-control" id="yourUsername" required>
+                        <input style="border-radius: 15px;" type="text" name="usuario" class="form-control" id="yourUsername" required>
                         <div class="invalid-feedback">Por favor, ingrese su usuario.</div>
                     </div>
 
                     <div class="col-12">
                       <label for="yourPassword" class="form-label">Contraseña</label>
-                      <input style="border-radius: 15px;" type="password" name="password" class="form-control" id="yourPassword" required>
+                      <input style="border-radius: 15px;" type="password" name="contrasena" class="form-control" id="yourPassword" required>
                       <div class="invalid-feedback">Por favor, ingrese su contraseña.</div>
                     </div>
 
