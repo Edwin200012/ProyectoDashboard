@@ -14,6 +14,23 @@
 <body>
 
   <main>
+
+  <?php
+      if(isset($_GET['registrar'])):
+
+  ?>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Cuenta creada!</strong> correctamente
+    <a href="login.php">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </a>
+</div>
+  <?php
+    endif;
+  ?>
+
+
+
     <div class="container">
 
       <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
@@ -111,6 +128,8 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  
 
 </body>
 

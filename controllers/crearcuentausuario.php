@@ -1,5 +1,7 @@
 <?php
 include_once("../route.php");
+include_once ("../plantilla/head.php");
+include_once ("../plantilla/scripts.php");
     class Usuario{
         function CrearUsuario(){
             $nombre = $_POST['nombre'];
@@ -34,8 +36,10 @@ include_once("../route.php");
 
             if ($informacion->registrado)
                 {
-                    sleep(2);
-                    header('Location: ../login.php');
+                    // sleep(2);
+                    header('Location: ../registro.php?registrar=true');
+                     
+                        
                 }
                 
             else{
@@ -47,8 +51,5 @@ include_once("../route.php");
 
     $usuario = new Usuario();
     $usuario->CrearUsuario();
-
-    
-
 
 ?>
