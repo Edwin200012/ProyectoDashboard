@@ -1,3 +1,20 @@
+<style>
+    #toastBox{
+        width: 400px;
+        height: 80px;
+        background-color: lightgreen;
+        font-weight: 500;
+        margin: 15px 0;
+        box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        margin-left: 75%;
+    }
+    #i{
+        margin: 0 20px;
+        font-size: 35px;
+        color: green;
+    }
+</style>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +25,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
 </head>
 
 <body>
@@ -19,12 +36,19 @@
       if(isset($_GET['registrar'])):
 
   ?>
-<div class="alert alert-success alert-dismissible fade show" role="alert">
-    <strong>Cuenta creada!</strong> correctamente
-    <a href="login.php">
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </a>
+<div style="margin-top:10px; margin-bottom: -5%; margin-left: 75%;" class="toast show">
+    <div style="background-color: lightcyan;"  class="toast-header">
+      <strong class="me-auto">Registro</strong>
+      <a href="login.php">
+        <button style="font-size: 18px;" type="button" class="btn-close" data-bs-dismiss="toast"></button>
+      </a>
+    </div>
+    <div style="background-color: lightgreen;" class="toast-body">
+    <p style="font-family:perpetua; font-size: 18px;"><i style="margin-top: 1%;" id="i" class="fa-solid fa-circle-check"></i>Cuenta creada exitosamente</p>
+    </div>
+  </div>
 </div>
+
   <?php
     endif;
   ?>
@@ -129,7 +153,8 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  
+  <script src="https://kit.fontawesome.com/c4254e24a8.js"
+  crossorigin="anonymous"></script>
 
 </body>
 
