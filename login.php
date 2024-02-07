@@ -34,15 +34,15 @@
 
                   <div class="pt-4 pb-2">
                     <h5 class="card-title text-center pb-0 fs-4">Ingresar</h5>
-                    <p class="text-center small">Ingrese su usuario & contraseña</p>
+                    <p class="text-center small">Ingrese su correo & contraseña</p>
                   </div>
 
                   <form action="controllers/loginusuario.php" class="row g-3 needs-validation" novalidate method="POST">
 
                     <div class="col-12">
-                      <label for="yourUsername" class="form-label">Usuario</label>
-                        <input style="border-radius: 15px;" type="text" name="usuario" class="form-control" id="yourUsername" required>
-                        <div class="invalid-feedback">Por favor, ingrese su usuario.</div>
+                      <label for="yourEmail" class="form-label">Correo</label>
+                        <input style="border-radius: 15px;" type="text" name="correo" class="form-control" id="yourEmail" required>
+                        <div class="invalid-feedback">Por favor, ingrese su correo.</div>
                     </div>
 
                     <div class="col-12">

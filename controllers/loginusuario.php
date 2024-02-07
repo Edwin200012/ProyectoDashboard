@@ -1,10 +1,10 @@
 <?php
     class Usuario{
         function Login(){
-            $usuario = $_POST['usuario'];
+            $correo = $_POST['correo'];
             $contrasena = $_POST['contrasena'];
 
-            var_dump($usuario);
+            var_dump($correo);
             var_dump($contrasena);
 
         }
