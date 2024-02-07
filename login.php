@@ -46,7 +46,7 @@
     </div>
     <div style="background-color: yellow; border-radius: 0px 0px 15px 15px;" class="toast-body">
     <p style="font-family:perpetua; font-size: 18px; color: red;">
-  <i class="fa-solid fa-circle-exclamation" style="color: #FFD43B;"></i>Error al iniciar sesión</p>
+  <i class="fa-solid fa-circle-exclamation" style="color: #FFD43B; margin-top: 1%;" id="i" "></i>Error al iniciar sesión</p>
     </div>
   </div>
 </div>
