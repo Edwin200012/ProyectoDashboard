@@ -33,7 +33,7 @@ include_once("../route.php");
                     header('Location: ../index.php');
                 }
                 else {
-                    header('Location: ../registro.php');
+                    header('Location: ../login.php?buscar=false');
                 }
 
         }

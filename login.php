@@ -1,3 +1,20 @@
+<style>
+    #toastBox{
+        width: 400px;
+        height: 80px;
+        background-color: lightgreen;
+        font-weight: 500;
+        margin: 15px 0;
+        box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        margin-left: 75%;
+    }
+    #i{
+        margin: 0 20px;
+        font-size: 35px;
+        color: green;
+    }
+</style>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,6 +31,32 @@
 <body>
 
   <main>
+
+
+  <?php
+      if(isset($_GET['buscar'])):
+
+  ?>
+<div style="margin-top:10px; margin-bottom: -5%; margin-left: 75%; border-radius: 15px;" class="toast show">
+    <div style="background-color: #FFFFE0; border-radius: 15px 15px 0px 0px;"  class="toast-header">
+      <strong class="me-auto">Login</strong>
+      <a href="login.php">
+        <button style="font-size: 18px;" type="button" class="btn-close" data-bs-dismiss="toast"></button>
+      </a>
+    </div>
+    <div style="background-color: yellow; border-radius: 0px 0px 15px 15px;" class="toast-body">
+    <p style="font-family:perpetua; font-size: 18px; color: red;">
+  <i class="fa-solid fa-circle-exclamation" style="color: #FFD43B;"></i>Error al iniciar sesión</p>
+    </div>
+  </div>
+</div>
+
+  <?php
+    endif;
+  ?>
+
+
+
     <div class="container">
 
       <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
@@ -95,6 +138,9 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script src="https://kit.fontawesome.com/c4254e24a8.js"
+  crossorigin="anonymous"></script>
 
 </body>
 
