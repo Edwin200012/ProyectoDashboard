@@ -104,6 +104,12 @@
                     </div>
 
                     <div class="col-12">
+                      <label for="yourPasswordConfirm" class="form-label">Confirmar Contraseña</label>
+                      <input style="border-radius: 15px;" type="password" name="contrasenaconfirm" class="form-control" id="yourPasswordConfirm" required>
+                      <div class="invalid-feedback">Por favor, confirme su contraseña.</div>
+                    </div>
+
+                    <div class="col-12">
                       <div class="form-check">
                         <input style="border-radius: 15px;" class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
                         <label class="form-check-label" for="acceptTerms">Estoy de acuerdo y acepto los <a href="#">términos y condiciones</a></label>
