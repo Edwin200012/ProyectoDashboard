@@ -1,6 +1,7 @@
 <?php
     //Continuamos la sesión
     session_start();
+    $id=$_SESSION['id'];
     $nombre=$_SESSION['nombre'];
     $apellidop=$_SESSION['apellidop'];
     $apellidom=$_SESSION['apellidom'];
@@ -10,7 +11,7 @@
     $telefono=$_SESSION['telefono'];
     $direccion=$_SESSION['direccion'];
     //Devolver los valores de la sesión
-    echo "Datos de Sesión: ";
+    echo "Datos de Sesión del usuario: ", $id;
     
     
 ?>
@@ -21,7 +22,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <?php
-    include_once ("plantilla/head.php");
+    include_once ("../plantilla/head.php");
   ?>
 </head>
 <body>
@@ -70,12 +71,12 @@
 
 
 
-<a style="background-color: #3A1CA6;" href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
 
 
 
 <?php
-    include_once ("plantilla/scripts.php");
+    include_once ("../plantilla/scripts.php");
   ?>
 
 <a href="cerrarsesion.php">

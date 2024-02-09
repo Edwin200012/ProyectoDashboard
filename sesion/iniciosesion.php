@@ -2,6 +2,7 @@
 // Comienzo de la sesión
 session_start();
 // Guardar datos de la sesión iniciada
+$_SESSION["id"] = "1";
 $_SESSION["nombre"] = "Jose";
 $_SESSION["apellidop"] = "Mendez";
 $_SESSION["apellidom"] = "Ruiz";
