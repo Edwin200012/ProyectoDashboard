@@ -94,12 +94,12 @@
                       <div class="invalid-feedback">Por favor, ingrese su contraseña.</div>
                     </div>
 
-                    <div class="col-12">
+                    <!-- <div class="col-12">
                       <div class="form-check">
                         <input style="border-radius: 15px;" class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
                         <label class="form-check-label" for="rememberMe">Recordar</label>
                       </div>
-                    </div>
+                    </div> -->
                     <div class="col-12">
                       <button style="border-radius: 15px; background-color: #77E6F2; color: #000807; border-color: silver;" class="btn btn-primary w-100" type="submit">Login</button>
                     </div>

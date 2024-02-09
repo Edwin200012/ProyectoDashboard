@@ -30,6 +30,7 @@ include_once("../route.php");
 
                 if ($informacion->buscar)
                 {
+                    sleep(1);
                     header('Location: ../index.php');
                 }
                 else {

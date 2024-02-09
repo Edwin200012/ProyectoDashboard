@@ -13,6 +13,15 @@
         font-size: 35px;
         color: green;
     }
+
+    .ocultar {
+        display: none;
+    }
+ 
+    .mostrar {
+        display: block;
+    }
+
 </style>
 
 <!DOCTYPE html>
@@ -98,16 +107,33 @@
                     </div>
 
                     <div class="col-12">
-                      <label for="yourPassword" class="form-label">Contraseña</label>
-                      <input style="border-radius: 15px;" type="password" name="contrasena" class="form-control" id="yourPassword" required>
+                      <label for="contrasena" class="form-label">Contraseña</label>
+                      <input onkeyup="mostrar(this.value);" style="border-radius: 15px;" type="password" name="contrasena" class="form-control" id="contrasena" required>
                       <div class="invalid-feedback">Por favor, ingrese su contraseña.</div>
                     </div>
 
                     <div class="col-12">
-                      <label for="yourPasswordConfirm" class="form-label">Confirmar Contraseña</label>
-                      <input style="border-radius: 15px;" type="password" name="contrasenaconfirm" class="form-control" id="yourPasswordConfirm" required>
+                      <label for="contrasenaconfirm" class="form-label">Confirmar Contraseña</label>
+                      <input onkeyup="mostrar(this.value);" style="border-radius: 15px;" type="password" name="contrasenaconfirm" class="form-control" id="contrasenaconfirm" required>
                       <div class="invalid-feedback">Por favor, confirme su contraseña.</div>
                     </div>
+
+                    <!-- Mostrar Contraseña -->
+                    <!-- <div class="form-check form-switch">
+                      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked">
+                      <label style="font-size: 15px;" class="form-check-label" for="flexSwitchCheckChecked">Mostrar Contraseña</label>
+                    </div> -->
+                    <button style="border-radius: 15px; background-color: #77E6F2; color: #000807; border-color: silver;" class="btn btn-primary w-100" onclick="validarContrasena();">Validar Contraseña</button>
+                    
+
+                    <!-- CheckBox -->
+                    <!-- <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Validar Contraseña
+                      </label>
+                    </div> -->
+
 
                     <div class="col-12">
                       <div class="form-check">
@@ -117,13 +143,13 @@
                       </div>
                     </div>
                     <div class="col-12">
-                      <button style="border-radius: 15px; background-color: #77E6F2; color: #000807; border-color: silver;" class="btn btn-primary w-100" type="submit">Crear Cuenta</button>
+                      <button disabled id="botonCrearCuenta" style="border-radius: 15px; background-color: #77E6F2; color: #000807; border-color: silver;" class="btn btn-primary w-100" type="submit">Crear Cuenta</button>
                     </div>
                     <div class="col-12">
                       <p class="small mb-0">¿Ya tienes una cuenta? <a href="login.php">Log in</a></p>
                     </div>
-                  </form>
 
+                  </form>
                 </div>
               </div>
 
@@ -161,6 +187,39 @@
 
   <script src="https://kit.fontawesome.com/c4254e24a8.js"
   crossorigin="anonymous"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+
+       const button = document.getElementById("botonCrearCuenta");
+
+      function validarContrasena() {
+        // const button = document.getElementById("botonCrearCuenta");
+
+          if(document.getElementById('contrasena').value == '' && document.getElementById('contrasenaconfirm').value == ''){
+              alert('Las contraseñas no deben estar vacias, intente de nuevo');
+              button.disabled = true;
+          }
+
+          else if(document.getElementById('contrasena').value == document.getElementById('contrasenaconfirm').value){
+              alert('Las Contraseñas Coinciden');
+              // document.getElementById('botonCrearCuenta').enable == true;
+              // document.getElementById('botonCrearCuenta').style.display = 'none';
+              button.disabled = false;
+          }
+
+          else{
+              alert('Las contraseñas no coinciden, intente de nuevo');
+              button.disabled = true;
+          }
+}
+
+
+function mostrar(valor){
+  console.log(valor);
+}
+
+    </script>
 
 </body>
 

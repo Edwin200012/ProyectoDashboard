@@ -5,7 +5,7 @@ include_once("../route.php");
             $nombre = $_POST['nombre'];
             $correo = $_POST['correo'];
             $usuario = $_POST['usuario'];
-            $contrasena = $_POST['contrasena'];
+            $contrasena = $_POST['contrasenaconfirm'];
 
             $url = Route::$url.Route::$crearUsuario;
 
