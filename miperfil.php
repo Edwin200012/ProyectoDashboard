@@ -138,35 +138,35 @@
                     <div class="row mb-3">
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Nombre:</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="fullName" type="text" class="form-control" id="fullName" value="Ejemplo">
+                        <input name="fullName" type="text" class="form-control" id="fullName" placeholder="Nombre">
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="about" class="col-md-4 col-lg-3 col-form-label">Apellido Paterno:</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="about" type="text" class="form-control" id="about" value="Ejemplo">
+                        <input name="about" type="text" class="form-control" id="about" placeholder="Apellido Paterno">
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="company" class="col-md-4 col-lg-3 col-form-label">Apellido Materno:</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="company" type="text" class="form-control" id="company" value="Ejemplo">
+                        <input name="company" type="text" class="form-control" id="company" placeholder="Apellido Materno">
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="Country" class="col-md-4 col-lg-3 col-form-label">Usuario:</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="country" type="text" class="form-control" id="Country" value="Ejemplo">
+                        <input name="country" type="text" class="form-control" id="Country" placeholder="Usuario">
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="Country" class="col-md-4 col-lg-3 col-form-label">Correo:</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="country" type="text" class="form-control" id="Country" value="Ejemplo">
+                        <input name="country" type="text" class="form-control" id="Country" placeholder="Correo Electrónico">
                       </div>
                     </div>
 
@@ -174,14 +174,14 @@
                     <div class="row mb-3">
                       <label for="Email" class="col-md-4 col-lg-3 col-form-label">Teléfono:</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="email" type="email" class="form-control" id="Email" value="Ejemplo">
+                        <input name="email" type="email" class="form-control" id="Email" placeholder="Teléfono">
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="Twitter" class="col-md-4 col-lg-3 col-form-label">Dirección:</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="twitter" type="text" class="form-control" id="Twitter" value="Ejemplo">
+                        <input name="twitter" type="text" class="form-control" id="Twitter" placeholder="Dirección">
                       </div>
                     </div>
 
