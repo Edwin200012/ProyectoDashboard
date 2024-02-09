@@ -136,52 +136,52 @@
                     </div>
 
                     <div class="row mb-3">
-                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Nombre:</label>
+                      <label for="editarnombre" class="col-md-4 col-lg-3 col-form-label">Nombre:</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="fullName" type="text" class="form-control" id="fullName" placeholder="Nombre">
+                        <input name="editarnombre" type="text" class="form-control" id="editarnombre" placeholder="Nombre">
                       </div>
                     </div>
 
                     <div class="row mb-3">
-                      <label for="about" class="col-md-4 col-lg-3 col-form-label">Apellido Paterno:</label>
+                      <label for="editarapellidop" class="col-md-4 col-lg-3 col-form-label">Apellido Paterno:</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="about" type="text" class="form-control" id="about" placeholder="Apellido Paterno">
+                        <input name="editarapellidop" type="text" class="form-control" id="editarapellidop" placeholder="Apellido Paterno">
                       </div>
                     </div>
 
                     <div class="row mb-3">
-                      <label for="company" class="col-md-4 col-lg-3 col-form-label">Apellido Materno:</label>
+                      <label for="editarapellidom" class="col-md-4 col-lg-3 col-form-label">Apellido Materno:</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="company" type="text" class="form-control" id="company" placeholder="Apellido Materno">
+                        <input name="editarapellidom" type="text" class="form-control" id="editarapellidom" placeholder="Apellido Materno">
                       </div>
                     </div>
 
                     <div class="row mb-3">
-                      <label for="Country" class="col-md-4 col-lg-3 col-form-label">Usuario:</label>
+                      <label for="editarusuario" class="col-md-4 col-lg-3 col-form-label">Usuario:</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="country" type="text" class="form-control" id="Country" placeholder="Usuario">
+                        <input name="editarusuario" type="text" class="form-control" id="editarusuario" placeholder="Usuario">
                       </div>
                     </div>
 
                     <div class="row mb-3">
-                      <label for="Country" class="col-md-4 col-lg-3 col-form-label">Correo:</label>
+                      <label for="editarcorreo" class="col-md-4 col-lg-3 col-form-label">Correo:</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="country" type="text" class="form-control" id="Country" placeholder="Correo Electrónico">
+                        <input name="editarcorreo" type="email" class="form-control" id="editarcorreo" placeholder="Correo Electrónico">
                       </div>
                     </div>
 
 
                     <div class="row mb-3">
-                      <label for="Email" class="col-md-4 col-lg-3 col-form-label">Teléfono:</label>
+                      <label for="editartelefono" class="col-md-4 col-lg-3 col-form-label">Teléfono:</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="email" type="email" class="form-control" id="Email" placeholder="Teléfono">
+                        <input name="editartelefono" type="tel" class="form-control" id="editartelefono" placeholder="Teléfono">
                       </div>
                     </div>
 
                     <div class="row mb-3">
-                      <label for="Twitter" class="col-md-4 col-lg-3 col-form-label">Dirección:</label>
+                      <label for="editardireccion" class="col-md-4 col-lg-3 col-form-label">Dirección:</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="twitter" type="text" class="form-control" id="Twitter" placeholder="Dirección">
+                        <input name="editardireccion" type="text" class="form-control" id="editardireccion" placeholder="Dirección">
                       </div>
                     </div>
 
