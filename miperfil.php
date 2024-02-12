@@ -63,9 +63,9 @@
                   <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-settings">Settings</button>
                 </li> -->
 
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                   <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Cambiar Contraseña</button>
-                </li>
+                </li> -->
 
               </ul>
               <div class="tab-content pt-2">
@@ -123,7 +123,7 @@
                 <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
                   <!-- Profile Edit Form -->
-                  <form>
+                  <form action="controllers/editarusuario.php" method="POST">
                     <div class="row mb-3">
                       <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Imagen de Perfil:</label>
                       <div class="col-md-8 col-lg-9">
@@ -138,7 +138,7 @@
                     <div class="row mb-3">
                       <label for="editarnombre" class="col-md-4 col-lg-3 col-form-label">Nombre:</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="editarnombre" type="text" class="form-control" id="editarnombre" placeholder="Nombre">
+                        <input name="editarnombre" type="text" class="form-control" id="editarnombre" placeholder="Nombre" require>
                       </div>
                     </div>
 
@@ -159,14 +159,14 @@
                     <div class="row mb-3">
                       <label for="editarusuario" class="col-md-4 col-lg-3 col-form-label">Usuario:</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="editarusuario" type="text" class="form-control" id="editarusuario" placeholder="Usuario">
+                        <input name="editarusuario" type="text" class="form-control" id="editarusuario" placeholder="Usuario" require>
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="editarcorreo" class="col-md-4 col-lg-3 col-form-label">Correo:</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="editarcorreo" type="email" class="form-control" id="editarcorreo" placeholder="Correo Electrónico">
+                        <input name="editarcorreo" type="email" class="form-control" id="editarcorreo" placeholder="Correo Electrónico" require>
                       </div>
                     </div>
 
@@ -182,6 +182,20 @@
                       <label for="editardireccion" class="col-md-4 col-lg-3 col-form-label">Dirección:</label>
                       <div class="col-md-8 col-lg-9">
                         <input name="editardireccion" type="text" class="form-control" id="editardireccion" placeholder="Dirección">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="editarcontrasena" class="col-md-4 col-lg-3 col-form-label">Contraseña:</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="editarcontrasena" type="password" class="form-control" id="editarcontrasena" placeholder="Contraseña">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="editarconfirmarcontrasena" class="col-md-4 col-lg-3 col-form-label">Confirmar Contraseña:</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="editarconfirmarcontrasena" type="password" class="form-control" id="editarconfirmarcontrasena" placeholder="Confirmar Contraseña" require>
                       </div>
                     </div>
 
