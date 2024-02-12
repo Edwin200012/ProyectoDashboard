@@ -1,3 +1,5 @@
+
+
 <style>
     #toastBox{
         width: 400px;
@@ -15,6 +17,23 @@
     }
 </style>
 
+<?php
+
+if(isset($_POST["enviar"]) ){
+  session_start();
+
+  $_SESSION['correo'] = htmlentities($_POST
+  ['correo']);
+
+  $_SESSION['contrasena'] = htmlentities($_POST
+  ['contrasena']);
+
+  header('Location: controllers/loginusuario.php');
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,7 +50,6 @@
 <body>
 
   <main>
-
 
   <?php
       if(isset($_GET['buscar'])):
@@ -80,7 +98,7 @@
                     <p class="text-center small">Ingrese su correo & contraseña</p>
                   </div>
 
-                  <form action="controllers/loginusuario.php" class="row g-3 needs-validation" novalidate method="POST">
+                  <form class="row g-3 needs-validation" novalidate method="POST">
 
                     <div class="col-12">
                       <label for="yourEmail" class="form-label">Correo</label>
@@ -101,7 +119,7 @@
                       </div>
                     </div> -->
                     <div class="col-12">
-                      <button style="border-radius: 15px; background-color: #77E6F2; color: #000807; border-color: silver;" class="btn btn-primary w-100" type="submit">Login</button>
+                      <button name="enviar" style="border-radius: 15px; background-color: #77E6F2; color: #000807; border-color: silver;" class="btn btn-primary w-100" type="submit">Login</button>
                     </div>
                     <div class="col-12">
                       <p class="small mb-0">¿No tienes cuenta? <a href="registro.php">Crear una cuenta</a></p>
