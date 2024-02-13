@@ -123,9 +123,9 @@
                 <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
                   <!-- Profile Edit Form -->
-                  <form class="row g-3 needs-validation" action="controllers/editarusuario.php" method="POST" novalidate>
-                    <div class="row mb-3">
-                      <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Imagen de Perfil:</label>
+                  <form action="controllers/editarusuario.php" class="row g-3 needs-validation" novalidate method="POST">
+                  <div class="row mb-3">
+                      <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Imagen de Perfil</label>
                       <div class="col-md-8 col-lg-9">
                         <img src="assets/img/profile-img.jpg" alt="Profile">
                         <div class="pt-2">
@@ -133,78 +133,69 @@
                           <a style="background-color: #8C030E; color: white; border-color: silver;" href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
                         </div>
                       </div>
+                    </div>  
+                  
+                  
+                  
+                  <div class="col-12">
+                      <label for="editarnombre" class="form-label">Nombre</label>
+                      <input style="border-radius: 15px;" type="text" name="editarnombre" class="form-control" id="editarnombre" required>
+                      <div class="invalid-feedback">Por favor, ingrese su nombre.</div>
                     </div>
 
-                    <div class="row mb-3">
-                      <label for="editarnombre" class="col-md-4 col-lg-3 col-form-label">Nombre:</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="editarnombre" type="text" class="form-control" id="editarnombre" placeholder="Nombre" require>
-                      </div>
+                    <!-- <div class="col-12">
+                      <label for="editarapellidop" class="form-label">Apellido Paterno</label>
+                      <input style="border-radius: 15px;" type="text" name="editarapellidop" class="form-control" id="editarapellidop">
+                    </div> -->
+
+                    <!-- <div class="col-12">
+                      <label for="editarapellidom" class="form-label">Apellido Materno</label>
+                      <input style="border-radius: 15px;" type="text" name="editarapellidom" class="form-control" id="editarapellidom">
+                    </div> -->
+
+                    <div class="col-12">
+                      <label for="editarusuario" class="form-label">Usuario</label>
+                      <input style="border-radius: 15px;" type="text" name="editarusuario" class="form-control" id="editarusuario" required>
+                      <div class="invalid-feedback">Por favor, ingrese su usuario.</div>
                     </div>
 
-                    <div class="row mb-3">
-                      <label for="editarapellidop" class="col-md-4 col-lg-3 col-form-label">Apellido Paterno:</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="editarapellidop" type="text" class="form-control" id="editarapellidop" placeholder="Apellido Paterno">
-                      </div>
+                    <div class="col-12">
+                      <label for="editarcorreo" class="form-label">Correo</label>
+                      <input style="border-radius: 15px;" type="email" name="editarcorreo" class="form-control" id="editarcorreo" required>
+                      <div class="invalid-feedback">Por favor, ingrese su correo.</div>
                     </div>
 
-                    <div class="row mb-3">
-                      <label for="editarapellidom" class="col-md-4 col-lg-3 col-form-label">Apellido Materno:</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="editarapellidom" type="text" class="form-control" id="editarapellidom" placeholder="Apellido Materno">
-                      </div>
+                    <!-- <div class="col-12">
+                      <label for="editartelefono" class="form-label">Teléfono</label>
+                      <input style="border-radius: 15px;" type="email" name="editartelefono" class="form-control" id="editartelefono">
+                    </div> -->
+
+                    <!-- <div class="col-12">
+                      <label for="editardireccion" class="form-label">Dirección</label>
+                      <input style="border-radius: 15px;" type="email" name="editardireccion" class="form-control" id="editardireccion">
+                    </div> -->
+
+                    <div class="col-12">
+                      <label for="editarcontrasena" class="form-label">Contraseña</label>
+                      <input onkeyup="mostrar(this.value);" style="border-radius: 15px;" type="password" name="editarcontrasena" class="form-control" id="editarcontrasena" required>
+                      <div class="invalid-feedback">Por favor, ingrese su contraseña.</div>
                     </div>
 
-                    <div class="row mb-3">
-                      <label for="editarusuario" class="col-md-4 col-lg-3 col-form-label">Usuario:</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="editarusuario" type="text" class="form-control" id="editarusuario" placeholder="Usuario" require>
-                      </div>
+                    <div class="col-12">
+                      <label for="editarconfirmarcontrasena" class="form-label">Confirmar Contraseña</label>
+                      <input onkeyup="mostrar(this.value);" style="border-radius: 15px;" type="password" name="editarconfirmarcontrasena" class="form-control" id="editarconfirmarcontrasena" required>
+                      <div class="invalid-feedback">Por favor, confirme su contraseña.</div>
                     </div>
 
-                    <div class="row mb-3">
-                      <label for="editarcorreo" class="col-md-4 col-lg-3 col-form-label">Correo:</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="editarcorreo" type="email" class="form-control" id="editarcorreo" placeholder="Correo Electrónico" require>
-                      </div>
+                    <button style="border-radius: 15px; background-color: #77E6F2; color: #000807; border-color: silver;" class="btn btn-primary w-100" onclick="validarContrasena();">Validar Contraseña</button>
+                 
+                    <div class="col-12">
+                      <button disabled id="botonActualizar" style="border-radius: 15px; background-color: #77E6F2; color: #000807; border-color: silver;" class="btn btn-primary w-100" type="submit">Actualizar Datos</button>
                     </div>
+                  
+                  </form>
 
-
-                    <div class="row mb-3">
-                      <label for="editartelefono" class="col-md-4 col-lg-3 col-form-label">Teléfono:</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="editartelefono" type="tel" class="form-control" id="editartelefono" placeholder="Teléfono">
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="editardireccion" class="col-md-4 col-lg-3 col-form-label">Dirección:</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="editardireccion" type="text" class="form-control" id="editardireccion" placeholder="Dirección">
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="editarcontrasena" class="col-md-4 col-lg-3 col-form-label">Contraseña:</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="editarcontrasena" type="password" class="form-control" id="editarcontrasena" placeholder="Contraseña">
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="editarconfirmarcontrasena" class="col-md-4 col-lg-3 col-form-label">Confirmar Contraseña:</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="editarconfirmarcontrasena" type="password" class="form-control" id="editarconfirmarcontrasena" placeholder="Confirmar Contraseña" require>
-                      </div>
-                    </div>
-
-                    
-
-                    <div class="text-center">
-                      <button style="background-color: #77E6F2; color: #000807; border-color: silver;" type="submit" class="btn btn-primary w-100">Actualizar Datos</button>
-                    </div>
-                  </form><!-- End Profile Edit Form -->
+                  
 
                 </div>
 
@@ -250,38 +241,6 @@
 
                 </div>
 
-                <div class="tab-pane fade pt-3" id="profile-change-password">
-                  <!-- Change Password Form -->
-                  <form>
-
-                    <div class="row mb-3">
-                      <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Contraseña Actual</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="password" type="password" class="form-control" id="currentPassword">
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">Nueva Contraseña</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="newpassword" type="password" class="form-control" id="newPassword">
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Confirmar Nueva Contraseña</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="renewpassword" type="password" class="form-control" id="renewPassword">
-                      </div>
-                    </div>
-
-                    <div class="text-center">
-                      <button style="background-color: #77E6F2; color: #000807; border-color: silver;" type="submit" class="btn btn-primary">Cambiar Contraseña</button>
-                    </div>
-                  </form><!-- End Change Password Form -->
-
-                </div>
-
               </div><!-- End Bordered Tabs -->
 
             </div>
@@ -304,5 +263,36 @@
 <?php
     include_once ("plantilla/scripts.php");
 ?>
+
+
+<script>
+
+const button = document.getElementById("botonActualizar");
+
+function validarContrasena() {
+ // const button = document.getElementById("botonCrearCuenta");
+
+   if(document.getElementById('editarcontrasena').value == '' && document.getElementById('editarconfirmarcontrasena').value == ''){
+       alert('Las contraseñas no deben estar vacias, intente de nuevo');
+       button.disabled = true;
+   }
+
+   else if(document.getElementById('editarcontrasena').value == document.getElementById('editarconfirmarcontrasena').value){
+       alert('Las Contraseñas Coinciden');
+       button.disabled = false;
+   }
+
+   else{
+       alert('Las contraseñas no coinciden, intente de nuevo');
+       button.disabled = true;
+   }
+}
+
+
+function mostrar(valor){
+  console.log(valor);
+}
+
+</script>
 </body>
 </html>
