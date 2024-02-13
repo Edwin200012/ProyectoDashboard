@@ -111,13 +111,6 @@
                     <div class="col-lg-9 col-md-8"><?php echo $direccionsesion ?></div>
                   </div>
 
-                  <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Contraseña Actual:</div>
-                    <div class="col-lg-9 col-md-8"><?php echo $contrasenasesion ?></div>
-                  </div>
-
-                 
-
                 </div>
 
                 <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
