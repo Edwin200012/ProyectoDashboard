@@ -1,14 +1,14 @@
 <?php
     session_start();
-    $correo = $_SESSION['correo'];
-    $contrasena = $_SESSION['contrasena'];
+    $correosesion = $_SESSION['correosesion'];
+    $contrasenasesion = $_SESSION['contrasenasesion'];
 ?>
 <?php
 include_once("../route.php");
     class Usuario{
         function Login(){
-            $correo = $_SESSION['correo'];
-            $contrasena = $_SESSION['contrasena'];
+            $correo = $_SESSION['correosesion'];
+            $contrasena = $_SESSION['contrasenasesion'];
 
             $url = Route::$url.Route::$loginUsuario;
 
@@ -37,13 +37,13 @@ include_once("../route.php");
                 if ($informacion->buscar)
                 {
                     
-                    $_SESSION['id'] = $informacion->usuarios[0]->id;
-                    $_SESSION['nombre'] = $informacion->usuarios[0]->nombre;
-                    $_SESSION['apellidop'] = $informacion->usuarios[0]->apellidoP;
-                    $_SESSION['apellidom'] = $informacion->usuarios[0]->apellidoM;
-                    $_SESSION['usuario'] = $informacion->usuarios[0]->usuario;
-                    $_SESSION['telefono'] = $informacion->usuarios[0]->telefono;
-                    $_SESSION['direccion'] = $informacion->usuarios[0]->direccion;
+                    $_SESSION['idsesion'] = $informacion->usuarios[0]->id;
+                    $_SESSION['nombresesion'] = $informacion->usuarios[0]->nombre;
+                    $_SESSION['apellidopsesion'] = $informacion->usuarios[0]->apellidoP;
+                    $_SESSION['apellidomsesion'] = $informacion->usuarios[0]->apellidoM;
+                    $_SESSION['usuariosesion'] = $informacion->usuarios[0]->usuario;
+                    $_SESSION['telefonosesion'] = $informacion->usuarios[0]->telefono;
+                    $_SESSION['direccionsesion'] = $informacion->usuarios[0]->direccion;
 
                     // $_SESSION['nombreusuario'] = $informacion->usuarios['nombre'];
                     sleep(1);

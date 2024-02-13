@@ -22,10 +22,10 @@
 if(isset($_POST["enviar"]) ){
   session_start();
 
-  $_SESSION['correo'] = htmlentities($_POST
+  $_SESSION['correosesion'] = htmlentities($_POST
   ['correo']);
 
-  $_SESSION['contrasena'] = htmlentities($_POST
+  $_SESSION['contrasenasesion'] = htmlentities($_POST
   ['contrasena']);
 
   header('Location: controllers/loginusuario.php');
@@ -101,14 +101,14 @@ if(isset($_POST["enviar"]) ){
                   <form class="row g-3 needs-validation" novalidate method="POST">
 
                     <div class="col-12">
-                      <label for="yourEmail" class="form-label">Correo</label>
-                        <input style="border-radius: 15px;" type="text" name="correo" class="form-control" id="yourEmail" required>
+                      <label for="correo" class="form-label">Correo</label>
+                        <input style="border-radius: 15px;" type="text" name="correo" class="form-control" id="correo" required>
                         <div class="invalid-feedback">Por favor, ingrese su correo.</div>
                     </div>
 
                     <div class="col-12">
-                      <label for="yourPassword" class="form-label">Contraseña</label>
-                      <input style="border-radius: 15px;" type="password" name="contrasena" class="form-control" id="yourPassword" required>
+                      <label for="contrasena" class="form-label">Contraseña</label>
+                      <input style="border-radius: 15px;" type="password" name="contrasena" class="form-control" id="contrasena" required>
                       <div class="invalid-feedback">Por favor, ingrese su contraseña.</div>
                     </div>
 

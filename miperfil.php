@@ -31,7 +31,7 @@
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
               <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-              <h2><?php echo $correo ?></h2>
+              <h2><?php echo $correosesion ?></h2>
               <h3>Web Designer</h3>
               <div class="social-links mt-2">
                 <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
@@ -78,42 +78,42 @@
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Nombre:</div>
-                    <div class="col-lg-9 col-md-8">Ejemplo</div>
+                    <div class="col-lg-9 col-md-8"><?php echo $nombresesion ?></div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Apellido Paterno:</div>
-                    <div class="col-lg-9 col-md-8">Ejemplo</div>
+                    <div class="col-lg-9 col-md-8"><?php echo $apellidopsesion ?></div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Apellido Materno:</div>
-                    <div class="col-lg-9 col-md-8">Ejemplo</div>
+                    <div class="col-lg-9 col-md-8"><?php echo $apellidomsesion ?></div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Usuario:</div>
-                    <div class="col-lg-9 col-md-8">Ejemplo</div>
+                    <div class="col-lg-9 col-md-8"><?php echo $usuariosesion ?></div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Correo:</div>
-                    <div class="col-lg-9 col-md-8"><?php echo $correo ?></div>
+                    <div class="col-lg-9 col-md-8"><?php echo $correosesion ?></div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Teléfono</div>
-                    <div class="col-lg-9 col-md-8">(871)290-7011</div>
+                    <div class="col-lg-9 col-md-8"><?php echo $telefonosesion ?></div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Dirección:</div>
-                    <div class="col-lg-9 col-md-8">Ejemplo</div>
+                    <div class="col-lg-9 col-md-8"><?php echo $direccionsesion ?></div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Contraseña Actual:</div>
-                    <div class="col-lg-9 col-md-8"><?php echo $contrasena ?></div>
+                    <div class="col-lg-9 col-md-8"><?php echo $contrasenasesion ?></div>
                   </div>
 
                  
