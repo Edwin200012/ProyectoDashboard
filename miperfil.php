@@ -31,7 +31,7 @@
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
               <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-              <h2>Kevin Anderson</h2>
+              <h2><?php echo $correo ?></h2>
               <h3>Web Designer</h3>
               <div class="social-links mt-2">
                 <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
@@ -143,15 +143,15 @@
                       <div class="invalid-feedback">Por favor, ingrese su nombre.</div>
                     </div>
 
-                    <!-- <div class="col-12">
+                    <div class="col-12">
                       <label for="editarapellidop" class="form-label">Apellido Paterno</label>
                       <input style="border-radius: 15px;" type="text" name="editarapellidop" class="form-control" id="editarapellidop">
-                    </div> -->
+                    </div>
 
-                    <!-- <div class="col-12">
+                    <div class="col-12">
                       <label for="editarapellidom" class="form-label">Apellido Materno</label>
                       <input style="border-radius: 15px;" type="text" name="editarapellidom" class="form-control" id="editarapellidom">
-                    </div> -->
+                    </div>
 
                     <div class="col-12">
                       <label for="editarusuario" class="form-label">Usuario</label>
@@ -165,15 +165,15 @@
                       <div class="invalid-feedback">Por favor, ingrese su correo.</div>
                     </div>
 
-                    <!-- <div class="col-12">
+                    <div class="col-12">
                       <label for="editartelefono" class="form-label">Teléfono</label>
-                      <input style="border-radius: 15px;" type="email" name="editartelefono" class="form-control" id="editartelefono">
-                    </div> -->
+                      <input style="border-radius: 15px;" type="tel" name="editartelefono" class="form-control" id="editartelefono">
+                    </div>
 
-                    <!-- <div class="col-12">
+                    <div class="col-12">
                       <label for="editardireccion" class="form-label">Dirección</label>
-                      <input style="border-radius: 15px;" type="email" name="editardireccion" class="form-control" id="editardireccion">
-                    </div> -->
+                      <input style="border-radius: 15px;" type="text" name="editardireccion" class="form-control" id="editardireccion">
+                    </div>
 
                     <div class="col-12">
                       <label for="editarcontrasena" class="form-label">Contraseña</label>
