@@ -98,7 +98,7 @@
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Correo:</div>
-                    <div class="col-lg-9 col-md-8">Ejemplo</div>
+                    <div class="col-lg-9 col-md-8"><?php echo $correo ?></div>
                   </div>
 
                   <div class="row">
@@ -123,7 +123,7 @@
                 <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
                   <!-- Profile Edit Form -->
-                  <form action="controllers/editarusuario.php" method="POST">
+                  <form class="row g-3 needs-validation" action="controllers/editarusuario.php" method="POST" novalidate>
                     <div class="row mb-3">
                       <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Imagen de Perfil:</label>
                       <div class="col-md-8 col-lg-9">
@@ -202,7 +202,7 @@
                     
 
                     <div class="text-center">
-                      <button style="background-color: #77E6F2; color: #000807; border-color: silver;" type="submit" class="btn btn-primary">Actualizar Datos</button>
+                      <button style="background-color: #77E6F2; color: #000807; border-color: silver;" type="submit" class="btn btn-primary w-100">Actualizar Datos</button>
                     </div>
                   </form><!-- End Profile Edit Form -->
 
