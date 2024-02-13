@@ -37,12 +37,24 @@ include_once("../route.php");
                 if ($informacion->buscar)
                 {
                     
-                    // $_SESSION['nombreusuario'] = 'jose';
+                    $_SESSION['id'] = $informacion->usuarios[0]->id;
+                    $_SESSION['nombre'] = $informacion->usuarios[0]->nombre;
+                    $_SESSION['apellidop'] = $informacion->usuarios[0]->apellidoP;
+                    $_SESSION['apellidom'] = $informacion->usuarios[0]->apellidoM;
+                    $_SESSION['usuario'] = $informacion->usuarios[0]->usuario;
+                    $_SESSION['telefono'] = $informacion->usuarios[0]->telefono;
+                    $_SESSION['direccion'] = $informacion->usuarios[0]->direccion;
+
                     // $_SESSION['nombreusuario'] = $informacion->usuarios['nombre'];
                     sleep(1);
                     header('Location: ../index.php');
                     // var_dump($_SESSION);
-                    // var_dump($informacion->usuarios);
+                    // var_dump($informacion->usuarios[0]->usuario);
+
+
+
+                    
+
                     
                 }
                 else {
