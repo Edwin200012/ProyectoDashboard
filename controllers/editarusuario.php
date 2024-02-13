@@ -17,16 +17,6 @@ include_once("../route.php");
             $direccion = $_POST['editardireccion'];
             $contrasena = $_POST['editarconfirmarcontrasena'];
 
-            var_dump($id);
-            var_dump($nombre);
-            var_dump($apellidop);
-            var_dump($apellidom);
-            var_dump($usuario);
-            var_dump($correo);
-            var_dump($telefono);
-            var_dump($direccion);
-            var_dump($contrasena);
-
             $url = Route::$url.Route::$editarUsuario;
 
             $curl = curl_init();

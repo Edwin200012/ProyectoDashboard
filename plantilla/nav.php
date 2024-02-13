@@ -34,7 +34,7 @@
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6><?php echo $usuariosesion?></h6>
+              <h6><?php echo $usuariosesion ?></h6>
               <span><?php echo $correosesion ?></span>
             </li>
             <li>
