@@ -2,7 +2,6 @@
     session_start();
     $correo = $_SESSION['correo'];
     $contrasena = $_SESSION['contrasena'];
-    // var_dump($_SESSION['correo']);
 ?>
 <?php
 include_once("../route.php");

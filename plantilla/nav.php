@@ -2,7 +2,6 @@
     session_start();
     $correo = $_SESSION['correo'];
     $contrasena = $_SESSION['contrasena'];
-    // var_dump($_SESSION['correo']);
 ?>
 
 <header style="border-style: ridge; background-color: #3A1CA6; border-color: aliceblue;  border-width: 0.3px;" id="header" class="header fixed-top d-flex align-items-center">
