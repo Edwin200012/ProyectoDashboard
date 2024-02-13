@@ -2,7 +2,7 @@
 include_once("../route.php");
     class Usuario{
         function EditarUsuario(){
-            $id = '1';
+            // $id = $_POST['id'];
             $nombre = $_POST['editarnombre'];
             $apellidop = $_POST['editarapellidop'];
             $apellidom = $_POST['editarapellidom'];
@@ -12,7 +12,7 @@ include_once("../route.php");
             $direccion = $_POST['editardireccion'];
             $contrasena = $_POST['editarconfirmarcontrasena'];
 
-            var_dump($id);
+            // var_dump($id);
             var_dump($nombre);
             var_dump($apellidop);
             var_dump($apellidom);
@@ -34,7 +34,7 @@ include_once("../route.php");
                 ]);
 
             $parametros = array (           
-                    "id" => $id,
+                    // "id" => $id,
                     "nombre" => $nombre,
                     "apellidop" => $apellidop,
                     "apellidom" => $apellidom,
