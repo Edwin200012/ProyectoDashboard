@@ -29,13 +29,13 @@
       
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
             <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-            <span style="color: white;" class="d-none d-md-block dropdown-toggle ps-2"><?php echo $correosesion ?></span>
+            <span style="color: white;" class="d-none d-md-block dropdown-toggle ps-2"><?php echo $nombresesion . ' ' . $apellidopsesion . ' ' . $apellidomsesion?></span>
           </a><!-- End Profile Image Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6><?php echo $nombresesion . ' ' . $apellidopsesion . ' ' . $apellidomsesion?></h6>
-              <span><?php echo $usuariosesion ?></span>
+              <h6><?php echo $usuariosesion?></h6>
+              <span><?php echo $correosesion ?></span>
             </li>
             <li>
               <hr class="dropdown-divider">
