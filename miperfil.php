@@ -127,9 +127,7 @@
                         </div>
                       </div>
                     </div>  
-                  
-                  
-                  
+
                   <div class="col-12">
                       <label for="editarnombre" class="form-label">Nombre</label>
                       <input style="border-radius: 15px;" type="text" name="editarnombre" class="form-control" id="editarnombre" value="<?php echo $nombresesion ?>" required>
@@ -168,8 +166,9 @@
                       <input style="border-radius: 15px;" type="text" name="editardireccion" class="form-control" id="editardireccion" value="<?php echo $direccionsesion ?>">
                     </div>
                  
-                    <div class="col-12">
-                      <button id="botonActualizar" style="border-radius: 15px; background-color: #77E6F2; color: #000807; border-color: silver;" class="btn btn-primary w-100" type="submit">Actualizar Datos</button>
+                    <div class="text-center">
+                    
+                      <button id="botonActualizar" style="width:300px; height:40px; border-radius: 30px; background-color: #77E6F2; color: #000807; border-color: silver;" class="btn btn-primary" type="submit">Actualizar Datos</button>
                     </div>
                   
                   </form>
@@ -183,30 +182,25 @@
                   <!-- Change Password Form -->
                   <form>
 
-                    <div class="row mb-3">
-                      <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Contraseña Actual</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="password" type="password" class="form-control" id="currentPassword">
-                      </div>
+                    <div class="col-12">
+                      <label for="contrasenaactual" class="form-label">Contraseña Actual</label>
+                      <input style="border-radius: 15px;" type="text" name="contrasenaactual" class="form-control" id="contrasenaactual">
                     </div>
 
-                    <div class="row mb-3">
-                      <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">Nueva Contraseña</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="newpassword" type="password" class="form-control" id="newPassword">
-                      </div>
+                    <div class="col-12">
+                      <label for="nuevacontrasena" class="form-label">Nueva Contraseña</label>
+                      <input style="border-radius: 15px;" type="text" name="nuevacontrasena" class="form-control" id="nuevacontrasena">
                     </div>
 
-                    <div class="row mb-3">
-                      <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Confirmar Contraseña</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="renewpassword" type="password" class="form-control" id="renewPassword">
-                      </div>
+                    <div class="col-12">
+                      <label for="confirmarcontrasena" class="form-label">Confirmar Contraseña</label>
+                      <input style="border-radius: 15px;" type="text" name="confirmarcontrasena" class="form-control" id="confirmarcontrasena">
                     </div>
 
-                    <div class="text-center">
-                    <button style="background-color: #77E6F2; color: #000807; border-color: silver;" type="submit" class="btn btn-primary">Cambiar Contraseña</button>
+                    <div class="text-center" style="margin-top: 15px;">
+                    <button style="width:300px; height:40px; border-radius: 30px; background-color: #77E6F2; color: #000807; border-color: silver;" class="btn btn-primary" type="submit">Cambiar Contraseña</button>
                     </div>
+
                   </form><!-- End Change Password Form -->
 
                 </div>
