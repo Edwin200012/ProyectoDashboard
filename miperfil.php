@@ -132,40 +132,40 @@
                   
                   <div class="col-12">
                       <label for="editarnombre" class="form-label">Nombre</label>
-                      <input style="border-radius: 15px;" type="text" name="editarnombre" class="form-control" id="editarnombre" required>
+                      <input style="border-radius: 15px;" type="text" name="editarnombre" class="form-control" id="editarnombre" value="<?php echo $nombresesion ?>" required>
                       <div class="invalid-feedback">Por favor, ingrese su nombre.</div>
                     </div>
 
                     <div class="col-12">
                       <label for="editarapellidop" class="form-label">Apellido Paterno</label>
-                      <input style="border-radius: 15px;" type="text" name="editarapellidop" class="form-control" id="editarapellidop">
+                      <input style="border-radius: 15px;" type="text" name="editarapellidop" class="form-control" id="editarapellidop" value="<?php echo $apellidopsesion ?>">
                     </div>
 
                     <div class="col-12">
                       <label for="editarapellidom" class="form-label">Apellido Materno</label>
-                      <input style="border-radius: 15px;" type="text" name="editarapellidom" class="form-control" id="editarapellidom">
+                      <input style="border-radius: 15px;" type="text" name="editarapellidom" class="form-control" id="editarapellidom" value="<?php echo $apellidomsesion ?>">
                     </div>
 
                     <div class="col-12">
                       <label for="editarusuario" class="form-label">Usuario</label>
-                      <input style="border-radius: 15px;" type="text" name="editarusuario" class="form-control" id="editarusuario" required>
+                      <input style="border-radius: 15px;" type="text" name="editarusuario" class="form-control" id="editarusuario" required value="<?php echo $usuariosesion ?>">
                       <div class="invalid-feedback">Por favor, ingrese su usuario.</div>
                     </div>
 
                     <div class="col-12">
                       <label for="editarcorreo" class="form-label">Correo</label>
-                      <input style="border-radius: 15px;" type="email" name="editarcorreo" class="form-control" id="editarcorreo" required>
+                      <input style="border-radius: 15px;" type="email" name="editarcorreo" class="form-control" id="editarcorreo" required value="<?php echo $correosesion ?>">
                       <div class="invalid-feedback">Por favor, ingrese su correo.</div>
                     </div>
 
                     <div class="col-12">
                       <label for="editartelefono" class="form-label">Teléfono</label>
-                      <input style="border-radius: 15px;" type="tel" name="editartelefono" class="form-control" id="editartelefono">
+                      <input style="border-radius: 15px;" type="tel" name="editartelefono" class="form-control" id="editartelefono" value="<?php echo $telefonosesion ?>">
                     </div>
 
                     <div class="col-12">
                       <label for="editardireccion" class="form-label">Dirección</label>
-                      <input style="border-radius: 15px;" type="text" name="editardireccion" class="form-control" id="editardireccion">
+                      <input style="border-radius: 15px;" type="text" name="editardireccion" class="form-control" id="editardireccion" value="<?php echo $direccionsesion ?>">
                     </div>
                  
                     <div class="col-12">

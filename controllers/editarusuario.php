@@ -15,7 +15,7 @@ include_once("../route.php");
             $correo = $_POST['editarcorreo'];
             $telefono = $_POST['editartelefono'];
             $direccion = $_POST['editardireccion'];
-            $contrasena = $_POST['editarconfirmarcontrasena'];
+            // $contrasena = $_POST['editarconfirmarcontrasena'];
 
             $url = Route::$url.Route::$editarUsuario;
 
@@ -37,7 +37,7 @@ include_once("../route.php");
                     "correo" => $correo,
                     "telefono" => $telefono,
                     "direccion" => $direccion,
-                    "contrasena" => $contrasena
+                    // "contrasena" => $contrasena
             );
 
             curl_setopt($curl, CURLOPT_POSTFIELDS,json_encode($parametros));
