@@ -1,6 +1,30 @@
+<style>
+  div#is-relative{
+  
+  position: relative;
+}
+
+/* El icono debe ser "position: absolute"
+ * Ademas le damos un "display: block" y lo posicionamos */
+#icon{
+  position: absolute;
+  display: block;
+  bottom: .5rem;
+  right: 1rem;
+  
+  user-select: none;
+  cursor: pointer;
+}
+input.input{
+  padding-right: 2.5rem;
+}
+</style>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css" rel="stylesheet"/>
+
 <?php
     include_once ("plantilla/head.php");
   ?>
@@ -58,10 +82,6 @@
                 <li class="nav-item">
                   <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Editar Perfil</button>
                 </li>
-
-                <!-- <li class="nav-item">
-                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-settings">Settings</button>
-                </li> -->
 
                 <li class="nav-item">
                   <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Cambiar Contraseña</button>
@@ -173,8 +193,6 @@
                   
                   </form>
 
-                  
-
                 </div>
 
 
@@ -182,9 +200,14 @@
                   <!-- Change Password Form -->
                   <form action="controllers/editarcontrasenausuario.php" class="row g-3 needs-validation" novalidate method="POST">
 
-                    <div class="col-12">
+
+                    <div class="col-12" id="is-relative">
                       <label for="contrasenaactual" class="form-label">Contraseña Actual</label>
-                      <input style="border-radius: 15px;" type="password" name="contrasenaactual" class="form-control" id="contrasenaactual" value="<?php echo $contrasenasesion ?>">
+                      <input style="border-radius: 15px;" type="password" name="contrasenaactual" class="form-control" id="contrasenaactual" value="<?php echo $contrasenasesion ?>">  
+                        <span id="icon">
+                            <i class="fas fa-eye" title="Mostrar Contraseña"></i>
+                            <i class="fas fa-eye-slash" title="Ocultar Contraseña"></i>
+                        </span>
                     </div>
 
                     <div class="col-12">
