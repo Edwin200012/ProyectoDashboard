@@ -167,23 +167,9 @@
                       <label for="editardireccion" class="form-label">Dirección</label>
                       <input style="border-radius: 15px;" type="text" name="editardireccion" class="form-control" id="editardireccion">
                     </div>
-
-                    <div class="col-12">
-                      <label for="editarcontrasena" class="form-label">Contraseña</label>
-                      <input onkeyup="mostrar(this.value);" style="border-radius: 15px;" type="password" name="editarcontrasena" class="form-control" id="editarcontrasena" required>
-                      <div class="invalid-feedback">Por favor, ingrese su contraseña.</div>
-                    </div>
-
-                    <div class="col-12">
-                      <label for="editarconfirmarcontrasena" class="form-label">Confirmar Contraseña</label>
-                      <input onkeyup="mostrar(this.value);" style="border-radius: 15px;" type="password" name="editarconfirmarcontrasena" class="form-control" id="editarconfirmarcontrasena" required>
-                      <div class="invalid-feedback">Por favor, confirme su contraseña.</div>
-                    </div>
-
-                    <button style="border-radius: 15px; background-color: #77E6F2; color: #000807; border-color: silver;" class="btn btn-primary w-100" onclick="validarContrasena();">Validar Contraseña</button>
                  
                     <div class="col-12">
-                      <button disabled id="botonActualizar" style="border-radius: 15px; background-color: #77E6F2; color: #000807; border-color: silver;" class="btn btn-primary w-100" type="submit">Actualizar Datos</button>
+                      <button id="botonActualizar" style="border-radius: 15px; background-color: #77E6F2; color: #000807; border-color: silver;" class="btn btn-primary w-100" type="submit">Actualizar Datos</button>
                     </div>
                   
                   </form>
@@ -290,35 +276,5 @@
     include_once ("plantilla/scripts.php");
 ?>
 
-
-<script>
-
-const button = document.getElementById("botonActualizar");
-
-function validarContrasena() {
- // const button = document.getElementById("botonCrearCuenta");
-
-   if(document.getElementById('editarcontrasena').value == '' && document.getElementById('editarconfirmarcontrasena').value == ''){
-       alert('Las contraseñas no deben estar vacias, intente de nuevo');
-       button.disabled = true;
-   }
-
-   else if(document.getElementById('editarcontrasena').value == document.getElementById('editarconfirmarcontrasena').value){
-       alert('Las Contraseñas Coinciden');
-       button.disabled = false;
-   }
-
-   else{
-       alert('Las contraseñas no coinciden, intente de nuevo');
-       button.disabled = true;
-   }
-}
-
-
-function mostrar(valor){
-  console.log(valor);
-}
-
-</script>
 </body>
 </html>
