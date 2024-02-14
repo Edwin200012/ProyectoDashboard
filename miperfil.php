@@ -180,21 +180,21 @@
 
                 <div class="tab-pane fade pt-3" id="profile-change-password">
                   <!-- Change Password Form -->
-                  <form>
+                  <form action="controllers/editarcontrasenausuario.php" class="row g-3 needs-validation" novalidate method="POST">
 
                     <div class="col-12">
                       <label for="contrasenaactual" class="form-label">Contraseña Actual</label>
-                      <input style="border-radius: 15px;" type="text" name="contrasenaactual" class="form-control" id="contrasenaactual">
+                      <input style="border-radius: 15px;" type="password" name="contrasenaactual" class="form-control" id="contrasenaactual" value="<?php echo $contrasenasesion ?>">
                     </div>
 
                     <div class="col-12">
                       <label for="nuevacontrasena" class="form-label">Nueva Contraseña</label>
-                      <input style="border-radius: 15px;" type="text" name="nuevacontrasena" class="form-control" id="nuevacontrasena">
+                      <input style="border-radius: 15px;" type="password" name="nuevacontrasena" class="form-control" id="nuevacontrasena">
                     </div>
 
                     <div class="col-12">
                       <label for="confirmarcontrasena" class="form-label">Confirmar Contraseña</label>
-                      <input style="border-radius: 15px;" type="text" name="confirmarcontrasena" class="form-control" id="confirmarcontrasena">
+                      <input style="border-radius: 15px;" type="password" name="confirmarcontrasena" class="form-control" id="confirmarcontrasena">
                     </div>
 
                     <div class="text-center" style="margin-top: 15px;">

@@ -3,18 +3,12 @@ session_start();
 
 include_once("../route.php");
     class Usuario{
-        function EditarUsuario(){
-            
-            $id = $_SESSION['idsesion'];
-            $nombre = $_POST['editarnombre'];
-            $apellidop = $_POST['editarapellidop'];
-            $apellidom = $_POST['editarapellidom'];
-            $usuario = $_POST['editarusuario'];
-            $correo = $_POST['editarcorreo'];
-            $telefono = $_POST['editartelefono'];
-            $direccion = $_POST['editardireccion'];
+        function EditarContrasenaUsuario(){
 
-            $url = Route::$url.Route::$editarUsuario;
+            $id = $_SESSION['idsesion'];
+            $nuevacontrasena = $_POST['confirmarcontrasena'];
+
+            $url = Route::$url.Route::$editarContrasenaUsuario;
 
             $curl = curl_init();
                 curl_setopt($curl, CURLOPT_URL, $url);
@@ -27,13 +21,7 @@ include_once("../route.php");
 
             $parametros = array (           
                     "id" => $id,
-                    "nombre" => $nombre,
-                    "apellidop" => $apellidop,
-                    "apellidom" => $apellidom,
-                    "usuario" => $usuario,
-                    "correo" => $correo,
-                    "telefono" => $telefono,
-                    "direccion" => $direccion,
+                    "contrasena" => $nuevacontrasena
             );
 
             curl_setopt($curl, CURLOPT_POSTFIELDS,json_encode($parametros));
@@ -43,9 +31,9 @@ include_once("../route.php");
 
             $informacion = json_decode($respuesta);
 
-            if ($informacion->actualizado)
+            if ($informacion->contrasenaactualizada)
                 {
-                    header('Location: ../index.php');       
+                    header('Location: ../miperfil.php');    
                 }
                 
             else{
@@ -56,6 +44,6 @@ include_once("../route.php");
     }
 
     $usuario = new Usuario();
-    $usuario->EditarUsuario();
+    $usuario->EditarContrasenaUsuario();
 
 ?>

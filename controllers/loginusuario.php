@@ -44,6 +44,7 @@ include_once("../route.php");
                     $_SESSION['usuariosesion'] = $informacion->usuarios[0]->usuario;
                     $_SESSION['telefonosesion'] = $informacion->usuarios[0]->telefono;
                     $_SESSION['direccionsesion'] = $informacion->usuarios[0]->direccion;
+                    $_SESSION['contrasenasesion'] = $informacion->usuarios[0]->contrasena;
 
                     // $_SESSION['nombreusuario'] = $informacion->usuarios['nombre'];
                     sleep(1);
@@ -51,11 +52,6 @@ include_once("../route.php");
                     // var_dump($_SESSION);
                     // var_dump($informacion->usuarios[0]->usuario);
 
-
-
-                    
-
-                    
                 }
                 else {
                     header('Location: ../login.php?buscar=false');
