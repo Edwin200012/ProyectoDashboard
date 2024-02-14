@@ -1,29 +1,8 @@
-<style>
-  div#is-relative{
-  
-  position: relative;
-}
 
-/* El icono debe ser "position: absolute"
- * Ademas le damos un "display: block" y lo posicionamos */
-#icon{
-  position: absolute;
-  display: block;
-  bottom: .5rem;
-  right: 1rem;
-  
-  user-select: none;
-  cursor: pointer;
-}
-input.input{
-  padding-right: 2.5rem;
-}
-</style>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css" rel="stylesheet"/>
+
 
 <?php
     include_once ("plantilla/head.php");

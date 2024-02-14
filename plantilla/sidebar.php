@@ -42,34 +42,34 @@
 
       <li class="nav-item">
         <a id="sidebarmenu1" style="border-radius: 15px; background-color: #3A1CA6;" class="nav-link " href="index.php">
-          <i style="color: white; margin-top: 2px;" class="bi bi-grid"></i>
+          <i style="color: white; margin-bottom: 8px;" class="bi bi-grid"></i>
           <span id="span1" style="color: white;">Dashboard</span>
         </a>
       </li><!-- End Dashboard Nav -->
       <hr style="color:white; margin-top: 10px;">
       <li class="nav-item">
         <a id="sidebarmenu2" style="border-radius: 15px; background-color: #3A1CA6;  margin-top: -10px;" class="nav-link collapsed" data-bs-target="#components-nav"  href="acercadenosotros.php">
-          <i style="color: white; margin-top: 2px;" class="bi bi-menu-button-wide"></i><span id="span2" style="color: white;">Acerca De Nosotros</span></i>
+          <i style="color: white; margin-bottom: 8px;" class="bi bi-menu-button-wide"></i><span id="span2" style="color: white;">Acerca De Nosotros</span></i>
         </a>
       </li><!-- End Components Nav -->
       <hr style="color:white; margin-top: 10px;">
       <li class="nav-item">
         <a id="sidebarmenu3" style="border-radius: 15px; background-color: #3A1CA6; margin-top: -10px;" class="nav-link collapsed" data-bs-target="#forms-nav" href="servicios.php">
-          <i style="color: white; margin-top: 2px;" class="bi bi-journal-text"></i><span id="span3" style="color: white;">Servicios</span></i>
+          <i style="color: white; margin-bottom: 8px;" class="bi bi-journal-text"></i><span id="span3" style="color: white;">Servicios</span></i>
         </a>
         
       </li><!-- End Forms Nav -->
       <hr style="color:white; margin-top: 10px;">
       <li class="nav-item">
         <a id="sidebarmenu4" style="border-radius: 15px; background-color: #3A1CA6;  margin-top: -10px;" class="nav-link collapsed" data-bs-target="#tables-nav" href="equipo.php">
-          <i style="color: white; margin-top: 2px;" class="bi bi-layout-text-window-reverse"></i><span id="span4" style="color: white;">Equipo</span></i>
+          <i style="color: white; margin-bottom: 8px;" class="bi bi-layout-text-window-reverse"></i><span id="span4" style="color: white;">Equipo</span></i>
         </a>
         
       </li><!-- End Tables Nav -->
       <hr style="color:white; margin-top: 10px;">
       <li class="nav-item">
         <a  id="sidebarmenu5" style="border-radius: 15px; background-color: #3A1CA6;  margin-top: -10px;" class="nav-link collapsed" data-bs-target="#charts-nav" href="contacto.php">
-          <i style="color: white; margin-top: 2px;" class="bi bi-bar-chart"></i><span id="span5" style="color: white;">Contacto</span></i>
+          <i style="color: white; margin-bottom: 8px;" class="bi bi-bar-chart"></i><span id="span5" style="color: white;">Contacto</span></i>
         </a>
         
       </li><!-- End Charts Nav -->
@@ -81,7 +81,7 @@
 
       <li style="margin-top: 20px;" class="nav-item">
         <a  id="sidebarmenu6" style="border-radius: 15px; background-color: #3A1CA6;  margin-top: -10px;" class="nav-link collapsed" data-bs-target="#charts-nav" href="miperfil.php">
-        <i style="color: white; margin-top: 2px;" class="bi bi-person"></i><span id="span5" style="color: white;">Mi Perfil</span></i>
+        <i style="color: white; margin-bottom: 8px;" class="bi bi-person"></i><span id="span5" style="color: white;">Mi Perfil</span></i>
 
         </a>
         
