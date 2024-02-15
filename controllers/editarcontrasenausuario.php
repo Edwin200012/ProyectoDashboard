@@ -38,7 +38,8 @@ include_once("../route.php");
 
             if ($informacion->contrasenaactualizada)
                 {
-                    header('Location: ../miperfil.php?actualizacontrasena=true');    
+                    $_SESSION['contrasenasesion'] = $confirmarcontrasena;
+                    header('Location: ../miperfil.php?actualizacontrasena=true');
                 }
                 
             else{
