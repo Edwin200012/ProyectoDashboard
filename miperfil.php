@@ -43,9 +43,38 @@
     </div>
   </div>
 </div>
+
 <?php
     endif;
   ?>
+
+
+<?php
+      if(isset($_GET['noactualizacontrasena'])):
+
+  ?>
+
+<div style="margin-bottom: 25px; margin-left: 75%; border-radius: 15px;" class="toast show">
+    <div style="background-color: #FFFFE0; border-radius: 15px 15px 0px 0px;"  class="toast-header">
+      <strong class="me-auto">Contraseña No Actualizada</strong>
+      <a href="miperfil.php">
+        <button style="font-size: 18px;" type="button" class="btn-close" data-bs-dismiss="toast"></button>
+      </a>
+    </div>
+    <div style="background-color: yellow; border-radius: 0px 0px 15px 15px;" class="toast-body">
+    <p style="font-family:perpetua; font-size: 18px; color: red;">
+  <i class="fa-solid fa-circle-exclamation" style="color: #FFD43B; margin-top: 1%;" id="i" "></i>La contraseña no pudo ser actualizada</p>
+    </div>
+  </div>
+</div>
+
+<?php
+    endif;
+  ?>
+
+
+
+
 
     <section class="section profile">
       <div class="row">
@@ -201,9 +230,9 @@
                   <form action="controllers/editarcontrasenausuario.php" class="row g-3 needs-validation" novalidate method="POST">
 
                   <div style="display: flex; align-items: center;" class="row mb-3">
-                      <label for="contrasenaactual" class="col-md-4 col-lg-3 col-form-label">Contraseña Actual</label>
+                      <label for="actualcontrasena" class="col-md-4 col-lg-3 col-form-label">Actual Contraseña</label>
                       <div style="display: flex; align-items: center; width: 93%;" class="col-md-8 col-lg-9">
-                        <input name="contrasenaactual" type="password" class="form-control" id="contrasenaactual" value="<?php echo $contrasenasesion ?>">
+                        <input name="actualcontrasena" type="password" class="form-control" id="actualcontrasena" value="<?php echo $contrasenasesion ?>">
                         <span >
                             <i style="font-size: 30px; transform: translateX(-35px); cursor: pointer;" title="Mostrar Contraseña" class="bx bx-show-alt"></i>
                         </span>
@@ -301,16 +330,16 @@
 
 
 <script>
-        const contrasenaactual = document.getElementById("contrasenaactual"),
+        const actualcontrasena = document.getElementById("actualcontrasena"),
               icon = document.querySelector(".bx"); 
 
               icon.addEventListener("click", e => {
-                if(contrasenaactual.type === "password"){
-                  contrasenaactual.type = "text";
+                if(actualcontrasena.type === "password"){
+                  actualcontrasena.type = "text";
                     icon.classList.remove('bx-show-alt')
                     icon.classList.add('bx-hide')
                 } else {
-                  contrasenaactual.type = "password"
+                  actualcontrasena.type = "password"
                     icon.classList.remove('bx-hide')
                     icon.classList.add('bx-show-alt')
                 }

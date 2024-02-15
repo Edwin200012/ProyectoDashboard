@@ -6,7 +6,10 @@ include_once("../route.php");
         function EditarContrasenaUsuario(){
 
             $id = $_SESSION['idsesion'];
-            $nuevacontrasena = $_POST['confirmarcontrasena'];
+            $actualcontrasena = $_POST['actualcontrasena'];
+            $nuevacontrasena = $_POST['nuevacontrasena'];
+            $confirmarcontrasena = $_POST['confirmarcontrasena'];
+            
 
             $url = Route::$url.Route::$editarContrasenaUsuario;
 
@@ -21,7 +24,9 @@ include_once("../route.php");
 
             $parametros = array (           
                     "id" => $id,
-                    "contrasena" => $nuevacontrasena
+                    "actualcontrasena" =>$actualcontrasena,
+                    "nuevacontrasena" => $nuevacontrasena,
+                    "confirmarcontrasena" => $confirmarcontrasena
             );
 
             curl_setopt($curl, CURLOPT_POSTFIELDS,json_encode($parametros));
@@ -37,9 +42,8 @@ include_once("../route.php");
                 }
                 
             else{
-                echo $respuesta;  
+                header('Location: ../miperfil.php?noactualizacontrasena=false');
             }
-            
         }
     }
 
