@@ -1,8 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 
 <?php
     include_once ("plantilla/head.php");
@@ -175,29 +173,35 @@
                 </div>
 
 
-                <div class="tab-pane fade pt-3" id="profile-change-password">
+                <div style="margin-left: 30px;" class="tab-pane fade pt-3" id="profile-change-password">
                   <!-- Change Password Form -->
                   <form action="controllers/editarcontrasenausuario.php" class="row g-3 needs-validation" novalidate method="POST">
 
-
-                    <div class="col-12" id="is-relative">
-                      <label for="contrasenaactual" class="form-label">Contraseña Actual</label>
-                      <input style="border-radius: 15px;" type="password" name="contrasenaactual" class="form-control" id="contrasenaactual" value="<?php echo $contrasenasesion ?>">  
-                        <span id="icon">
-                            <i class="fas fa-eye" title="Mostrar Contraseña"></i>
-                            <i class="fas fa-eye-slash" title="Ocultar Contraseña"></i>
+                  <div style="display: flex; align-items: center;" class="row mb-3">
+                      <label for="contrasenaactual" class="col-md-4 col-lg-3 col-form-label">Contraseña Actual</label>
+                      <div style="display: flex; align-items: center; width: 93%;" class="col-md-8 col-lg-9">
+                        <input name="contrasenaactual" type="password" class="form-control" id="contrasenaactual" value="<?php echo $contrasenasesion ?>">
+                        <span >
+                            <i style="font-size: 30px; transform: translateX(-35px); cursor: pointer;" title="Mostrar Contraseña" class="bx bx-show-alt"></i>
                         </span>
+                      </div>
                     </div>
 
-                    <div class="col-12">
-                      <label for="nuevacontrasena" class="form-label">Nueva Contraseña</label>
-                      <input style="border-radius: 15px;" type="password" name="nuevacontrasena" class="form-control" id="nuevacontrasena">
+                    <div class="row mb-3">
+                      <label for="nuevacontrasena" class="col-md-4 col-lg-3 col-form-label">Nueva Contraseña</label>
+                      <div class="col-md-8 col-lg-9" style="width: 90%;">
+                        <input name="nuevacontrasena" type="password" class="form-control" id="nuevacontrasena">
+                      </div>
                     </div>
 
-                    <div class="col-12">
-                      <label for="confirmarcontrasena" class="form-label">Confirmar Contraseña</label>
-                      <input style="border-radius: 15px;" type="password" name="confirmarcontrasena" class="form-control" id="confirmarcontrasena">
+                    <div class="row mb-3">
+                      <label for="confirmarcontrasena" class="col-md-4 col-lg-3 col-form-label">Confirmar Contraseña</label>
+                      <div class="col-md-8 col-lg-9" style="width: 90%;">
+                        <input name="confirmarcontrasena" type="password" class="form-control" id="confirmarcontrasena">
+                      </div>
                     </div>
+
+                    
 
                     <div class="text-center" style="margin-top: 15px;">
                     <button style="width:300px; height:40px; border-radius: 30px; background-color: #77E6F2; color: #000807; border-color: silver;" class="btn btn-primary" type="submit">Cambiar Contraseña</button>
@@ -266,11 +270,31 @@
 <?php
   include_once ("plantilla/footer.php");
 ?>
-<a style="background-color: #3A1CA6;" href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
 
 <?php
     include_once ("plantilla/scripts.php");
 ?>
+
+
+<script>
+        const contrasenaactual = document.getElementById("contrasenaactual"),
+              icon = document.querySelector(".bx"); 
+
+              icon.addEventListener("click", e => {
+                if(contrasenaactual.type === "password"){
+                  contrasenaactual.type = "text";
+                    icon.classList.remove('bx-show-alt')
+                    icon.classList.add('bx-hide')
+                } else {
+                  contrasenaactual.type = "password"
+                    icon.classList.remove('bx-hide')
+                    icon.classList.add('bx-show-alt')
+                }
+              })
+
+    </script>
+
 
 </body>
 </html>
