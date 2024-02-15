@@ -52,7 +52,7 @@ include_once("../route.php");
                     $_SESSION['correosesion'] = $correo;
                     $_SESSION['telefonosesion'] = $telefono;
                     $_SESSION['direccionsesion'] = $direccion;
-                    header('Location: ../index.php');       
+                    header('Location: ../miperfil.php?actualizadatos=true');
                 }
                 
             else{

@@ -72,7 +72,27 @@
     endif;
   ?>
 
+<?php
+      if(isset($_GET['actualizadatos'])):
 
+  ?>
+
+<div style="margin-bottom: 25px; margin-left: 75%; border-radius: 15px;" class="toast show">
+    <div style="background-color: lightcyan; border-radius: 15px 15px 0px 0px;"  class="toast-header">
+      <strong class="me-auto">Datos Actualizados</strong>
+      <a href="miperfil.php">
+        <button style="font-size: 18px;" type="button" class="btn-close" data-bs-dismiss="toast"></button>
+      </a>
+    </div>
+    <div style="background-color: lightgreen; border-radius: 0px 0px 15px 15px;" class="toast-body">
+    <p style="font-family:perpetua; font-size: 18px;"><i style="margin-top: 1%; font-size: 35px;  color: green; margin: 0 20px;" class="fa-solid fa-circle-check"></i>Datos actualizados exitosamente</p>
+    </div>
+  </div>
+</div>
+
+<?php
+    endif;
+  ?>
 
 
 
