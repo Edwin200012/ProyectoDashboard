@@ -45,6 +45,13 @@ include_once("../route.php");
 
             if ($informacion->actualizado)
                 {
+                    $_SESSION['nombresesion'] = $nombre;
+                    $_SESSION['apellidopsesion'] = $apellidop;
+                    $_SESSION['apellidomsesion'] = $apellidom;
+                    $_SESSION['usuariosesion'] = $usuario;
+                    $_SESSION['correosesion'] = $correo;
+                    $_SESSION['telefonosesion'] = $telefono;
+                    $_SESSION['direccionsesion'] = $direccion;
                     header('Location: ../index.php');       
                 }
                 
