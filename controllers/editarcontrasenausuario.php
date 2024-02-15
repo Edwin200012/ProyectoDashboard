@@ -33,11 +33,11 @@ include_once("../route.php");
 
             if ($informacion->contrasenaactualizada)
                 {
-                    header('Location: ../miperfil.php');    
+                    header('Location: ../miperfil.php?actualizacontrasena=true');    
                 }
                 
             else{
-                echo $respuesta;
+                echo $respuesta;  
             }
             
         }
