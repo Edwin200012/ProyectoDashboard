@@ -63,6 +63,29 @@
   ?>
 
 
+<?php
+      if(isset($_GET['noregistrar'])):
+
+  ?>
+
+<div style="margin-top:10px; margin-bottom: -5%; margin-left: 75%; border-radius: 15px;" class="toast show">
+    <div style="background-color: #FFFFE0; border-radius: 15px 15px 0px 0px;"  class="toast-header">
+      <strong class="me-auto">Usuario no registrado</strong>
+      <a href="registro.php">
+        <button style="font-size: 18px;" type="button" class="btn-close" data-bs-dismiss="toast"></button>
+      </a>
+    </div>
+    <div style="background-color: yellow; border-radius: 0px 0px 15px 15px;" class="toast-body">
+    <p style="font-family:perpetua; font-size: 18px; color: red;">
+  <i class="fa-solid fa-circle-exclamation" style="color: #FFD43B; margin-top: 1%;" id="i" "></i>El usuario no pudo ser creado</p>
+    </div>
+  </div>
+</div>
+
+<?php
+    endif;
+  ?>
+
 
     <div class="container">
 
@@ -74,7 +97,6 @@
               <div class="d-flex justify-content-center py-4">
                 <a href="" class="logo d-flex align-items-center w-auto">
                   <img src="assets/img/nuevo_logo.png" alt="">
-                  <!-- <span class="d-none d-lg-block">NiceAdmin</span> -->
                 </a>
               </div><!-- End Logo -->
 
@@ -107,33 +129,16 @@
                     </div>
 
                     <div class="col-12">
-                      <label for="contrasena" class="form-label">Contraseña</label>
-                      <input onkeyup="mostrar(this.value);" style="border-radius: 15px;" type="password" name="contrasena" class="form-control" id="contrasena" required>
+                      <label for="nuevacontrasena" class="form-label">Contraseña</label>
+                      <input style="border-radius: 15px;" type="password" name="nuevacontrasena" class="form-control" id="nuevacontrasena" required>
                       <div class="invalid-feedback">Por favor, ingrese su contraseña.</div>
                     </div>
 
                     <div class="col-12">
-                      <label for="contrasenaconfirm" class="form-label">Confirmar Contraseña</label>
-                      <input onkeyup="mostrar(this.value);" style="border-radius: 15px;" type="password" name="contrasenaconfirm" class="form-control" id="contrasenaconfirm" required>
+                      <label for="contrasenaconfirmar" class="form-label">Confirmar Contraseña</label>
+                      <input style="border-radius: 15px;" type="password" name="contrasenaconfirmar" class="form-control" id="contrasenaconfirmar" required>
                       <div class="invalid-feedback">Por favor, confirme su contraseña.</div>
                     </div>
-
-                    <!-- Mostrar Contraseña -->
-                    <!-- <div class="form-check form-switch">
-                      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked">
-                      <label style="font-size: 15px;" class="form-check-label" for="flexSwitchCheckChecked">Mostrar Contraseña</label>
-                    </div> -->
-                    <button style="border-radius: 15px; background-color: #77E6F2; color: #000807; border-color: silver;" class="btn btn-primary w-100" onclick="validarContrasena();">Validar Contraseña</button>
-                    
-
-                    <!-- CheckBox -->
-                    <!-- <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                      <label class="form-check-label" for="flexCheckDefault">
-                        Validar Contraseña
-                      </label>
-                    </div> -->
-
 
                     <div class="col-12">
                       <div class="form-check">
@@ -143,7 +148,7 @@
                       </div>
                     </div>
                     <div class="col-12">
-                      <button disabled id="botonCrearCuenta" style="border-radius: 15px; background-color: #77E6F2; color: #000807; border-color: silver;" class="btn btn-primary w-100" type="submit">Crear Cuenta</button>
+                      <button id="botonCrearCuenta" style="border-radius: 15px; background-color: #77E6F2; color: #000807; border-color: silver;" class="btn btn-primary w-100" type="submit">Crear Cuenta</button>
                     </div>
                     <div class="col-12">
                       <p class="small mb-0">¿Ya tienes una cuenta? <a href="login.php">Log in</a></p>
@@ -154,10 +159,6 @@
               </div>
 
               <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
                 Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
               </div>
 
@@ -189,37 +190,6 @@
   crossorigin="anonymous"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script>
-
-       const button = document.getElementById("botonCrearCuenta");
-
-      function validarContrasena() {
-        // const button = document.getElementById("botonCrearCuenta");
-
-          if(document.getElementById('contrasena').value == '' && document.getElementById('contrasenaconfirm').value == ''){
-              alert('Las contraseñas no deben estar vacias, intente de nuevo');
-              button.disabled = true;
-          }
-
-          else if(document.getElementById('contrasena').value == document.getElementById('contrasenaconfirm').value){
-              alert('Las Contraseñas Coinciden');
-              // document.getElementById('botonCrearCuenta').enable == true;
-              // document.getElementById('botonCrearCuenta').style.display = 'none';
-              button.disabled = false;
-          }
-
-          else{
-              alert('Las contraseñas no coinciden, intente de nuevo');
-              button.disabled = true;
-          }
-}
-
-
-function mostrar(valor){
-  console.log(valor);
-}
-
-    </script>
 
 </body>
 

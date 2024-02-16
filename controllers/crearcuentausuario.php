@@ -5,7 +5,8 @@ include_once("../route.php");
             $nombre = $_POST['nombre'];
             $correo = $_POST['correo'];
             $usuario = $_POST['usuario'];
-            $contrasena = $_POST['contrasenaconfirm'];
+            $nuevacontrasena = $_POST['nuevacontrasena'];
+            $contrasena = $_POST['contrasenaconfirmar'];
 
             $url = Route::$url.Route::$crearUsuario;
 
@@ -22,6 +23,7 @@ include_once("../route.php");
                     "nombre" => $nombre,
                     "usuario" => $usuario,
                     "correo" => $correo,
+                    "nuevacontrasena" => $nuevacontrasena,
                     "contrasena" => $contrasena
             );
 
@@ -34,11 +36,11 @@ include_once("../route.php");
 
             if ($informacion->registrado)
                 {
-                    header('Location: ../registro.php?registrar=true');       
+                    header('Location: ../registro.php?registrar=true');      
                 }
                 
             else{
-                echo $respuesta;
+                header('Location: ../registro.php?noregistrar=true');
             }
             
         }
