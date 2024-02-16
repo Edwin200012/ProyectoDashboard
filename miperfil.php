@@ -63,7 +63,7 @@
     </div>
     <div style="background-color: yellow; border-radius: 0px 0px 15px 15px;" class="toast-body">
     <p style="font-family:perpetua; font-size: 18px; color: red;">
-  <i class="fa-solid fa-circle-exclamation" style="color: #FFD43B; margin-top: 1%;" id="i" "></i>La contraseña no pudo ser actualizada</p>
+  <i class="fa-solid fa-circle-exclamation" style="color: #FFD43B; margin-top: 1%;" id="i" "></i>La contraseña no se actualizó correctamente</p>
     </div>
   </div>
 </div>
