@@ -1,5 +1,6 @@
 <?php
 class Route{
+    //Usuario
     static $url = "https://localhost:7182/";
     static $crearUsuario = "Usuario/CrearUsuario";//POST
     static $loginUsuario = "Usuario/LoginUsuario";
@@ -8,5 +9,8 @@ class Route{
     // static $eliminarUsuario = "Usuario/Eliminar?idusuario=";
     // static $mostrarporId = "Usuario/MostrarPorId?idusuario=";
     // static $editarUsuario = "Usuario/Editar?idusuario=";
+
+    //Empresa
+    static $enviarDatosContacto = "Empresa/Contacto";//POST
 }
 ?>

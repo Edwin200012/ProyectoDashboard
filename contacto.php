@@ -34,26 +34,26 @@
                 
 
 <!-- Profile Edit Form -->
-<form action="" class="row g-3 needs-validation" novalidate method="POST">
+<form action="controllers/contactoempresa.php" class="row g-3 needs-validation" novalidate method="POST">
 
 <div style="width: 90%; margin-left: 5%;">
 
 
   <div class="mb-3">
-    <label for="correo" class="form-label">Correo</label>
-    <input maxlength="50" minlength="3" style="border-radius: 15px;" type="email" class="form-control" id="correo" name="correo" required placeholder="Correo">
+    <label for="correocontacto" class="form-label">Correo</label>
+    <input maxlength="50" minlength="3" style="border-radius: 15px;" type="email" class="form-control" id="correocontacto" name="correocontacto" required placeholder="Correo">
     <div class="invalid-feedback">Por favor, ingrese el correo.</div>
   </div>
 
   <div class="mb-3">
-    <label for="telefono" class="form-label">Teléfono</label>
-    <input maxlength="10" minlength="10" style="border-radius: 15px;" type="tel" class="form-control" id="telefono" name="telefono" required placeholder="Teléfono"">
+    <label for="telefonocontacto" class="form-label">Teléfono</label>
+    <input maxlength="10" minlength="10" style="border-radius: 15px;" type="tel" class="form-control" id="telefonocontacto" name="telefonocontacto" required placeholder="Teléfono"">
     <div class="invalid-feedback">Por favor, ingrese el teléfono.</div>
   </div>
 
   <div class="mb-3">
-    <label for="direccion" class="form-label">Dirección</label>
-    <input maxlength="300" minlength="3" style="border-radius: 15px;" type="text" class="form-control" id="direccion" name="direccion" required placeholder="Dirección">
+    <label for="ubicacioncontacto" class="form-label">Ubicación</label>
+    <input maxlength="300" minlength="3" style="border-radius: 15px;" type="text" class="form-control" id="ubicacioncontacto" name="ubicacioncontacto" required placeholder="Dirección">
     <div class="invalid-feedback">Por favor, ingrese la dirección.</div>
   </div>
   </div>
