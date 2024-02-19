@@ -102,13 +102,13 @@ if(isset($_POST["enviar"]) ){
 
                     <div class="col-12">
                       <label for="correo" class="form-label">Correo</label>
-                        <input style="border-radius: 15px;" type="text" name="correo" class="form-control" id="correo" required>
+                        <input maxlength="50" minlength="3" style="border-radius: 15px;" type="text" name="correo" class="form-control" id="correo" required>
                         <div class="invalid-feedback">Por favor, ingrese su correo.</div>
                     </div>
 
                     <div class="col-12">
                       <label for="contrasena" class="form-label">Contraseña</label>
-                      <input style="border-radius: 15px;" type="password" name="contrasena" class="form-control" id="contrasena" required>
+                      <input maxlength="50" minlength="3" style="border-radius: 15px;" type="password" name="contrasena" class="form-control" id="contrasena" required>
                       <div class="invalid-feedback">Por favor, ingrese su contraseña.</div>
                     </div>
 

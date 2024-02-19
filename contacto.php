@@ -41,26 +41,26 @@
 
   <div class="mb-3">
     <label for="correo" class="form-label">Correo</label>
-    <input style="border-radius: 15px;" type="email" class="form-control" id="correo" name="correo" required placeholder="Correo">
+    <input maxlength="50" minlength="3" style="border-radius: 15px;" type="email" class="form-control" id="correo" name="correo" required placeholder="Correo">
     <div class="invalid-feedback">Por favor, ingrese el correo.</div>
   </div>
 
   <div class="mb-3">
     <label for="telefono" class="form-label">Teléfono</label>
-    <input style="border-radius: 15px;" type="tel" class="form-control" id="telefono" name="telefono" required placeholder="Teléfono"">
+    <input maxlength="10" minlength="10" style="border-radius: 15px;" type="tel" class="form-control" id="telefono" name="telefono" required placeholder="Teléfono"">
     <div class="invalid-feedback">Por favor, ingrese el teléfono.</div>
   </div>
 
   <div class="mb-3">
     <label for="direccion" class="form-label">Dirección</label>
-    <input style="border-radius: 15px;" type="text" class="form-control" id="direccion" name="direccion" required placeholder="Dirección">
+    <input maxlength="300" minlength="3" style="border-radius: 15px;" type="text" class="form-control" id="direccion" name="direccion" required placeholder="Dirección">
     <div class="invalid-feedback">Por favor, ingrese la dirección.</div>
   </div>
   </div>
 
 
   <div class="text-center">
-    <button id="botonActualizar" style="width:300px; height:40px; border-radius: 30px; background-color: #77E6F2; color: #000807; border-color: silver;" class="btn btn-primary" type="submit">Actualizar Datos</button>
+    <button id="botonActualizar" style="width:300px; height:40px; border-radius: 30px; background-color: #77E6F2; color: #000807; border-color: silver;" class="btn btn-primary" type="submit">Enviar</button>
   </div>
 
 </form>

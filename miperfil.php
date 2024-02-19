@@ -199,40 +199,40 @@
 
                   <div class="col-12">
                       <label for="editarnombre" class="form-label">Nombre</label>
-                      <input style="border-radius: 15px;" type="text" name="editarnombre" class="form-control" id="editarnombre" value="<?php echo $nombresesion ?>" required>
+                      <input maxlength="50" minlength="3" style="border-radius: 15px;" type="text" name="editarnombre" class="form-control" id="editarnombre" value="<?php echo $nombresesion ?>" required>
                       <div class="invalid-feedback">Por favor, ingrese su nombre.</div>
                     </div>
 
                     <div class="col-12">
                       <label for="editarapellidop" class="form-label">Apellido Paterno</label>
-                      <input style="border-radius: 15px;" type="text" name="editarapellidop" class="form-control" id="editarapellidop" value="<?php echo $apellidopsesion ?>">
+                      <input maxlength="50" minlength="3" style="border-radius: 15px;" type="text" name="editarapellidop" class="form-control" id="editarapellidop" value="<?php echo $apellidopsesion ?>">
                     </div>
 
                     <div class="col-12">
                       <label for="editarapellidom" class="form-label">Apellido Materno</label>
-                      <input style="border-radius: 15px;" type="text" name="editarapellidom" class="form-control" id="editarapellidom" value="<?php echo $apellidomsesion ?>">
+                      <input maxlength="50" minlength="3" style="border-radius: 15px;" type="text" name="editarapellidom" class="form-control" id="editarapellidom" value="<?php echo $apellidomsesion ?>">
                     </div>
 
                     <div class="col-12">
                       <label for="editarusuario" class="form-label">Usuario</label>
-                      <input style="border-radius: 15px;" type="text" name="editarusuario" class="form-control" id="editarusuario" required value="<?php echo $usuariosesion ?>">
+                      <input maxlength="50" minlength="3" style="border-radius: 15px;" type="text" name="editarusuario" class="form-control" id="editarusuario" required value="<?php echo $usuariosesion ?>">
                       <div class="invalid-feedback">Por favor, ingrese su usuario.</div>
                     </div>
 
                     <div class="col-12">
                       <label for="editarcorreo" class="form-label">Correo</label>
-                      <input style="border-radius: 15px;" type="email" name="editarcorreo" class="form-control" id="editarcorreo" required value="<?php echo $correosesion ?>">
+                      <input maxlength="50" minlength="3" style="border-radius: 15px;" type="email" name="editarcorreo" class="form-control" id="editarcorreo" required value="<?php echo $correosesion ?>">
                       <div class="invalid-feedback">Por favor, ingrese su correo.</div>
                     </div>
 
                     <div class="col-12">
                       <label for="editartelefono" class="form-label">Teléfono</label>
-                      <input style="border-radius: 15px;" type="tel" name="editartelefono" class="form-control" id="editartelefono" value="<?php echo $telefonosesion ?>">
+                      <input maxlength="10" minlength="10" style="border-radius: 15px;" type="tel" name="editartelefono" class="form-control" id="editartelefono" value="<?php echo $telefonosesion ?>">
                     </div>
 
                     <div class="col-12">
                       <label for="editardireccion" class="form-label">Dirección</label>
-                      <input style="border-radius: 15px;" type="text" name="editardireccion" class="form-control" id="editardireccion" value="<?php echo $direccionsesion ?>">
+                      <input maxlength="300" minlength="3" style="border-radius: 15px;" type="text" name="editardireccion" class="form-control" id="editardireccion" value="<?php echo $direccionsesion ?>">
                     </div>
                  
                     <div class="text-center">
@@ -249,28 +249,30 @@
                   <!-- Change Password Form -->
                   <form action="controllers/editarcontrasenausuario.php" class="row g-3 needs-validation" novalidate method="POST">
 
-                  <div style="display: flex; align-items: center;" class="row mb-3">
+                  <!-- <div style="display: flex; align-items: center;" class="row mb-3">
                       <label for="actualcontrasena" class="col-md-4 col-lg-3 col-form-label">Actual Contraseña</label>
                       <div style="display: flex; align-items: center; width: 93%;" class="col-md-8 col-lg-9">
-                        <input name="actualcontrasena" type="password" class="form-control" id="actualcontrasena" value="<?php echo $contrasenasesion ?>">
+                        <input name="actualcontrasena" type="password" class="form-control" id="actualcontrasena" >
                         <span >
                             <i style="font-size: 30px; transform: translateX(-35px); cursor: pointer;" title="Mostrar Contraseña" class="bx bx-show-alt"></i>
                         </span>
                       </div>
-                    </div>
+                    </div> -->
 
                     <div class="row mb-3">
                       <label for="nuevacontrasena" class="col-md-4 col-lg-3 col-form-label">Nueva Contraseña</label>
                       <div class="col-md-8 col-lg-9" style="width: 90%;">
-                        <input name="nuevacontrasena" type="password" class="form-control" id="nuevacontrasena">
-                      </div>
+                      <input maxlength="50" minlength="3" name="nuevacontrasena" style="border-radius: 15px;" type="password" class="form-control" id="nuevacontrasena" required placeholder="Nueva Contraseña">
+                      <div class="invalid-feedback">Por favor, ingrese la contraseña.</div>  
+                    </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="confirmarcontrasena" class="col-md-4 col-lg-3 col-form-label">Confirmar Contraseña</label>
                       <div class="col-md-8 col-lg-9" style="width: 90%;">
-                        <input name="confirmarcontrasena" type="password" class="form-control" id="confirmarcontrasena">
-                      </div>
+                      <input maxlength="50" minlength="3" name="confirmarcontrasena" style="border-radius: 15px;" type="password" class="form-control" id="confirmarcontrasena" required placeholder="Confirmar Contraseña">
+                      <div class="invalid-feedback">Por favor, confirme la contraseña.</div>  
+                    </div>
                     </div>
 
                     

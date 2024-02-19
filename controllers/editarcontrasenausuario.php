@@ -6,7 +6,7 @@ include_once("../route.php");
         function EditarContrasenaUsuario(){
 
             $id = $_SESSION['idsesion'];
-            $actualcontrasena = $_POST['actualcontrasena'];
+            // $actualcontrasena = $_POST['actualcontrasena'];
             $nuevacontrasena = $_POST['nuevacontrasena'];
             $confirmarcontrasena = $_POST['confirmarcontrasena'];
             
@@ -24,7 +24,7 @@ include_once("../route.php");
 
             $parametros = array (           
                     "id" => $id,
-                    "actualcontrasena" =>$actualcontrasena,
+                    // "actualcontrasena" =>$actualcontrasena,
                     "nuevacontrasena" => $nuevacontrasena,
                     "confirmarcontrasena" => $confirmarcontrasena
             );
