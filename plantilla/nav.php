@@ -1,8 +1,23 @@
 <?php 
-      session_start();
-      if(isset($_SESSION['idsesion']) == false){
-        header('Location: login.php');
-      }
+    session_start();
+    if(isset($_SESSION['idsesion']) == false){
+      header('Location: login.php');
+    }
+
+    //Solo se permite 1 minuto de inactividad
+    $tiempoinactivo = 60;
+
+    if(isset($_SESSION['ultima_actividad']) && (time() - $_SESSION['ultima_actividad'] > $tiempoinactivo)){
+      //Si pasa ese tiempo se cierra sesion y se redirige al login
+      session_unset();
+      session_destroy();
+      header('Location: ./login.php');
+      exit;
+    }
+
+
+    //Actualizar tiempo de la última actividad
+    $_SESSION['ultima_actividad'] = time();
   
     $idsesion = $_SESSION['idsesion'];
     $nombresesion = $_SESSION['nombresesion'];

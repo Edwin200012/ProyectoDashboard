@@ -191,8 +191,8 @@
                       <div class="col-md-8 col-lg-9">
                         <img src="assets/img/icono-perfil.png" alt="Profile">
                         <div class="pt-2">
-                          <a style="background-color: #77E6F2; color: black; border-color: silver;" href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a>
-                          <a style="background-color: #8C030E; color: white; border-color: silver;" href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
+                          <a style="background-color: #77E6F2; color: black; border-color: silver;" href="#" class="btn btn-primary btn-sm" title="Subir imagen de perfil"><i class="bi bi-upload"></i></a>
+                          <a style="background-color: #8C030E; color: white; border-color: silver;" href="#" class="btn btn-danger btn-sm" title="Eliminar mi imagen de perfil"><i class="bi bi-trash"></i></a>
                         </div>
                       </div>
                     </div>  
