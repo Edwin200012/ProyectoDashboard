@@ -6,13 +6,6 @@
     include_once ("plantilla/head.php");
   ?>
 
-  <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Updated: Jan 09 2024 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
