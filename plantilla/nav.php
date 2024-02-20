@@ -11,7 +11,7 @@
       //Si pasa ese tiempo se cierra sesion y se redirige al login
       session_unset();
       session_destroy();
-      header('Location: ./login.php');
+      header('Location: ./login.php?inactividad=true');
       exit;
     }
 

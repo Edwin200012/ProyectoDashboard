@@ -73,23 +73,37 @@ if(isset($_POST["enviar"]) ){
       </a>
     </div>
     <div style="background-color: yellow; border-radius: 0px 0px 15px 15px;" class="toast-body">
-    <p >Error al iniciar sesión</p>
+    <p>Error al iniciar sesión</p>
     </div>
   </div>
 </div>
-<!-- <div style="margin-top:10px; margin-bottom: -5%; margin-left: 75%; border-radius: 15px;" class="toast show">
-    <div style="background-color: #FFFFE0; border-radius: 15px 15px 0px 0px;"  class="toast-header">
-      <strong class="me-auto">Login</strong>
+
+
+  <?php
+    endif;
+  ?>
+
+
+
+
+<?php
+      if(isset($_GET['inactividad'])):
+
+  ?>
+   <div style="margin-top:10px; margin-bottom: -5%; margin-left: 75%; border-radius: 15px;" class="toast show">
+    <div style="background-color: lightcyan; border-radius: 15px 15px 0px 0px;"  class="toast-header">
+    <span> <i class="fa-solid fa-right-from-bracket"></i></span>
+      <strong style="margin-left: 15px;" class="me-auto">Sesión</strong>
       <a href="login.php">
         <button style="font-size: 18px;" type="button" class="btn-close" data-bs-dismiss="toast"></button>
       </a>
     </div>
     <div style="background-color: yellow; border-radius: 0px 0px 15px 15px;" class="toast-body">
-    <p style="font-family:perpetua; font-size: 18px; color: red;">
-  <i class="fa-solid fa-circle-exclamation" style="color: #FFD43B; margin-top: 1%;" id="i" "></i>Error al iniciar sesión</p>
+    <p>Sesión cerrada por inactividad</p>
     </div>
   </div>
-</div> -->
+</div>
+
 
   <?php
     endif;
