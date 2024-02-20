@@ -31,6 +31,11 @@
 
   ?>
 
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    ¡Contraseña actualizada exitosamente!.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<!-- 
 <div style="margin-bottom: 25px; margin-left: 75%; border-radius: 15px;" class="toast show">
     <div style="background-color: lightcyan; border-radius: 15px 15px 0px 0px;"  class="toast-header">
       <strong class="me-auto">Contraseña Actualizada</strong>
@@ -42,7 +47,7 @@
     <p style="font-family:perpetua; font-size: 18px;"><i style="margin-top: 1%; font-size: 35px;  color: green; margin: 0 20px;" class="fa-solid fa-circle-check"></i>Contraseña actualizada exitosamente</p>
     </div>
   </div>
-</div>
+</div> -->
 
 <?php
     endif;
@@ -54,7 +59,12 @@
 
   ?>
 
-<div style="margin-bottom: 25px; margin-left: 75%; border-radius: 15px;" class="toast show">
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    ¡La contraseña no se actualizó correctamente!.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+<!-- <div style="margin-bottom: 25px; margin-left: 75%; border-radius: 15px;" class="toast show">
     <div style="background-color: #FFFFE0; border-radius: 15px 15px 0px 0px;"  class="toast-header">
       <strong class="me-auto">Contraseña No Actualizada</strong>
       <a href="miperfil.php">
@@ -66,7 +76,7 @@
   <i class="fa-solid fa-circle-exclamation" style="color: #FFD43B; margin-top: 1%;" id="i" "></i>La contraseña no se actualizó correctamente</p>
     </div>
   </div>
-</div>
+</div> -->
 
 <?php
     endif;
@@ -76,8 +86,12 @@
       if(isset($_GET['actualizadatos'])):
 
   ?>
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    ¡Datos actualizados exitosamente!.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
 
-<div style="margin-bottom: 25px; margin-left: 75%; border-radius: 15px;" class="toast show">
+<!-- <div style="margin-bottom: 25px; margin-left: 75%; border-radius: 15px;" class="toast show">
     <div style="background-color: lightcyan; border-radius: 15px 15px 0px 0px;"  class="toast-header">
       <strong class="me-auto">Datos Actualizados</strong>
       <a href="miperfil.php">
@@ -88,7 +102,9 @@
     <p style="font-family:perpetua; font-size: 18px;"><i style="margin-top: 1%; font-size: 35px;  color: green; margin: 0 20px;" class="fa-solid fa-circle-check"></i>Datos actualizados exitosamente</p>
     </div>
   </div>
-</div>
+</div> -->
+
+
 
 <?php
     endif;

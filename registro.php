@@ -1,4 +1,16 @@
 <style>
+  
+    .toast-icon {
+      font-size: 24px;
+      margin-right: 8px;
+      color: white;
+    }
+
+    .success-icon {
+      color: lightgreen; /* Texto oscuro */
+    }
+
+
     #toastBox{
         width: 400px;
         height: 80px;
@@ -22,12 +34,23 @@
         display: block;
     }
 
+
+
+    .alert-icon {
+      font-size: 24px;
+      margin-right: 8px;
+    }
+
+    .error-icon {
+      color: #721c24; /* Texto oscuro */
+    }
 </style>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
 <?php
     include_once ("plantilla/head.php");
   ?>
@@ -45,15 +68,18 @@
       if(isset($_GET['registrar'])):
 
   ?>
+ 
+
 <div style="margin-top:10px; margin-bottom: -5%; margin-left: 75%; border-radius: 15px;" class="toast show">
     <div style="background-color: lightcyan; border-radius: 15px 15px 0px 0px;"  class="toast-header">
+    <span class="toast-icon success-icon">&#10003;</span>
       <strong class="me-auto">Registro</strong>
-      <a href="login.php">
+      <a href="registro.php">
         <button style="font-size: 18px;" type="button" class="btn-close" data-bs-dismiss="toast"></button>
       </a>
     </div>
     <div style="background-color: lightgreen; border-radius: 0px 0px 15px 15px;" class="toast-body">
-    <p style="font-family:perpetua; font-size: 18px;"><i style="margin-top: 1%;" id="i" class="fa-solid fa-circle-check"></i>Cuenta creada exitosamente</p>
+    <p>Cuenta creada exitosamente</p>
     </div>
   </div>
 </div>
@@ -68,19 +94,22 @@
 
   ?>
 
-<div style="margin-top:10px; margin-bottom: -5%; margin-left: 75%; border-radius: 15px;" class="toast show">
-    <div style="background-color: #FFFFE0; border-radius: 15px 15px 0px 0px;"  class="toast-header">
+
+  <div style="margin-top:10px; margin-bottom: -5%; margin-left: 75%; border-radius: 15px;" class="toast show">
+    <div style="background-color: lightcyan; border-radius: 15px 15px 0px 0px;"  class="toast-header">
+    <span class="alert-icon error-icon">&#10007;</span>
       <strong class="me-auto">Usuario no registrado</strong>
       <a href="registro.php">
         <button style="font-size: 18px;" type="button" class="btn-close" data-bs-dismiss="toast"></button>
       </a>
     </div>
     <div style="background-color: yellow; border-radius: 0px 0px 15px 15px;" class="toast-body">
-    <p style="font-family:perpetua; font-size: 18px; color: red;">
-  <i class="fa-solid fa-circle-exclamation" style="color: #FFD43B; margin-top: 1%;" id="i" "></i>El usuario no se creó correctamente</p>
+    <p >La cuenta no se creó correctamente</p>
     </div>
   </div>
 </div>
+
+
 
 <?php
     endif;
@@ -190,6 +219,15 @@
   crossorigin="anonymous"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+
+   <!-- Activa el toast con JavaScript -->
+   <script>
+    
+    var toast = new bootstrap.Toast(document.querySelector('.toast'))
+    toast.show();
+
+  </script>
 
 </body>
 

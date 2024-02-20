@@ -15,6 +15,15 @@
         font-size: 35px;
         color: green;
     }
+
+    .alert-icon {
+      font-size: 24px;
+      margin-right: 8px;
+    }
+
+    .error-icon {
+      color: #721c24; /* Texto oscuro */
+    }
 </style>
 
 <?php
@@ -55,7 +64,20 @@ if(isset($_POST["enviar"]) ){
       if(isset($_GET['buscar'])):
 
   ?>
-<div style="margin-top:10px; margin-bottom: -5%; margin-left: 75%; border-radius: 15px;" class="toast show">
+   <div style="margin-top:10px; margin-bottom: -5%; margin-left: 75%; border-radius: 15px;" class="toast show">
+    <div style="background-color: lightcyan; border-radius: 15px 15px 0px 0px;"  class="toast-header">
+    <span class="alert-icon error-icon">&#10007;</span>
+      <strong class="me-auto">Login</strong>
+      <a href="login.php">
+        <button style="font-size: 18px;" type="button" class="btn-close" data-bs-dismiss="toast"></button>
+      </a>
+    </div>
+    <div style="background-color: yellow; border-radius: 0px 0px 15px 15px;" class="toast-body">
+    <p >Error al iniciar sesión</p>
+    </div>
+  </div>
+</div>
+<!-- <div style="margin-top:10px; margin-bottom: -5%; margin-left: 75%; border-radius: 15px;" class="toast show">
     <div style="background-color: #FFFFE0; border-radius: 15px 15px 0px 0px;"  class="toast-header">
       <strong class="me-auto">Login</strong>
       <a href="login.php">
@@ -67,7 +89,7 @@ if(isset($_POST["enviar"]) ){
   <i class="fa-solid fa-circle-exclamation" style="color: #FFD43B; margin-top: 1%;" id="i" "></i>Error al iniciar sesión</p>
     </div>
   </div>
-</div>
+</div> -->
 
   <?php
     endif;
@@ -159,6 +181,14 @@ if(isset($_POST["enviar"]) ){
 
   <script src="https://kit.fontawesome.com/c4254e24a8.js"
   crossorigin="anonymous"></script>
+
+   <!-- Activa el toast con JavaScript -->
+   <script>
+    
+    var toast = new bootstrap.Toast(document.querySelector('.toast'))
+    toast.show();
+
+  </script>
 
 </body>
 
