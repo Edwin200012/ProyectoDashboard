@@ -103,7 +103,7 @@
           <div class="card">
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-              <img src="assets/img/icono-perfil.png" alt="Profile" class="rounded-circle">
+              <img src="imagenesperfil/icono-perfil-default.png" alt="Profile" class="rounded-circle">
               <h2><?php echo $nombresesion . ' ' . $apellidopsesion . ' ' . $apellidomsesion ?></h2>
               <h3><?php echo $usuariosesion ?></h3>
               <div class="social-links mt-2">
@@ -189,7 +189,7 @@
                   <div class="row mb-3">
                       <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Imagen de Perfil</label>
                       <div class="col-md-8 col-lg-9">
-                        <img src="assets/img/icono-perfil.png" alt="Profile">
+                        <img src="imagenesperfil/icono-perfil-default.png" alt="Profile">
                         <div class="pt-2">
                           <a style="background-color: #77E6F2; color: black; border-color: silver;" href="#" class="btn btn-primary btn-sm" title="Subir imagen de perfil"><i class="bi bi-upload"></i></a>
                           <a style="background-color: #8C030E; color: white; border-color: silver;" href="#" class="btn btn-danger btn-sm" title="Eliminar mi imagen de perfil"><i class="bi bi-trash"></i></a>
