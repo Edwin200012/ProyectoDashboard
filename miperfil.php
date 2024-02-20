@@ -32,7 +32,7 @@
   ?>
 
 <div class="alert alert-success alert-dismissible fade show" role="alert">
-    ¡Contraseña actualizada exitosamente!.
+    ¡Contraseña actualizada exitosamente!
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 <!-- 
@@ -60,7 +60,7 @@
   ?>
 
 <div class="alert alert-danger alert-dismissible fade show" role="alert">
-    ¡La contraseña no se actualizó correctamente!.
+    ¡La contraseña no se actualizó correctamente!
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 
@@ -87,7 +87,7 @@
 
   ?>
   <div class="alert alert-success alert-dismissible fade show" role="alert">
-    ¡Datos actualizados exitosamente!.
+    ¡Datos actualizados exitosamente!
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 
