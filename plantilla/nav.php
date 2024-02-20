@@ -4,8 +4,8 @@
       header('Location: login.php');
     }
 
-    //Solo se permite 1 minuto de inactividad
-    $tiempoinactivo = 60;
+    //Tiempo permitido de inactividad en segundos
+    $tiempoinactivo = 600;
 
     if(isset($_SESSION['ultima_actividad']) && (time() - $_SESSION['ultima_actividad'] > $tiempoinactivo)){
       //Si pasa ese tiempo se cierra sesion y se redirige al login
