@@ -28,6 +28,7 @@
     $contrasenasesion = $_SESSION['contrasenasesion'];
     $telefonosesion = $_SESSION['telefonosesion'];
     $direccionsesion = $_SESSION['direccionsesion'];
+    $rutasesion = $_SESSION['rutasesion'];
 ?>
 
 <header style="border-style: ridge; background-color: #3A1CA6; border-color: aliceblue;  border-width: 0.3px;" id="header" class="header fixed-top d-flex align-items-center">
@@ -42,7 +43,7 @@
     <nav class="header-nav ms-auto">
       
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="imagenesperfil/icono-perfil-default.png" alt="Profile" class="rounded-circle">
+            <img src="<?php echo $rutasesion ?>" alt="Profile" class="rounded-circle">
             <span style="color: white;" class="d-none d-md-block dropdown-toggle ps-2"><?php echo $nombresesion . ' ' . $apellidopsesion . ' ' . $apellidomsesion?></span>
           </a><!-- End Profile Image Icon -->
 

@@ -71,7 +71,7 @@ include_once("../route.php");
                     $_SESSION['correosesion'] = $correo;
                     $_SESSION['telefonosesion'] = $telefono;
                     $_SESSION['direccionsesion'] = $direccion;
-                    $_SESSION['rutasesion'] = $ubicacionFinal;
+                    // $_SESSION['rutasesion'] = $ubicacionFinal;
                     
                     // echo $_SESSION;
                     header('Location: ../miperfil.php?actualizadatos=true');

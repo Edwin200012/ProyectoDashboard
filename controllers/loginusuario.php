@@ -45,6 +45,9 @@ include_once("../route.php");
                     $_SESSION['telefonosesion'] = $informacion->usuarios[0]->telefono;
                     $_SESSION['direccionsesion'] = $informacion->usuarios[0]->direccion;
                     $_SESSION['contrasenasesion'] = $informacion->usuarios[0]->contrasena;
+                    $rutasesion = "imagenesperfil/icono-perfil-default.png";
+
+                    $_SESSION['rutasesion'] = $rutasesion;
 
                     // $_SESSION['nombreusuario'] = $informacion->usuarios['nombre'];
                     sleep(1);
