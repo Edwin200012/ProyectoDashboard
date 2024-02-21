@@ -14,6 +14,23 @@ include_once("../route.php");
             $telefono = $_POST['editartelefono'];
             $direccion = $_POST['editardireccion'];
 
+            if(isset($_FILES['imagenperfil'])){
+                $nombreArchivo = $_FILES['imagenperfil']['name'];
+                $tipo = $_FILES['imagenperfil']['type'];
+                $tamano = $_FILES['imagenperfil']['size'];
+                $temporal = $_FILES['imagenperfil']['tmp_name'];
+                $error = $_FILES['imagenperfil']['error'];
+
+                $carpetaDestino ='../imagenesperfil/';
+                $ubicacionFinal = $carpetaDestino . basename($_FILES['imagenperfil']['name']);
+            }
+
+            if(move_uploaded_file($_FILES['imagenperfil']['tmp_name'], $ubicacionFinal)){
+                echo "La imagen se ha subido correctamente.";
+            } else{
+                echo "Error al mover la imagen.";
+            }
+
             $url = Route::$url.Route::$editarUsuario;
 
             $curl = curl_init();
@@ -34,6 +51,7 @@ include_once("../route.php");
                     "correo" => $correo,
                     "telefono" => $telefono,
                     "direccion" => $direccion,
+                    "ruta" => $ubicacionFinal
             );
 
             curl_setopt($curl, CURLOPT_POSTFIELDS,json_encode($parametros));
@@ -45,6 +63,7 @@ include_once("../route.php");
 
             if ($informacion->actualizado)
                 {
+                    // echo $informacion;
                     $_SESSION['nombresesion'] = $nombre;
                     $_SESSION['apellidopsesion'] = $apellidop;
                     $_SESSION['apellidomsesion'] = $apellidom;
@@ -52,6 +71,9 @@ include_once("../route.php");
                     $_SESSION['correosesion'] = $correo;
                     $_SESSION['telefonosesion'] = $telefono;
                     $_SESSION['direccionsesion'] = $direccion;
+                    $_SESSION['rutasesion'] = $ubicacionFinal;
+                    
+                    // echo $_SESSION;
                     header('Location: ../miperfil.php?actualizadatos=true');
                 }
                 
