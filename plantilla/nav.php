@@ -43,7 +43,7 @@
     <nav class="header-nav ms-auto">
       
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="<?php echo $rutasesion ?>" alt="Profile" class="rounded-circle">
+            <img src="<?php echo $rutasesion ?>" alt="Imagen de Perfil" class="rounded-circle">
             <span style="color: white;" class="d-none d-md-block dropdown-toggle ps-2"><?php echo $nombresesion . ' ' . $apellidopsesion . ' ' . $apellidomsesion?></span>
           </a><!-- End Profile Image Icon -->
 

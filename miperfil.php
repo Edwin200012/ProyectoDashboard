@@ -117,7 +117,7 @@
           <div class="card">
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-              <img src="imagenesperfil/icono-perfil-default.png" alt="Profile" class="rounded-circle">
+              <img src="<?php echo $rutasesion ?>" alt="Imagen de Perfil" class="rounded-circle">
               <h2><?php echo $nombresesion . ' ' . $apellidopsesion . ' ' . $apellidomsesion ?></h2>
               <h3><?php echo $usuariosesion ?></h3>
               <div class="social-links mt-2">
@@ -203,7 +203,7 @@
                   <div class="row mb-3">
                       <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Imagen de Perfil</label>
                       <div  class="col-md-8 col-lg-9">
-                        <img style="margin-left: 12px;" src="imagenesperfil/icono-perfil-default.png" alt="Profile">
+                        <img src="<?php echo $rutasesion ?>" style="margin-left: 12px;" alt="Imagen de Perfil">
                         <div id="div_file" class="pt-2" style="position:relative; width: 150px; background-color: #2499e3; border-radius: 5px; box-shadow:0px 3px 0px #1a71a9;">
                         <p style="text-align: center; color: white;" id="texto">Cambiar Imagen</p>
                         <input style="position: absolute; top:0px; left:0px; right:0px; bottom:0px; width:100%; height:100%; opacity:0;" type="file" id="imagenperfil" name="imagenperfil">
