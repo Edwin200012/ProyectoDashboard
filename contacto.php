@@ -89,14 +89,20 @@
               <table class="table datatable">
                 <thead>
                   <tr>
-                    <th>Id</th>
-                    <th>Correo</th>
-                    <th>Teléfono</th>
-                    <th>Ubicación</th>
+                    <th title="Id" scope="col">Id</th>
+                    <th title="Correo" scope="col">Correo</th>
+                    <th title="Teléfono" scope="col">Teléfono</th>
+                    <th title="Ubicación" scope="col">Ubicación</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody id="tBody">
                   <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <!-- <tr>
                     <td>Walker Nixon</td>
                     <td>6901</td>
                     <td>Metz</td>
@@ -143,7 +149,7 @@
                     <td>7516</td>
                     <td>Redwater</td>
                     <td>31%</td>
-                  </tr>
+                  </tr> -->
                 </tbody>
               </table>
               <!-- End Table with stripped rows -->
@@ -154,10 +160,11 @@
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
+  <div style="margin-top: 150px;>
 <?php
     include_once ("plantilla/footer.php");
 ?>
-
+</div>
 <a style="background-color: #3A1CA6;" href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 <?php
