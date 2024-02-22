@@ -160,11 +160,14 @@
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-  <div style="margin-top: 150px;>
-<?php
+  <div style="margin-top: 10%;">
+  <?php
     include_once ("plantilla/footer.php");
-?>
-</div>
+  ?>
+
+  </div>
+
+
 <a style="background-color: #3A1CA6;" href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 <?php
