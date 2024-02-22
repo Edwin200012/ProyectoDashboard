@@ -72,20 +72,18 @@
   </div>
   </div>
 
-
   <div class="text-center">
     <button id="botonActualizar" style="width:300px; height:40px; border-radius: 30px; background-color: #77E6F2; color: #000807; border-color: silver;" class="btn btn-primary" type="submit">Enviar</button>
   </div>
 </form>
-              </div>
-            </div>
-
+     </div>
+        </div>
             <div style="margin-left: 50%; margin-top: -29%;" class="col-xxl-4 col-md-6">
               <div class="card info-card sales-card">
                 <div class="card-body">
                   <h5 class="card-title">Registro Contactos</span></h5>
                 </div>
-                 <!-- Table with stripped rows -->
+                 <!-- Inicio de tabla para mostrar los registros de contacto -->
               <table class="table datatable">
                 <thead>
                   <tr>
@@ -100,16 +98,40 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
                   </tr>
                 </tbody>
               </table>
-              <!-- End Table with stripped rows -->
+              <!-- Fin de tabla para mostrar los registros de contacto -->
               </div>
             </div>
     </section>
 
   </main><!-- End #main -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+        mostrarDatosContacto();
+    })
+
+    function mostrarDatosContacto(){
+      jQuery.ajax({
+        url:'controllers/registrocontactoempresa.php',
+        type: 'GET',
+        dataType: 'JSON',
+        success: function (response){
+          $('#tBody').empty();
+          let datos = response.registrocontactos
+            datos.forEach((post, i) => {
+              $('#tBody').append('<tr id="'+post.id+'"><td>'+post.id+'</td><td>'+post.correo+'</td><td>'+post.telefono+'</td><td>'+post.ubicacion+'</td></tr>');
+            });
+        }
+      }).fail(function () {
+        alert("Error");
+      });
+    }
+
+  </script>
 
   <!-- ======= Footer ======= -->
   <div style="margin-top: 10%;">
@@ -125,6 +147,7 @@
 <?php
     include_once ("plantilla/scripts.php");
 ?>
+
 
 </body>
 </html>
