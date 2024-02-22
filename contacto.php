@@ -102,54 +102,6 @@
                     <td></td>
                     <td></td>
                   </tr>
-                  <!-- <tr>
-                    <td>Walker Nixon</td>
-                    <td>6901</td>
-                    <td>Metz</td>
-                    <td>41%</td>
-                  </tr>
-                  <tr>
-                    <td>Nathan Espinoza</td>
-                    <td>5956</td>
-                    <td>Strathcona County</td>
-                    <td>47%</td>
-                  </tr>
-                  <tr>
-                    <td>Kelly Cameron</td>
-                    <td>4836</td>
-                    <td>Fontaine-Valmont</td>
-                    <td>24%</td>
-                  </tr>
-                  <tr>
-                    <td>Kyra Moses</td>
-                    <td>3796</td>
-                    <td>Quenast</td>
-                    <td>68%</td>
-                  </tr>
-                  <tr>
-                    <td>Grace Bishop</td>
-                    <td>8340</td>
-                    <td>Rodez</td>
-                    <td>4%</td>
-                  </tr>
-                  <tr>
-                    <td>Haviva Hernandez</td>
-                    <td>8136</td>
-                    <td>Suwałki</td>
-                    <td>16%</td>
-                  </tr>
-                  <tr>
-                    <td>Alisa Horn</td>
-                    <td>9853</td>
-                    <td>Ucluelet</td>
-                    <td>39%</td>
-                  </tr>
-                  <tr>
-                    <td>Zelenia Roman</td>
-                    <td>7516</td>
-                    <td>Redwater</td>
-                    <td>31%</td>
-                  </tr> -->
                 </tbody>
               </table>
               <!-- End Table with stripped rows -->

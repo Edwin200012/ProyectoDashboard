@@ -11,6 +11,7 @@ class Route{
     // static $editarUsuario = "Usuario/Editar?idusuario=";
 
     //Empresa
-    static $enviarDatosContacto = "Empresa/Contacto";//POST
+    static $enviarDatosContacto = "Empresa/Contacto";
+    static $mostrarDatosContacto = "Empresa/MostrarDatosContacto";
 }
 ?>
