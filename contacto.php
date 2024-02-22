@@ -89,18 +89,10 @@
               <table class="table datatable">
                 <thead>
                   <tr>
-                    <th>
-                      Id
-                    </th>
-                    <th>
-                      Correo
-                    </th>
-                    <th>
-                      Teléfono
-                    </th>
-                    <th>
-                      Ubicación
-                    </th>
+                    <th>Id</th>
+                    <th>Correo</th>
+                    <th>Teléfono</th>
+                    <th>Ubicación</th>
                   </tr>
                 </thead>
                 <tbody>
