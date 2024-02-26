@@ -1,9 +1,3 @@
-<style>
-    /* Ajustar el espaciado vertical entre las filas */
-    .table tbody tr {
-      line-height: 1.5; /* Reducir el espacio entre las filas */
-    }
-  </style>
 <!DOCTYPE html>
 <html lang="en">
 <head>
