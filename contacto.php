@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome CSS for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 <?php
     include_once ("plantilla/head.php");
 ?>
@@ -78,36 +82,50 @@
 </form>
      </div>
         </div>
-            <div style="margin-left: 50%; margin-top: -29%;" class="col-xxl-4 col-md-6">
-              <div class="card info-card sales-card">
-                <div class="card-body">
-                  <h5 class="card-title">Registro Contactos</span></h5>
-                </div>
-                 <!-- Inicio de tabla para mostrar los registros de contacto -->
-              <table class="table datatable">
-                <thead>
-                  <tr>
-                    <th title="Id" scope="col">Id</th>
-                    <th title="Correo" scope="col">Correo</th>
-                    <th title="Teléfono" scope="col">Teléfono</th>
-                    <th title="Ubicación" scope="col">Ubicación</th>
-                  </tr>
-                </thead>
-                <tbody id="tBody">
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
-              <!-- Fin de tabla para mostrar los registros de contacto -->
-              </div>
-            </div>
+
+
+
+
+<div style="margin-left: 50%; margin-top: -29%;">
+        <div class="container mt-5">
+  <div class="row justify-content-end">
+    <div class="col-md-4">
+      <div class="input-group mb-3 rounded" style="background-color: #6c757d;">
+        <input type="text" class="form-control rounded" placeholder="Buscar..." aria-label="Buscar" aria-describedby="button-addon2">
+        <button class="btn btn-primary rounded" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="table-responsive rounded" style="background-color: #007bff;">
+        <table class="table table-bordered table-hover rounded" style="background-color: #ffffff;">
+          <thead class="table-primary">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Correo</th>
+              <th scope="col">Teléfono</th>
+              <th scope="col">Ubicación</th>
+            </tr>
+          </thead>
+          <tbody id="tBody">
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
     </section>
 
   </main><!-- End #main -->
 
+  <!-- Script para mostrar los datos del contaco -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   <script>
     $(document).ready(function() {
@@ -116,7 +134,7 @@
 
     function mostrarDatosContacto(){
       jQuery.ajax({
-        url:'controllers/registrocontactoempresa.php',
+        url:'controllers/registrocontactoempresa.php',  
         type: 'GET',
         dataType: 'JSON',
         success: function (response){
@@ -130,8 +148,24 @@
         alert("Error");
       });
     }
-
   </script>
+
+  <!-- Script para la barra de busqueda -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const searchInput = document.getElementById('searchInput');
+    const rows = document.querySelectorAll('.table tbody tr');
+
+    searchInput.addEventListener('keyup', function(event) {
+      const searchString = event.target.value.toLowerCase();
+
+      rows.forEach(row => {
+        row.style.display = row.textContent.toLowerCase().includes(searchString) ? '' : 'none';
+      });
+    });
+  });
+</script>
 
   <!-- ======= Footer ======= -->
   <div style="margin-top: 10%;">
