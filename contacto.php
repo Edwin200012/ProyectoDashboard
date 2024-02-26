@@ -180,7 +180,7 @@
   </script>
 
   <!-- ======= Footer ======= -->
-  <div style="margin-top: 10%;">
+  <div style="margin-top: 18%;">
   <?php
     include_once ("plantilla/footer.php");
   ?>
