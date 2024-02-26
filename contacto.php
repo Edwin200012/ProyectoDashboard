@@ -1,3 +1,9 @@
+<style>
+    /* Ajustar el espaciado vertical entre las filas */
+    .table tbody tr {
+      line-height: 1.5; /* Reducir el espacio entre las filas */
+    }
+  </style>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome CSS for icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  
 <?php
     include_once ("plantilla/head.php");
 ?>
@@ -86,40 +93,34 @@
 
 
 
-<div style="margin-left: 50%; margin-top: -29%;">
-        <div class="container mt-5">
-  <div class="row justify-content-end">
-    <div class="col-md-4">
-      <div class="input-group mb-3 rounded" style="background-color: #6c757d;">
-        <input type="text" class="form-control rounded" placeholder="Buscar..." aria-label="Buscar" aria-describedby="button-addon2">
-        <button class="btn btn-primary rounded" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
-      </div>
-    </div>
+
+
+  <div style="margin-left: 40%; margin-right: 5%; margin-top: -29%;" >
+    <!-- Barra de búsqueda -->
+    <input type="text" id="searchInput" class="form-control" style="width: 100%; margin-bottom: 10px;" placeholder="Buscar...">
+    <!-- Tabla -->
+    <table class="table" style="border-radius: 10px; overflow: hidden; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);">
+      <thead style="background-color: #007bff; color: #fff; border-color: #007bff;">
+        <tr>
+          <th>#</th>
+          <th>Correo</th>
+          <th>Teléfono</th>
+          <th>Ubicación</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <tr style="background-color: #f0faff;">
+          <td></td>
+          <td></td>
+          <td></td>
+          
+        </tr>
+      </tbody>
+    </table>
   </div>
 
-  <div class="row">
-    <div class="col">
-      <div class="table-responsive rounded" style="background-color: #007bff;">
-        <table class="table table-bordered table-hover rounded" style="background-color: #ffffff;">
-          <thead class="table-primary">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Correo</th>
-              <th scope="col">Teléfono</th>
-              <th scope="col">Ubicación</th>
-            </tr>
-          </thead>
-          <tbody id="tBody">
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
+ 
+
   </div>
     </section>
 
@@ -138,10 +139,10 @@
         type: 'GET',
         dataType: 'JSON',
         success: function (response){
-          $('#tBody').empty();
+          $('#tableBody').empty();
           let datos = response.registrocontactos
             datos.forEach((post, i) => {
-              $('#tBody').append('<tr id="'+post.id+'"><td>'+post.id+'</td><td>'+post.correo+'</td><td>'+post.telefono+'</td><td>'+post.ubicacion+'</td></tr>');
+              $('#tableBody').append('<tr id="'+post.id+'"><td>'+post.id+'</td><td>'+post.correo+'</td><td>'+post.telefono+'</td><td>'+post.ubicacion+'</td></tr>');
             });
         }
       }).fail(function () {
@@ -150,22 +151,33 @@
     }
   </script>
 
-  <!-- Script para la barra de busqueda -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const searchInput = document.getElementById('searchInput');
-    const rows = document.querySelectorAll('.table tbody tr');
+  <!-- Agrega la CDN de jQuery y Popper.js (necesarios para que funcionen los componentes de Bootstrap) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <!-- Agrega la CDN de Bootstrap (JavaScript) -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    searchInput.addEventListener('keyup', function(event) {
-      const searchString = event.target.value.toLowerCase();
-
-      rows.forEach(row => {
-        row.style.display = row.textContent.toLowerCase().includes(searchString) ? '' : 'none';
+  <script>
+    // Función para filtrar la tabla según el texto ingresado en la barra de búsqueda
+    $(document).ready(function(){
+      $("#searchInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#tableBody tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
       });
+
+      // Agregar efecto de cambio de color al pasar el mouse sobre las celdas
+      $("#tableBody tr").hover(
+        function() {
+          $(this).css("background-color", "#cce5ff");
+        },
+        function() {
+          $(this).css("background-color", "");
+        }
+      );
     });
-  });
-</script>
+  </script>
 
   <!-- ======= Footer ======= -->
   <div style="margin-top: 10%;">
