@@ -201,7 +201,7 @@ if(isset($_POST["enviar"]) ){
     
     var toast = new bootstrap.Toast(document.querySelector('.toast'))
     toast.show();
-
+ 
   </script>
 
 </body>
