@@ -66,7 +66,7 @@
     .form-control:focus ~ .form-label,
     .form-control:not(:placeholder-shown) ~ .form-label {
       font-size: 0.85rem; /* Tamaño del texto del label cuando está arriba */
-      transform: translateY(-1.5em) scale(0.9); /* Mover el label arriba del input */
+      transform: translateY(-2.5em) scale(0.9); /* Mover el label arriba del input */
       color: #007bff; /* Cambia el color del texto del label cuando está enfocado o tiene contenido */
     }
   
@@ -184,16 +184,21 @@ if(isset($_POST["enviar"]) ){
                   
                   <div style="margin-top: 10%;" class="col-12">
                     <div class="input-container">
+                      
                       <input style="border-radius: 15px;" name="correo" maxlength="50" minlength="3" type="email" class="form-control" id="correo" placeholder=" " required>
-                      <label style="margin-left: 2%; margin-top:2%;" for="correo" class="form-label">Correo electrónico</label>
+                      
+                      <label style="margin-left: 2%; margin-top:2%;" for="correo" class="form-label"> <i class="fa-solid fa-envelope" style="color: #74C0FC;"></i> Correo electrónico</label>
+                      
                     <div class="invalid-feedback">Por favor, ingrese su correo.</div>
                     </div>
                  </div>      
 
+                 
+
                  <div style="margin-top: 8%;" class="col-12">
                     <div class="input-container">
                       <input style="border-radius: 15px;" name="contrasena" maxlength="50" minlength="3" type="password" class="form-control" id="contrasena" placeholder=" " required>
-                      <label style="margin-left: 2%; margin-top:2%;" for="contrasena" class="form-label">Contraseña</label>
+                      <label style="margin-left: 2%; margin-top:2%;" for="contrasena" class="form-label"> <i class="fa-solid fa-lock" style="color: #74C0FC;"></i> Contraseña</label>
                     <div class="invalid-feedback">Por favor, ingrese su contraseña.</div>
                     </div>
                  </div>  
