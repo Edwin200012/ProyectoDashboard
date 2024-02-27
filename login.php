@@ -185,7 +185,7 @@ if(isset($_POST["enviar"]) ){
                   <div style="margin-top: 10%;" class="col-12">
                     <div class="input-container">
                       <input style="border-radius: 15px;" name="correo" maxlength="50" minlength="3" type="email" class="form-control" id="correo" placeholder=" " required>
-                      <label style="margin-left: 2%;" for="correo" class="form-label">Correo electrónico</label>
+                      <label style="margin-left: 2%; margin-top:2%;" for="correo" class="form-label">Correo electrónico</label>
                     <div class="invalid-feedback">Por favor, ingrese su correo.</div>
                     </div>
                  </div>      
@@ -193,7 +193,7 @@ if(isset($_POST["enviar"]) ){
                  <div style="margin-top: 8%;" class="col-12">
                     <div class="input-container">
                       <input style="border-radius: 15px;" name="contrasena" maxlength="50" minlength="3" type="password" class="form-control" id="contrasena" placeholder=" " required>
-                      <label style="margin-left: 2%;" for="contrasena" class="form-label">Contraseña</label>
+                      <label style="margin-left: 2%; margin-top:2%;" for="contrasena" class="form-label">Contraseña</label>
                     <div class="invalid-feedback">Por favor, ingrese su contraseña.</div>
                     </div>
                  </div>  
