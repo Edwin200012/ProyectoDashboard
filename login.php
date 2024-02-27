@@ -65,7 +65,7 @@
     /* Estilo para cuando el input está enfocado o tiene contenido */
     .form-control:focus ~ .form-label,
     .form-control:not(:placeholder-shown) ~ .form-label {
-      font-size: 0.75rem; /* Tamaño del texto del label cuando está arriba */
+      font-size: 0.85rem; /* Tamaño del texto del label cuando está arriba */
       transform: translateY(-1.5em) scale(0.9); /* Mover el label arriba del input */
       color: #007bff; /* Cambia el color del texto del label cuando está enfocado o tiene contenido */
     }
