@@ -24,6 +24,52 @@
     .error-icon {
       color: #721c24; /* Texto oscuro */
     }
+
+    
+    /* Estilo para el contenedor del input y el label */
+    .input-container {
+      position: relative;
+    }
+
+    /* Estilo para el input */
+    .form-control {
+      border-radius: 10px;
+      border: 1px solid #6c757d; /* Color del borde del input */
+      transition: all 0.3s;
+      box-shadow: 0 0 10px rgba(108, 117, 125, 0.2); /* Sombra del input */
+    }
+
+    /* Estilo para cuando el input está enfocado */
+    .form-control:focus {
+      border-color: #007bff; /* Cambia el color del borde cuando está enfocado */
+      box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Cambia el color de la sombra cuando está enfocado */
+    }
+
+    /* Estilo para cuando el input tiene contenido */
+    .form-control:not(:placeholder-shown) {
+      border-color: #007bff; /* Cambia el color del borde cuando tiene contenido */
+    }
+
+    /* Estilo para el label */
+    .form-label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      transition: all 0.2s;
+      color: #6c757d; /* Color del texto del label */
+      font-size: 1rem; /* Tamaño de fuente del label */
+      font-family: Arial, sans-serif; /* Fuente del label */
+    }
+
+    /* Estilo para cuando el input está enfocado o tiene contenido */
+    .form-control:focus ~ .form-label,
+    .form-control:not(:placeholder-shown) ~ .form-label {
+      font-size: 0.75rem; /* Tamaño del texto del label cuando está arriba */
+      transform: translateY(-1.5em) scale(0.9); /* Mover el label arriba del input */
+      color: #007bff; /* Cambia el color del texto del label cuando está enfocado o tiene contenido */
+    }
+  
 </style>
 
 <?php
@@ -135,18 +181,22 @@ if(isset($_POST["enviar"]) ){
                   </div>
 
                   <form class="row g-3 needs-validation" novalidate method="POST">
-
-                    <div class="col-12">
-                      <label for="correo" class="form-label">Correo</label>
-                        <input maxlength="50" minlength="3" style="border-radius: 15px;" type="text" name="correo" class="form-control" id="correo" required>
-                        <div class="invalid-feedback">Por favor, ingrese su correo.</div>
+                  
+                  <div style="margin-top: 10%;" class="col-12">
+                    <div class="input-container">
+                      <input style="border-radius: 15px;" name="correo" maxlength="50" minlength="3" type="email" class="form-control" id="correo" placeholder=" " required>
+                      <label style="margin-left: 2%;" for="correo" class="form-label">Correo electrónico</label>
+                    <div class="invalid-feedback">Por favor, ingrese su correo.</div>
                     </div>
+                 </div>      
 
-                    <div class="col-12">
-                      <label for="contrasena" class="form-label">Contraseña</label>
-                      <input maxlength="50" minlength="3" style="border-radius: 15px;" type="password" name="contrasena" class="form-control" id="contrasena" required>
-                      <div class="invalid-feedback">Por favor, ingrese su contraseña.</div>
+                 <div style="margin-top: 8%;" class="col-12">
+                    <div class="input-container">
+                      <input style="border-radius: 15px;" name="contrasena" maxlength="50" minlength="3" type="password" class="form-control" id="contrasena" placeholder=" " required>
+                      <label style="margin-left: 2%;" for="contrasena" class="form-label">Contraseña</label>
+                    <div class="invalid-feedback">Por favor, ingrese su contraseña.</div>
                     </div>
+                 </div>  
 
                     <!-- <div class="col-12">
                       <div class="form-check">
@@ -154,7 +204,8 @@ if(isset($_POST["enviar"]) ){
                         <label class="form-check-label" for="rememberMe">Recordar</label>
                       </div>
                     </div> -->
-                    <div class="col-12">
+
+                    <div style="margin-top: 8%;" class="col-12">
                       <button name="enviar" style="border-radius: 15px; background-color: #77E6F2; color: #000807; border-color: silver;" class="btn btn-primary w-100" type="submit">Login</button>
                     </div>
                     <div class="col-12">
@@ -201,8 +252,14 @@ if(isset($_POST["enviar"]) ){
     
     var toast = new bootstrap.Toast(document.querySelector('.toast'))
     toast.show();
- 
+
   </script>
+
+   <!-- Agrega la CDN de jQuery y Popper.js (necesarios para que funcionen los componentes de Bootstrap) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <!-- Agrega la CDN de Bootstrap (JavaScript) -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 
