@@ -100,6 +100,8 @@
           <th>Correo</th>
           <th>Teléfono</th>
           <th>Ubicación</th>
+          <th>Editar</th>
+          <th>Eliminar</th>
         </tr>
       </thead>
       <tbody id="tableBody">
@@ -107,20 +109,15 @@
           <td></td>
           <td></td>
           <td></td>
-          
         </tr>
       </tbody>
     </table>
   </div>
-
- 
-
   </div>
     </section>
-
   </main><!-- End #main -->
 
-  <!-- Script para mostrar los datos del contaco -->
+  <!-- Script para mostrar los datos del contacto -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   <script>
     $(document).ready(function() {
@@ -129,14 +126,14 @@
 
     function mostrarDatosContacto(){
       jQuery.ajax({
-        url:'controllers/registrocontactoempresa.php',  
+        url:'controllers/registrocontactoempresa.php',
         type: 'GET',
         dataType: 'JSON',
         success: function (response){
           $('#tableBody').empty();
           let datos = response.registrocontactos
             datos.forEach((post, i) => {
-              $('#tableBody').append('<tr id="'+post.id+'"><td>'+post.id+'</td><td>'+post.correo+'</td><td>'+post.telefono+'</td><td>'+post.ubicacion+'</td></tr>');
+              $('#tableBody').append('<tr id="'+post.id+'"><td>'+post.id+'</td><td>'+post.correo+'</td><td>'+post.telefono+'</td><td>'+post.ubicacion+'</td><td><a title="Editar Registro" type="button" href="formularioactualizar.php?usuario='+post.id+'" class="btn btn-outline-warning"> <i class="fa-solid fa-pen-to-square" "></i></a></td> <td><button title="Eliminar Registro" type="button" class="btn btn-outline-danger btneliminar" id="'+post.id+'" value="'+post.ruta+'"> <i class="fas fa-trash"></i> </button></td> </tr>');
             });
         }
       }).fail(function () {
