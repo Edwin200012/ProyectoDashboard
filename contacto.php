@@ -5,6 +5,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome CSS for icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   
 <?php
     include_once ("plantilla/head.php");
@@ -115,6 +117,48 @@
   </div>
   </div>
     </section>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Datos Contacto N°:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Inputs -->
+        <div class="form-group">
+          <label for="input1">Correo</label>
+          <input style="border-radius: 15px;" type="text" class="form-control" id="input1" value="Correo">
+        </div>
+        <div class="form-group">
+          <label for="input2">Teléfono</label>
+          <input style="border-radius: 15px;" type="text" class="form-control" id="input2" value="Teléfono">
+        </div>
+        <div class="form-group">
+          <label for="input3">Ubicación</label>
+          <input style="border-radius: 15px;" type="text" class="form-control" id="input3" value="Ubicación">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <!-- Botones -->
+        <button style=" background-color: #dc3545; border-color: #dc3545; border-radius: 20px;" type="button" class="btn btn-secondary btn-modal btn-cerrar" data-dismiss="modal">
+            <i class="fas fa-times"></i> Cerrar
+        </button>
+        <button style="background-color: #28a745; border-color: #28a745; border-radius: 20px;" type="button" class="btn btn-primary btn-modal btn-guardar">
+            <i class="fas fa-save"></i> Guardar cambios
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
   </main><!-- End #main -->
 
   <!-- Script para mostrar los datos del contacto -->
@@ -133,7 +177,7 @@
           $('#tableBody').empty();
           let datos = response.registrocontactos
             datos.forEach((post, i) => {
-              $('#tableBody').append('<tr id="'+post.id+'"><td>'+post.id+'</td><td>'+post.correo+'</td><td>'+post.telefono+'</td><td>'+post.ubicacion+'</td><td><a title="Editar Registro" type="button" href="formularioactualizar.php?usuario='+post.id+'" class="btn btn-outline-warning"> <i class="fa-solid fa-pen-to-square" "></i></a></td> <td><button title="Eliminar Registro" type="button" class="btn btn-outline-danger btneliminar" id="'+post.id+'" value="'+post.ruta+'"> <i class="fas fa-trash"></i> </button></td> </tr>');
+              $('#tableBody').append('<tr id="'+post.id+'"><td>'+post.id+'</td><td>'+post.correo+'</td><td>'+post.telefono+'</td><td>'+post.ubicacion+'</td>                                           <td><button title="Editar Registro" type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-outline-warning"> <i class="fa-solid fa-pen-to-square" "></i></button></td>                                                                <td><button title="Eliminar Registro" type="button" class="btn btn-outline-danger btneliminar" id="'+post.id+'" value="'+post.ruta+'"> <i class="fas fa-trash"></i> </button></td> </tr>');
             });
         }
       }).fail(function () {
@@ -147,6 +191,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <!-- Agrega la CDN de Bootstrap (JavaScript) -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
   <script>
     // Función para filtrar la tabla según el texto ingresado en la barra de búsqueda
