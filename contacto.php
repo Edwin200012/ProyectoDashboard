@@ -54,7 +54,7 @@
                 </div>
                 
 
-<!-- Profile Edit Form -->
+
 <form action="controllers/contactoempresa.php" class="row g-3 needs-validation" novalidate method="POST">
 
 <div style="width: 90%; margin-left: 5%;">
@@ -75,7 +75,7 @@
   <div class="mb-3">
     <label for="ubicacioncontacto" class="form-label">Ubicación</label>
     <input maxlength="300" minlength="3" style="border-radius: 15px;" type="text" class="form-control" id="ubicacioncontacto" name="ubicacioncontacto" required placeholder="Dirección">
-    <div class="invalid-feedback">Por favor, ingrese la dirección.</div>
+    <div class="invalid-feedback">Por favor, ingrese la ubicación.</div>
   </div>
   </div>
 
@@ -118,6 +118,7 @@
   </div>
     </section>
 
+<form action="controllers/editarcontacto.php" class="row g-3 needs-validation" novalidate method="POST">
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
   <div class="modal-dialog" role="document">
@@ -131,16 +132,18 @@
       <div class="modal-body">
         <!-- Inputs -->
         <div class="form-group">
-          <label for="input1">Correo</label>
-          <input style="border-radius: 15px;" type="text" class="form-control" id="input1" value="Correo">
+          <label for="editarcorreocontacto">Correo</label>
+          <input maxlength="50" minlength="3" style="border-radius: 15px;" type="email" class="form-control" id="editarcorreocontacto" name="editarcorreocontacto" value="Correo">
         </div>
         <div class="form-group">
-          <label for="input2">Teléfono</label>
-          <input style="border-radius: 15px;" type="text" class="form-control" id="input2" value="Teléfono">
+          <label for="editartelefonocontacto">Teléfono</label>
+          <input maxlength="10" minlength="10" style="border-radius: 15px;" type="tel" class="form-control" id="editartelefonocontacto" name="editartelefonocontacto" value="Telefono">
+          <div class="invalid-feedback">Por favor, ingrese el teléfono.</div>
         </div>
         <div class="form-group">
-          <label for="input3">Ubicación</label>
-          <input style="border-radius: 15px;" type="text" class="form-control" id="input3" value="Ubicación">
+          <label for="editarubicacioncontacto">Ubicación</label>
+          <input maxlength="300" minlength="3" style="border-radius: 15px;" type="text" class="form-control" id="editarubicacioncontacto" name="editarubicacioncontacto" value="Ubicacion">
+          <div class="invalid-feedback">Por favor, ingrese la ubicación.</div>
         </div>
       </div>
       <div class="modal-footer">
@@ -148,14 +151,14 @@
         <button style=" background-color: #dc3545; border-color: #dc3545; border-radius: 20px;" type="button" class="btn btn-secondary btn-modal btn-cerrar" data-dismiss="modal">
             <i class="fas fa-times"></i> Cerrar
         </button>
-        <button style="background-color: #28a745; border-color: #28a745; border-radius: 20px;" type="button" class="btn btn-primary btn-modal btn-guardar">
+        <button style="background-color: #28a745; border-color: #28a745; border-radius: 20px;" type="submit" class="btn btn-primary btn-modal btn-guardar">
             <i class="fas fa-save"></i> Guardar cambios
         </button>
       </div>
     </div>
   </div>
 </div>
-
+</form>
 
 
 
@@ -177,7 +180,7 @@
           $('#tableBody').empty();
           let datos = response.registrocontactos
             datos.forEach((post, i) => {
-              $('#tableBody').append('<tr id="'+post.id+'"><td>'+post.id+'</td><td>'+post.correo+'</td><td>'+post.telefono+'</td><td>'+post.ubicacion+'</td>                                           <td><button title="Editar Registro" type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-outline-warning"> <i class="fa-solid fa-pen-to-square" "></i></button></td>                                                                <td><button title="Eliminar Registro" type="button" class="btn btn-outline-danger btneliminar" id="'+post.id+'" value="'+post.ruta+'"> <i class="fas fa-trash"></i> </button></td> </tr>');
+              $('#tableBody').append('<tr id="'+post.id+'"><td>'+post.id+'</td><td>'+post.correo+'</td><td>'+post.telefono+'</td><td>'+post.ubicacion+'</td>  <td><button title="Editar Registro" type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-outline-warning"> <i class="fa-solid fa-pen-to-square" "></i></button></td>  <td><button title="Eliminar Registro" type="button" class="btn btn-outline-danger btneliminar" id="'+post.id+'" value="'+post.ruta+'"> <i class="fas fa-trash"></i> </button></td> </tr>');
             });
         }
       }).fail(function () {
