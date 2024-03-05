@@ -62,19 +62,19 @@
 
   <div class="mb-3">
     <label for="correocontacto" class="form-label">Correo</label>
-    <input maxlength="50" minlength="3" style="border-radius: 15px;" type="email" class="form-control" id="correocontacto" name="correocontacto" required placeholder="Correo">
+    <input maxlength="50" minlength="3" style="border-radius: 15px;" type="email" class="form-control" id="correocontacto" name="correocontacto" required placeholder="correo@ejemplo.com">
     <div class="invalid-feedback">Por favor, ingrese el correo.</div>
   </div>
 
   <div class="mb-3">
     <label for="telefonocontacto" class="form-label">Teléfono</label>
-    <input maxlength="10" minlength="10" style="border-radius: 15px;" type="tel" class="form-control" id="telefonocontacto" name="telefonocontacto" required placeholder="Teléfono"">
+    <input maxlength="10" minlength="10" style="border-radius: 15px;" type="tel" class="form-control" id="telefonocontacto" name="telefonocontacto" required placeholder="8710000000">
     <div class="invalid-feedback">Por favor, ingrese el teléfono.</div>
   </div>
 
   <div class="mb-3">
     <label for="ubicacioncontacto" class="form-label">Ubicación</label>
-    <input maxlength="300" minlength="3" style="border-radius: 15px;" type="text" class="form-control" id="ubicacioncontacto" name="ubicacioncontacto" required placeholder="Dirección">
+    <input maxlength="300" minlength="3" style="border-radius: 15px;" type="text" class="form-control" id="ubicacioncontacto" name="ubicacioncontacto" required placeholder="Ej. Gomez Palacio, Dgo.">
     <div class="invalid-feedback">Por favor, ingrese la ubicación.</div>
   </div>
   </div>
@@ -89,12 +89,12 @@
   <div style="margin-left: 40%; margin-right: 5%; margin-top: -29%;" >
     <div class="container mt-4">
     <!-- Contenedor del input de búsqueda -->
-    <div class="input-group">
+    <div class="input-group" style="width:30%; margin-left: 70%;">
         <!-- Input de búsqueda -->
-        <input id="searchInput" style="border-radius: 15px;" type="text" class="form-control" placeholder="Buscar...">
+        <input id="searchInput" style="border-radius: 15px 0px 0px 15px;" type="text" class="form-control" placeholder="Buscar...">
         <div class="input-group-append">
             <!-- Icono de búsqueda (Font Awesome) -->
-            <span style="cursor: pointer; border-radius: 15px;" class="input-group-text search-icon"><i class="fas fa-search"></i></span>
+            <span style="cursor: pointer; border-radius: 0px 15px 15px 0px;" class="input-group-text search-icon"><i class="fas fa-search"></i></span>
         </div>
     </div>
 </div>
@@ -111,7 +111,7 @@
           <th>Eliminar</th>
         </tr>
       </thead>
-      <tbody id="tableBody">
+      <tbody id="tBody">
         <tr style="background-color: #f0faff;">
           <td></td>
           <td></td>
@@ -121,7 +121,7 @@
     </table>
   </div>
   </div>
-    </ section >
+    </section>
 
 <form action="controllers/editarcontacto.php" class="row g-3 needs-validation" novalidate method="POST">
 <!-- Modal -->
@@ -141,7 +141,7 @@
         </div>
         <div class="form-group">
           <label for="editartelefonocontacto">Teléfono</label>
-          <input maxlength="10" minlength="10" style="border-radius: 15px;" type="tel" class="form-control" id="editartelefonocontacto" name="editartelefonocontacto" value="Telefono">
+          <input maxlength="10" minlength="10" style="border-radius: 15px;" type="tel" class="form-control" id="editartelefonocontacto" name="editartelefonocontacto" value="8710000000">
           <div class="invalid-feedback">Por favor, ingrese el teléfono.</div>
         </div>
         <div class="form-group">
@@ -164,8 +164,6 @@
 </div>
 </form>
 
-
-
   </main><!-- End #main -->
 
   <!-- Script para mostrar los datos del contacto -->
@@ -174,20 +172,41 @@
     $(document).ready(function() {
         mostrarDatosContacto();
     })
-    
+
     function mostrarDatosContacto(){
       jQuery.ajax({
         url:'controllers/registrocontactoempresa.php',
         type: 'GET',
         dataType: 'JSON',
         success: function (response){
-          $('#tableBody').empty();
+          $('#tBody').empty();
           let datos = response.registrocontactos
             datos.forEach((post, i) => {
-              $('#tableBody').append('<tr id="'+post.id+'"><td>'+post.id+'</td><td>'+post.correo+'</td><td>'+post.telefono+'</td><td>'+post.ubicacion+'</td>  <td><button title="Editar Registro" type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-outline-warning"> <i class="fa-solid fa-pen-to-square" "></i></button></td>  <td><button title="Eliminar Registro" type="button" class="btn btn-outline-danger btneliminar" id="'+post.id+'" value="'+post.ruta+'"> <i class="fas fa-trash"></i> </button></td> </tr>');
+              $('#tBody').append('<tr id="'+post.id+'"><td>'+post.id+'</td><td>'+post.correo+'</td><td>'+post.telefono+'</td><td>'+post.ubicacion+'</td>  <td><button title="Editar Registro" type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-outline-warning"> <i class="fa-solid fa-pen-to-square" "></i></button></td>  <td><button title="Eliminar Registro" type="button" class="btn btn-outline-danger btneliminar" id="'+post.id+'"> <i class="fas fa-trash"></i> </button></td> </tr>');
             });
         }
       }).fail(function () {
+        alert("Error");
+      });
+    }
+
+    $("#tBody").on("click",".btneliminar",function() {
+            let id = $(this).attr('id');
+            eliminarContacto(id);
+        });
+
+    function eliminarContacto(id){
+      alert(id);
+      jQuery.ajax({
+        url:'controllers/eliminarcontactoempresa.php',
+        type:'POST',
+        dataType:'JSON',
+        data:{id:id},
+        success: function (response){
+          alert("Se elimino el contacto con Id: " + id);
+          $('#'+id).remove();
+        }
+      }).fail(function (){
         alert("Error");
       });
     }
@@ -206,13 +225,13 @@
     $(document).ready(function(){
       $("#searchInput").on("keyup", function() {
         var value = $(this).val().toLowerCase();
-        $("#tableBody tr").filter(function() {
+        $("#tBody tr").filter(function() {
           $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
       });
 
       // Agregar efecto de cambio de color al pasar el mouse sobre las celdas
-      $("#tableBody tr").hover(
+      $("#tBody tr").hover(
         function() {
           $(this).css("background-color", "#cce5ff");
         },
