@@ -86,16 +86,21 @@
      </div>
         </div>
 
-
-
-
-
-
   <div style="margin-left: 40%; margin-right: 5%; margin-top: -29%;" >
-    <!-- Barra de búsqueda -->
-    <input type="text" id="searchInput" class="form-control" style="width: 100%; margin-bottom: 10px;" placeholder="Buscar...">
-    <!-- Tabla -->
-    <table class="table" style="border-radius: 10px; overflow: hidden; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);">
+    <div class="container mt-4">
+    <!-- Contenedor del input de búsqueda -->
+    <div class="input-group">
+        <!-- Input de búsqueda -->
+        <input id="searchInput" style="border-radius: 15px;" type="text" class="form-control" placeholder="Buscar...">
+        <div class="input-group-append">
+            <!-- Icono de búsqueda (Font Awesome) -->
+            <span style="cursor: pointer; border-radius: 15px;" class="input-group-text search-icon"><i class="fas fa-search"></i></span>
+        </div>
+    </div>
+</div>
+
+<!-- Tabla -->
+    <table class="table" style="border-radius: 10px; overflow: hidden; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); margin-top: 1%;">
       <thead style="background-color: #007bff; color: #fff; border-color: #007bff;">
         <tr>
           <th>#</th>
@@ -116,7 +121,7 @@
     </table>
   </div>
   </div>
-    </section>
+    </ section >
 
 <form action="controllers/editarcontacto.php" class="row g-3 needs-validation" novalidate method="POST">
 <!-- Modal -->
@@ -130,7 +135,6 @@
         </button>
       </div>
       <div class="modal-body">
-        <!-- Inputs -->
         <div class="form-group">
           <label for="editarcorreocontacto">Correo</label>
           <input maxlength="50" minlength="3" style="border-radius: 15px;" type="email" class="form-control" id="editarcorreocontacto" name="editarcorreocontacto" value="Correo">
@@ -170,7 +174,7 @@
     $(document).ready(function() {
         mostrarDatosContacto();
     })
-
+    
     function mostrarDatosContacto(){
       jQuery.ajax({
         url:'controllers/registrocontactoempresa.php',
