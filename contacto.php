@@ -196,7 +196,7 @@
         });
 
     function eliminarContacto(id){
-      alert(id);
+      alert("Se eliminara el contacto con Id: " + id);
       jQuery.ajax({
         url:'controllers/eliminarcontactoempresa.php',
         type:'POST',
