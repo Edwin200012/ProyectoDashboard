@@ -3,7 +3,7 @@ include_once("../route.php");
     class Empresa{
         function EditarContacto(){
             // $id = $_POST["editaridcontacto"];
-            $id = 1;
+            $id = 16;
             $correo = $_POST["editarcorreocontacto"];
             $telefono = $_POST["editartelefonocontacto"];
             $ubicacion = $_POST["editarubicacioncontacto"];

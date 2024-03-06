@@ -182,7 +182,7 @@
           $('#tBody').empty();
           let datos = response.registrocontactos
             datos.forEach((post, i) => {
-              $('#tBody').append('<tr id="'+post.id+'"><td>'+post.id+'</td><td>'+post.correo+'</td><td>'+post.telefono+'</td><td>'+post.ubicacion+'</td>  <td><button title="Editar Registro" type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-outline-warning"> <i class="fa-solid fa-pen-to-square" "></i></button></td>  <td><button title="Eliminar Registro" type="button" class="btn btn-outline-danger btneliminar" id="'+post.id+'"> <i class="fas fa-trash"></i> </button></td> </tr>');
+              $('#tBody').append('<tr id="'+post.id+'"><td>'+post.id+'</td><td>'+post.correo+'</td><td>'+post.telefono+'</td><td>'+post.ubicacion+'</td>  <td><a title="Editar Registro" type="button" href="formularioactualizarcontacto.php?idcontacto='+post.id+'" class="btn btn-outline-warning"> <i class="fa-solid fa-pen-to-square" "></i></a></td>  <td><button title="Eliminar Registro" type="button" class="btn btn-outline-danger btneliminar" id="'+post.id+'"> <i class="fas fa-trash"></i> </button></td> </tr>');
             });
         }
       }).fail(function () {
