@@ -123,46 +123,6 @@
   </div>
     </section>
 
-<form action="controllers/editarcontacto.php" class="row g-3 needs-validation" novalidate method="POST">
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Datos Contacto N°:</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="form-group">
-          <label for="editarcorreocontacto">Correo</label>
-          <input maxlength="50" minlength="3" style="border-radius: 15px;" type="email" class="form-control" id="editarcorreocontacto" name="editarcorreocontacto" value="Correo">
-        </div>
-        <div class="form-group">
-          <label for="editartelefonocontacto">Teléfono</label>
-          <input maxlength="10" minlength="10" style="border-radius: 15px;" type="tel" class="form-control" id="editartelefonocontacto" name="editartelefonocontacto" value="8710000000">
-          <div class="invalid-feedback">Por favor, ingrese el teléfono.</div>
-        </div>
-        <div class="form-group">
-          <label for="editarubicacioncontacto">Ubicación</label>
-          <input maxlength="300" minlength="3" style="border-radius: 15px;" type="text" class="form-control" id="editarubicacioncontacto" name="editarubicacioncontacto" value="Ubicacion">
-          <div class="invalid-feedback">Por favor, ingrese la ubicación.</div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <!-- Botones -->
-        <button style=" background-color: #dc3545; border-color: #dc3545; border-radius: 20px;" type="button" class="btn btn-secondary btn-modal btn-cerrar" data-dismiss="modal">
-            <i class="fas fa-times"></i> Cerrar
-        </button>
-        <button style="background-color: #28a745; border-color: #28a745; border-radius: 20px;" type="submit" class="btn btn-primary btn-modal btn-guardar">
-            <i class="fas fa-save"></i> Guardar cambios
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-</form>
 
   </main><!-- End #main -->
 
@@ -210,7 +170,10 @@
         alert("Error");
       });
     }
+    
   </script>
+
+
 
   <!-- Agrega la CDN de jQuery y Popper.js (necesarios para que funcionen los componentes de Bootstrap) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

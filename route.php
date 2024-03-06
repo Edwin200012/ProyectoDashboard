@@ -15,5 +15,6 @@ class Route{
     static $mostrarDatosContacto = "Empresa/MostrarDatosContacto";
     static $editarContacto = "Empresa/EditarContacto";
     static $eliminarContacto = "Empresa/EliminarContacto?idcontacto=";
+    static $mostrarDatosContactoPorId = "Empresa/MostrarDatosContactoPorId?idcontacto=";
 }
 ?>
