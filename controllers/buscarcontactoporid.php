@@ -1,9 +1,11 @@
 <?php
-include_once("route.php");
+include_once("../route.php");
 
 class Empresa{
     function MostrarDatosContactoPorId(){
         $Id = $_GET["contacto"];
+        // $Id = $_GET["idcontacto"];
+        // $Id = 26;
         $url = Route::$url.Route::$mostrarDatosContactoPorId.$Id;
         var_dump($url);
         var_dump($Id);
@@ -25,9 +27,6 @@ class Empresa{
         echo json_encode($informacion->contacto);
      else  
      echo json_encode("Error al mostrar");
-
-    
-
 }
 }
 $empresa = new Empresa();

@@ -106,9 +106,9 @@ $(document).ready(function(){
 
   function obtenerDatosContactoPorId(){
       let contacto = document.getElementById("contacto").value;
-      console.log("Id recuperado: "+contacto);
+      console.log("Id recuperado: " + contacto);
       jQuery.ajax({
-        url:'buscarcontactoporid.php',
+        url:'controllers/buscarcontactoporid.php',
         type:'GET',
         dataType:'JSON',
         data:{id:contacto},
