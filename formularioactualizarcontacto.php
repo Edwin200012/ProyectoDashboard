@@ -29,11 +29,11 @@
 
 <form action="controllers/editarcontacto.php" class="row g-3 needs-validation" novalidate method="POST">
 <!-- Modal -->
-<div class="modal fade" id="modalEditarDatosContacto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" show="true">
+<div class="modal fade" id="modalEditarDatosContacto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" show="true" data-keyboard="false">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Datos Contacto N°: <?php echo $_GET['idcontacto']?></h5>
+        <h5 class="modal-title" id="exampleModalLabel">Editar Contacto N°: <?php echo $_GET['idcontacto']?></h5>
           <a href="contacto.php">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
