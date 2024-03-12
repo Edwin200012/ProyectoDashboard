@@ -34,16 +34,9 @@ include_once("../route.php");
 
             $informacion = json_decode($respuesta);
 
-            if($informacion->actualizado)
-            {
-                header('Location: ../contacto.php?actualizacontacto=true');
-            }
-
-            else{
-                echo $respuesta;
-            }
-
-
+            //Operador ternario
+            $mostrar = ($informacion->actualizado) ? header('Location: ../contacto.php?actualizacontacto=true') : $respuesta;
+            echo $mostrar;
 
         }
 
