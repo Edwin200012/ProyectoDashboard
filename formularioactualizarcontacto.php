@@ -58,12 +58,7 @@
         </div>
       </div>
 
-
-          
           <input name="contacto" id="contacto" type="hidden" value="<?php echo $_GET['idcontacto']?>"/>
-          
-        
-
 
       <div class="modal-footer">
         <!-- Botones -->
@@ -83,7 +78,6 @@
   </main><!-- End #main -->
 
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   <!-- Agrega la CDN de jQuery y Popper.js (necesarios para que funcionen los componentes de Bootstrap) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -92,14 +86,14 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-  <script>
-    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  
+<script>
 // Función para mostrar el modal automáticamente al cargar la página
 $(document).ready(function(){
     $('#modalEditarDatosContacto').modal('show');
     obtenerDatosContactoPorId();
 });
-
 </script>
 
 <script>
@@ -110,18 +104,23 @@ $(document).ready(function(){
       jQuery.ajax({
         url:'controllers/buscarcontactoporid.php',
         type:'GET',
-        dataType:'JSON',
-        data:{id:contacto},
+        dataType:'Text',
+        // dataType:'JSON',
+        // data:{idcontacto:contacto},
+        data: JSON.stringify({idcontacto:contacto}),
         success: function (response){
           console.log("Datos Contacto: ", response);
-          document.getElementById('editarcorreocontacto').value = response[0].nombre;
+          document.getElementById('editarcorreocontacto').value = response[0].correo;
           document.getElementById('editartelefonocontacto').value = response[0].telefono;
           document.getElementById('editarubicacioncontacto').value = response[0].ubicacion;
+        },
+        error: function (xhr, status, error) {
+          console.error("Error en la solicitud AJAX:", error);
+          alert("Ocurrió un error al mostrar los datos. Por favor, inténtalo de nuevo más tarde.");
         }
-      }).fail(function (response) {
-        alert("Ocurrio un error al mostrar los datos");
       });
-  }
+    }  
+    
 </script>
 
 <a style="background-color: #3A1CA6;" href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -129,8 +128,5 @@ $(document).ready(function(){
 <?php
     include_once ("plantilla/scripts.php");
 ?>
-
-
 </body>
 </html>
-

@@ -3,9 +3,8 @@ include_once("../route.php");
 
 class Empresa{
     function MostrarDatosContactoPorId(){
-        $Id = $_GET["contacto"];
-        // $Id = $_GET["idcontacto"];
         // $Id = 26;
+        $Id = $_GET['idcontacto'];
         $url = Route::$url.Route::$mostrarDatosContactoPorId.$Id;
         var_dump($url);
         var_dump($Id);
@@ -23,7 +22,7 @@ class Empresa{
         curl_close($curl);
         $informacion = json_decode($respuesta);
 
-        if (isset($informacion->contacto[0]->id))
+        if (isset($informacion->contacto[0]->idcontacto))
         echo json_encode($informacion->contacto);
      else  
      echo json_encode("Error al mostrar");

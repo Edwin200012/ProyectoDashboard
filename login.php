@@ -93,6 +93,10 @@ if(isset($_POST["enviar"]) ){
 <html lang="en">
 
 <head>
+<!-- <script src="https://www.google.com/recaptcha/api.js?render=6LfrR5UpAAAAAM_c1hgwPpCKD10AkTxEIqhJeaL3"></script> -->
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 <?php
     include_once ("plantilla/head.php");
   ?>
@@ -209,9 +213,12 @@ if(isset($_POST["enviar"]) ){
                         <label class="form-check-label" for="rememberMe">Recordar</label>
                       </div>
                     </div> -->
+                    <div style="width: 50%; margin-right: 7%; margin-left: 7%;" class="pt-4 pb-2">
+                        <div class="g-recaptcha" data-sitekey="6LfrR5UpAAAAACsKlRxRSJnqSmdkjJM4trkFCi5k" data-callback="enableSubmit">></div>
+                    </div>
 
                     <div style="margin-top: 8%;" class="col-12">
-                      <button name="enviar" style="border-radius: 15px; background-color: #77E6F2; color: #000807; border-color: silver;" class="btn btn-primary w-100" type="submit">Login</button>
+                      <button id="enviar" name="enviar" style="border-radius: 15px; background-color: #77E6F2; color: #000807; border-color: silver;" class="btn btn-primary w-100" type="submit" disabled>Login</button>
                     </div>
                     <div class="col-12">
                       <p class="small mb-0">¿No tienes cuenta? <a href="registro.php">Crear una cuenta</a></p>
@@ -265,6 +272,12 @@ if(isset($_POST["enviar"]) ){
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <!-- Agrega la CDN de Bootstrap (JavaScript) -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+function enableSubmit() {
+    document.getElementById("enviar").disabled = false;
+}
+</script>
 
 </body>
 
