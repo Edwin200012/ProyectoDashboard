@@ -42,20 +42,26 @@
       
       </div>
       <div class="modal-body">
-        <div class="form-group">
-          <label for="editarcorreocontacto">Correo</label>
+        <div class="form-group" style=" margin-left: 1%;">
+          <i class="fa-solid fa-envelope" style="color: #74C0FC;"></i>
+          <label style="margin-left: .5%;" for="editarcorreocontacto">Correo</label>
           <input maxlength="50" minlength="3" style="border-radius: 15px;" type="email" class="form-control" id="editarcorreocontacto" name="editarcorreocontacto">
         </div>
-        <div class="form-group">
-          <label for="editartelefonocontacto">Teléfono</label>
+
+        <div class="form-group" style=" margin-left: 1%;">
+          <i class="fa-solid fa-mobile-screen-button" style="color: #74C0FC;"></i>
+          <label style="margin-left: .5%;" for="editartelefonocontacto">Teléfono</label>
           <input maxlength="10" minlength="10" style="border-radius: 15px;" type="tel" class="form-control" id="editartelefonocontacto" name="editartelefonocontacto">
           <div class="invalid-feedback">Por favor, ingrese el teléfono.</div>
         </div>
-        <div class="form-group">
-          <label for="editarubicacioncontacto">Ubicación</label>
+
+        <div class="form-group" style=" margin-left: 1%;">
+        <i class="fa-solid fa-location-dot" style="color: #74C0FC;"></i>
+          <label style="margin-left: .5%;" for="editarubicacioncontacto">Ubicación</label>
           <input maxlength="300" minlength="3" style="border-radius: 15px;" type="text" class="form-control" id="editarubicacioncontacto" name="editarubicacioncontacto">
           <div class="invalid-feedback">Por favor, ingrese la ubicación.</div>
         </div>
+
       </div>
 
           <input name="contacto" id="contacto" type="hidden" value="<?php echo $_GET['idcontacto']?>"/>

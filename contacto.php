@@ -61,19 +61,29 @@
 
 
   <div class="mb-3">
-    <label for="correocontacto" class="form-label">Correo</label>
+
+  <div style=" margin-left: 1%;">  
+    <i class="fa-solid fa-envelope" style="color: #74C0FC;"></i>
+    <label style="margin-left: .5%;" for="correocontacto" class="form-label">Correo</label>
+  </div>
     <input maxlength="50" minlength="3" style="border-radius: 15px;" type="email" class="form-control" id="correocontacto" name="correocontacto" required placeholder="correo@ejemplo.com">
     <div class="invalid-feedback">Por favor, ingrese el correo.</div>
   </div>
 
   <div class="mb-3">
-    <label for="telefonocontacto" class="form-label">Teléfono</label>
+  <div style=" margin-left: 1%;">
+    <i class="fa-solid fa-mobile-screen-button" style="color: #74C0FC;"></i>
+    <label style="margin-left: .5%;" for="telefonocontacto" class="form-label">Teléfono</label>
+  </div>
     <input maxlength="10" minlength="10" style="border-radius: 15px;" type="tel" class="form-control" id="telefonocontacto" name="telefonocontacto" required placeholder="8710000000">
     <div class="invalid-feedback">Por favor, ingrese el teléfono.</div>
   </div>
 
   <div class="mb-3">
-    <label for="ubicacioncontacto" class="form-label">Ubicación</label>
+  <div style=" margin-left: 1%;">  
+    <i class="fa-solid fa-location-dot" style="color: #74C0FC;"></i>
+    <label style="margin-left: .5%;" for="ubicacioncontacto" class="form-label">Ubicación</label>
+  </div>
     <input maxlength="300" minlength="3" style="border-radius: 15px;" type="text" class="form-control" id="ubicacioncontacto" name="ubicacioncontacto" required placeholder="Ej. Gomez Palacio, Dgo.">
     <div class="invalid-feedback">Por favor, ingrese la ubicación.</div>
   </div>
