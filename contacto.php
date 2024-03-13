@@ -50,7 +50,7 @@
             <div class="col-xxl-4 col-md-6">
               <div class="card info-card sales-card">
                 <div class="card-body">
-                  <h5 class="card-title">Contacto</span></h5>
+                  <h5 style=" margin-left: 2.8%;" class="card-title">Contacto</span></h5>
                 </div>
                 
 
