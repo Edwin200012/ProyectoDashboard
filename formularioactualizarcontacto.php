@@ -104,10 +104,8 @@ $(document).ready(function(){
       jQuery.ajax({
         url:'controllers/buscarcontactoporid.php',
         type:'GET',
-        dataType:'Text',
-        // dataType:'JSON',
-        // data:{idcontacto:contacto},
-        data: JSON.stringify({idcontacto:contacto}),
+        dataType:'JSON',
+        data:{idcontacto:contacto},
         success: function (response){
           console.log("Datos Contacto: ", response);
           document.getElementById('editarcorreocontacto').value = response[0].correo;
