@@ -39,6 +39,20 @@
     endif;
   ?>
 
+<?php
+      if(isset($_GET['actualizacontacto'])):
+
+  ?>
+
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    ¡Contacto actualizado exitosamente!
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+<?php
+    endif;
+  ?>
+
 <!-- ======= Titulo de inicio ======= -->
 <?php
     $titulo = "Contacto";
