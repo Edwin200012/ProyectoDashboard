@@ -106,14 +106,12 @@ $(document).ready(function(){
 
   function obtenerDatosContactoPorId(){
       let contacto = document.getElementById("contacto").value;
-      console.log("Id recuperado: " + contacto);
       jQuery.ajax({
         url:'controllers/buscarcontactoporid.php',
         type:'GET',
         dataType:'JSON',
         data:{idcontacto:contacto},
         success: function (response){
-          console.log("Datos Contacto: ", response);
           document.getElementById('editarcorreocontacto').value = response[0].correo;
           document.getElementById('editartelefonocontacto').value = response[0].telefono;
           document.getElementById('editarubicacioncontacto').value = response[0].ubicacion;
