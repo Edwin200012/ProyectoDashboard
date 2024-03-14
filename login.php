@@ -66,7 +66,7 @@
     .form-control:focus ~ .form-label,
     .form-control:not(:placeholder-shown) ~ .form-label {
       font-size: 0.85rem; /* Tamaño del texto del label cuando está arriba */
-      transform: translateY(-1.5em) scale(0.9); /* Mover el label arriba del input */
+      transform: translateY(-2.5em) scale(0.9); /* Mover el label arriba del input */
       color: #007bff; /* Cambia el color del texto del label cuando está enfocado o tiene contenido */
     }
   
@@ -93,6 +93,10 @@ if(isset($_POST["enviar"]) ){
 <html lang="en">
 
 <head>
+<!-- <script src="https://www.google.com/recaptcha/api.js?render=6LfrR5UpAAAAAM_c1hgwPpCKD10AkTxEIqhJeaL3"></script> -->
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 <?php
     include_once ("plantilla/head.php");
   ?>
@@ -184,16 +188,21 @@ if(isset($_POST["enviar"]) ){
                   
                   <div style="margin-top: 10%;" class="col-12">
                     <div class="input-container">
+                      
                       <input style="border-radius: 15px;" name="correo" maxlength="50" minlength="3" type="email" class="form-control" id="correo" placeholder=" " required>
-                      <label style="margin-left: 2%; margin-top:2%;" for="correo" class="form-label">Correo electrónico</label>
+                      
+                      <label style="margin-left: 2%; margin-top:2%;" for="correo" class="form-label"> <i class="fa-solid fa-envelope" style="color: #74C0FC;"></i> Correo electrónico</label>
+                      
                     <div class="invalid-feedback">Por favor, ingrese su correo.</div>
                     </div>
                  </div>      
 
+                 
+
                  <div style="margin-top: 8%;" class="col-12">
                     <div class="input-container">
                       <input style="border-radius: 15px;" name="contrasena" maxlength="50" minlength="3" type="password" class="form-control" id="contrasena" placeholder=" " required>
-                      <label style="margin-left: 2%; margin-top:2%;" for="contrasena" class="form-label">Contraseña</label>
+                      <label style="margin-left: 2%; margin-top:2%;" for="contrasena" class="form-label"> <i class="fa-solid fa-lock" style="color: #74C0FC;"></i> Contraseña</label>
                     <div class="invalid-feedback">Por favor, ingrese su contraseña.</div>
                     </div>
                  </div>  
@@ -204,9 +213,12 @@ if(isset($_POST["enviar"]) ){
                         <label class="form-check-label" for="rememberMe">Recordar</label>
                       </div>
                     </div> -->
+                    <div style="width: 50%; margin-right: 7%; margin-left: 7%;" class="pt-4 pb-2">
+                        <div class="g-recaptcha" data-sitekey="6LfrR5UpAAAAACsKlRxRSJnqSmdkjJM4trkFCi5k" data-callback="enableSubmit">></div>
+                    </div>
 
                     <div style="margin-top: 8%;" class="col-12">
-                      <button name="enviar" style="border-radius: 15px; background-color: #77E6F2; color: #000807; border-color: silver;" class="btn btn-primary w-100" type="submit">Login</button>
+                      <button id="enviar" name="enviar" style="border-radius: 15px; background-color: #77E6F2; color: #000807; border-color: silver;" class="btn btn-primary w-100" type="submit" disabled>Login</button>
                     </div>
                     <div class="col-12">
                       <p class="small mb-0">¿No tienes cuenta? <a href="registro.php">Crear una cuenta</a></p>
@@ -260,6 +272,12 @@ if(isset($_POST["enviar"]) ){
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <!-- Agrega la CDN de Bootstrap (JavaScript) -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+function enableSubmit() {
+    document.getElementById("enviar").disabled = false;
+}
+</script>
 
 </body>
 
