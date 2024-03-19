@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Include SweetAlert library -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome CSS for icons -->
@@ -180,19 +182,41 @@
         });
 
     function eliminarContacto(id){
-      alert("Se eliminara el contacto con Id: " + id);
-      jQuery.ajax({
-        url:'controllers/eliminarcontactoempresa.php',
-        type:'POST',
-        dataType:'JSON',
-        data:{id:id},
-        success: function (response){
-          alert("Se elimino el contacto con Id: " + id);
-          $('#'+id).remove();
-        }
-      }).fail(function (){
-        alert("Error");
-      });
+      Swal.fire({
+        title: 'Confirmar eliminación',
+      text: '¿Desea eliminar el contacto #' + id + ' ?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Eliminar',
+      cancelButtonText: 'Cancelar'
+    })
+    .then((result) => {
+        if (result.isConfirmed) {
+          //Codigo para eliminar el contacto
+          jQuery.ajax({
+          url:'controllers/eliminarcontactoempresa.php',
+          type:'POST',
+          dataType:'JSON',
+          data:{id:id},
+          success: function (response){
+            $('#'+id).remove();
+            swal.fire("El registro #" + id + " se elimino correctamente.", {
+                  icon: "info",
+             });
+         }
+        }).fail(function (){
+          alert("Error");
+        });
+
+          } else {
+              swal.fire("El registro #" + id + " no se elimino.", {
+                  icon: "info",
+             });
+          }
+     });
+      
     }
     
   </script>
