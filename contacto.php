@@ -182,15 +182,16 @@
         });
 
     function eliminarContacto(id){
-      Swal.fire({
-        title: 'Confirmar eliminación',
+    Swal.fire({
+      title: 'Confirmar eliminación',
       text: '¿Desea eliminar el contacto #' + id + ' ?',
-      icon: 'warning',
+      icon: 'question',
       showCancelButton: true,
       confirmButtonColor: '#d33',
       cancelButtonColor: '#3085d6',
-      confirmButtonText: 'Eliminar',
-      cancelButtonText: 'Cancelar'
+      confirmButtonText: 'Si, eliminar',
+      cancelButtonText: 'Cancelar',
+      showCloseButton: true
     })
     .then((result) => {
         if (result.isConfirmed) {
@@ -202,8 +203,12 @@
           data:{id:id},
           success: function (response){
             $('#'+id).remove();
-            swal.fire("El registro #" + id + " se elimino correctamente.", {
-                  icon: "info",
+            swal.fire({                 
+                  title: "Registro Eliminado",
+                  text: "El registro #" + id + " se elimino correctamente.",
+                  icon: "success",
+                  timer: 3000,
+                  showCloseButton: true
              });
          }
         }).fail(function (){
@@ -211,8 +216,12 @@
         });
 
           } else {
-              swal.fire("El registro #" + id + " no se elimino.", {
-                  icon: "info",
+              swal.fire({
+                  title:"Registro",
+                  text: "El registro #" + id + " no se elimino.",
+                  icon: "warning",
+                  timer: 3000,
+                  showCloseButton: true
              });
           }
      });
