@@ -58,7 +58,7 @@
 <!-- ======= Titulo de inicio ======= -->
 <?php
     $titulo = "Contacto";
-    include_once ("plantilla/titulo.php");
+    include_once ("plantilla/titulo.php");                                  
 ?>
 
 <section class="section dashboard">
@@ -191,7 +191,19 @@
       cancelButtonColor: '#3085d6',
       confirmButtonText: 'Si, eliminar',
       cancelButtonText: 'Cancelar',
-      showCloseButton: true
+      showCloseButton: true,
+      customClass: {
+    container: 'swal-container',
+    popup: 'swal-popup',
+    header: 'swal-header',
+    title: 'swal-title',
+    closeButton: 'swal-close-button',
+    icon: 'swal-icon',
+    content: 'swal-content',
+    actions: 'swal-actions',
+    confirmButton: 'swal-confirm-button',
+    cancelButton: 'swal-cancel-button',
+  }
     })
     .then((result) => {
         if (result.isConfirmed) {
