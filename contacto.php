@@ -183,8 +183,9 @@
 
     function eliminarContacto(id){
     Swal.fire({
+      background: '#f3f4f6',
       title: 'Confirmar eliminación',
-      text: '¿Desea eliminar el contacto #' + id + ' ?',
+      text: '¿Desea eliminar el contacto #' + id + '?',
       icon: 'question',
       showCancelButton: true,
       confirmButtonColor: '#d33',
@@ -193,16 +194,8 @@
       cancelButtonText: 'Cancelar',
       showCloseButton: true,
       customClass: {
-    container: 'swal-container',
-    popup: 'swal-popup',
-    header: 'swal-header',
-    title: 'swal-title',
-    closeButton: 'swal-close-button',
-    icon: 'swal-icon',
-    content: 'swal-content',
-    actions: 'swal-actions',
-    confirmButton: 'swal-confirm-button',
-    cancelButton: 'swal-cancel-button',
+    confirmButton: 'btn-rounded', // Clase para redondear el botón de confirmar
+    cancelButton: 'btn-rounded' // Clase para redondear el botón de cancelar
   }
     })
     .then((result) => {
@@ -215,7 +208,8 @@
           data:{id:id},
           success: function (response){
             $('#'+id).remove();
-            swal.fire({                 
+            swal.fire({
+                  background: '#f3f4f6',                 
                   title: "Registro Eliminado",
                   text: "El registro #" + id + " se elimino correctamente.",
                   icon: "success",
@@ -229,6 +223,7 @@
 
           } else {
               swal.fire({
+                  background: '#f3f4f6',
                   title:"Registro",
                   text: "El registro #" + id + " no se elimino.",
                   icon: "warning",
