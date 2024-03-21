@@ -35,19 +35,10 @@
     $rutasesion = $_SESSION['rutasesion'];
 ?>
 
-<!-- Include SweetAlert library -->
+
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
 <header style="border-style: ridge; background-color: #3A1CA6; border-color: aliceblue;  border-width: 0.3px;" id="header" class="header fixed-top d-flex align-items-center">
-
-<!-- Agrega el spinner y el overlay dentro de un div que esté oculto inicialmente -->
-<div id="spinner-cerrar-sesion" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 9999; display: flex; justify-content: center; align-items: center;">
-  <div class="spinner-border text-light" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
-</div>
 
    <div class="d-flex align-items-center justify-content-between">
       <a href="index.php" class="logo d-flex align-items-center">
@@ -121,23 +112,15 @@
   }
       }).then((result) => {
       if (result.isConfirmed) {
-         document.getElementById('spinner-cerrar-sesion').style.display = 'flex';
         setTimeout(function() {
           window.location.href = "./sesion/cerrarsesion.php";
         }, 1000);
-
-        
 }
       
     });
   });
 });
 
-// Ocultar el spinner y el overlay cuando la página haya cargado completamente
-window.addEventListener('load', function() {
-    document.getElementById('spinner-cerrar-sesion').style.display = 'none';
-  });
 
 </script>
-
 
