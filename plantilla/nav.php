@@ -2,6 +2,107 @@
   .dropdown-item:hover {
   cursor: pointer;
 }
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0); /* Fondo oscuro */
+  background-color: rgba(0,0,0,0.4); /* Negro con transparencia */
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% del top y centrado */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%; /* Podrías querer ajustar este valor */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+.close-button {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: bold; /* Hace que el texto sea en negritas */
+  font-size: 24px;
+}
+
+
+.modal-body {
+  margin-bottom: 15px;
+}
+
+.btn {
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 20px; /* Bordes redondeados */
+  margin: 4px 2px; /* Espacio alrededor de los botones */
+}
+
+.btn-confirmar {
+  background-color: #28a745;
+}
+
+.btn-cancelar {
+  background-color: #d33;
+}
+
+.btn-confirmar:hover,
+.btn-cancelar:hover {
+  opacity: 0.8;
+}
+
+.btn-rounded {
+  border-radius: 20px;
+}
+
+/* Ajuste de colores a tu solicitud */
+.modal-content {
+  background-color: #f3f4f6;
+}
+
+.modal-header, .modal-body {
+  color: #333;
+}
+
+
 </style>
 <?php 
     session_start();
@@ -36,9 +137,27 @@
 ?>
 
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
 <header style="border-style: ridge; background-color: #3A1CA6; border-color: aliceblue;  border-width: 0.3px;" id="header" class="header fixed-top d-flex align-items-center">
+
+<!-- El modal -->
+<div id="miModal" class="modal">
+
+  <!-- Contenido del modal -->
+  <div class="modal-content">
+    <div class="modal-header">
+      ¿Desea cerrar sesión?
+    </div>
+    <div class="modal-body">
+      <p>Esta acción cerrará su sesión actual.</p>
+    </div>
+    <div class="modal-footer">
+      <button id="confirmar" class="btn btn-confirmar btn-rounded">Si, cerrar sesión</button>
+      <button id="cancelar" class="btn btn-cancelar btn-rounded">Cancelar</button>
+    </div>
+  </div>
+
+</div>
+
 
    <div class="d-flex align-items-center justify-content-between">
       <a href="index.php" class="logo d-flex align-items-center">
@@ -78,7 +197,7 @@
               <a class="dropdown-item d-flex align-items-center">
               <!-- <a class="dropdown-item d-flex align-items-center"> -->
                 <i class="bi bi-box-arrow-right"></i>
-                <span id="btnCerrarSesion">Cerrar Sesión</span>
+                <span id="btnMostrarModal">Cerrar Sesión</span>
               </a>
             </li>
             <!-- <button id="btnCerrarSesion" class="btn btn-primary">Mostrar Alerta</button> -->
@@ -92,35 +211,44 @@
   </header><!-- End Header -->
 
   
-<script>
-  $(document).ready(function() {
-    // Agrega un controlador de eventos clic al botón
-    $('#btnCerrarSesion').click(function() {
-      // Muestra el SweetAlert
-      Swal.fire({
-      background: '#f3f4f6',
-      title: '¿Desea cerrar sesión?',
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#28a745',
-      cancelButtonColor: '#3085d6',
-      confirmButtonText: 'Si, cerrar sesión',
-      cancelButtonText: 'Cancelar',
-      customClass: {
-    confirmButton: 'btn-rounded', // Clase para redondear el botón de confirmar
-    cancelButton: 'btn-rounded' // Clase para redondear el botón de cancelar
-  }
-      }).then((result) => {
-      if (result.isConfirmed) {
-        setTimeout(function() {
-          window.location.href = "./sesion/cerrarsesion.php";
-        }, 1000);
+
+  <script>
+
+
+// Obtiene el modal
+var modal = document.getElementById("miModal");
+
+// Obtiene el botón que abre el modal
+var btnMostrarModal = document.getElementById("btnMostrarModal");
+
+// Obtiene el elemento <span> que cierra el modal
+var span = document.getElementsByClassName("close-button")[0];
+
+// Cuando el usuario hace clic en el botón, abre el modal 
+btnMostrarModal.onclick = function() {
+  modal.style.display = "block";
 }
-      
-    });
-  });
-});
+
+// Cuando el usuario hace clic en cualquier lugar fuera del modal, lo cierra
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Manejar confirmación
+document.getElementById("confirmar").onclick = function() {
+  // Lógica para confirmar acción
+  modal.style.display = "none";
+  setTimeout(function() {
+          window.location.href = "./sesion/cerrarsesion.php";
+        }, 500);
+};
+
+// Manejar cancelación
+document.getElementById("cancelar").onclick = function() {
+  modal.style.display = "none";
+};
 
 
 </script>
-
