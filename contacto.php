@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Include SweetAlert library -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome CSS for icons -->
@@ -56,7 +58,7 @@
 <!-- ======= Titulo de inicio ======= -->
 <?php
     $titulo = "Contacto";
-    include_once ("plantilla/titulo.php");
+    include_once ("plantilla/titulo.php");                                  
 ?>
 
 <section class="section dashboard">
@@ -180,19 +182,57 @@
         });
 
     function eliminarContacto(id){
-      alert("Se eliminara el contacto con Id: " + id);
-      jQuery.ajax({
-        url:'controllers/eliminarcontactoempresa.php',
-        type:'POST',
-        dataType:'JSON',
-        data:{id:id},
-        success: function (response){
-          alert("Se elimino el contacto con Id: " + id);
-          $('#'+id).remove();
-        }
-      }).fail(function (){
-        alert("Error");
-      });
+    Swal.fire({
+      background: '#f3f4f6',
+      title: 'Confirmar eliminación',
+      text: '¿Desea eliminar el contacto #' + id + '?',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Si, eliminar',
+      cancelButtonText: 'Cancelar',
+      showCloseButton: true,
+      customClass: {
+    confirmButton: 'btn-rounded', // Clase para redondear el botón de confirmar
+    cancelButton: 'btn-rounded' // Clase para redondear el botón de cancelar
+  }
+    })
+    .then((result) => {
+        if (result.isConfirmed) {
+          //Codigo para eliminar el contacto
+          jQuery.ajax({
+          url:'controllers/eliminarcontactoempresa.php',
+          type:'POST',
+          dataType:'JSON',
+          data:{id:id},
+          success: function (response){
+            $('#'+id).remove();
+            swal.fire({
+                  background: '#f3f4f6',                 
+                  title: "Registro Eliminado",
+                  text: "El registro #" + id + " se elimino correctamente.",
+                  icon: "success",
+                  timer: 3000,
+                  showCloseButton: true
+             });
+         }
+        }).fail(function (){
+          alert("Error");
+        });
+
+          } else {
+              swal.fire({
+                  background: '#f3f4f6',
+                  title:"Registro",
+                  text: "El registro #" + id + " no se elimino.",
+                  icon: "warning",
+                  timer: 3000,
+                  showCloseButton: true
+             });
+          }
+     });
+      
     }
     
   </script>
