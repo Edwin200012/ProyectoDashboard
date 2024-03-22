@@ -163,36 +163,47 @@
   
 
   <script>
-
-
 // Obtiene el modal
 var modal = document.getElementById("miModal");
 
 // Obtiene el botón que abre el modal
 var btnMostrarModal = document.getElementById("btnMostrarModal");
 
-// Obtiene el elemento <span> que cierra el modal
-var span = document.getElementsByClassName("close-button")[0];
-
 // Cuando el usuario hace clic en el botón, abre el modal 
 btnMostrarModal.onclick = function() {
   modal.style.display = "block";
+  modal.classList.add("show-zoom");
 }
-
-
 
 // Manejar confirmación
 document.getElementById("btnConfirmar").onclick = function() {
   // Lógica para confirmar acción
-  modal.style.display = "none";
+  modal.classList.remove("show-zoom");
   setTimeout(function() {
-          window.location.href = "./sesion/cerrarsesion.php";
-        }, 750);
+    window.location.href = "./sesion/cerrarsesion.php";
+  }, 750);
 };
 
 // Manejar cancelación
 document.getElementById("btnCancelar").onclick = function() {
-  modal.style.display = "none";
+  modal.classList.remove("show-zoom");
+  modal.style.display = "none"; // Ocultar el modal
+};
+
+
+// Dar click fuera del modal
+window.onclick = function(event) {
+  if (event.target === modal) {
+    // Aplicar un efecto de zoom al modal
+    modal.style.transition = "transform 0.5s";
+    modal.style.transform = "scale(1.1)";
+
+    // Volver al tamaño normal después de 0.5 segundos
+    setTimeout(function() {
+      modal.style.transition = "transform 0.5s"; // Transicion al tamaño normal
+      modal.style.transform = "scale(1)";
+    }, 500);
+  }
 };
 
 
