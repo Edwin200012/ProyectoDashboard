@@ -3,7 +3,7 @@
   cursor: pointer;
 }
 
-.modal {
+#miModal {
   display: none;
   position: fixed;
   z-index: 1000;
@@ -12,61 +12,35 @@
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgb(0,0,0); /* Fondo oscuro */
   background-color: rgba(0,0,0,0.4); /* Negro con transparencia */
 }
 
-.modal-content {
+#miModal .modal-content {
   position: relative;
-  background-color: #fefefe;
+  background-color: #f3f4f6;
   margin: 15% auto; /* 15% del top y centrado */
   padding: 20px;
   border: 1px solid #888;
-  width: 30%; /* Podrías querer ajustar este valor */
+  width: 30%; /* Puede ajustarse según necesidad */
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  -webkit-animation-name: animatetop;
-  -webkit-animation-duration: 0.4s;
-  animation-name: animatetop;
-  animation-duration: 0.4s
 }
 
-@-webkit-keyframes animatetop {
-  from {top:-300px; opacity:0} 
-  to {top:0; opacity:1}
-}
-
-@keyframes animatetop {
-  from {top:-300px; opacity:0}
-  to {top:0; opacity:1}
-}
-
-.close-button {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close-button:hover,
-.close-button:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.modal-header {
+#modalHeader {
   color: #333;
   margin-bottom: 15px;
-  font-weight: bold; /* Hace que el texto sea en negritas */
-  font-size: 24px;
+  font-weight: bold; /* Texto en negritas */
+  font-size: 24px; /* Tamaño de letra más grande */
 }
 
-
-.modal-body {
-  margin-bottom: 15px;
+#miModal .btn-confirmar {
+  background-color: #28a745;
 }
 
-.btn {
+#miModal .btn-cancelar {
+  background-color: #d33;
+}
+
+#miModal .btn {
   border: none;
   color: white;
   padding: 10px 20px;
@@ -76,30 +50,8 @@
   margin: 4px 2px; /* Espacio alrededor de los botones */
 }
 
-.btn-confirmar {
-  background-color: #28a745;
-}
-
-.btn-cancelar {
-  background-color: #d33;
-}
-
-.btn-confirmar:hover,
-.btn-cancelar:hover {
+#miModal .btn:hover {
   opacity: 0.8;
-}
-
-.btn-rounded {
-  border-radius: 20px;
-}
-
-/* Ajuste de colores a tu solicitud */
-.modal-content {
-  background-color: #f3f4f6;
-}
-
-.modal-header, .modal-body {
-  color: #333;
 }
 
 
@@ -139,31 +91,22 @@
 
 <header style="border-style: ridge; background-color: #3A1CA6; border-color: aliceblue;  border-width: 0.3px;" id="header" class="header fixed-top d-flex align-items-center">
 
-<!-- Agrega el spinner y el overlay dentro de un div que esté oculto inicialmente -->
-<div id="spinner-cerrar-sesion" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 9999; display: flex; justify-content: center; align-items: center;">
-  <div class="spinner-border text-light" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
-</div>
 
-<!-- El modal -->
 <div id="miModal" class="modal">
-
-  <!-- Contenido del modal -->
   <div class="modal-content">
-    <div class="modal-header">
+    <div id="modalHeader" class="modal-header">
       ¿Desea cerrar sesión?
     </div>
     <div class="modal-body">
-      <p>Esta acción cerrará su sesión actual.</p>
+      <p>Esta acción cerrará la sesión actual del Usuario: <?php echo $usuariosesion ?>.</p>
     </div>
     <div class="modal-footer">
-      <button id="confirmar" class="btn btn-confirmar btn-rounded">Si, cerrar sesión</button>
-      <button id="cancelar" class="btn btn-cancelar btn-rounded">Cancelar</button>
+      <button id="btnConfirmar" class="btn btn-confirmar">Si, cerrar sesión</button>
+      <button id="btnCancelar" class="btn btn-cancelar">Cancelar</button>
     </div>
   </div>
-
 </div>
+
 
 
    <div class="d-flex align-items-center justify-content-between">
@@ -236,31 +179,22 @@ btnMostrarModal.onclick = function() {
   modal.style.display = "block";
 }
 
-// Cuando el usuario hace clic en cualquier lugar fuera del modal, lo cierra
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+
 
 // Manejar confirmación
-document.getElementById("confirmar").onclick = function() {
+document.getElementById("btnConfirmar").onclick = function() {
   // Lógica para confirmar acción
   modal.style.display = "none";
-  document.getElementById('spinner-cerrar-sesion').style.display = 'flex';
   setTimeout(function() {
           window.location.href = "./sesion/cerrarsesion.php";
         }, 750);
 };
 
 // Manejar cancelación
-document.getElementById("cancelar").onclick = function() {
+document.getElementById("btnCancelar").onclick = function() {
   modal.style.display = "none";
 };
 
-// Ocultar el spinner y el overlay cuando la página haya cargado completamente
-window.addEventListener('load', function() {
-    document.getElementById('spinner-cerrar-sesion').style.display = 'none';
-  });
+
 
 </script>
