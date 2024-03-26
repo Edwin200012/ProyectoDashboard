@@ -15,15 +15,15 @@ $mail = new PHPMailer(true);
 
 try {
     //Server settings
-$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-$mail->isSMTP();                                            //Send using SMTP
-$mail->Host       = 'smtp.elasticemail.com';                     //Set the SMTP server to send through
-$mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-$mail->Username   = 'edwinvazquezcal12@gmail.com';                     //SMTP username
-$mail->Password   = 'EC322809F8A153B2A637C022C1923DD40F1B';                               //SMTP password
-$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;            //Enable implicit TLS encryption
-//$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-$mail->Port       = 2525;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = 'smtp.elasticemail.com';                     //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = 'edwinvazquezcal12@gmail.com';                     //SMTP username
+    $mail->Password   = 'EC322809F8A153B2A637C022C1923DD40F1B';                               //SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;            //Enable implicit TLS encryption
+    //$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $mail->Port       = 2525;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Destinatarios
     $mail->setFrom('edwinvazquezcal12@gmail.com', 'Remitente');
