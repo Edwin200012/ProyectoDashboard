@@ -1,6 +1,12 @@
 <?php
 session_start();
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require 'vendor/autoload.php';
+
 include_once("../route.php");
     class Usuario{
         function EditarContrasenaUsuario(){
