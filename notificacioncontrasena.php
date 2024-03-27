@@ -26,10 +26,10 @@ try {
     $mail->setFrom('edwinvazquezcal12@gmail.com', 'Remitente');
 
     //Añadir un destinatario
-    $mail->addAddress('fawigek423@glaslack.com');   
-
+    // $mail->addAddress('fawigek423@glaslack.com');   
+    $mail->addAddress((isset($_SESSION['correosesion']) ? $_SESSION['correosesion'] : 'Desconocido'));
     //Contenido
-    $mail->isHTML(true);                                  //Setear formato de email a HTML
+    $mail->isHTML(true);
     $mail->Subject = 'Cambio de contrasena del Usuario: ' . (isset($_SESSION['usuariosesion']) ? $_SESSION['usuariosesion'] : 'Desconocido');
     $mail->Body    = 'Este es un correo electronico para confirmar que tu contrasena ha sido cambiada exitosamente. Si no hiciste este cambio, por favor contacta a soporte.';
     $mail->AltBody = 'Este es un correo electonico para confirmar que tu contrasena ha sido cambiada exitosamente. Si no hiciste este cambio, por favor contacta a soporte.';
