@@ -125,11 +125,6 @@
     </div>
 </div>
 
-<a href="notificacioncontrasena.php">
-  <button type="button">Enviar Correo</button>
-</a>
-
-
 <!-- Tabla -->
     <table class="table" style="border-radius: 10px; overflow: hidden; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); margin-top: 1%;">
       <thead style="background-color: #007bff; color: #fff; border-color: #007bff;">
