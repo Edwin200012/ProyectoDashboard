@@ -77,7 +77,6 @@ $dotenv->load();
         //$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mail->Port       = $_ENV['PORT'];                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
-        //Destinatarios
         $mail->setFrom('edwinvazquezcal12@gmail.com', 'Remitente');
 
         //Añadir un destinatario
