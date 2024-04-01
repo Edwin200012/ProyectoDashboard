@@ -12,12 +12,13 @@ class Route{
 
     //Empresa
     //Contacto
-    static $enviarDatosContacto = "Empresa/Contacto";
+    static $enviarDatosContacto = "Empresa/InsertarContacto";
     static $mostrarDatosContacto = "Empresa/MostrarDatosContacto";
     static $editarContacto = "Empresa/EditarContacto";
     static $eliminarContacto = "Empresa/EliminarContacto?idcontacto=";
     static $mostrarDatosContactoPorId = "Empresa/MostrarDatosContactoPorId?idcontacto=";
     //Equipo
     static $mostrarDatosEquipo = "Empresa/MostrarDatosEquipo";
+    static $enviarDatosEquipo = "Empresa/InsertarEquipo";
 }
 ?>
