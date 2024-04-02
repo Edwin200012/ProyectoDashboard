@@ -188,12 +188,69 @@
             datos.forEach((post, i) => {
               $('#tBody').append('<tr id="'+post.id+'"><td>'+post.id+'</td><td>'+post.nombre+'</td><td>'+post.puesto+'</td><td>'+post.descripcion+'</td><td>'+post.imagen+'</td><td>'+post.redes_Sociales+'</td>  <td><a title="Editar Registro" type="button" href="formularioactualizarequipo.php?idequipo='+post.id+'" class="btn btn-outline-warning"> <i class="fa-solid fa-pen-to-square" "></i></a></td>  <td><button title="Eliminar Registro" type="button" class="btn btn-outline-danger btneliminar" id="'+post.id+'"> <i class="fas fa-trash"></i> </button></td> </tr>');
             });
-            console.log(datos);
         }
       }).fail(function () {
         alert("Error");
       });
     }
+    $("#tBody").on("click",".btneliminar",function() {
+            let id = $(this).attr('id');
+            eliminarEquipo(id);
+        });
+
+        function eliminarEquipo(id){
+          Swal.fire({
+            background: '#f3f4f6',
+            title: 'Confirmar eliminación',
+            text: '¿Desea eliminar el integrante del equipo #' + id + '?',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Si, eliminar',
+            cancelButtonText: 'Cancelar',
+            showCloseButton: true,
+            customClass: {
+              confirmButton: 'btn-rounded', // Clase para redondear el botón de confirmar
+              cancelButton: 'btn-rounded' // Clase para redondear el botón de cancelar
+             }
+          })
+            .then((result) =>{
+              if(result.isConfirmed){
+                jQuery.ajax({
+                  url:'controllers/eliminarequipo.php',
+                  type: 'POST',
+                  dataType: 'JSON',
+                  data:{id:id},
+                  success: function (response){
+                    $('#'+id).remove();
+                    swal.fire({
+                          background: '#f3f4f6',                 
+                          title: "Registro Eliminado",
+                          text: "El registro #" + id + " se elimino correctamente.",
+                          icon: "success",
+                          timer: 3000,
+                          showCloseButton: true
+                    });
+                  }
+                }).fail(function (){
+                  alert("Error");
+                });
+
+              } else {
+                swal.fire({
+                  background: '#f3f4f6',
+                  title:"Registro",
+                  text: "El registro #" + id + " no se elimino.",
+                  icon: "warning",
+                  timer: 3000,
+                  showCloseButton: true
+                });
+              }
+            });
+          }
+        
+
   </script>
 
 
