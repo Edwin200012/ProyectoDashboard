@@ -101,9 +101,6 @@ $(document).ready(function(){
     $('#modalEditarDatosContacto').modal('show');
     obtenerDatosContactoPorId();
 });
-</script>
-
-<script>
 
   function obtenerDatosContactoPorId(){
       let contacto = document.getElementById("contacto").value;
