@@ -109,32 +109,32 @@
 // Función para mostrar el modal automáticamente al cargar la página
 $(document).ready(function(){
   $('#modalEditarDatosEquipo').modal('show');
-//   obtenerDatosContactoPorId();
+  obtenerDatosEquipoIntegrantePorId();
 });
+
+
+function obtenerDatosEquipoIntegrantePorId(){
+      let equipo = document.getElementById("equipo").value;
+      jQuery.ajax({
+        url:'controllers/buscarequipointegranteporid.php',
+        type:'GET',
+        dataType:'JSON',
+        data:{idequipo:equipo},
+        success: function (response){
+          document.getElementById('editar_nombre_equipo').value = response[0].nombre;
+          document.getElementById('editar_puesto_equipo').value = response[0].puesto;
+          document.getElementById('editar_descripcion_equipo').value = response[0].descripcion;
+          document.getElementById('editar_imagen_equipo').value = response[0].imagen;
+          document.getElementById('editar_redes_sociales_equipo').value = response[0].redes_Sociales;
+        },
+        error: function (xhr, status, error) {
+          console.error("Error en la solicitud AJAX:", error);
+          alert("Ocurrió un error al mostrar los datos. Por favor, inténtalo de nuevo más tarde.");
+        }
+      });
+    }  
+
 </script>
-
-<!-- <script>
-
-function obtenerDatosContactoPorId(){
-    let contacto = document.getElementById("contacto").value;
-    jQuery.ajax({
-      url:'controllers/buscarcontactoporid.php',
-      type:'GET',
-      dataType:'JSON',
-      data:{idcontacto:contacto},
-      success: function (response){
-        document.getElementById('editarcorreocontacto').value = response[0].correo;
-        document.getElementById('editartelefonocontacto').value = response[0].telefono;
-        document.getElementById('editarubicacioncontacto').value = response[0].ubicacion;
-      },
-      error: function (xhr, status, error) {
-        console.error("Error en la solicitud AJAX:", error);
-        alert("Ocurrió un error al mostrar los datos. Por favor, inténtalo de nuevo más tarde.");
-      }
-    });
-  }  
-  
-</script> -->
 
 <a style="background-color: #3A1CA6;" href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
