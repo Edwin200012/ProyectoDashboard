@@ -11,10 +11,17 @@ class Route{
     // static $editarUsuario = "Usuario/Editar?idusuario=";
 
     //Empresa
-    static $enviarDatosContacto = "Empresa/Contacto";
+    //Contacto
+    static $enviarDatosContacto = "Empresa/InsertarContacto";
     static $mostrarDatosContacto = "Empresa/MostrarDatosContacto";
     static $editarContacto = "Empresa/EditarContacto";
     static $eliminarContacto = "Empresa/EliminarContacto?idcontacto=";
     static $mostrarDatosContactoPorId = "Empresa/MostrarDatosContactoPorId?idcontacto=";
+    //Equipo
+    static $mostrarDatosEquipo = "Empresa/MostrarDatosEquipo";
+    static $enviarDatosEquipo = "Empresa/InsertarEquipo";
+    static $editarEquipo = "Empresa/EditarEquipo";
+    static $mostrarDatosEquipoIntegrantePorId = "Empresa/MostrarDatosEquipoIntegrantePorId?idequipo=";
+    static $eliminarEquipo = "Empresa/EliminarEquipo?idequipo=";
 }
 ?>

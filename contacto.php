@@ -106,7 +106,7 @@
   </div>
 
   <div class="text-center">
-    <button id="botonActualizar" style="width:300px; height:40px; border-radius: 30px; background-color: #77E6F2; color: #000807; border-color: silver;" class="btn btn-primary" type="submit">Enviar</button>
+    <button id="botonEnviarContacto" style="width:300px; height:40px; border-radius: 30px; background-color: #77E6F2; color: #000807; border-color: silver;" class="btn btn-primary" type="submit">Enviar</button>
   </div>
 </form>
      </div>
