@@ -46,6 +46,7 @@
           <i class="fa-solid fa-envelope" style="color: #74C0FC;"></i>
           <label style="margin-left: .5%;" for="editarcorreocontacto">Correo</label>
           <input maxlength="50" minlength="3" style="border-radius: 15px;" type="email" class="form-control" id="editarcorreocontacto" name="editarcorreocontacto">
+          <div class="invalid-feedback">Por favor, ingrese el correo.</div>
         </div>
 
         <div class="form-group" style=" margin-left: 1%;">
