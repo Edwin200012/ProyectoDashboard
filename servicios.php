@@ -41,6 +41,21 @@
     endif;
   ?>
 
+
+<?php
+      if(isset($_GET['actualizaservicios'])):
+
+  ?>
+
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    ¡Servicio actualizado exitosamente!
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+<?php
+    endif;
+  ?>
+
 <!-- ======= Titulo de inicio ======= -->
 <?php
     $titulo = "Servicios";
@@ -64,7 +79,7 @@
 
   <div class="mb-3">
   <div style=" margin-left: 1%;">  
-    <i class="fa-solid fa-user" style="color: #74C0FC;"></i>
+    <i class="fa-solid fa-clipboard-list" style="color: #74C0FC;"></i>
     <label style="margin-left: .5%;" for="nombre_servicios" class="form-label">Nombre del Servicio</label>
   </div>
     <input maxlength="50" minlength="3" style="border-radius: 15px;" type="text" class="form-control" id="nombre_servicios" name="nombre_servicios" required placeholder="Nombre del Servicio">
@@ -151,7 +166,7 @@
           $('#tBody').empty();
           let datos = response.registroservicios
           datos.forEach((post, i) => {
-              $('#tBody').append('<tr id="'+post.id+'"><td>'+post.id+'</td><td>'+post.nombre+'</td><td>'+post.descripcion+'</td><td>'+post.precio+'</td>  <td><a title="Editar Registro" type="button" href=".php?idservicio='+post.id+'" class="btn btn-outline-warning"> <i class="fa-solid fa-pen-to-square" "></i></a></td>  <td><button title="Eliminar Registro" type="button" class="btn btn-outline-danger btneliminar" id="'+post.id+'"> <i class="fas fa-trash"></i> </button></td> </tr>');
+              $('#tBody').append('<tr id="'+post.id+'"><td>'+post.id+'</td><td>'+post.nombre+'</td><td>'+post.descripcion+'</td><td>'+post.precio+'</td>  <td><a title="Editar Registro" type="button" href="formularioactualizarservicios.php?idservicio='+post.id+'" class="btn btn-outline-warning"> <i class="fa-solid fa-pen-to-square" "></i></a></td>  <td><button title="Eliminar Registro" type="button" class="btn btn-outline-danger btneliminar" id="'+post.id+'"> <i class="fas fa-trash"></i> </button></td> </tr>');
             });
             console.log(datos);
         }

@@ -26,5 +26,6 @@ class Route{
     //Servicios
     static $mostrarDatosServicios = "Empresa/MostrarDatosServicios";
     static $enviarDatosServicios = "Empresa/InsertarServicios";
+    static $editarServicios = "Empresa/EditarServicios";
 }
 ?>
