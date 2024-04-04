@@ -106,7 +106,6 @@ function obtenerDatosServiciosPorId(){
         dataType:'JSON',
         data:{idservicios:servicios},
         success: function (response){
-          console.log(response);
           document.getElementById('editar_nombre_servicios').value = response[0].nombre;
           document.getElementById('editar_descripcion_servicios').value = response[0].descripcion;
           document.getElementById('editar_precio_servicios').value = response[0].precio;
