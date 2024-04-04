@@ -30,7 +30,9 @@
               <div class="card info-card sales-card">
                 <div class="card-body">
                   <h5 class="card-title">Nosotros</h5>
-                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam consectetur quidem adipisci obcaecati fugit sed rerum ducimus aperiam illum, aspernatur sunt aut excepturi a temporibus quia expedita consequuntur eaque minima.</p>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                    Totam consectetur quidem adipisci obcaecati fugit sed rerum ducimus aperiam illum,
+                     aspernatur sunt aut excepturi a temporibus quia expedita consequuntur eaque minima.</p>
                 </div>
               </div>
             </div>
