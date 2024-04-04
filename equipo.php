@@ -249,18 +249,39 @@
               }
             });
           }
-        
-
+          
   </script>
 
+  <!-- Agrega la CDN de jQuery y Popper.js (necesarios para que funcionen los componentes de Bootstrap) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <!-- Agrega la CDN de jQuery y Popper.js (necesarios para que funcionen los componentes de Bootstrap) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <!-- Agrega la CDN de Bootstrap (JavaScript) -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script>
+      // Función para filtrar la tabla según el texto ingresado en la barra de búsqueda
+      $(document).ready(function(){
+      $("#searchInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#tBody tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+
+      // Agregar efecto de cambio de color al pasar el mouse sobre las celdas
+      $("#tBody tr").hover(
+        function() {
+          $(this).css("background-color", "#cce5ff");
+        },
+        function() {
+          $(this).css("background-color", "");
+        }
+      );
+    });
+  </script>
 
 
 <!-- ======= Footer ======= -->
