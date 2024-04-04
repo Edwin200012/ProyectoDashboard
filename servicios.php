@@ -172,8 +172,66 @@
       }).fail(function () {
         alert("Error");
       });
-      
     }
+
+    $("#tBody").on("click", ".btneliminar", function() {
+      let id = $(this).attr('id');
+      eliminarServicios(id);
+    });
+
+    function eliminarServicios(id){
+      Swal.fire({
+        background: '#f3f4f6',
+            title: 'Confirmar eliminación',
+            text: '¿Desea eliminar el servicio #' + id + '?',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Si, eliminar',
+            cancelButtonText: 'Cancelar',
+            showCloseButton: true,
+            customClass: {
+              confirmButton: 'btn-rounded', // Clase para redondear el botón de confirmar
+              cancelButton: 'btn-rounded' // Clase para redondear el botón de cancelar
+             }
+      })
+      .then((result) =>{
+        if(result.isConfirmed){
+          jQuery.ajax({
+            url:'controllers/eliminarservicios.php',
+            type: 'POST',
+            dataType: 'JSON',
+            data:{id:id},
+            success: function (response){
+              $('#'+id).remove();
+              swal.fire({
+                    background: '#f3f4f6',                 
+                    title: "Registro Eliminado",
+                    text: "El registro #" + id + " se elimino correctamente.",
+                    icon: "success",
+                    timer: 3000,
+                    showCloseButton: true
+              });
+            }
+          }).fail(function (){
+            alert("Error");
+          });
+
+        } else {
+          swal.fire({
+                  background: '#f3f4f6',
+                  title:"Registro",
+                  text: "El registro #" + id + " no se elimino.",
+                  icon: "warning",
+                  timer: 3000,
+                  showCloseButton: true
+                });
+        }
+
+      });
+    }
+
   </script>
 
 
