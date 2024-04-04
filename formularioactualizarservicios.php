@@ -31,7 +31,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Editar Servicio N°: <?php echo $_GET['idservicio']?></h5>
+        <h5 class="modal-title" id="exampleModalLabel">Editar Servicio N°: <?php echo $_GET['idservicios']?></h5>
           <a href="servicios.php">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
@@ -61,7 +61,7 @@
           <div class="invalid-feedback">Por favor, ingrese el precio del servicio.</div>
         </div>
 
-          <input name="servicios" id="servicios" type="hidden" value="<?php echo $_GET['idservicio']?>"/>
+          <input name="servicios" id="servicios" type="hidden" value="<?php echo $_GET['idservicios']?>"/>
 
       <div class="modal-footer">
         <!-- Botones -->
@@ -95,7 +95,28 @@
 // Función para mostrar el modal automáticamente al cargar la página
 $(document).ready(function(){
   $('#modalEditarDatosServicios').modal('show');
+  obtenerDatosServiciosPorId();
 });
+
+function obtenerDatosServiciosPorId(){
+  let servicios = document.getElementById("servicios").value;
+      jQuery.ajax({
+        url:'controllers/buscarserviciosporid.php',
+        type:'GET',
+        dataType:'JSON',
+        data:{idservicios:servicios},
+        success: function (response){
+          console.log(response);
+          document.getElementById('editar_nombre_servicios').value = response[0].nombre;
+          document.getElementById('editar_descripcion_servicios').value = response[0].descripcion;
+          document.getElementById('editar_precio_servicios').value = response[0].precio;
+        },
+        error: function (xhr, status, error) {
+          console.error("Error en la solicitud AJAX:", error);
+          alert("Ocurrió un error al mostrar los datos. Por favor, inténtalo de nuevo más tarde.");
+        }
+      });
+}
 
 </script>
 
