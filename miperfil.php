@@ -227,8 +227,8 @@
                     <label for="nuevacontrasena" class="col-md-4 col-lg-3 col-form-label">Nueva Contraseña</label>
                     <div class="col-md-8 col-lg-9" style="width: 90%;">
                     <div class="input-group">
-                    <input maxlength="50" minlength="3" name="nuevacontrasena" style="border-radius: 15px;" type="password" class="form-control" id="nuevacontrasena" required placeholder="Nueva Contraseña">
-                    <button class="btn btn-outline-secondary" type="button" id="botonMostrarOcultarNC">
+                    <input maxlength="50" minlength="3" name="nuevacontrasena" style="border-radius: 15px 0px 0px 15px;" type="password" class="form-control" id="nuevacontrasena" required placeholder="Nueva Contraseña">
+                    <button style="border-color: lightgray; border-radius: 0px 15px 15px 0px;" class="btn btn-outline-secondary" type="button" id="botonMostrarOcultarNC">
                     <i class="bi bi-eye-slash"></i>
                     </button>
                   </div>
@@ -241,8 +241,8 @@
                       <label for="confirmarcontrasena" class="col-md-4 col-lg-3 col-form-label">Confirmar Contraseña</label>
                       <div class="col-md-8 col-lg-9" style="width: 90%;">
                       <div class="input-group">
-                      <input maxlength="50" minlength="3" name="confirmarcontrasena" style="border-radius: 15px;" type="password" class="form-control" id="confirmarcontrasena" required placeholder="Confirmar Contraseña">
-                      <button class="btn btn-outline-secondary" type="button" id="botonMostrarOcultarCC">
+                      <input maxlength="50" minlength="3" name="confirmarcontrasena" style="border-radius: 15px 0px 0px 15px;" type="password" class="form-control" id="confirmarcontrasena" required placeholder="Confirmar Contraseña">
+                      <button style="border-color: lightgray; border-radius: 0px 15px 15px 0px;" class="btn btn-outline-secondary" type="button" id="botonMostrarOcultarCC">
                       <i class="bi bi-eye-slash"></i>
                       </button>
                       <div class="invalid-feedback">Por favor, confirme la contraseña.</div>  
