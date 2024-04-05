@@ -223,18 +223,28 @@
                   <!-- Change Password Form -->
                   <form action="controllers/editarcontrasenausuario.php" class="row g-3 needs-validation" novalidate method="POST">
 
-                    <div class="row mb-3">
-                      <label for="nuevacontrasena" class="col-md-4 col-lg-3 col-form-label">Nueva Contraseña</label>
-                      <div class="col-md-8 col-lg-9" style="width: 90%;">
-                      <input maxlength="50" minlength="3" name="nuevacontrasena" style="border-radius: 15px;" type="password" class="form-control" id="nuevacontrasena" required placeholder="Nueva Contraseña">
-                      <div class="invalid-feedback">Por favor, ingrese la contraseña.</div>  
-                    </div>
-                    </div>
+                  <div class="row mb-3">
+                    <label for="nuevacontrasena" class="col-md-4 col-lg-3 col-form-label">Nueva Contraseña</label>
+                    <div class="col-md-8 col-lg-9" style="width: 90%;">
+                    <div class="input-group">
+                    <input maxlength="50" minlength="3" name="nuevacontrasena" style="border-radius: 15px;" type="password" class="form-control" id="nuevacontrasena" required placeholder="Nueva Contraseña">
+                    <button class="btn btn-outline-secondary" type="button" id="botonMostrarOcultarNC">
+                    <i class="bi bi-eye-slash"></i>
+                    </button>
+                  </div>
+                  <div class="invalid-feedback">Por favor, ingrese la contraseña.</div>
+              </div>
+          </div>
+
 
                     <div class="row mb-3">
                       <label for="confirmarcontrasena" class="col-md-4 col-lg-3 col-form-label">Confirmar Contraseña</label>
                       <div class="col-md-8 col-lg-9" style="width: 90%;">
+                      <div class="input-group">
                       <input maxlength="50" minlength="3" name="confirmarcontrasena" style="border-radius: 15px;" type="password" class="form-control" id="confirmarcontrasena" required placeholder="Confirmar Contraseña">
+                      <button class="btn btn-outline-secondary" type="button" id="botonMostrarOcultarCC">
+                      <i class="bi bi-eye-slash"></i>
+                      </button>
                       <div class="invalid-feedback">Por favor, confirme la contraseña.</div>  
                     </div>
                     </div>
@@ -259,6 +269,26 @@
 
 
 </main>
+
+<script>
+    const botonMostrarOcultarNC = document.querySelector('#botonMostrarOcultarNC');
+    const nuevacontrasena = document.querySelector('#nuevacontrasena');
+    botonMostrarOcultarNC.addEventListener('click', function () {
+        const type = nuevacontrasena.getAttribute('type') === 'password' ? 'text' : 'password';
+        nuevacontrasena.setAttribute('type', type);
+        this.querySelector('i').classList.toggle('bi-eye');
+        this.querySelector('i').classList.toggle('bi-eye-slash');
+    });
+
+    const botonMostrarOcultarCC = document.querySelector('#botonMostrarOcultarCC');
+    const confirmarcontrasena = document.querySelector('#confirmarcontrasena');
+    botonMostrarOcultarCC.addEventListener('click', function () {
+        const type = confirmarcontrasena.getAttribute('type') === 'password' ? 'text' : 'password';
+        confirmarcontrasena.setAttribute('type', type);
+        this.querySelector('i').classList.toggle('bi-eye');
+        this.querySelector('i').classList.toggle('bi-eye-slash');
+    });
+</script>
 
 <!-- ======= Footer ======= -->
 <?php
