@@ -33,19 +33,6 @@
     ¡Contraseña actualizada exitosamente!
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
-<!-- 
-<div style="margin-bottom: 25px; margin-left: 75%; border-radius: 15px;" class="toast show">
-    <div style="background-color: lightcyan; border-radius: 15px 15px 0px 0px;"  class="toast-header">
-      <strong class="me-auto">Contraseña Actualizada</strong>
-      <a href="miperfil.php">
-        <button style="font-size: 18px;" type="button" class="btn-close" data-bs-dismiss="toast"></button>
-      </a>
-    </div>
-    <div style="background-color: lightgreen; border-radius: 0px 0px 15px 15px;" class="toast-body">
-    <p style="font-family:perpetua; font-size: 18px;"><i style="margin-top: 1%; font-size: 35px;  color: green; margin: 0 20px;" class="fa-solid fa-circle-check"></i>Contraseña actualizada exitosamente</p>
-    </div>
-  </div>
-</div> -->
 
 <?php
     endif;
@@ -62,20 +49,6 @@
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 
-<!-- <div style="margin-bottom: 25px; margin-left: 75%; border-radius: 15px;" class="toast show">
-    <div style="background-color: #FFFFE0; border-radius: 15px 15px 0px 0px;"  class="toast-header">
-      <strong class="me-auto">Contraseña No Actualizada</strong>
-      <a href="miperfil.php">
-        <button style="font-size: 18px;" type="button" class="btn-close" data-bs-dismiss="toast"></button>
-      </a>
-    </div>
-    <div style="background-color: yellow; border-radius: 0px 0px 15px 15px;" class="toast-body">
-    <p style="font-family:perpetua; font-size: 18px; color: red;">
-  <i class="fa-solid fa-circle-exclamation" style="color: #FFD43B; margin-top: 1%;" id="i" "></i>La contraseña no se actualizó correctamente</p>
-    </div>
-  </div>
-</div> -->
-
 <?php
     endif;
   ?>
@@ -88,21 +61,6 @@
     ¡Datos actualizados exitosamente!
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
-
-<!-- <div style="margin-bottom: 25px; margin-left: 75%; border-radius: 15px;" class="toast show">
-    <div style="background-color: lightcyan; border-radius: 15px 15px 0px 0px;"  class="toast-header">
-      <strong class="me-auto">Datos Actualizados</strong>
-      <a href="miperfil.php">
-        <button style="font-size: 18px;" type="button" class="btn-close" data-bs-dismiss="toast"></button>
-      </a>
-    </div>
-    <div style="background-color: lightgreen; border-radius: 0px 0px 15px 15px;" class="toast-body">
-    <p style="font-family:perpetua; font-size: 18px;"><i style="margin-top: 1%; font-size: 35px;  color: green; margin: 0 20px;" class="fa-solid fa-circle-check"></i>Datos actualizados exitosamente</p>
-    </div>
-  </div>
-</div> -->
-
-
 
 <?php
     endif;
@@ -213,8 +171,6 @@
                       </div>
                     </div>  
 
-                  
-
                   <div class="col-12">
                       <label for="editarnombre" class="form-label">Nombre</label>
                       <input maxlength="50" minlength="3" style="border-radius: 15px;" type="text" name="editarnombre" class="form-control" id="editarnombre" value="<?php echo $nombresesion ?>" required>
@@ -267,81 +223,37 @@
                   <!-- Change Password Form -->
                   <form action="controllers/editarcontrasenausuario.php" class="row g-3 needs-validation" novalidate method="POST">
 
-                  <!-- <div style="display: flex; align-items: center;" class="row mb-3">
-                      <label for="actualcontrasena" class="col-md-4 col-lg-3 col-form-label">Actual Contraseña</label>
-                      <div style="display: flex; align-items: center; width: 93%;" class="col-md-8 col-lg-9">
-                        <input name="actualcontrasena" type="password" class="form-control" id="actualcontrasena" >
-                        <span >
-                            <i style="font-size: 30px; transform: translateX(-35px); cursor: pointer;" title="Mostrar Contraseña" class="bx bx-show-alt"></i>
-                        </span>
-                      </div>
-                    </div> -->
+                  <div class="row mb-3">
+                    <label for="nuevacontrasena" class="col-md-4 col-lg-3 col-form-label">Nueva Contraseña</label>
+                    <div class="col-md-8 col-lg-9" style="width: 90%;">
+                    <div class="input-group">
+                    <input maxlength="50" minlength="3" name="nuevacontrasena" style="border-radius: 15px 0px 0px 15px;" type="password" class="form-control" id="nuevacontrasena" required placeholder="Nueva Contraseña">
+                    <button style="border-color: lightgray; border-radius: 0px 15px 15px 0px;" class="btn btn-outline-secondary" type="button" id="botonMostrarOcultarNC">
+                    <i class="bi bi-eye-slash"></i>
+                    </button>
+                  </div>
+                  <div class="invalid-feedback">Por favor, ingrese la contraseña.</div>
+              </div>
+          </div>
 
-                    <div class="row mb-3">
-                      <label for="nuevacontrasena" class="col-md-4 col-lg-3 col-form-label">Nueva Contraseña</label>
-                      <div class="col-md-8 col-lg-9" style="width: 90%;">
-                      <input maxlength="50" minlength="3" name="nuevacontrasena" style="border-radius: 15px;" type="password" class="form-control" id="nuevacontrasena" required placeholder="Nueva Contraseña">
-                      <div class="invalid-feedback">Por favor, ingrese la contraseña.</div>  
-                    </div>
-                    </div>
 
                     <div class="row mb-3">
                       <label for="confirmarcontrasena" class="col-md-4 col-lg-3 col-form-label">Confirmar Contraseña</label>
                       <div class="col-md-8 col-lg-9" style="width: 90%;">
-                      <input maxlength="50" minlength="3" name="confirmarcontrasena" style="border-radius: 15px;" type="password" class="form-control" id="confirmarcontrasena" required placeholder="Confirmar Contraseña">
+                      <div class="input-group">
+                      <input maxlength="50" minlength="3" name="confirmarcontrasena" style="border-radius: 15px 0px 0px 15px;" type="password" class="form-control" id="confirmarcontrasena" required placeholder="Confirmar Contraseña">
+                      <button style="border-color: lightgray; border-radius: 0px 15px 15px 0px;" class="btn btn-outline-secondary" type="button" id="botonMostrarOcultarCC">
+                      <i class="bi bi-eye-slash"></i>
+                      </button>
                       <div class="invalid-feedback">Por favor, confirme la contraseña.</div>  
                     </div>
                     </div>
-
-                    
 
                     <div class="text-center" style="margin-top: 15px;">
                     <button style="width:300px; height:40px; border-radius: 30px; background-color: #77E6F2; color: #000807; border-color: silver;" class="btn btn-primary" type="submit">Cambiar Contraseña</button>
                     </div>
 
                   </form><!-- End Change Password Form -->
-
-                </div>
-
-                <div class="tab-pane fade pt-3" id="profile-settings">
-
-                  <!-- Settings Form -->
-                  <form>
-
-                    <div class="row mb-3">
-                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Email Notifications</label>
-                      <div class="col-md-8 col-lg-9">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="changesMade" checked>
-                          <label class="form-check-label" for="changesMade">
-                            Changes made to your account
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="newProducts" checked>
-                          <label class="form-check-label" for="newProducts">
-                            Information on new products and services
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="proOffers">
-                          <label class="form-check-label" for="proOffers">
-                            Marketing and promo offers
-                          </label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" id="securityNotify" checked disabled>
-                          <label class="form-check-label" for="securityNotify">
-                            Security alerts
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="text-center">
-                      <button style="background-color: #77E6F2; color: #000807; border-color: silver;" type="submit" class="btn btn-primary">Save Changes</button>
-                    </div>
-                  </form><!-- End settings Form -->
 
                 </div>
 
@@ -358,6 +270,26 @@
 
 </main>
 
+<script>
+    const botonMostrarOcultarNC = document.querySelector('#botonMostrarOcultarNC');
+    const nuevacontrasena = document.querySelector('#nuevacontrasena');
+    botonMostrarOcultarNC.addEventListener('click', function () {
+        const type = nuevacontrasena.getAttribute('type') === 'password' ? 'text' : 'password';
+        nuevacontrasena.setAttribute('type', type);
+        this.querySelector('i').classList.toggle('bi-eye');
+        this.querySelector('i').classList.toggle('bi-eye-slash');
+    });
+
+    const botonMostrarOcultarCC = document.querySelector('#botonMostrarOcultarCC');
+    const confirmarcontrasena = document.querySelector('#confirmarcontrasena');
+    botonMostrarOcultarCC.addEventListener('click', function () {
+        const type = confirmarcontrasena.getAttribute('type') === 'password' ? 'text' : 'password';
+        confirmarcontrasena.setAttribute('type', type);
+        this.querySelector('i').classList.toggle('bi-eye');
+        this.querySelector('i').classList.toggle('bi-eye-slash');
+    });
+</script>
+
 <!-- ======= Footer ======= -->
 <?php
   include_once ("plantilla/footer.php");
@@ -368,24 +300,6 @@
     include_once ("plantilla/scripts.php");
 ?>
 
-
-<script>
-        const actualcontrasena = document.getElementById("actualcontrasena"),
-              icon = document.querySelector(".bx"); 
-
-              icon.addEventListener("click", e => {
-                if(actualcontrasena.type === "password"){
-                  actualcontrasena.type = "text";
-                    icon.classList.remove('bx-show-alt')
-                    icon.classList.add('bx-hide')
-                } else {
-                  actualcontrasena.type = "password"
-                    icon.classList.remove('bx-hide')
-                    icon.classList.add('bx-show-alt')
-                }
-              })
-
-    </script>
 <script src="https://kit.fontawesome.com/c4254e24a8.js"
   crossorigin="anonymous"></script>
 

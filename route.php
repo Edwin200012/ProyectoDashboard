@@ -12,8 +12,8 @@ class Route{
 
     //Empresa
     //Contacto
-    static $enviarDatosContacto = "Empresa/InsertarContacto";
     static $mostrarDatosContacto = "Empresa/MostrarDatosContacto";
+    static $enviarDatosContacto = "Empresa/InsertarContacto";
     static $editarContacto = "Empresa/EditarContacto";
     static $eliminarContacto = "Empresa/EliminarContacto?idcontacto=";
     static $mostrarDatosContactoPorId = "Empresa/MostrarDatosContactoPorId?idcontacto=";
@@ -23,5 +23,11 @@ class Route{
     static $editarEquipo = "Empresa/EditarEquipo";
     static $mostrarDatosEquipoIntegrantePorId = "Empresa/MostrarDatosEquipoIntegrantePorId?idequipo=";
     static $eliminarEquipo = "Empresa/EliminarEquipo?idequipo=";
+    //Servicios
+    static $mostrarDatosServicios = "Empresa/MostrarDatosServicios";
+    static $enviarDatosServicios = "Empresa/InsertarServicios";
+    static $editarServicios = "Empresa/EditarServicios";
+    static $mostrarDatosServiciosPorId = "Empresa/MostrarDatosServiciosPorId?idservicios=";
+    static $eliminarServicios = "Empresa/EliminarServicios?idservicios=";
 }
 ?>
