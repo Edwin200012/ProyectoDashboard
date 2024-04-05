@@ -33,19 +33,6 @@
     ¡Contraseña actualizada exitosamente!
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
-<!-- 
-<div style="margin-bottom: 25px; margin-left: 75%; border-radius: 15px;" class="toast show">
-    <div style="background-color: lightcyan; border-radius: 15px 15px 0px 0px;"  class="toast-header">
-      <strong class="me-auto">Contraseña Actualizada</strong>
-      <a href="miperfil.php">
-        <button style="font-size: 18px;" type="button" class="btn-close" data-bs-dismiss="toast"></button>
-      </a>
-    </div>
-    <div style="background-color: lightgreen; border-radius: 0px 0px 15px 15px;" class="toast-body">
-    <p style="font-family:perpetua; font-size: 18px;"><i style="margin-top: 1%; font-size: 35px;  color: green; margin: 0 20px;" class="fa-solid fa-circle-check"></i>Contraseña actualizada exitosamente</p>
-    </div>
-  </div>
-</div> -->
 
 <?php
     endif;
@@ -62,20 +49,6 @@
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 
-<!-- <div style="margin-bottom: 25px; margin-left: 75%; border-radius: 15px;" class="toast show">
-    <div style="background-color: #FFFFE0; border-radius: 15px 15px 0px 0px;"  class="toast-header">
-      <strong class="me-auto">Contraseña No Actualizada</strong>
-      <a href="miperfil.php">
-        <button style="font-size: 18px;" type="button" class="btn-close" data-bs-dismiss="toast"></button>
-      </a>
-    </div>
-    <div style="background-color: yellow; border-radius: 0px 0px 15px 15px;" class="toast-body">
-    <p style="font-family:perpetua; font-size: 18px; color: red;">
-  <i class="fa-solid fa-circle-exclamation" style="color: #FFD43B; margin-top: 1%;" id="i" "></i>La contraseña no se actualizó correctamente</p>
-    </div>
-  </div>
-</div> -->
-
 <?php
     endif;
   ?>
@@ -88,21 +61,6 @@
     ¡Datos actualizados exitosamente!
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
-
-<!-- <div style="margin-bottom: 25px; margin-left: 75%; border-radius: 15px;" class="toast show">
-    <div style="background-color: lightcyan; border-radius: 15px 15px 0px 0px;"  class="toast-header">
-      <strong class="me-auto">Datos Actualizados</strong>
-      <a href="miperfil.php">
-        <button style="font-size: 18px;" type="button" class="btn-close" data-bs-dismiss="toast"></button>
-      </a>
-    </div>
-    <div style="background-color: lightgreen; border-radius: 0px 0px 15px 15px;" class="toast-body">
-    <p style="font-family:perpetua; font-size: 18px;"><i style="margin-top: 1%; font-size: 35px;  color: green; margin: 0 20px;" class="fa-solid fa-circle-check"></i>Datos actualizados exitosamente</p>
-    </div>
-  </div>
-</div> -->
-
-
 
 <?php
     endif;
@@ -213,8 +171,6 @@
                       </div>
                     </div>  
 
-                  
-
                   <div class="col-12">
                       <label for="editarnombre" class="form-label">Nombre</label>
                       <input maxlength="50" minlength="3" style="border-radius: 15px;" type="text" name="editarnombre" class="form-control" id="editarnombre" value="<?php echo $nombresesion ?>" required>
@@ -267,16 +223,6 @@
                   <!-- Change Password Form -->
                   <form action="controllers/editarcontrasenausuario.php" class="row g-3 needs-validation" novalidate method="POST">
 
-                  <!-- <div style="display: flex; align-items: center;" class="row mb-3">
-                      <label for="actualcontrasena" class="col-md-4 col-lg-3 col-form-label">Actual Contraseña</label>
-                      <div style="display: flex; align-items: center; width: 93%;" class="col-md-8 col-lg-9">
-                        <input name="actualcontrasena" type="password" class="form-control" id="actualcontrasena" >
-                        <span >
-                            <i style="font-size: 30px; transform: translateX(-35px); cursor: pointer;" title="Mostrar Contraseña" class="bx bx-show-alt"></i>
-                        </span>
-                      </div>
-                    </div> -->
-
                     <div class="row mb-3">
                       <label for="nuevacontrasena" class="col-md-4 col-lg-3 col-form-label">Nueva Contraseña</label>
                       <div class="col-md-8 col-lg-9" style="width: 90%;">
@@ -292,8 +238,6 @@
                       <div class="invalid-feedback">Por favor, confirme la contraseña.</div>  
                     </div>
                     </div>
-
-                    
 
                     <div class="text-center" style="margin-top: 15px;">
                     <button style="width:300px; height:40px; border-radius: 30px; background-color: #77E6F2; color: #000807; border-color: silver;" class="btn btn-primary" type="submit">Cambiar Contraseña</button>
