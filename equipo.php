@@ -70,7 +70,7 @@
 
 
                 
-<form action="controllers/crearequipo.php" class="row g-3 needs-validation" novalidate method="POST">
+<form action="controllers/crearequipo.php" class="row g-3 needs-validation" novalidate method="POST" enctype="multipart/form-data">
 
 <div style="width: 90%; margin-left: 5%;">
 
