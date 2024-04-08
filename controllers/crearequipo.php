@@ -7,7 +7,6 @@ class Empresa{
         $nombre_equipo = $_POST['nombre_equipo'];
         $puesto_equipo = $_POST['puesto_equipo'];
         $descripcion_equipo = $_POST['descripcion_equipo'];
-        // $imagen_equipo = $_POST['imagen_equipo'];
         $redes_sociales_equipo = $_POST['redes_sociales_equipo'];
 
         if(isset($_FILES['imagen_equipo'])){
@@ -48,8 +47,6 @@ class Empresa{
                 "imagen" => $ubicacionFinal,
                 "redes_Sociales" => $redes_sociales_equipo
             );
-        
-            var_dump($parametros);
 
         curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($parametros));
         $respuesta = curl_exec($curl);

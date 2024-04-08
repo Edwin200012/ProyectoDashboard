@@ -8,8 +8,25 @@ include_once("../route.php");
             $nombre = $_POST["editar_nombre_equipo"];
             $puesto = $_POST["editar_puesto_equipo"];
             $descripcion = $_POST["editar_descripcion_equipo"];
-            $imagen = $_POST["editar_imagen_equipo"];
+            // $imagen = $_POST["editar_imagen_equipo"];
             $redes_sociales = $_POST["editar_redes_sociales_equipo"];
+
+            if(isset($_FILES['editar_imagen_equipo'])){
+            $nombreArchivo = $_FILES['editar_imagen_equipo']['name'];
+            $tipo = $_FILES['editar_imagen_equipo']['type'];
+            $tamano = $_FILES['editar_imagen_equipo']['size'];
+            $temporal = $_FILES['editar_imagen_equipo']['tmp_name'];
+            $error = $_FILES['editar_imagen_equipo']['error'];
+
+            $carpetaDestino ='../imagenes_equipo/';
+            $ubicacionFinal = $carpetaDestino . basename($_FILES['editar_imagen_equipo']['name']);
+            }
+
+            if(move_uploaded_file($_FILES['editar_imagen_equipo']['tmp_name'], $ubicacionFinal)){
+                echo "El archivo se ha subido correctamente";
+            } else {
+                echo "Error al mover el archivo";
+            }
 
             $url = Route::$url.Route::$editarEquipo;
             $curl = curl_init();
@@ -26,7 +43,7 @@ include_once("../route.php");
                     "nombre" => $nombre,
                     "puesto" => $puesto,
                     "descripcion" => $descripcion,
-                    "imagen" => $imagen,
+                    "imagen" => $ubicacionFinal,
                     "redes_Sociales" => $redes_sociales,
                 );
 

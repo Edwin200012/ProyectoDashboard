@@ -25,7 +25,7 @@
 ?>
 
 <main id="main" class="main">
-<form action="controllers/editarequipo.php" class="row g-3 needs-validation" novalidate method="POST">
+<form action="controllers/editarequipo.php" class="row g-3 needs-validation" novalidate method="POST" enctype="multipart/form-data">
 <!-- Modal -->
 <div class="modal fade" id="modalEditarDatosEquipo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" show="true" data-keyboard="false">
   <div class="modal-dialog" role="document">
@@ -76,13 +76,6 @@
         <input maxlength="255" minlength="3" style="border-radius: 15px;" type="text" class="form-control" id="actual_imagen_equipo" name="actual_imagen_equipo">
 
         </div>
-
-        <!-- <div class="form-group" style=" margin-left: 1%;">
-          <i class="fa-solid fa-image" style="color: #74C0FC;"></i>
-          <label style="margin-left: .5%;" for="editar_imagen_equipo">Imagen</label>
-          <input maxlength="255" minlength="3" style="border-radius: 15px;" type="text" class="form-control" id="editar_imagen_equipo" name="editar_imagen_equipo">
-          <div class="invalid-feedback">Por favor, ingrese la imagen.</div>
-        </div> -->
 
         <div class="form-group" style=" margin-left: 1%;">
           <i class="fa-solid fa-user-plus" style="color: #74C0FC;"></i>
