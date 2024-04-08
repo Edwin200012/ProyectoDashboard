@@ -30,7 +30,7 @@ $dotenv->load();
                 $temporal = $_FILES['imagenperfil']['tmp_name'];
                 $error = $_FILES['imagenperfil']['error'];
 
-                $carpetaDestino ='../imagenesperfil/';
+                $carpetaDestino ='../imagenes_perfil/';
                 $ubicacionFinal = $carpetaDestino . basename($_FILES['imagenperfil']['name']);
             }
 
