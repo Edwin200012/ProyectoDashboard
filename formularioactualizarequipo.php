@@ -61,12 +61,28 @@
           <div class="invalid-feedback">Por favor, ingrese la descripción.</div>
         </div>
 
-        <div class="form-group" style=" margin-left: 1%;">
+        <div class="mb-3">
+        <div style=" margin-left: 1%;">  
+          <i class="fa-solid fa-image" style="color: #74C0FC;"></i>
+          <label style="margin-left: .5%;" for="imagen_equipo" class="form-label">Imagen</label>
+        </div>
+
+        <div id="div_file" class="pt-2" style="position:relative; width: 150px; background-color: #2499e3; border-radius: 5px; box-shadow:0px 3px 0px #1a71a9;">
+          <p style="text-align: center; color: white;" id="texto_imagen_equipo">Cambiar Imagen</p>
+
+          <input style="position: absolute; top:0px; left:0px; right:0px; bottom:0px; width:100%; height:100%; opacity:0;" type="file" id="editar_imagen_equipo" name="editar_imagen_equipo">
+          <div class="invalid-feedback">Por favor, ingrese la imagen del integrante del equipo.</div>
+        </div>
+        <input maxlength="255" minlength="3" style="border-radius: 15px;" type="text" class="form-control" id="actual_imagen_equipo" name="actual_imagen_equipo">
+
+        </div>
+
+        <!-- <div class="form-group" style=" margin-left: 1%;">
           <i class="fa-solid fa-image" style="color: #74C0FC;"></i>
           <label style="margin-left: .5%;" for="editar_imagen_equipo">Imagen</label>
           <input maxlength="255" minlength="3" style="border-radius: 15px;" type="text" class="form-control" id="editar_imagen_equipo" name="editar_imagen_equipo">
           <div class="invalid-feedback">Por favor, ingrese la imagen.</div>
-        </div>
+        </div> -->
 
         <div class="form-group" style=" margin-left: 1%;">
           <i class="fa-solid fa-user-plus" style="color: #74C0FC;"></i>
@@ -124,7 +140,7 @@ function obtenerDatosEquipoIntegrantePorId(){
           document.getElementById('editar_nombre_equipo').value = response[0].nombre;
           document.getElementById('editar_puesto_equipo').value = response[0].puesto;
           document.getElementById('editar_descripcion_equipo').value = response[0].descripcion;
-          document.getElementById('editar_imagen_equipo').value = response[0].imagen;
+          document.getElementById('actual_imagen_equipo').value = response[0].imagen;
           document.getElementById('editar_redes_sociales_equipo').value = response[0].redes_Sociales;
         },
         error: function (xhr, status, error) {

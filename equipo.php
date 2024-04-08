@@ -113,7 +113,7 @@
           <input style="position: absolute; top:0px; left:0px; right:0px; bottom:0px; width:100%; height:100%; opacity:0;" type="file" id="imagen_equipo" name="imagen_equipo">
           <div class="invalid-feedback">Por favor, ingrese la imagen del integrante del equipo.</div>
       </div>
-      </div>
+  </div>
 
   <div class="mb-3">
   <div style=" margin-left: 1%;">  
