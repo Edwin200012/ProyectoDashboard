@@ -10,6 +10,7 @@ include_once("../route.php");
             $descripcion = $_POST["editar_descripcion_equipo"];
             // $imagen = $_POST["editar_imagen_equipo"];
             $redes_sociales = $_POST["editar_redes_sociales_equipo"];
+            $rutaImagenActual = $_POST["rutaImagenActual"];
 
             if(isset($_FILES['editar_imagen_equipo'])){
             $nombreArchivo = $_FILES['editar_imagen_equipo']['name'];
@@ -21,6 +22,13 @@ include_once("../route.php");
             $carpetaDestino ='../imagenes_equipo/';
             $ubicacionFinal = $carpetaDestino . basename($_FILES['editar_imagen_equipo']['name']);
             }
+            
+
+             // Eliminar la imagen anterior si existe
+             if(file_exists($rutaImagenActual)) {
+                unlink($rutaImagenActual);
+            }
+            
 
             if(move_uploaded_file($_FILES['editar_imagen_equipo']['tmp_name'], $ubicacionFinal)){
                 echo "El archivo se ha subido correctamente";

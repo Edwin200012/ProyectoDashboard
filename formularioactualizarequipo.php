@@ -74,7 +74,7 @@
           <div class="invalid-feedback">Por favor, ingrese la imagen del integrante del equipo.</div>
         </div>
         <input maxlength="255" minlength="3" style="border-radius: 15px;" type="text" class="form-control" id="nombre_imagen_seleccionada_editar" name="nombre_imagen_seleccionada_editar" readonly>
-
+        <input name="rutaImagenActual" id="rutaImagenActual" >
         </div>
 
         <div class="form-group" style=" margin-left: 1%;">
@@ -134,6 +134,7 @@ function obtenerDatosEquipoIntegrantePorId(){
           document.getElementById('editar_puesto_equipo').value = response[0].puesto;
           document.getElementById('editar_descripcion_equipo').value = response[0].descripcion;
           document.getElementById('nombre_imagen_seleccionada_editar').value = response[0].imagen;
+          document.getElementById('rutaImagenActual').value = response[0].imagen;
           document.getElementById('editar_redes_sociales_equipo').value = response[0].redes_Sociales;
         },
         error: function (xhr, status, error) {
