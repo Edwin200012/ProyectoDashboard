@@ -68,7 +68,7 @@
         </div>
 
         <div id="div_file" class="pt-2" style="position:relative; width: 150px; background-color: #2499e3; border-radius: 5px; box-shadow:0px 3px 0px #1a71a9;">
-          <p style="text-align: center; color: white;" id="texto_imagen_equipo">Cambiar Imagen</p>
+          <p style="text-align: center; color: white;" id="texto_imagen_equipo">Actualizar Imagen</p>
 
           <input style="position: absolute; top:0px; left:0px; right:0px; bottom:0px; width:100%; height:100%; opacity:0;" type="file" id="editar_imagen_equipo" name="editar_imagen_equipo" onchange="mostrarNombreImagenEditar()">
           <div class="invalid-feedback">Por favor, ingrese la imagen del integrante del equipo.</div>
