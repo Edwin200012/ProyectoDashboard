@@ -112,9 +112,9 @@
     <label style="margin-left: .5%;" for="imagen_equipo" class="form-label">Imagen</label>
   </div>
 
-      <div id="div_file" class="pt-2" style="position:relative; width: 150px; background-color: #2499e3; border-radius: 5px; box-shadow:0px 3px 0px #1a71a9;">
-          <p style="text-align: center; color: white;" id="texto_imagen_equipo">Subir Imagen</p>
-          <input style="position: absolute; top:0px; left:0px; right:0px; bottom:0px; width:100%; height:100%; opacity:0;" type="file" id="imagen_equipo" name="imagen_equipo" onchange="mostrarNombreImagen()">
+      <div id="div_file" class="pt-2" style="position:relative; width: 150px; background-color: white; border-radius: 20px; box-shadow:0px 2px 2px 2px #1a71a9;">
+          <p style="text-align: center; color: black;" id="texto_imagen_equipo">Subir Imagen</p>
+          <input style="position: absolute; top:0px; left:0px; right:0px; bottom:0px; width:100%; height:100%; opacity:0;" type="file" id="imagen_equipo" name="imagen_equipo" onchange="mostrarNombreImagen()" onmouseover="this.style.cursor='pointer'">
           <div class="invalid-feedback">Por favor, ingrese la imagen del integrante del equipo.</div>
       </div>
   </div>
@@ -122,7 +122,7 @@
   <div class="mb-3">
   <div style=" margin-left: 1%;">  
   </div>
-    <input maxlength="255" minlength="3" style="border-radius: 15px;" type="text" class="form-control" id="nombre_imagen_seleccionada" name="nombre_imagen_seleccionada" required placeholder="Imagen" readonly>
+    <input maxlength="255" minlength="3" style="border-radius: 30px;" type="text" class="form-control" id="nombre_imagen_seleccionada" name="nombre_imagen_seleccionada" required placeholder="Imagen" readonly>
   </div>
 
   <div class="mb-3">
