@@ -74,7 +74,6 @@
           <div class="invalid-feedback">Por favor, ingrese la imagen del integrante del equipo.</div>
         </div>
         <input maxlength="255" minlength="3" style="border-radius: 15px;" type="text" class="form-control" id="nombre_imagen_seleccionada_editar" name="nombre_imagen_seleccionada_editar" readonly>
-        <input name="rutaImagenActual" id="rutaImagenActual" >
         </div>
 
         <div class="form-group" style=" margin-left: 1%;">
@@ -85,6 +84,7 @@
         </div>
 
           <input name="equipo" id="equipo" type="hidden" value="<?php echo $_GET['idequipo']?>"/>
+          <input name="rutaImagenActual" id="rutaImagenActual" type="hidden">
 
       <div class="modal-footer">
         <!-- Botones -->
