@@ -70,10 +70,10 @@
         <div id="div_file" class="pt-2" style="position:relative; width: 150px; background-color: #2499e3; border-radius: 5px; box-shadow:0px 3px 0px #1a71a9;">
           <p style="text-align: center; color: white;" id="texto_imagen_equipo">Cambiar Imagen</p>
 
-          <input style="position: absolute; top:0px; left:0px; right:0px; bottom:0px; width:100%; height:100%; opacity:0;" type="file" id="editar_imagen_equipo" name="editar_imagen_equipo">
+          <input style="position: absolute; top:0px; left:0px; right:0px; bottom:0px; width:100%; height:100%; opacity:0;" type="file" id="editar_imagen_equipo" name="editar_imagen_equipo" onchange="mostrarNombreImagenEditar()">
           <div class="invalid-feedback">Por favor, ingrese la imagen del integrante del equipo.</div>
         </div>
-        <input maxlength="255" minlength="3" style="border-radius: 15px;" type="text" class="form-control" id="actual_imagen_equipo" name="actual_imagen_equipo">
+        <input maxlength="255" minlength="3" style="border-radius: 15px;" type="text" class="form-control" id="nombre_imagen_seleccionada_editar" name="nombre_imagen_seleccionada_editar" readonly>
 
         </div>
 
@@ -133,7 +133,7 @@ function obtenerDatosEquipoIntegrantePorId(){
           document.getElementById('editar_nombre_equipo').value = response[0].nombre;
           document.getElementById('editar_puesto_equipo').value = response[0].puesto;
           document.getElementById('editar_descripcion_equipo').value = response[0].descripcion;
-          document.getElementById('actual_imagen_equipo').value = response[0].imagen;
+          document.getElementById('nombre_imagen_seleccionada_editar').value = response[0].imagen;
           document.getElementById('editar_redes_sociales_equipo').value = response[0].redes_Sociales;
         },
         error: function (xhr, status, error) {
@@ -143,6 +143,18 @@ function obtenerDatosEquipoIntegrantePorId(){
       });
     }  
 
+</script>
+
+<script>
+  function mostrarNombreImagenEditar() {
+    const input = document.getElementById('editar_imagen_equipo');
+    const nombre_imagen_seleccionada_editar = document.getElementById('nombre_imagen_seleccionada_editar');
+    if (input.files.length > 0) {
+      nombre_imagen_seleccionada_editar.value = input.files[0].name;
+    } else {
+      nombre_imagen_seleccionada_editar.value = '';
+    }
+  }
 </script>
 
 <a style="background-color: #3A1CA6;" href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
