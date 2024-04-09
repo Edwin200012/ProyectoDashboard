@@ -33,7 +33,9 @@
 
 <div class="alert alert-success alert-dismissible fade show" role="alert">
     ¡Datos enviados exitosamente!
+    <a href="equipo.php">
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </a>
   </div>
 
 <?php
@@ -47,7 +49,9 @@
 
 <div class="alert alert-success alert-dismissible fade show" role="alert">
     ¡Integrante de equipo actualizado exitosamente!
+    <a href="equipo.php">
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </a>
   </div>
 
 <?php

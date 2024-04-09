@@ -34,7 +34,9 @@
 
 <div class="alert alert-success alert-dismissible fade show" role="alert">
     ¡Datos enviados exitosamente!
+    <a href="servicios.php">
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </a>
   </div>
 
 <?php
@@ -49,7 +51,9 @@
 
 <div class="alert alert-success alert-dismissible fade show" role="alert">
     ¡Servicio actualizado exitosamente!
+    <a href="servicios.php">
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </a>
   </div>
 
 <?php
