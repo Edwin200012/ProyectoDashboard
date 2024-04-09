@@ -200,7 +200,7 @@
           $('#tBody').empty();
           let datos = response.registroequipo
             datos.forEach((post, i) => {
-              $('#tBody').append('<tr id="'+post.id+'"><td>'+post.id+'</td><td>'+post.nombre+'</td><td>'+post.puesto+'</td><td>'+post.descripcion+'</td><td>'+post.imagen+'</td><td>'+post.redes_Sociales+'</td>  <td><a title="Editar Registro" type="button" href="formularioactualizarequipo.php?idequipo='+post.id+'" class="btn btn-outline-warning"> <i class="fa-solid fa-pen-to-square" "></i></a></td>  <td><button title="Eliminar Registro" type="button" class="btn btn-outline-danger btneliminar" id="'+post.id+'"> <i class="fas fa-trash"></i> </button></td> </tr>');
+              $('#tBody').append('<tr id="'+post.id+'"><td>'+post.id+'</td><td>'+post.nombre+'</td><td>'+post.puesto+'</td><td>'+post.descripcion+'</td><td>'+post.imagen+'</td><td>'+post.redes_Sociales+'</td>  <td><a title="Editar Registro" type="button" href="formularioactualizarequipo.php?idequipo='+post.id+'" class="btn btn-outline-warning"> <i class="fa-solid fa-pen-to-square" "></i></a></td>  <td><button title="Eliminar Registro" type="button" class="btn btn-outline-danger btneliminar" id="'+post.id+'" value="'+post.imagen+'"> <i class="fas fa-trash"></i> </button></td> </tr>');
             });
         }
       }).fail(function () {
@@ -209,10 +209,11 @@
     }
     $("#tBody").on("click",".btneliminar",function() {
             let id = $(this).attr('id');
-            eliminarEquipo(id);
+            let url = $(this).val();
+            eliminarEquipo(id, url);
         });
 
-        function eliminarEquipo(id){
+        function eliminarEquipo(id, ruta){
           Swal.fire({
             background: '#f3f4f6',
             title: 'Confirmar eliminación',
@@ -235,7 +236,7 @@
                   url:'controllers/eliminarequipo.php',
                   type: 'POST',
                   dataType: 'JSON',
-                  data:{id:id},
+                  data:{id:id, ruta:ruta},
                   success: function (response){
                     $('#'+id).remove();
                     swal.fire({
