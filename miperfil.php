@@ -112,9 +112,7 @@
               <div class="tab-content pt-2">
 
                 <div class="tab-pane fade show active profile-overview" id="profile-overview">
-                  <!-- <h5 class="card-title">About</h5>
-                  <p class="small fst-italic">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</p> -->
-
+                
                   <h5 class="card-title">Perfil</h5>
 
                   <div class="row">
@@ -164,9 +162,9 @@
                         <img src="<?php echo $rutasesion ?>" style="margin-left: 12px;" alt="Imagen de Perfil">
                         <div id="div_file" class="pt-2" style="position:relative; width: 150px; background-color: #2499e3; border-radius: 5px; box-shadow:0px 3px 0px #1a71a9;">
                         <p style="text-align: center; color: white;" id="texto">Cambiar Imagen</p>
-                        <input style="position: absolute; top:0px; left:0px; right:0px; bottom:0px; width:100%; height:100%; opacity:0;" type="file" id="imagenperfil" name="imagenperfil">
-                          <!-- <a style="background-color: #77E6F2; color: black; border-color: silver;" href="#" class="btn btn-primary btn-sm" title="Subir imagen de perfil"><i class="bi bi-upload"></i></a>
-                          <a style="background-color: #8C030E; color: white; border-color: silver;" href="#" class="btn btn-danger btn-sm" title="Eliminar mi imagen de perfil"><i class="bi bi-trash"></i></a> -->
+                        <input style="position: absolute; top:0px; left:0px; right:0px; bottom:0px; width:100%; height:100%; opacity:0;" type="file" id="editarimagenperfil" name="editarimagenperfil" onchange="mostrarNombreImagen()" onmouseover="this.style.cursor='pointer'">
+                        <input maxlength="255" minlength="3" style="border-radius: 30px;" type="hidden" class="form-control" id="nombre_imagen_editar" name="nombre_imagen_editar" required placeholder="Imagen" readonly>
+
                         </div>
                       </div>
                     </div>  
@@ -288,6 +286,18 @@
         this.querySelector('i').classList.toggle('bi-eye');
         this.querySelector('i').classList.toggle('bi-eye-slash');
     });
+</script>
+
+<script>
+  function mostrarNombreImagen() {
+    const input = document.getElementById('editarimagenperfil');
+    const nombre_imagen_editar = document.getElementById('nombre_imagen_editar');
+    if (input.files.length > 0) {
+      nombre_imagen_editar.value = input.files[0].name;
+    } else {
+      nombre_imagen_editar.value = '';
+    }
+  }
 </script>
 
 <!-- ======= Footer ======= -->
