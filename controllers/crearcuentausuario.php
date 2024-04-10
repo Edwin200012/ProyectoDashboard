@@ -9,6 +9,7 @@ include_once("../route.php");
             $usuario = $_POST['usuario'];
             $nuevacontrasena = $_POST['nuevacontrasena'];
             $contrasena = $_POST['contrasenaconfirmar'];
+            $rutasesion = "imagenes_perfil/icono-perfil-default.png";
 
             $url = Route::$url.Route::$crearUsuario;
 
@@ -26,7 +27,8 @@ include_once("../route.php");
                     "usuario" => $usuario,
                     "correo" => $correo,
                     "nuevacontrasena" => $nuevacontrasena,
-                    "contrasena" => $contrasena
+                    "contrasena" => $contrasena,
+                    "ruta" => $rutasesion
             );
 
             curl_setopt($curl, CURLOPT_POSTFIELDS,json_encode($parametros));
