@@ -87,6 +87,21 @@
     endif;
   ?>
 
+<?php
+      if(isset($_GET['resetimagen'])):
+
+  ?>
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    ¡Imagen reseteada exitosamente!
+    <a href="miperfil.php">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </a>
+  </div>
+
+<?php
+    endif;
+  ?>
+
 
     <section class="section profile">
       <div class="row">
@@ -177,7 +192,7 @@
                 <form enctype="multipart/form-data" action="controllers/editarimagenusuario.php" class="row g-3 needs-validation" novalidate method="POST">
                   <div class="row mb-3">
                       <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Imagen de Perfil</label>
-                      <div  class="col-md-8 col-lg-9">
+                      <div style="margin-top: 5%;"  class="col-md-8 col-lg-9">
                       <!-- <div  class="col-md-8 col-lg-9" style="margin-left: 40%;"> -->
                         <img src="<?php echo $rutasesion ?>" style="margin-left: 12px;" alt="Imagen de Perfil">
                         <div id="div_file" class="pt-2" style="position:relative; width: 150px; background-color: white; border-radius: 20px; box-shadow:0px 2px 2px 2px #1a71a9;">
@@ -185,22 +200,27 @@
                         <input style="position: absolute; top:0px; left:0px; right:0px; bottom:0px; width:100%; height:100%; opacity:0;" type="file" id="editarimagenperfil" name="editarimagenperfil" onchange="mostrarNombreImagen()" onmouseover="this.style.cursor='pointer'">
                         <input maxlength="255" minlength="3" style="border-radius: 30px;" type="hidden" class="form-control" id="nombre_imagen_editar" name="nombre_imagen_editar" required placeholder="Imagen" readonly>
                         </div>
-                        <div style="margin-left: 4%;">
 
-                        
+                        <div style="margin-left: 4%;">
                         <button title="Subir imagen de perfil" style="color: #74C0FC; background-color: #FFFFFF; height: 40px; width: 40px;" type="submit" id="botonActualizarImagen" name="botonActualizarImagen">
                             <i class="bi-solid bi-upload"></i>
                           </a>
                         </button>
-                        <button title="Eliminar mi imagen de perfil" style="color: #74C0FC; background-color: #FFFFFF; height: 40px; width: 40px;" type="submit" id="botonEliminarImagen" name="botonEliminarImagen">
-                        <i class="bi bi-trash"></i>
-                        </button>
                         </div>
-                      
-                      
+
                       </div>
                     </div>  
                 </form>
+
+                <form style="margin-left: 33%; margin-top: -7.2%;" enctype="multipart/form-data" action="controllers/resetimagenusuario.php" class="row g-3 needs-validation" novalidate method="POST">
+                        <input maxlength="255" minlength="3" style="border-radius: 30px;" type="hidden" class="form-control" id="ruta_reset_imagen" name="ruta_reset_imagen" required value="imagenes_perfil/icono-perfil-default.png" readonly>
+        
+                        <button title="Eliminar mi imagen de perfil" style="color: #74C0FC; background-color: #FFFFFF; height: 40px; width: 40px;" type="submit" id="botonEliminarImagen" name="botonEliminarImagen">
+                        <i class="bi bi-trash"></i>
+                        </button>
+                        
+                </form>
+                
 
                   <!-- Profile Edit Form -->
                   <form enctype="multipart/form-data" action="controllers/editarusuario.php" class="row g-3 needs-validation" novalidate method="POST"> 

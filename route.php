@@ -7,6 +7,7 @@ class Route{
     static $editarUsuario = "Usuario/EditarUsuario";
     static $editarContrasenaUsuario = "Usuario/EditarContrasenaUsuario";
     static $editarImagenUsuario = "Usuario/EditarImagenUsuario";
+    static $resetImagenUsuario = "Usuario/ResetImagenUsuario";
     // static $eliminarUsuario = "Usuario/Eliminar?idusuario=";
     // static $mostrarporId = "Usuario/MostrarPorId?idusuario=";
     // static $editarUsuario = "Usuario/Editar?idusuario=";
