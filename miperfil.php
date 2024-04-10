@@ -31,7 +31,9 @@
 
 <div class="alert alert-success alert-dismissible fade show" role="alert">
     ¡Contraseña actualizada exitosamente!
+    <a href="miperfil.php">
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </a>
   </div>
 
 <?php
@@ -46,7 +48,9 @@
 
 <div class="alert alert-danger alert-dismissible fade show" role="alert">
     ¡La contraseña no se actualizó correctamente!
+    <a href="miperfil.php">
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </a>
   </div>
 
 <?php
@@ -59,7 +63,9 @@
   ?>
   <div class="alert alert-success alert-dismissible fade show" role="alert">
     ¡Datos actualizados exitosamente!
+    <a href="miperfil.php">
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </a>
   </div>
 
 <?php
@@ -72,7 +78,9 @@
   ?>
   <div class="alert alert-success alert-dismissible fade show" role="alert">
     ¡Imagen actualizada exitosamente!
+    <a href="miperfil.php">
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </a>
   </div>
 
 <?php
