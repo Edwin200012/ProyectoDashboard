@@ -182,6 +182,7 @@
                   <div class="row mb-3">
                       <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Imagen de Perfil</label>
                       <div  class="col-md-8 col-lg-9">
+                      <!-- <div  class="col-md-8 col-lg-9" style="margin-left: 40%;"> -->
                         <img src="<?php echo $rutasesion ?>" style="margin-left: 12px;" alt="Imagen de Perfil">
                         <div id="div_file" class="pt-2" style="position:relative; width: 150px; background-color: white; border-radius: 20px; box-shadow:0px 2px 2px 2px #1a71a9;">
                         <p style="text-align: center; color: black;" id="texto">Cambiar Imagen</p>
