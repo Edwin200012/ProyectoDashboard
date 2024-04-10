@@ -22,26 +22,6 @@ $dotenv->load();
             $correo = $_POST['editarcorreo'];
             $telefono = $_POST['editartelefono'];
             $direccion = $_POST['editardireccion'];
-            $rutaImagenActual = $_POST['nombre_imagen_editar'];
-            var_dump($direccion);
-            var_dump($rutaImagenActual);
-
-            if(isset($_FILES['editarimagenperfil'])){
-                $nombreArchivo = $_FILES['editarimagenperfil']['name'];
-                $tipo = $_FILES['editarimagenperfil']['type'];
-                $tamano = $_FILES['editarimagenperfil']['size'];
-                $temporal = $_FILES['editarimagenperfil']['tmp_name'];
-                $error = $_FILES['editarimagenperfil']['error'];
-
-                $carpetaDestino ='../imagenes_perfil/';
-                $ubicacionFinal = $carpetaDestino . basename($_FILES['editarimagenperfil']['name']);
-            }
-
-            if(move_uploaded_file($_FILES['editarimagenperfil']['tmp_name'], $ubicacionFinal)){
-                echo "La imagen se ha subido correctamente.";
-            } else{
-                echo "Error al mover la imagen.";
-            }
 
             $url = Route::$url.Route::$editarUsuario;
 
@@ -63,8 +43,7 @@ $dotenv->load();
                     "usuario" => $usuario,
                     "correo" => $correo,
                     "telefono" => $telefono,
-                    "direccion" => $direccion,
-                    "ruta" => "imagenes_perfil/" . $rutaImagenActual
+                    "direccion" => $direccion
             );
 
             curl_setopt($curl, CURLOPT_POSTFIELDS,json_encode($parametros));
@@ -83,7 +62,6 @@ $dotenv->load();
                     $_SESSION['correosesion'] = $correo;
                     $_SESSION['telefonosesion'] = $telefono;
                     $_SESSION['direccionsesion'] = $direccion;
-                    $_SESSION['rutasesion'] = "imagenes_perfil/" . $rutaImagenActual;
                     
                     $this->NotificacionDatosActualizados();
 
