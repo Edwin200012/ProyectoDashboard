@@ -174,21 +174,33 @@
 
                 <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
+
+                <!-- <div id="div_file" class="pt-2" style="position:relative; width: 150px; background-color: white; border-radius: 20px; box-shadow:0px 2px 2px 2px #1a71a9;"> -->
+
+
                 <form enctype="multipart/form-data" action="controllers/editarimagenusuario.php" class="row g-3 needs-validation" novalidate method="POST">
                   <div class="row mb-3">
                       <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Imagen de Perfil</label>
                       <div  class="col-md-8 col-lg-9">
                         <img src="<?php echo $rutasesion ?>" style="margin-left: 12px;" alt="Imagen de Perfil">
-                        <div id="div_file" class="pt-2" style="position:relative; width: 150px; background-color: #2499e3; border-radius: 5px; box-shadow:0px 3px 0px #1a71a9;">
-                        <p style="text-align: center; color: white;" id="texto">Cambiar Imagen</p>
+                        <div id="div_file" class="pt-2" style="position:relative; width: 150px; background-color: white; border-radius: 20px; box-shadow:0px 2px 2px 2px #1a71a9;">
+                        <p style="text-align: center; color: black;" id="texto">Cambiar Imagen</p>
                         <input style="position: absolute; top:0px; left:0px; right:0px; bottom:0px; width:100%; height:100%; opacity:0;" type="file" id="editarimagenperfil" name="editarimagenperfil" onchange="mostrarNombreImagen()" onmouseover="this.style.cursor='pointer'">
                         <input maxlength="255" minlength="3" style="border-radius: 30px;" type="hidden" class="form-control" id="nombre_imagen_editar" name="nombre_imagen_editar" required placeholder="Imagen" readonly>
                         </div>
-                        <button id="botonActualizarImagen" style="width:150px; height:80px; border-radius: 30px; background-color: #77E6F2; color: #000807; border-color: silver;" class="btn btn-primary" type="submit">Actualizar Imagen</button>
+                        <div style="margin-left: 4%;">
 
                         
-                    <!-- <button style="width:300px; height:40px; border-radius: 30px; background-color: #77E6F2; color: #000807; border-color: silver;" class="btn btn-primary" type="submit"></button> -->
-
+                        <button title="Subir imagen de perfil" style="color: #74C0FC; background-color: #FFFFFF; height: 40px; width: 40px;" type="submit" id="botonActualizarImagen" name="botonActualizarImagen">
+                            <i class="bi-solid bi-upload"></i>
+                          </a>
+                        </button>
+                        <button title="Eliminar mi imagen de perfil" style="color: #74C0FC; background-color: #FFFFFF; height: 40px; width: 40px;" type="submit" id="botonEliminarImagen" name="botonEliminarImagen">
+                        <i class="bi bi-trash"></i>
+                        </button>
+                        </div>
+                      
+                      
                       </div>
                     </div>  
                 </form>
