@@ -64,7 +64,7 @@ class Usuario{
                     
                 $this->NotificacionImagenActualizada();
 
-                header('Location: ../miperfil.php?actualizadatos=true');
+                header('Location: ../miperfil.php?actualizaimagen=true');
 
             }
 
