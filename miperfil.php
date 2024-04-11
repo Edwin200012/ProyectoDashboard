@@ -203,7 +203,7 @@
                       </div>
 
                         <div style="margin-left: 4%;">
-                        <button title="Subir imagen de perfil" style="color: #74C0FC; background-color: #FFFFFF; height: 40px; width: 40px;" type="submit" id="botonActualizarImagen" name="botonActualizarImagen">
+                        <button disabled title="Subir imagen de perfil" style="color: #74C0FC; background-color: #FFFFFF; height: 40px; width: 40px;" type="submit" id="botonActualizarImagen" name="botonActualizarImagen">
                             <i class="bi-solid bi-upload"></i>
                           </a>
                         </button>
@@ -355,6 +355,16 @@
       ruta_imagen_nueva.value = '';
     }
   }
+</script>
+
+<script>
+    document.getElementById('nuevaimagenperfil').addEventListener('change', function() {
+    // Comprobar si se ha seleccionado un archivo.
+    if(this.files.length > 0) {
+      // Habilitar boton al seleccionar un artchivo.
+      document.getElementById('botonActualizarImagen').disabled = false;
+    }
+  });
 </script>
 
 <!-- ======= Footer ======= -->
