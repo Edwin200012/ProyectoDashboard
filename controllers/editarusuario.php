@@ -16,12 +16,28 @@ $dotenv->load();
             
             $id = $_SESSION['idsesion'];
             $nombre = $_POST['editarnombre'];
-            $apellidop = $_POST['editarapellidop'];
-            $apellidom = $_POST['editarapellidom'];
+            if(isset($_POST['editarapellidop']) && !empty($_POST['editarapellidop'])) {
+                $apellidop = $_POST['editarapellidop'];
+            } else {
+                $apellidop = NULL;
+            }
+            if(isset($_POST['editarapellidom']) && !empty($_POST['editarapellidom'])) {
+                $apellidom = $_POST['editarapellidom'];
+            } else {
+                $apellidom = NULL;
+            }
             $usuario = $_POST['editarusuario'];
             $correo = $_POST['editarcorreo'];
-            $telefono = $_POST['editartelefono'];
-            $direccion = $_POST['editardireccion'];
+            if(isset($_POST['editartelefono']) && !empty($_POST['editartelefono'])) {
+                $telefono = $_POST['editartelefono'];
+            } else {
+                $telefono = NULL;
+            }
+            if(isset($_POST['editardireccion']) && !empty($_POST['editardireccion'])) {
+                $direccion = $_POST['editardireccion'];
+            } else {
+                $direccion = NULL;
+            }
 
             $url = Route::$url.Route::$editarUsuario;
 
