@@ -92,7 +92,7 @@
 
   ?>
   <div class="alert alert-success alert-dismissible fade show" role="alert">
-    ¡Imagen reseteada exitosamente!
+    ¡Imagen restablecida exitosamente!
     <a href="miperfil.php">
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </a>
@@ -101,6 +101,23 @@
 <?php
     endif;
   ?>
+
+<?php
+      if(isset($_GET['noresetimagen'])):
+
+  ?>
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    La imagen ya esta restablecida!
+    <a href="miperfil.php">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </a>
+  </div>
+
+<?php
+    endif;
+  ?>
+
+  
 
 
     <section class="section profile">
@@ -214,7 +231,7 @@
                 </form>
 
                 <form style="margin-left: 33%; margin-top: -7.2%;" enctype="multipart/form-data" action="controllers/resetimagenusuario.php" class="row g-3 needs-validation" novalidate method="POST">
-                        <input maxlength="255" minlength="3" style="border-radius: 30px;" type="hidden" class="form-control" id="ruta_reset_imagen" name="ruta_reset_imagen" required value="imagenes_perfil/icono-perfil-default.png" readonly>
+                        <input maxlength="255" minlength="3" style="border-radius: 30px;" type="hidden" class="form-control" id="ruta_reset_imagen" name="ruta_reset_imagen" required value="imagen_default_usuario/icono_perfil_default.png" readonly>
                         <input name="rutaImagenActual" id="rutaImagenActual" type="hidden" value="<?php echo $_SESSION['rutasesion'] ?>" readonly>
                         <button title="Eliminar mi imagen de perfil" style="color: #74C0FC; background-color: #FFFFFF; height: 40px; width: 40px;" type="submit" id="botonEliminarImagen" name="botonEliminarImagen">
                         <i class="bi bi-trash"></i>

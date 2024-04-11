@@ -17,13 +17,12 @@ class Usuario{
         $rutaResetImagen = $_POST['ruta_reset_imagen'];
         $rutaImagenActual = $_POST['rutaImagenActual'];
 
-        if(file_exists("../" . $rutaImagenActual)) {
-            unlink("../" . $rutaImagenActual);
-        } else{
-            echo "Error al eliminar imagen";
-        }
+        $imagenPorDefecto = "../imagen_default_usuario/icono_perfil_default.png";
 
-        $url = Route::$url.Route::$resetImagenUsuario;
+         // Verificar que la imagen exista y no sea la imagen por defecto antes de eliminarlo
+        if(file_exists("../" . $rutaImagenActual) && "../" . $rutaImagenActual != $imagenPorDefecto) {
+            unlink("../" . $rutaImagenActual);
+            $url = Route::$url.Route::$resetImagenUsuario;
 
         $curl = curl_init();
             curl_setopt($curl, CURLOPT_URL, $url);
@@ -61,6 +60,16 @@ class Usuario{
             else {
                 echo $respuesta;
             }
+        } else{
+            if("../" . $rutaImagenActual == $imagenPorDefecto){
+                header('Location: ../miperfil.php?noresetimagen=true');
+            } else {
+                echo "Error al eliminar la imagen";
+            }
+            
+        }
+
+        
     }
 
 
