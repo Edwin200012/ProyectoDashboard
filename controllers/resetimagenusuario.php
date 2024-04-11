@@ -15,6 +15,13 @@ class Usuario{
     function ResetImagenUsuario(){
         $id = $_SESSION['idsesion'];
         $rutaResetImagen = $_POST['ruta_reset_imagen'];
+        $rutaImagenActual = $_POST['rutaImagenActual'];
+
+        if(file_exists("../" . $rutaImagenActual)) {
+            unlink("../" . $rutaImagenActual);
+        } else{
+            echo "Error al eliminar imagen";
+        }
 
         $url = Route::$url.Route::$resetImagenUsuario;
 

@@ -29,12 +29,9 @@ class Usuario{
                 $ubicacionFinal = $carpetaDestino . basename($_FILES['nuevaimagenperfil']['name']);
             }
 
-            var_dump($rutaImagenActual);
-
             // Eliminar la imagen anterior si existe
             if(file_exists("../" . $rutaImagenActual)) {
                 unlink("../" . $rutaImagenActual);
-                echo "Se elimino la imagen";
             } else{
                 echo "Error al eliminar imagen";
             }
