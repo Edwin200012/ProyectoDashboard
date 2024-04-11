@@ -197,8 +197,8 @@
                         <img src="<?php echo $rutasesion ?>" style="margin-left: 12px;" alt="Imagen de Perfil">
                         <div id="div_file" class="pt-2" style="position:relative; width: 150px; background-color: white; border-radius: 20px; box-shadow:0px 2px 2px 2px #1a71a9;">
                         <p style="text-align: center; color: black;" id="texto">Cambiar Imagen</p>
-                        <input style="position: absolute; top:0px; left:0px; right:0px; bottom:0px; width:100%; height:100%; opacity:0;" type="file" id="editarimagenperfil" name="editarimagenperfil" onchange="mostrarNombreImagen()" onmouseover="this.style.cursor='pointer'">
-                        <input maxlength="255" minlength="3" style="border-radius: 30px;" type="hidden" class="form-control" id="nombre_imagen_editar" name="nombre_imagen_editar" required placeholder="Imagen" readonly>
+                        <input style="position: absolute; top:0px; left:0px; right:0px; bottom:0px; width:100%; height:100%; opacity:0;" type="file" id="nuevaimagenperfil" name="nuevaimagenperfil" onchange="mostrarNombreImagen()" onmouseover="this.style.cursor='pointer'">
+                        <input maxlength="255" minlength="3" style="border-radius: 30px;" type="hidden" class="form-control" id="ruta_imagen_nueva" name="ruta_imagen_nueva" required readonly>
                         </div>
 
                         <div style="margin-left: 4%;">
@@ -346,12 +346,12 @@
 
 <script>
   function mostrarNombreImagen() {
-    const input = document.getElementById('editarimagenperfil');
-    const nombre_imagen_editar = document.getElementById('nombre_imagen_editar');
+    const input = document.getElementById('nuevaimagenperfil');
+    const ruta_imagen_nueva = document.getElementById('ruta_imagen_nueva');
     if (input.files.length > 0) {
-      nombre_imagen_editar.value = input.files[0].name;
+      ruta_imagen_nueva.value = input.files[0].name;
     } else {
-      nombre_imagen_editar.value = '';
+      ruta_imagen_nueva.value = '';
     }
   }
 </script>

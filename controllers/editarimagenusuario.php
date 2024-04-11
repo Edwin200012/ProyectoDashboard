@@ -15,20 +15,25 @@ $dotenv->load();
 class Usuario{
     function EditarImagenUsuario(){
         $id = $_SESSION['idsesion'];
-        $rutaImagenActual = $_POST['nombre_imagen_editar'];
+        $rutaImagenNueva = $_POST['ruta_imagen_nueva'];
 
-         if(isset($_FILES['editarimagenperfil'])){
-                $nombreArchivo = $_FILES['editarimagenperfil']['name'];
-                $tipo = $_FILES['editarimagenperfil']['type'];
-                $tamano = $_FILES['editarimagenperfil']['size'];
-                $temporal = $_FILES['editarimagenperfil']['tmp_name'];
-                $error = $_FILES['editarimagenperfil']['error'];
+         if(isset($_FILES['nuevaimagenperfil'])){
+                $nombreArchivo = $_FILES['nuevaimagenperfil']['name'];
+                $tipo = $_FILES['nuevaimagenperfil']['type'];
+                $tamano = $_FILES['nuevaimagenperfil']['size'];
+                $temporal = $_FILES['nuevaimagenperfil']['tmp_name'];
+                $error = $_FILES['nuevaimagenperfil']['error'];
 
                 $carpetaDestino ='../imagenes_perfil/';
-                $ubicacionFinal = $carpetaDestino . basename($_FILES['editarimagenperfil']['name']);
+                $ubicacionFinal = $carpetaDestino . basename($_FILES['nuevaimagenperfil']['name']);
             }
 
-            if(move_uploaded_file($_FILES['editarimagenperfil']['tmp_name'], $ubicacionFinal)){
+            // Eliminar la imagen anterior si existe
+            // if(file_exists($rutaImagenActual)) {
+            //     unlink($rutaImagenActual);
+            // }
+
+            if(move_uploaded_file($_FILES['nuevaimagenperfil']['tmp_name'], $ubicacionFinal)){
                 echo "La imagen se ha subido correctamente.";
             } else{
                 echo "Error al mover la imagen.";
@@ -48,7 +53,7 @@ class Usuario{
 
             $parametros = array (
                 "id" => $id,
-                "ruta" => "imagenes_perfil/" . $rutaImagenActual
+                "ruta" => "imagenes_perfil/" . $rutaImagenNueva
             );
 
             curl_setopt($curl, CURLOPT_POSTFIELDS,json_encode($parametros));
@@ -60,7 +65,7 @@ class Usuario{
 
             if($informacion->actualizado)
             {
-                $_SESSION['rutasesion'] = "imagenes_perfil/" . $rutaImagenActual;
+                $_SESSION['rutasesion'] = "imagenes_perfil/" . $rutaImagenNueva;
                     
                 $this->NotificacionImagenActualizada();
 
