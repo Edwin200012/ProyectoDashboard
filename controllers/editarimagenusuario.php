@@ -16,6 +16,7 @@ class Usuario{
     function EditarImagenUsuario(){
         $id = $_SESSION['idsesion'];
         $rutaImagenNueva = $_POST['ruta_imagen_nueva'];
+        $rutaImagenActual = $_POST['rutaImagenActual'];
 
          if(isset($_FILES['nuevaimagenperfil'])){
                 $nombreArchivo = $_FILES['nuevaimagenperfil']['name'];
@@ -28,10 +29,15 @@ class Usuario{
                 $ubicacionFinal = $carpetaDestino . basename($_FILES['nuevaimagenperfil']['name']);
             }
 
+            var_dump($rutaImagenActual);
+
             // Eliminar la imagen anterior si existe
-            // if(file_exists($rutaImagenActual)) {
-            //     unlink($rutaImagenActual);
-            // }
+            if(file_exists("../" . $rutaImagenActual)) {
+                unlink("../" . $rutaImagenActual);
+                echo "Se elimino la imagen";
+            } else{
+                echo "Error al eliminar imagen";
+            }
 
             if(move_uploaded_file($_FILES['nuevaimagenperfil']['tmp_name'], $ubicacionFinal)){
                 echo "La imagen se ha subido correctamente.";
