@@ -46,7 +46,7 @@
 
   ?>
 
-<div id="alertaNoExitoContrasena" class="alert alert-danger alert-dismissible fade show" role="alert">
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
     ¡La contraseña no se actualizó correctamente!
     <a href="miperfil.php">
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -61,7 +61,7 @@
       if(isset($_GET['actualizadatos'])):
 
   ?>
-  <div id="alertaExitoActualizaDatos" class="alert alert-success alert-dismissible fade show" role="alert">
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
     ¡Datos actualizados exitosamente!
     <a href="miperfil.php">
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -76,7 +76,7 @@
       if(isset($_GET['actualizaimagen'])):
 
   ?>
-  <div id="alertaExitoImagenActualiza" class="alert alert-success alert-dismissible fade show" role="alert">
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
     ¡Imagen actualizada exitosamente!
     <a href="miperfil.php">
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -91,7 +91,7 @@
       if(isset($_GET['resetimagen'])):
 
   ?>
-  <div id="alertaExitoResetImagen" class="alert alert-success alert-dismissible fade show" role="alert">
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
     ¡Imagen restablecida exitosamente!
     <a href="miperfil.php">
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -106,7 +106,7 @@
       if(isset($_GET['noresetimagen'])):
 
   ?>
-  <div id="alertaNoExitoResetImagen" class="alert alert-success alert-dismissible fade show" role="alert">
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
     La imagen ya esta restablecida!
     <a href="miperfil.php">
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -426,97 +426,7 @@
     // Redirige al usuario después de cerrar la alerta
     setTimeout(function() {
       window.location.href = 'miperfil.php'; // Cambia esta URL por tu destino deseado
-    }, 0);
-  }, 3000); // 3000 milisegundos = 3 segundos
-</script>
-
-<script>
-  // Selecciona la alerta por su ID
-  var alerta = document.getElementById('alertaNoExitoContrasena');
-
-  // Configura un temporizador para que se ejecute después de 3000 milisegundos (3 segundos)
-  setTimeout(function() {
-    // Cierra la alerta
-    var evento = new Event('click');
-    var botonCerrar = alerta.querySelector('.btn-close');
-    botonCerrar.dispatchEvent(evento);
-
-    // Redirige al usuario después de cerrar la alerta
-    setTimeout(function() {
-      window.location.href = 'miperfil.php'; // Cambia esta URL por tu destino deseado
-    }, 0);
-  }, 3000); // 3000 milisegundos = 3 segundos
-</script>
-
-<script>
-  // Selecciona la alerta por su ID
-  var alerta = document.getElementById('alertaExitoActualizaDatos');
-
-  // Configura un temporizador para que se ejecute después de 3000 milisegundos (3 segundos)
-  setTimeout(function() {
-    // Cierra la alerta
-    var evento = new Event('click');
-    var botonCerrar = alerta.querySelector('.btn-close');
-    botonCerrar.dispatchEvent(evento);
-
-    // Redirige al usuario después de cerrar la alerta
-    setTimeout(function() {
-      window.location.href = 'miperfil.php'; // Cambia esta URL por tu destino deseado
-    }, 0);
-  }, 3000); // 3000 milisegundos = 3 segundos
-</script>
-
-<script>
-  // Selecciona la alerta por su ID
-  var alerta = document.getElementById('alertaExitoImagenActualiza');
-
-  // Configura un temporizador para que se ejecute después de 3000 milisegundos (3 segundos)
-  setTimeout(function() {
-    // Cierra la alerta
-    var evento = new Event('click');
-    var botonCerrar = alerta.querySelector('.btn-close');
-    botonCerrar.dispatchEvent(evento);
-
-    // Redirige al usuario después de cerrar la alerta
-    setTimeout(function() {
-      window.location.href = 'miperfil.php'; // Cambia esta URL por tu destino deseado
-    }, 0);
-  }, 3000); // 3000 milisegundos = 3 segundos
-</script>
-
-<script>
-  // Selecciona la alerta por su ID
-  var alerta = document.getElementById('alertaExitoResetImagen');
-
-  // Configura un temporizador para que se ejecute después de 3000 milisegundos (3 segundos)
-  setTimeout(function() {
-    // Cierra la alerta
-    var evento = new Event('click');
-    var botonCerrar = alerta.querySelector('.btn-close');
-    botonCerrar.dispatchEvent(evento);
-
-    // Redirige al usuario después de cerrar la alerta
-    setTimeout(function() {
-      window.location.href = 'miperfil.php'; // Cambia esta URL por tu destino deseado
-    }, 0);
-  }, 3000); // 3000 milisegundos = 3 segundos
-</script>
-
-<script>
-  // Selecciona la alerta por su ID
-  var alerta = document.getElementById('alertaNoExitoResetImagen');
-
-  // Configura un temporizador para que se ejecute después de 3000 milisegundos (3 segundos)
-  setTimeout(function() {
-    // Cierra la alerta
-    var evento = new Event('click');
-    var botonCerrar = alerta.querySelector('.btn-close');
-    botonCerrar.dispatchEvent(evento);
-
-    // Redirige al usuario después de cerrar la alerta
-    setTimeout(function() {
-      window.location.href = 'miperfil.php'; // Cambia esta URL por tu destino deseado
-    }, 0);
+    }, 0); // Espera un poco para iniciar la redirección tras el cierre de la alerta
   }, 3000); // 3000 milisegundos = 3 segundos
 </script>
 
