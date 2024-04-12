@@ -181,7 +181,7 @@ document.getElementById("btnConfirmar").onclick = function() {
   modal.classList.remove("show-zoom");
   setTimeout(function() {
     window.location.href = "./sesion/cerrarsesion.php";
-  }, 750);
+  }, 0);
 };
 
 // Manejar cancelación
