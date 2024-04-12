@@ -37,8 +37,11 @@ class Usuario{
                     return;
                 }
             } else {
-                echo "La imagen anterior no existe.";
-                return;
+                if(file_exists("../" . $rutaImagenActual)) {
+                    unlink("../" . $rutaImagenActual);
+                } else{
+                    echo "Error al eliminar imagen";
+                }
             }
         } else {
             echo "La imagen actual es la imagen por defecto. No se eliminará.";
