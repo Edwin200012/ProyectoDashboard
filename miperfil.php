@@ -211,10 +211,13 @@
                       <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Imagen de Perfil</label>
                       <div style="margin-top: 5%;"  class="col-md-8 col-lg-9">
                       <!-- <div  class="col-md-8 col-lg-9" style="margin-left: 40%;"> -->
-                        <img src="<?php echo $rutasesion ?>" style="margin-left: 12px;" alt="Imagen de Perfil">
+                      <div style="display: flex;">
+                        <img src="<?php echo $rutasesion ?>" style="margin-left: 12px;" alt="Imagen de Perfil" id="imagenActual">
+                        <div style="margin-left: 20%;" id="imagenSeleccionada"></div>
+                        </div>
                         <div id="div_file" class="pt-2" style="position:relative; width: 150px; background-color: white; border-radius: 20px; box-shadow:0px 2px 2px 2px #1a71a9;">
                         <p style="text-align: center; color: black;" id="texto">Cambiar Imagen</p>
-                        <input style="position: absolute; top:0px; left:0px; right:0px; bottom:0px; width:100%; height:100%; opacity:0;" type="file" id="nuevaimagenperfil" name="nuevaimagenperfil" onchange="mostrarNombreImagen()" onmouseover="this.style.cursor='pointer'">
+                        <input style="position: absolute; top:0px; left:0px; right:0px; bottom:0px; width:100%; height:100%; opacity:0;" type="file" id="nuevaimagenperfil" name="nuevaimagenperfil" onchange="mostrarImagenSeleccionada()" onmouseover="this.style.cursor='pointer'">
                         <input maxlength="255" minlength="3" style="border-radius: 30px;" type="hidden" class="form-control" id="ruta_imagen_nueva" name="ruta_imagen_nueva" required readonly>
                         <input name="rutaImagenActual" id="rutaImagenActual" type="hidden" value="<?php echo $_SESSION['rutasesion'] ?>" readonly>
                       </div>
@@ -362,7 +365,7 @@
     });
 </script>
 
-<script>
+<!-- <script>
   function mostrarNombreImagen() {
     const input = document.getElementById('nuevaimagenperfil');
     const ruta_imagen_nueva = document.getElementById('ruta_imagen_nueva');
@@ -372,7 +375,7 @@
       ruta_imagen_nueva.value = '';
     }
   }
-</script>
+</script> -->
 
 <script>
     document.getElementById('nuevaimagenperfil').addEventListener('change', function() {
@@ -382,6 +385,31 @@
       document.getElementById('botonActualizarImagen').disabled = false;
     }
   });
+</script>
+
+<script>
+    function mostrarImagenSeleccionada() {
+        var input = document.getElementById('nuevaimagenperfil');
+        const ruta_imagen_nueva = document.getElementById('ruta_imagen_nueva');
+        //Colocar el nombre de la imagen en el input
+    if (input.files.length > 0) {
+      ruta_imagen_nueva.value = input.files[0].name;
+    } else {
+      ruta_imagen_nueva.value = '';
+    }
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                var imagenSeleccionada = document.createElement('img');
+                imagenSeleccionada.src = e.target.result;
+                imagenSeleccionada.style.maxWidth = '120px';
+                imagenSeleccionada.style.maxWidth = '120px';
+                document.getElementById('imagenSeleccionada').innerHTML = '';
+                document.getElementById('imagenSeleccionada').appendChild(imagenSeleccionada);
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
 </script>
 
 <!-- ======= Footer ======= -->
