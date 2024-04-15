@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <div id="whatsapp-button">
-  <a title="Contacto" href="https://api.whatsapp.com/send?phone=+528712400654&text=Hola,%20contacto%20con%20soporte" target="_blank">
+  <a title="Soporte" href="https://api.whatsapp.com/send?phone=+528712400654&text=Hola,%20contacto%20con%20soporte" target="_blank">
     <div class="circle" id="whatsapp-circle">
       <i class="fab fa-whatsapp"></i>
     </div>
