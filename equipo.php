@@ -310,6 +310,10 @@
   }
 </script>
 
+<!-- ======= WhatsApp ======= -->
+<?php
+    include_once("plantilla/whatsapp.php");
+?>
 
 <!-- ======= Footer ======= -->
 <div style="margin-top: 25%;">

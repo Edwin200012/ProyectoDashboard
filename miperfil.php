@@ -117,9 +117,6 @@
     endif;
   ?>
 
-  
-
-
     <section class="section profile">
       <div class="row">
         <div class="col-xl-4">
@@ -412,6 +409,10 @@
     }
 </script>
 
+<!-- ======= WhatsApp ======= -->
+<?php
+    include_once("plantilla/whatsapp.php");
+?>
 
 <!-- ======= Footer ======= -->
 <?php

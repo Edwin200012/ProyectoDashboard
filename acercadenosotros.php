@@ -41,6 +41,12 @@
 
   </main><!-- End #main -->
 
+  <!-- ======= WhatsApp ======= -->
+<?php
+    include_once("plantilla/whatsapp.php");
+?>
+
+
   <!-- ======= Footer ======= -->
   <?php
     include_once ("plantilla/footer.php");
