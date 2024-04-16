@@ -9,7 +9,7 @@ include_once("../route.php");
             $usuario = $_POST['usuario'];
             $nuevacontrasena = $_POST['nuevacontrasena'];
             $contrasena = $_POST['contrasenaconfirmar'];
-            $rutasesion = "imagenes_perfil/icono-perfil-default.png";
+            $rutasesion = "imagen_default_usuario/icono_perfil_default.png";
 
             $url = Route::$url.Route::$crearUsuario;
 
