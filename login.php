@@ -201,7 +201,7 @@ if(isset($_POST["enviar"]) ){
 
                  <div style="margin-top: 8%;" class="col-12">
                     <div class="input-container">
-                      <input style="border-radius: 15px;" name="contrasena" maxlength="50" minlength="3" type="password" class="form-control" id="contrasena" placeholder=" " required>
+                      <input style="border-radius: 15px;" name="contrasena" maxlength="100" minlength="8" type="password" class="form-control" id="contrasena" placeholder=" " required>
                       <label style="margin-left: 2%; margin-top:2%;" for="contrasena" class="form-label"> <i class="fa-solid fa-lock" style="color: #74C0FC;"></i> Contraseña</label>
                     <div class="invalid-feedback">Por favor, ingrese su contraseña.</div>
                     </div>
