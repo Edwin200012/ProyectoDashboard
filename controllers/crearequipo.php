@@ -8,6 +8,7 @@ class Empresa{
         $puesto_equipo = $_POST['puesto_equipo'];
         $descripcion_equipo = $_POST['descripcion_equipo'];
         $redes_sociales_equipo = $_POST['redes_sociales_equipo'];
+        $imagenDefault = "../imagen_default_equipo/icono_perfil_default.png";
 
         if(isset($_FILES['imagen_equipo'])){
         $nombreArchivo = $_FILES['imagen_equipo']['name'];
@@ -44,7 +45,8 @@ class Empresa{
                 "nombre" => $nombre_equipo,
                 "puesto" => $puesto_equipo,
                 "descripcion" => $descripcion_equipo,
-                "imagen" => $ubicacionFinal,
+                // Verificar si se manda o no una imagen
+                "imagen" => ($ubicacionFinal == "../imagenes_equipo/") ? $imagenDefault : $ubicacionFinal,
                 "redes_Sociales" => $redes_sociales_equipo
             );
 
@@ -61,7 +63,6 @@ class Empresa{
         else{
             header('Location: ../equipo.php?datosnoenviadosequipo=true');
         }
-        
         
     }
 }
