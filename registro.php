@@ -159,13 +159,13 @@
 
                     <div class="col-12">
                       <label for="nuevacontrasena" class="form-label">Contraseña</label>
-                      <input maxlength="50" minlength="3" style="border-radius: 15px;" type="password" name="nuevacontrasena" class="form-control" id="nuevacontrasena" required>
+                      <input maxlength="100" minlength="8" style="border-radius: 15px;" type="password" name="nuevacontrasena" class="form-control" id="nuevacontrasena" required>
                       <div class="invalid-feedback">Por favor, ingrese su contraseña.</div>
                     </div>
 
                     <div class="col-12">
                       <label for="contrasenaconfirmar" class="form-label">Confirmar Contraseña</label>
-                      <input maxlength="50" minlength="3" style="border-radius: 15px;" type="password" name="contrasenaconfirmar" class="form-control" id="contrasenaconfirmar" required>
+                      <input maxlength="100" minlength="8" style="border-radius: 15px;" type="password" name="contrasenaconfirmar" class="form-control" id="contrasenaconfirmar" required>
                       <div class="invalid-feedback">Por favor, confirme su contraseña.</div>
                     </div>
 
