@@ -188,7 +188,7 @@
               </div>
 
               <div class="credits">
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                  Diseñado por <a href="https://bootstrapmade.com/">BootstrapMade</a>
               </div>
 
             </div>
