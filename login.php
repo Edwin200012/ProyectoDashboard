@@ -199,12 +199,13 @@ if(isset($_POST["enviar"]) ){
                     </div>
                  </div>  
 
-                    <div class="col-12">
+                    <!-- <div class="col-12">
                       <div class="form-check">
                         <input style="border-radius: 15px;" class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
                         <label class="form-check-label" for="rememberMe">Recordar</label>
                       </div>
-                    </div>
+                    </div> -->
+
                     <div style="width: 50%; margin-right: 7%; margin-left: 7%;" class="pt-4 pb-2">
                         <div class="g-recaptcha" data-sitekey="6LfrR5UpAAAAACsKlRxRSJnqSmdkjJM4trkFCi5k" data-callback="enableSubmit">></div>
                     </div>
