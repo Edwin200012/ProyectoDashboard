@@ -1,5 +1,3 @@
-
-
 <style>
     #toastBox{
         width: 400px;
@@ -93,7 +91,6 @@ if(isset($_POST["enviar"]) ){
 <html lang="en">
 
 <head>
-<!-- <script src="https://www.google.com/recaptcha/api.js?render=6LfrR5UpAAAAAM_c1hgwPpCKD10AkTxEIqhJeaL3"></script> -->
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
@@ -134,8 +131,6 @@ if(isset($_POST["enviar"]) ){
   ?>
 
 
-
-
 <?php
       if(isset($_GET['inactividad'])):
 
@@ -159,8 +154,6 @@ if(isset($_POST["enviar"]) ){
     endif;
   ?>
 
-
-
     <div class="container">
 
       <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
@@ -171,7 +164,6 @@ if(isset($_POST["enviar"]) ){
               <div class="d-flex justify-content-center py-4">
                 <a href="" class="logo d-flex align-items-center w-auto">
                   <img src="assets/img/nuevo_logo.png" alt="">
-                  <!-- <span class="d-none d-lg-block">NiceAdmin</span> -->
                 </a>
               </div><!-- End Logo -->
 
@@ -207,12 +199,12 @@ if(isset($_POST["enviar"]) ){
                     </div>
                  </div>  
 
-                    <!-- <div class="col-12">
+                    <div class="col-12">
                       <div class="form-check">
                         <input style="border-radius: 15px;" class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
                         <label class="form-check-label" for="rememberMe">Recordar</label>
                       </div>
-                    </div> -->
+                    </div>
                     <div style="width: 50%; margin-right: 7%; margin-left: 7%;" class="pt-4 pb-2">
                         <div class="g-recaptcha" data-sitekey="6LfrR5UpAAAAACsKlRxRSJnqSmdkjJM4trkFCi5k" data-callback="enableSubmit">></div>
                     </div>
