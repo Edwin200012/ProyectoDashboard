@@ -88,7 +88,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <div id="whatsapp-button">
-  <a class="whatsapp-button" href="https://api.whatsapp.com/send?phone=+528712400654&text=Hola,%20contacto%20con%20soporte,%20olvide%20mi%20contrasena" target="_blank">
+  <a class="whatsapp-button" href="https://api.whatsapp.com/send?phone=+528712400654&text=Hola,%20contacto%20con%20soporte,%20olvide%20mi%20contrasena." target="_blank">
       <i class="bi bi-whatsapp whatsapp-icon"></i>
   </a>
 </div>
