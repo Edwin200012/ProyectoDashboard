@@ -21,9 +21,6 @@
         transform: rotate(360deg);
     }
 
-/* Eliminar cualquier decoración de texto */
-
-
 /* Mostrar tooltip y diseño del mismo */
 .whatsapp-button:hover::after {
     content: "¡Contacto Soporte!";
