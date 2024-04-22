@@ -217,12 +217,11 @@ if(isset($_POST["enviar"]) ){
                       <p class="small mb-0">¿No tienes cuenta? <a href="registro.php">Crear una cuenta</a></p>
                     </div>
                   </form>
-
                 </div>
               </div>
 
-              <div class="credits">
-                  Diseñado por <a href="https://bootstrapmade.com/">BootstrapMade</a>
+              <div class="credits" style="color: inherit;">
+                    Diseñado por <span style="color: #007bff;">BootstrapMade</span>
               </div>
 
             </div>

@@ -187,8 +187,8 @@
                 </div>
               </div>
 
-              <div class="credits">
-                  Diseñado por <a href="https://bootstrapmade.com/">BootstrapMade</a>
+              <div class="credits" style="color: inherit;">
+                    Diseñado por <span style="color: #007bff;">BootstrapMade</span>
               </div>
 
             </div>
