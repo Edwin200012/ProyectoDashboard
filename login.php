@@ -196,6 +196,9 @@ if(isset($_POST["enviar"]) ){
                       <input style="border-radius: 15px;" name="contrasena" maxlength="100" minlength="8" type="password" class="form-control" id="contrasena" placeholder=" " required>
                       <label style="margin-left: 2%; margin-top:2%;" for="contrasena" class="form-label"> <i class="fa-solid fa-lock" style="color: #74C0FC;"></i> Contraseña</label>
                     <div class="invalid-feedback">Por favor, ingrese su contraseña.</div>
+                    <span id="botonMostrarOcultarContrasena" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;">
+                    <i class="bi bi-eye-slash" style="color: #74C0FC;"></i>
+                    </span>
                     </div>
                  </div>  
 
@@ -259,16 +262,29 @@ if(isset($_POST["enviar"]) ){
 
   </script>
 
-   <!-- Agrega la CDN de jQuery y Popper.js (necesarios para que funcionen los componentes de Bootstrap) -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Agrega la CDN de jQuery y Popper.js (necesarios para que funcionen los componentes de Bootstrap) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <!-- Agrega la CDN de Bootstrap (JavaScript) -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
   <script>
-function enableSubmit() {
+    function enableSubmit() {
     document.getElementById("enviar").disabled = false;
 }
+</script>
+
+<script>
+  const botonMostrarOcultarContrasena = document.querySelector('#botonMostrarOcultarContrasena');
+  const contrasena = document.querySelector('#contrasena');
+  botonMostrarOcultarContrasena.addEventListener('click', function () {
+    const type = contrasena.getAttribute('type') === 'password' ? 'text' : 'password';
+    contrasena.setAttribute('type', type);
+    this.querySelector('i').classList.toggle('bi-eye');
+    this.querySelector('i').classList.toggle('bi-eye-slash');
+  });
+
+
 </script>
 
 </body>
