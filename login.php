@@ -233,6 +233,26 @@ if(isset($_POST["enviar"]) ){
 
       </section>
 
+      <!-- Modal para confirmar mostrar contraseña -->
+<div class="modal fade" id="confirmarMostrarContrasenaModal" tabindex="-1" aria-labelledby="confirmarMostrarContrasenaModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmarMostrarContrasenaModalLabel">Confirmar</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ¿Está seguro de querer mostrar la contraseña? Esto podría ser visible para otras personas.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" id="confirmarMostrarContrasena">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
     </div>
   </main><!-- End #main -->
 
@@ -275,35 +295,48 @@ if(isset($_POST["enviar"]) ){
 </script>
 
 <script>
-  const botonMostrarOcultarContrasena = document.querySelector('#botonMostrarOcultarContrasena');
-  const contrasena = document.querySelector('#contrasena');
-  
-  let mostrarContrasena = false;
 
-  
-  botonMostrarOcultarContrasena.addEventListener('click', function () {
-    const type = contrasena.getAttribute('type') === 'password' ? 'text' : 'password';
-    contrasena.setAttribute('type', type);
-    
-    if (type === 'text' && !mostrarContrasena){
-     
-      const confirmar = confirm('¿Está seguro de querer mostrar la contraseña? Esto podría ser visible para otras personas.');
-      
-      if(confirmar){
+const botonMostrarOcultarContrasena = document.querySelector('#botonMostrarOcultarContrasena');
+const contrasena = document.querySelector('#contrasena');
+const confirmarMostrarContrasenaBtn = document.querySelector('#confirmarMostrarContrasena');
+const cancelarMostrarContrasenaBtn = document.querySelector('[data-bs-dismiss="modal"]');
+const modalElement = document.getElementById('confirmarMostrarContrasenaModal');
+
+let mostrarContrasena = false;
+
+botonMostrarOcultarContrasena.addEventListener('click', function () {
+  const type = contrasena.getAttribute('type') === 'password' ? 'text' : 'password';
+
+  if (type === 'text' && !mostrarContrasena) {
+    const confirmarMostrarContrasenaModal = new bootstrap.Modal(modalElement);
+    confirmarMostrarContrasenaModal.show();
+
+    function handleButtonClick(event) {
+      if (event.target === confirmarMostrarContrasenaBtn) {
+        contrasena.setAttribute('type', 'text');
         mostrarContrasena = true;
-      }
-      else{
+        toggleEyeIcon(true);
+      } else if (event.target === cancelarMostrarContrasenaBtn) {
         contrasena.setAttribute('type', 'password');
-        return;
-      }
-    }
-      else{
         mostrarContrasena = false;
       }
-     
-    this.querySelector('i').classList.toggle('bi-eye');
-    this.querySelector('i').classList.toggle('bi-eye-slash');
-  });
+      confirmarMostrarContrasenaModal.hide();
+      modalElement.removeEventListener('click', handleButtonClick);
+    }
+
+    modalElement.addEventListener('click', handleButtonClick);
+  } else {
+    contrasena.setAttribute('type', 'password');
+    mostrarContrasena = false;
+    toggleEyeIcon(false);
+  }
+});
+
+function toggleEyeIcon(showEye) {
+  const eyeIcon = botonMostrarOcultarContrasena.querySelector('i');
+  eyeIcon.classList.toggle('bi-eye', showEye);
+  eyeIcon.classList.toggle('bi-eye-slash', !showEye);
+}
 
 
 </script>
