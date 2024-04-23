@@ -16,28 +16,27 @@ $dotenv->load();
             
             $id = $_SESSION['idsesion'];
             $nombre = $_POST['editarnombre'];
-            $apellidop = $_POST['editarapellidop'];
-            $apellidom = $_POST['editarapellidom'];
+            if(isset($_POST['editarapellidop']) && !empty($_POST['editarapellidop'])) {
+                $apellidop = $_POST['editarapellidop'];
+            } else {
+                $apellidop = NULL;
+            }
+            if(isset($_POST['editarapellidom']) && !empty($_POST['editarapellidom'])) {
+                $apellidom = $_POST['editarapellidom'];
+            } else {
+                $apellidom = NULL;
+            }
             $usuario = $_POST['editarusuario'];
             $correo = $_POST['editarcorreo'];
-            $telefono = $_POST['editartelefono'];
-            $direccion = $_POST['editardireccion'];
-
-            if(isset($_FILES['imagenperfil'])){
-                $nombreArchivo = $_FILES['imagenperfil']['name'];
-                $tipo = $_FILES['imagenperfil']['type'];
-                $tamano = $_FILES['imagenperfil']['size'];
-                $temporal = $_FILES['imagenperfil']['tmp_name'];
-                $error = $_FILES['imagenperfil']['error'];
-
-                $carpetaDestino ='../imagenesperfil/';
-                $ubicacionFinal = $carpetaDestino . basename($_FILES['imagenperfil']['name']);
+            if(isset($_POST['editartelefono']) && !empty($_POST['editartelefono'])) {
+                $telefono = $_POST['editartelefono'];
+            } else {
+                $telefono = NULL;
             }
-
-            if(move_uploaded_file($_FILES['imagenperfil']['tmp_name'], $ubicacionFinal)){
-                echo "La imagen se ha subido correctamente.";
-            } else{
-                echo "Error al mover la imagen.";
+            if(isset($_POST['editardireccion']) && !empty($_POST['editardireccion'])) {
+                $direccion = $_POST['editardireccion'];
+            } else {
+                $direccion = NULL;
             }
 
             $url = Route::$url.Route::$editarUsuario;
@@ -51,6 +50,7 @@ $dotenv->load();
                     'Content-Type: application/json',
                 ]);
 
+                
             $parametros = array (           
                     "id" => $id,
                     "nombre" => $nombre,
@@ -59,8 +59,7 @@ $dotenv->load();
                     "usuario" => $usuario,
                     "correo" => $correo,
                     "telefono" => $telefono,
-                    "direccion" => $direccion,
-                    "ruta" => $ubicacionFinal
+                    "direccion" => $direccion
             );
 
             curl_setopt($curl, CURLOPT_POSTFIELDS,json_encode($parametros));
@@ -72,7 +71,6 @@ $dotenv->load();
 
             if ($informacion->actualizado)
                 {
-                    // echo $informacion;
                     $_SESSION['nombresesion'] = $nombre;
                     $_SESSION['apellidopsesion'] = $apellidop;
                     $_SESSION['apellidomsesion'] = $apellidom;
@@ -80,9 +78,9 @@ $dotenv->load();
                     $_SESSION['correosesion'] = $correo;
                     $_SESSION['telefonosesion'] = $telefono;
                     $_SESSION['direccionsesion'] = $direccion;
-                    // $_SESSION['rutasesion'] = $ubicacionFinal;
+                    
                     $this->NotificacionDatosActualizados();
-                    // echo $_SESSION;
+
                     header('Location: ../miperfil.php?actualizadatos=true');
                 }
                 
@@ -113,7 +111,6 @@ try {
     $mail->setFrom('edwinvazquezcal12@gmail.com', 'Remitente');
 
     //Añadir un destinatario
-    // $mail->addAddress('fawigek423@glaslack.com');
     $mail->addAddress((isset($_SESSION['correosesion']) ? $_SESSION['correosesion'] : 'Desconocido'));
     //Contenido
     $mail->isHTML(true);
@@ -127,10 +124,9 @@ try {
     } catch (Exception $e) {
         echo "El mensaje no pudo ser enviado. Mailer Error: {$mail->ErrorInfo}";
     }
+
+        }
 }
-
-
-    }
 
     $usuario = new Usuario();
     $usuario->EditarUsuario();

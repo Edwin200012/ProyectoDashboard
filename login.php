@@ -1,5 +1,3 @@
-
-
 <style>
     #toastBox{
         width: 400px;
@@ -93,7 +91,6 @@ if(isset($_POST["enviar"]) ){
 <html lang="en">
 
 <head>
-<!-- <script src="https://www.google.com/recaptcha/api.js?render=6LfrR5UpAAAAAM_c1hgwPpCKD10AkTxEIqhJeaL3"></script> -->
 
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
@@ -134,8 +131,6 @@ if(isset($_POST["enviar"]) ){
   ?>
 
 
-
-
 <?php
       if(isset($_GET['inactividad'])):
 
@@ -159,8 +154,6 @@ if(isset($_POST["enviar"]) ){
     endif;
   ?>
 
-
-
     <div class="container">
 
       <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
@@ -171,7 +164,6 @@ if(isset($_POST["enviar"]) ){
               <div class="d-flex justify-content-center py-4">
                 <a href="" class="logo d-flex align-items-center w-auto">
                   <img src="assets/img/nuevo_logo.png" alt="">
-                  <!-- <span class="d-none d-lg-block">NiceAdmin</span> -->
                 </a>
               </div><!-- End Logo -->
 
@@ -191,7 +183,7 @@ if(isset($_POST["enviar"]) ){
                       
                       <input style="border-radius: 15px;" name="correo" maxlength="50" minlength="3" type="email" class="form-control" id="correo" placeholder=" " required>
                       
-                      <label style="margin-left: 2%; margin-top:2%;" for="correo" class="form-label"> <i class="fa-solid fa-envelope" style="color: #74C0FC;"></i> Correo electrónico</label>
+                      <label style="margin-left: 2%; margin-top:2%;" for="correo" class="form-label">  Correo electrónico</label>
                       
                     <div class="invalid-feedback">Por favor, ingrese su correo.</div>
                     </div>
@@ -201,9 +193,12 @@ if(isset($_POST["enviar"]) ){
 
                  <div style="margin-top: 8%;" class="col-12">
                     <div class="input-container">
-                      <input style="border-radius: 15px;" name="contrasena" maxlength="50" minlength="3" type="password" class="form-control" id="contrasena" placeholder=" " required>
-                      <label style="margin-left: 2%; margin-top:2%;" for="contrasena" class="form-label"> <i class="fa-solid fa-lock" style="color: #74C0FC;"></i> Contraseña</label>
+                      <input style="border-radius: 15px;" name="contrasena" maxlength="100" minlength="8" type="password" class="form-control" id="contrasena" placeholder=" " required>
+                      <label style="margin-left: 2%; margin-top:2%;" for="contrasena" class="form-label">Contraseña</label>
                     <div class="invalid-feedback">Por favor, ingrese su contraseña.</div>
+                    <span id="botonMostrarOcultarContrasena" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;">
+                    <i class="bi bi-eye-slash" style="color: #74C0FC;"></i>
+                    </span>
                     </div>
                  </div>  
 
@@ -213,6 +208,7 @@ if(isset($_POST["enviar"]) ){
                         <label class="form-check-label" for="rememberMe">Recordar</label>
                       </div>
                     </div> -->
+
                     <div style="width: 50%; margin-right: 7%; margin-left: 7%;" class="pt-4 pb-2">
                         <div class="g-recaptcha" data-sitekey="6LfrR5UpAAAAACsKlRxRSJnqSmdkjJM4trkFCi5k" data-callback="enableSubmit">></div>
                     </div>
@@ -224,12 +220,11 @@ if(isset($_POST["enviar"]) ){
                       <p class="small mb-0">¿No tienes cuenta? <a href="registro.php">Crear una cuenta</a></p>
                     </div>
                   </form>
-
                 </div>
               </div>
 
-              <div class="credits">
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+              <div class="credits" style="color: inherit;">
+                    Diseñado por <span style="color: #007bff;">BootstrapMade</span>
               </div>
 
             </div>
@@ -267,17 +262,37 @@ if(isset($_POST["enviar"]) ){
 
   </script>
 
-   <!-- Agrega la CDN de jQuery y Popper.js (necesarios para que funcionen los componentes de Bootstrap) -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Agrega la CDN de jQuery y Popper.js (necesarios para que funcionen los componentes de Bootstrap) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <!-- Agrega la CDN de Bootstrap (JavaScript) -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
   <script>
-function enableSubmit() {
+    function enableSubmit() {
     document.getElementById("enviar").disabled = false;
 }
 </script>
+
+<script>
+  const botonMostrarOcultarContrasena = document.querySelector('#botonMostrarOcultarContrasena');
+  const contrasena = document.querySelector('#contrasena');
+  botonMostrarOcultarContrasena.addEventListener('click', function () {
+    const type = contrasena.getAttribute('type') === 'password' ? 'text' : 'password';
+    contrasena.setAttribute('type', type);
+    this.querySelector('i').classList.toggle('bi-eye');
+    this.querySelector('i').classList.toggle('bi-eye-slash');
+  });
+
+
+</script>
+
+<!-- ======= WhatsApp ======= -->
+<?php
+    include_once("plantilla/whatsappcontrasenaolvidada.php");
+?>
+
+
 
 </body>
 

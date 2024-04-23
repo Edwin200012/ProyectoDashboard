@@ -31,7 +31,9 @@
 
 <div class="alert alert-success alert-dismissible fade show" role="alert">
     ¡Contraseña actualizada exitosamente!
+    <a href="miperfil.php">
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </a>
   </div>
 
 <?php
@@ -46,7 +48,9 @@
 
 <div class="alert alert-danger alert-dismissible fade show" role="alert">
     ¡La contraseña no se actualizó correctamente!
+    <a href="miperfil.php">
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </a>
   </div>
 
 <?php
@@ -59,14 +63,59 @@
   ?>
   <div class="alert alert-success alert-dismissible fade show" role="alert">
     ¡Datos actualizados exitosamente!
+    <a href="miperfil.php">
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </a>
   </div>
 
 <?php
     endif;
   ?>
 
+<?php
+      if(isset($_GET['actualizaimagen'])):
 
+  ?>
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    ¡Imagen actualizada exitosamente!
+    <a href="miperfil.php">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </a>
+  </div>
+
+<?php
+    endif;
+  ?>
+
+<?php
+      if(isset($_GET['resetimagen'])):
+
+  ?>
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    ¡Imagen restablecida exitosamente!
+    <a href="miperfil.php">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </a>
+  </div>
+
+<?php
+    endif;
+  ?>
+
+<?php
+      if(isset($_GET['noresetimagen'])):
+
+  ?>
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    La imagen ya esta restablecida!
+    <a href="miperfil.php">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </a>
+  </div>
+
+<?php
+    endif;
+  ?>
 
     <section class="section profile">
       <div class="row">
@@ -112,9 +161,7 @@
               <div class="tab-content pt-2">
 
                 <div class="tab-pane fade show active profile-overview" id="profile-overview">
-                  <!-- <h5 class="card-title">About</h5>
-                  <p class="small fst-italic">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</p> -->
-
+                
                   <h5 class="card-title">Perfil</h5>
 
                   <div class="row">
@@ -156,20 +203,45 @@
 
                 <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
-                  <!-- Profile Edit Form -->
-                  <form enctype="multipart/form-data" action="controllers/editarusuario.php" class="row g-3 needs-validation" novalidate method="POST">
+                <form enctype="multipart/form-data" action="controllers/editarimagenusuario.php" class="row g-3 needs-validation" novalidate method="POST">
                   <div class="row mb-3">
                       <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Imagen de Perfil</label>
-                      <div  class="col-md-8 col-lg-9">
-                        <img src="<?php echo $rutasesion ?>" style="margin-left: 12px;" alt="Imagen de Perfil">
-                        <div id="div_file" class="pt-2" style="position:relative; width: 150px; background-color: #2499e3; border-radius: 5px; box-shadow:0px 3px 0px #1a71a9;">
-                        <p style="text-align: center; color: white;" id="texto">Cambiar Imagen</p>
-                        <input style="position: absolute; top:0px; left:0px; right:0px; bottom:0px; width:100%; height:100%; opacity:0;" type="file" id="imagenperfil" name="imagenperfil">
-                          <!-- <a style="background-color: #77E6F2; color: black; border-color: silver;" href="#" class="btn btn-primary btn-sm" title="Subir imagen de perfil"><i class="bi bi-upload"></i></a>
-                          <a style="background-color: #8C030E; color: white; border-color: silver;" href="#" class="btn btn-danger btn-sm" title="Eliminar mi imagen de perfil"><i class="bi bi-trash"></i></a> -->
+                      <div style="margin-top: 5%;"  class="col-md-8 col-lg-9">
+                      <!-- <div  class="col-md-8 col-lg-9" style="margin-left: 40%;"> -->
+                      <div style="display: flex;">
+                        <img src="<?php echo $rutasesion ?>" style="margin-left: 12px;" alt="Imagen de Perfil" id="imagenActual">
+                        <div style="margin-left: 20%;" id="imagenSeleccionada"></div>
                         </div>
+                        <div id="div_file" class="pt-2" style="position:relative; width: 150px; background-color: white; border-radius: 20px; box-shadow:0px 2px 2px 2px #1a71a9;">
+                        <p style="text-align: center; color: black;" id="texto">Cambiar Imagen</p>
+                        <input style="position: absolute; top:0px; left:0px; right:0px; bottom:0px; width:100%; height:100%; opacity:0;" type="file" id="nuevaimagenperfil" name="nuevaimagenperfil" onchange="mostrarImagenSeleccionada()" onmouseover="this.style.cursor='pointer'">
+                        <input maxlength="255" minlength="3" style="border-radius: 30px;" type="hidden" class="form-control" id="ruta_imagen_nueva" name="ruta_imagen_nueva" required readonly>
+                        <input name="rutaImagenActual" id="rutaImagenActual" type="hidden" value="<?php echo $_SESSION['rutasesion'] ?>" readonly>
+                      </div>
+
+                        <div style="margin-left: 4%;">
+                        <button disabled title="Subir imagen de perfil" style="color: #74C0FC; background-color: #FFFFFF; height: 40px; width: 40px;" type="submit" id="botonActualizarImagen" name="botonActualizarImagen">
+                            <i class="bi-solid bi-upload"></i>
+                          </a>
+                        </button>
+                        </div>
+
                       </div>
                     </div>  
+                </form>
+
+                <form style="margin-left: 33%; margin-top: -7.2%;" enctype="multipart/form-data" action="controllers/resetimagenusuario.php" class="row g-3 needs-validation" novalidate method="POST">
+                        <input maxlength="255" minlength="3" style="border-radius: 30px;" type="hidden" class="form-control" id="ruta_reset_imagen" name="ruta_reset_imagen" required value="imagen_default_usuario/icono_perfil_default.png" readonly>
+                        <input name="rutaImagenActual" id="rutaImagenActual" type="hidden" value="<?php echo $_SESSION['rutasesion'] ?>" readonly>
+                        <button title="Eliminar mi imagen de perfil" style="color: #74C0FC; background-color: #FFFFFF; height: 40px; width: 40px;" type="submit" id="botonEliminarImagen" name="botonEliminarImagen">
+                        <i class="bi bi-trash"></i>
+                        </button>
+                        
+                </form>
+                
+
+                  <!-- Profile Edit Form -->
+                  <form enctype="multipart/form-data" action="controllers/editarusuario.php" class="row g-3 needs-validation" novalidate method="POST"> 
 
                   <div class="col-12">
                       <label for="editarnombre" class="form-label">Nombre</label>
@@ -227,7 +299,7 @@
                     <label for="nuevacontrasena" class="col-md-4 col-lg-3 col-form-label">Nueva Contraseña</label>
                     <div class="col-md-8 col-lg-9" style="width: 90%;">
                     <div class="input-group">
-                    <input maxlength="50" minlength="3" name="nuevacontrasena" style="border-radius: 15px 0px 0px 15px;" type="password" class="form-control" id="nuevacontrasena" required placeholder="Nueva Contraseña">
+                    <input maxlength="100" minlength="8" name="nuevacontrasena" style="border-radius: 15px 0px 0px 15px;" type="password" class="form-control" id="nuevacontrasena" required placeholder="Nueva Contraseña">
                     <button style="border-color: lightgray; border-radius: 0px 15px 15px 0px;" class="btn btn-outline-secondary" type="button" id="botonMostrarOcultarNC">
                     <i class="bi bi-eye-slash"></i>
                     </button>
@@ -241,7 +313,7 @@
                       <label for="confirmarcontrasena" class="col-md-4 col-lg-3 col-form-label">Confirmar Contraseña</label>
                       <div class="col-md-8 col-lg-9" style="width: 90%;">
                       <div class="input-group">
-                      <input maxlength="50" minlength="3" name="confirmarcontrasena" style="border-radius: 15px 0px 0px 15px;" type="password" class="form-control" id="confirmarcontrasena" required placeholder="Confirmar Contraseña">
+                      <input maxlength="100" minlength="8" name="confirmarcontrasena" style="border-radius: 15px 0px 0px 15px;" type="password" class="form-control" id="confirmarcontrasena" required placeholder="Confirmar Contraseña">
                       <button style="border-color: lightgray; border-radius: 0px 15px 15px 0px;" class="btn btn-outline-secondary" type="button" id="botonMostrarOcultarCC">
                       <i class="bi bi-eye-slash"></i>
                       </button>
@@ -289,6 +361,58 @@
         this.querySelector('i').classList.toggle('bi-eye-slash');
     });
 </script>
+
+<!-- <script>
+  function mostrarNombreImagen() {
+    const input = document.getElementById('nuevaimagenperfil');
+    const ruta_imagen_nueva = document.getElementById('ruta_imagen_nueva');
+    if (input.files.length > 0) {
+      ruta_imagen_nueva.value = input.files[0].name;
+    } else {
+      ruta_imagen_nueva.value = '';
+    }
+  }
+</script> -->
+
+<script>
+    document.getElementById('nuevaimagenperfil').addEventListener('change', function() {
+    // Comprobar si se ha seleccionado un archivo.
+    if(this.files.length > 0) {
+      // Habilitar boton al seleccionar un artchivo.
+      document.getElementById('botonActualizarImagen').disabled = false;
+    }
+  });
+</script>
+
+<script>
+    function mostrarImagenSeleccionada() {
+        var input = document.getElementById('nuevaimagenperfil');
+        const ruta_imagen_nueva = document.getElementById('ruta_imagen_nueva');
+        //Colocar el nombre de la imagen en el input
+    if (input.files.length > 0) {
+      ruta_imagen_nueva.value = input.files[0].name;
+    } else {
+      ruta_imagen_nueva.value = '';
+    }
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                var imagenSeleccionada = document.createElement('img');
+                imagenSeleccionada.src = e.target.result;
+                imagenSeleccionada.style.maxWidth = '120px';
+                imagenSeleccionada.style.maxWidth = '120px';
+                document.getElementById('imagenSeleccionada').innerHTML = '';
+                document.getElementById('imagenSeleccionada').appendChild(imagenSeleccionada);
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+
+<!-- ======= WhatsApp ======= -->
+<?php
+    include_once("plantilla/whatsapp.php");
+?>
 
 <!-- ======= Footer ======= -->
 <?php

@@ -6,6 +6,7 @@ include_once("../route.php");
 class Empresa{
     function EliminarEquipo(){
         $Id = $_POST["id"];
+        $Ruta = $_POST["ruta"];
         $url = Route::$url.Route::$eliminarEquipo.$Id;
 
         $curl = curl_init();
@@ -24,9 +25,14 @@ class Empresa{
         $informacion = json_decode($respuesta);
 
         if($informacion->equipointegranteeliminado)
+        {
+            unlink($Ruta);
             echo json_encode("Eliminado");
-        else
-        echo json_encode("Error al eliminar");
+        }
+        
+        else{
+            echo json_encode("Error al eliminar");
+        }
     }
 }
 

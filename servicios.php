@@ -34,7 +34,9 @@
 
 <div class="alert alert-success alert-dismissible fade show" role="alert">
     ¡Datos enviados exitosamente!
+    <a href="servicios.php">
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </a>
   </div>
 
 <?php
@@ -49,7 +51,9 @@
 
 <div class="alert alert-success alert-dismissible fade show" role="alert">
     ¡Servicio actualizado exitosamente!
+    <a href="servicios.php">
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </a>
   </div>
 
 <?php
@@ -265,6 +269,11 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+
+<!-- ======= WhatsApp ======= -->
+<?php
+    include_once("plantilla/whatsapp.php");
+?>
 
 <!-- ======= Footer ======= -->
 <div style="margin-top: 25%;">

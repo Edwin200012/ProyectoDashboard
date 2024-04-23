@@ -33,7 +33,9 @@
 
 <div class="alert alert-success alert-dismissible fade show" role="alert">
     ¡Datos enviados exitosamente!
+    <a href="equipo.php">
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </a>
   </div>
 
 <?php
@@ -47,7 +49,9 @@
 
 <div class="alert alert-success alert-dismissible fade show" role="alert">
     ¡Integrante de equipo actualizado exitosamente!
+    <a href="equipo.php">
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </a>
   </div>
 
 <?php
@@ -70,7 +74,7 @@
 
 
                 
-<form action="controllers/crearequipo.php" class="row g-3 needs-validation" novalidate method="POST">
+<form action="controllers/crearequipo.php" class="row g-3 needs-validation" novalidate method="POST" enctype="multipart/form-data">
 
 <div style="width: 90%; margin-left: 5%;">
 
@@ -107,8 +111,18 @@
     <i class="fa-solid fa-image" style="color: #74C0FC;"></i>
     <label style="margin-left: .5%;" for="imagen_equipo" class="form-label">Imagen</label>
   </div>
-    <input maxlength="255" minlength="3" style="border-radius: 15px;" type="text" class="form-control" id="imagen_equipo" name="imagen_equipo" required placeholder="Imagen">
-    <div class="invalid-feedback">Por favor, ingrese la imagen del integrante del equipo.</div>
+
+      <div id="div_file" class="pt-2" style="position:relative; width: 150px; background-color: white; border-radius: 20px; box-shadow:0px 2px 2px 2px #1a71a9;">
+          <p style="text-align: center; color: black;" id="texto_imagen_equipo">Subir Imagen</p>
+          <input style="position: absolute; top:0px; left:0px; right:0px; bottom:0px; width:100%; height:100%; opacity:0;" type="file" id="imagen_equipo" name="imagen_equipo" onchange="mostrarNombreImagen()" onmouseover="this.style.cursor='pointer'">
+          <div class="invalid-feedback">Por favor, ingrese la imagen del integrante del equipo.</div>
+      </div>
+  </div>
+
+  <div class="mb-3">
+  <div style=" margin-left: 1%;">  
+  </div>
+    <input maxlength="255" minlength="3" style="border-radius: 30px;" type="text" class="form-control" id="nombre_imagen_seleccionada" name="nombre_imagen_seleccionada" required placeholder="Imagen" readonly>
   </div>
 
   <div class="mb-3">
@@ -186,7 +200,7 @@
           $('#tBody').empty();
           let datos = response.registroequipo
             datos.forEach((post, i) => {
-              $('#tBody').append('<tr id="'+post.id+'"><td>'+post.id+'</td><td>'+post.nombre+'</td><td>'+post.puesto+'</td><td>'+post.descripcion+'</td><td>'+post.imagen+'</td><td>'+post.redes_Sociales+'</td>  <td><a title="Editar Registro" type="button" href="formularioactualizarequipo.php?idequipo='+post.id+'" class="btn btn-outline-warning"> <i class="fa-solid fa-pen-to-square" "></i></a></td>  <td><button title="Eliminar Registro" type="button" class="btn btn-outline-danger btneliminar" id="'+post.id+'"> <i class="fas fa-trash"></i> </button></td> </tr>');
+              $('#tBody').append('<tr id="'+post.id+'"><td>'+post.id+'</td><td>'+post.nombre+'</td><td>'+post.puesto+'</td><td>'+post.descripcion+'</td><td>'+post.imagen+'</td><td>'+post.redes_Sociales+'</td>  <td><a title="Editar Registro" type="button" href="formularioactualizarequipo.php?idequipo='+post.id+'" class="btn btn-outline-warning"> <i class="fa-solid fa-pen-to-square" "></i></a></td>  <td><button title="Eliminar Registro" type="button" class="btn btn-outline-danger btneliminar" id="'+post.id+'" value="'+post.imagen+'"> <i class="fas fa-trash"></i> </button></td> </tr>');
             });
         }
       }).fail(function () {
@@ -195,10 +209,11 @@
     }
     $("#tBody").on("click",".btneliminar",function() {
             let id = $(this).attr('id');
-            eliminarEquipo(id);
+            let url = $(this).val();
+            eliminarEquipo(id, url);
         });
 
-        function eliminarEquipo(id){
+        function eliminarEquipo(id, ruta){
           Swal.fire({
             background: '#f3f4f6',
             title: 'Confirmar eliminación',
@@ -221,7 +236,7 @@
                   url:'controllers/eliminarequipo.php',
                   type: 'POST',
                   dataType: 'JSON',
-                  data:{id:id},
+                  data:{id:id, ruta:ruta},
                   success: function (response){
                     $('#'+id).remove();
                     swal.fire({
@@ -283,6 +298,22 @@
     });
   </script>
 
+<script>
+  function mostrarNombreImagen() {
+    const input = document.getElementById('imagen_equipo');
+    const nombreImagenSeleccionada = document.getElementById('nombre_imagen_seleccionada');
+    if (input.files.length > 0) {
+      nombreImagenSeleccionada.value = input.files[0].name;
+    } else {
+      nombreImagenSeleccionada.value = '';
+    }
+  }
+</script>
+
+<!-- ======= WhatsApp ======= -->
+<?php
+    include_once("plantilla/whatsapp.php");
+?>
 
 <!-- ======= Footer ======= -->
 <div style="margin-top: 25%;">

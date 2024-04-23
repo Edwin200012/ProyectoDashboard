@@ -159,14 +159,29 @@
 
                     <div class="col-12">
                       <label for="nuevacontrasena" class="form-label">Contraseña</label>
-                      <input maxlength="50" minlength="3" style="border-radius: 15px;" type="password" name="nuevacontrasena" class="form-control" id="nuevacontrasena" required>
-                      <div class="invalid-feedback">Por favor, ingrese su contraseña.</div>
+                      <div class="col-md-8 col-lg-9" style="width: 100%;">
+                        <div class="input-group">
+                          <input maxlength="100" minlength="8" style="border-radius: 15px 0px 0px 15px;" type="password" name="nuevacontrasena" class="form-control" id="nuevacontrasena" required>
+                          <button style="border-color: lightgray; border-radius: 0px 15px 15px 0px;" class="btn btn-outline-secondary" type="button" id="botonMostrarOcultarContrasena">
+                          <i class="bi bi-eye-slash"></i>
+                          </button>
+                          <div class="invalid-feedback">Por favor, ingrese su contraseña.</div>
+                        </div>
+                        
+                      </div>
                     </div>
 
                     <div class="col-12">
                       <label for="contrasenaconfirmar" class="form-label">Confirmar Contraseña</label>
-                      <input maxlength="50" minlength="3" style="border-radius: 15px;" type="password" name="contrasenaconfirmar" class="form-control" id="contrasenaconfirmar" required>
-                      <div class="invalid-feedback">Por favor, confirme su contraseña.</div>
+                      <div class="col-md-8 col-lg-9" style="width: 100%;">
+                        <div class="input-group">
+                        <input maxlength="100" minlength="8" style="border-radius: 15px 0px 0px 15px;" type="password" name="contrasenaconfirmar" class="form-control" id="contrasenaconfirmar" required>
+                        <button style="border-color: lightgray; border-radius: 0px 15px 15px 0px;" class="btn btn-outline-secondary" type="button" id="botonMostrarOcultarConfirmarContrasena">
+                          <i class="bi bi-eye-slash"></i>
+                          </button>
+                        </div>
+                        <div class="invalid-feedback">Por favor, confirme su contraseña.</div>
+                      </div>
                     </div>
 
                     <div class="col-12">
@@ -187,8 +202,8 @@
                 </div>
               </div>
 
-              <div class="credits">
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+              <div class="credits" style="color: inherit;">
+                    Diseñado por <span style="color: #007bff;">BootstrapMade</span>
               </div>
 
             </div>
@@ -228,6 +243,31 @@
     toast.show();
 
   </script>
+
+  <script>
+    const botonMostrarOcultarContrasena = document.querySelector('#botonMostrarOcultarContrasena');
+    const nuevacontrasena = document.querySelector('#nuevacontrasena');
+    botonMostrarOcultarContrasena.addEventListener('click', function () {
+      const type = nuevacontrasena.getAttribute('type') === 'password' ? 'text' : 'password';
+      nuevacontrasena.setAttribute('type', type);
+      this.querySelector('i').classList.toggle('bi-eye');
+      this.querySelector('i').classList.toggle('bi-eye-slash');
+    });
+
+    const botonMostrarOcultarConfirmarContrasena = document.querySelector('#botonMostrarOcultarConfirmarContrasena');
+    const contrasenaconfirmar = document.querySelector('#contrasenaconfirmar');
+    botonMostrarOcultarConfirmarContrasena.addEventListener ('click', function () {
+      const type = contrasenaconfirmar.getAttribute('type') === 'password' ? 'text' : 'password';
+      contrasenaconfirmar.setAttribute('type', type);
+      this.querySelector('i').classList.toggle('bi-eye');
+      this.querySelector('i').classList.toggle('bi-eye-slash');
+    });
+  </script>
+
+<!-- ======= WhatsApp ======= -->
+<?php
+    include_once("plantilla/whatsappcontrasenaolvidada.php");
+?>
 
 </body>
 
