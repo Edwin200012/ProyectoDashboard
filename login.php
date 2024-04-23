@@ -311,7 +311,7 @@ botonMostrarOcultarContrasena.addEventListener('click', function () {
     const confirmarMostrarContrasenaModal = new bootstrap.Modal(modalElement);
     confirmarMostrarContrasenaModal.show();
 
-    function handleButtonClick(event) {
+    function darClick(event) {
       if (event.target === confirmarMostrarContrasenaBtn) {
         contrasena.setAttribute('type', 'text');
         mostrarContrasena = true;
@@ -321,10 +321,10 @@ botonMostrarOcultarContrasena.addEventListener('click', function () {
         mostrarContrasena = false;
       }
       confirmarMostrarContrasenaModal.hide();
-      modalElement.removeEventListener('click', handleButtonClick);
+      modalElement.removeEventListener('click', darClick);
     }
 
-    modalElement.addEventListener('click', handleButtonClick);
+    modalElement.addEventListener('click', darClick);
   } else {
     contrasena.setAttribute('type', 'password');
     mostrarContrasena = false;
@@ -332,10 +332,10 @@ botonMostrarOcultarContrasena.addEventListener('click', function () {
   }
 });
 
-function toggleEyeIcon(showEye) {
-  const eyeIcon = botonMostrarOcultarContrasena.querySelector('i');
-  eyeIcon.classList.toggle('bi-eye', showEye);
-  eyeIcon.classList.toggle('bi-eye-slash', !showEye);
+function toggleEyeIcon(mostrarIcono) {
+  const icono = botonMostrarOcultarContrasena.querySelector('i');
+  icono.classList.toggle('bi-eye', mostrarIcono);
+  icono.classList.toggle('bi-eye-slash', !mostrarIcono);
 }
 
 
