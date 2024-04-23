@@ -277,9 +277,30 @@ if(isset($_POST["enviar"]) ){
 <script>
   const botonMostrarOcultarContrasena = document.querySelector('#botonMostrarOcultarContrasena');
   const contrasena = document.querySelector('#contrasena');
+  
+  let mostrarContrasena = false;
+
+  
   botonMostrarOcultarContrasena.addEventListener('click', function () {
     const type = contrasena.getAttribute('type') === 'password' ? 'text' : 'password';
     contrasena.setAttribute('type', type);
+    
+    if (type === 'text' && !mostrarContrasena){
+     
+      const confirmar = confirm('¿Está seguro de querer mostrar la contraseña? Esto podría ser visible para otras personas.');
+      
+      if(confirmar){
+        mostrarContrasena = true;
+      }
+      else{
+        contrasena.setAttribute('type', 'password');
+        return;
+      }
+    }
+      else{
+        mostrarContrasena = false;
+      }
+     
     this.querySelector('i').classList.toggle('bi-eye');
     this.querySelector('i').classList.toggle('bi-eye-slash');
   });
@@ -291,8 +312,6 @@ if(isset($_POST["enviar"]) ){
 <?php
     include_once("plantilla/whatsappcontrasenaolvidada.php");
 ?>
-
-
 
 </body>
 
