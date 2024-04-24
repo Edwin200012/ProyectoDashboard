@@ -245,8 +245,8 @@ if(isset($_POST["enviar"]) ){
         ¿Está seguro de querer mostrar la contraseña? Esto podría ser visible para otras personas.
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary" id="confirmarMostrarContrasena">Aceptar</button>
+        <button style="background-color: #d33; border-radius: 20px; border: none;" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button style="background-color: #28a745; border-radius: 20px; border: none;" type="button" class="btn btn-primary" id="confirmarMostrarContrasena">Aceptar</button>
       </div>
     </div>
   </div>
