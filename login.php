@@ -108,6 +108,29 @@ if(isset($_POST["enviar"]) ){
   <main>
 
   <?php
+      if(isset($_GET['sesioncerrada'])):
+
+  ?>
+   <div style="margin-top:10px; margin-bottom: -5%; margin-left: 75%; border-radius: 15px;" class="toast show">
+    <div style="background-color: lightcyan; border-radius: 15px 15px 0px 0px;"  class="toast-header">
+    <span class="alert-icon success-icon">&#10004;</span>
+      <strong class="me-auto">Login</strong>
+      <a href="login.php">
+        <button style="font-size: 18px;" type="button" class="btn-close" data-bs-dismiss="toast"></button>
+      </a>
+    </div>
+    <div style="background-color: yellow; border-radius: 0px 0px 15px 15px;" class="toast-body">
+    <p>Sesión cerrada correctamente</p>
+    </div>
+  </div>
+</div>
+
+
+  <?php
+    endif;
+  ?>
+
+  <?php
       if(isset($_GET['buscar'])):
 
   ?>
