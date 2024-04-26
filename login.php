@@ -338,7 +338,7 @@ botonMostrarOcultarContrasena.addEventListener('click', function () {
       if (event.target === confirmarMostrarContrasenaBtn) {
         contrasena.setAttribute('type', 'text');
         mostrarContrasena = true;
-        toggleEyeIcon(true);
+        alternarIcono(true);
       } else if (event.target === cancelarMostrarContrasenaBtn) {
         contrasena.setAttribute('type', 'password');
         mostrarContrasena = false;
@@ -351,11 +351,11 @@ botonMostrarOcultarContrasena.addEventListener('click', function () {
   } else {
     contrasena.setAttribute('type', 'password');
     mostrarContrasena = false;
-    toggleEyeIcon(false);
+    alternarIcono(false);
   }
 });
 
-function toggleEyeIcon(mostrarIcono) {
+function alternarIcono(mostrarIcono) {
   const icono = botonMostrarOcultarContrasena.querySelector('i');
   icono.classList.toggle('bi-eye', mostrarIcono);
   icono.classList.toggle('bi-eye-slash', !mostrarIcono);
