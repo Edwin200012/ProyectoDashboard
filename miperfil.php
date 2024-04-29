@@ -438,6 +438,7 @@
               mostrarContrasena = true;
               alternarIcono(true);
             }
+          
             else if (event.target === cancelarMostrarContrasenaBtn) {
               nuevacontrasena.setAttribute('type', 'password');
               mostrarContrasena = false;
@@ -453,10 +454,54 @@
           alternarIcono(false);
         }
     });
+
     function alternarIcono(mostrarIcono) {
       const icono = botonMostrarOcultarNC.querySelector('i');
       icono.classList.toggle('bi-eye', mostrarIcono);
       icono.classList.toggle('bi-eye-slash', !mostrarIcono);
+      }
+
+
+      const botonMostrarOcultarCC = document.querySelector('#botonMostrarOcultarCC');
+      const confirmarcontrasena = document.querySelector('#confirmarcontrasena');
+      const confirmarMostrarConfirmarContrasenaBtn = document.querySelector('#confirmarMostrarConfirmarContrasena');
+      const cancelarMostrarConfirmarContrasenaBtn = document.querySelector('[data-bs-dismiss="modal"]');
+      const modalConfirmarElement = document.getElementById('confirmarMostrarConfirmarContrasenaModal');
+
+      let mostrarConfirmarContrasena = false;
+
+      botonMostrarOcultarCC.addEventListener('click', function () {
+        const typeConfirmar = confirmarcontrasena.getAttribute('type') === 'password' ? 'text' : 'password';
+
+        if(typeConfirmar === 'text' && !mostrarConfirmarContrasena) {
+          const confirmarMostrarConfirmarContrasenaModal = new bootstrap.Modal(modalConfirmarElement);
+          confirmarMostrarConfirmarContrasenaModal.show();
+
+          function darClickConfirmar(eventConfirmar) {
+            if (eventConfirmar.target === confirmarMostrarConfirmarContrasenaBtn) {
+              confirmarcontrasena.setAttribute('type', 'text');
+              mostrarConfirmarContrasena = true;
+              alternarIconoConfirmar(true);
+            }
+
+            else if (eventConfirmar.target === cancelarMostrarConfirmarContrasenaBtn) {
+              confirmarcontrasena.setAttribute('type', 'password');
+              mostrarConfirmarContrasena = false;
+            }
+            confirmarMostrarConfirmarContrasenaModal.hide();
+            modalConfirmarElement.removeEventListener('click', darClickConfirmar);
+          }
+          modalConfirmarElement.addEventListener('click', darClickConfirmar);
+        } else {
+          confirmarcontrasena.setAttribute('type', 'password');
+          mostrarConfirmarContrasena = false;
+          alternarIconoConfirmar(false);
+        }
+      });
+      function alternarIconoConfirmar(mostrarConfirmarIcono) {
+        const iconoConfirmar = botonMostrarOcultarCC.querySelector('i');
+        iconoConfirmar.classList.toggle('bi-eye', mostrarConfirmarIcono);
+        iconoConfirmar.classList.toggle('bi-eye-slash', !mostrarConfirmarIcono);
       }
 
 </script>
