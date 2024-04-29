@@ -338,47 +338,53 @@
       </div>
     </section>
 
+<!-- Modal para confirmar mostrar contraseña -->
+<div class="modal fade" id="confirmarMostrarContrasenaModal" tabindex="-1" aria-labelledby="confirmarMostrarContrasenaModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmarMostrarContrasenaModalLabel">Confirmar</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ¿Está seguro de querer mostrar la contraseña? Esto podría ser visible para otras personas.
+      </div>
+      <div class="modal-footer">
+        <button style="background-color: #d33; border-radius: 20px; border: none;" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button style="background-color: #28a745; border-radius: 20px; border: none;" type="button" class="btn btn-primary" id="confirmarMostrarContrasena">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal para confirmar mostrar contraseña confirmacion -->
+<div class="modal fade" id="confirmarMostrarConfirmarContrasenaModal" tabindex="-1" aria-labelledby="confirmarMostrarConfirmarContrasenaModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmarMostrarContrasenaModalLabel">Confirmar</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ¿Está seguro de querer mostrar la contraseña? Esto podría ser visible para otras personas.
+      </div>
+      <div class="modal-footer">
+        <button style="background-color: #d33; border-radius: 20px; border: none;" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button style="background-color: #28a745; border-radius: 20px; border: none;" type="button" class="btn btn-primary" id="confirmarMostrarConfirmarContrasena">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 </main>
 
 <script>
-    const botonMostrarOcultarNC = document.querySelector('#botonMostrarOcultarNC');
-    const nuevacontrasena = document.querySelector('#nuevacontrasena');
-    botonMostrarOcultarNC.addEventListener('click', function () {
-        const type = nuevacontrasena.getAttribute('type') === 'password' ? 'text' : 'password';
-        nuevacontrasena.setAttribute('type', type);
-        this.querySelector('i').classList.toggle('bi-eye');
-        this.querySelector('i').classList.toggle('bi-eye-slash');
-    });
-
-    const botonMostrarOcultarCC = document.querySelector('#botonMostrarOcultarCC');
-    const confirmarcontrasena = document.querySelector('#confirmarcontrasena');
-    botonMostrarOcultarCC.addEventListener('click', function () {
-        const type = confirmarcontrasena.getAttribute('type') === 'password' ? 'text' : 'password';
-        confirmarcontrasena.setAttribute('type', type);
-        this.querySelector('i').classList.toggle('bi-eye');
-        this.querySelector('i').classList.toggle('bi-eye-slash');
-    });
-</script>
-
-<!-- <script>
-  function mostrarNombreImagen() {
-    const input = document.getElementById('nuevaimagenperfil');
-    const ruta_imagen_nueva = document.getElementById('ruta_imagen_nueva');
-    if (input.files.length > 0) {
-      ruta_imagen_nueva.value = input.files[0].name;
-    } else {
-      ruta_imagen_nueva.value = '';
-    }
-  }
-</script> -->
-
-<script>
     document.getElementById('nuevaimagenperfil').addEventListener('change', function() {
     // Comprobar si se ha seleccionado un archivo.
     if(this.files.length > 0) {
-      // Habilitar boton al seleccionar un artchivo.
+      // Habilitar boton al seleccionar un archivo.
       document.getElementById('botonActualizarImagen').disabled = false;
     }
   });
@@ -407,6 +413,52 @@
             reader.readAsDataURL(input.files[0]);
         }
     }
+</script>
+
+<script>
+    const botonMostrarOcultarNC = document.querySelector('#botonMostrarOcultarNC');
+    const nuevacontrasena = document.querySelector('#nuevacontrasena');
+    const confirmarMostrarContrasenaBtn = document.querySelector('#confirmarMostrarContrasena');
+    const cancelarMostrarContrasenaBtn = document.querySelector('[data-bs-dismiss="modal"]');
+    const modalElement = document.getElementById('confirmarMostrarContrasenaModal');
+
+    let mostrarContrasena = false;
+
+
+    botonMostrarOcultarNC.addEventListener('click', function () {
+        const type = nuevacontrasena.getAttribute('type') === 'password' ? 'text' : 'password';
+
+        if(type === 'text' && !mostrarContrasena) {
+          const confirmarMostrarContrasenaModal = new bootstrap.Modal(modalElement);
+          confirmarMostrarContrasenaModal.show();
+
+          function darClick(event) {
+            if (event.target === confirmarMostrarContrasenaBtn) {
+              nuevacontrasena.setAttribute('type', 'text');
+              mostrarContrasena = true;
+              alternarIcono(true);
+            }
+            else if (event.target === cancelarMostrarContrasenaBtn) {
+              nuevacontrasena.setAttribute('type', 'password');
+              mostrarContrasena = false;
+            }
+            confirmarMostrarContrasenaModal.hide();
+            modalElement.removeEventListener('click', darClick);
+          }
+
+          modalElement.addEventListener('click', darClick);
+        } else {
+          nuevacontrasena.setAttribute('type', 'password');
+          mostrarContrasena = false;
+          alternarIcono(false);
+        }
+    });
+    function alternarIcono(mostrarIcono) {
+      const icono = botonMostrarOcultarNC.querySelector('i');
+      icono.classList.toggle('bi-eye', mostrarIcono);
+      icono.classList.toggle('bi-eye-slash', !mostrarIcono);
+      }
+
 </script>
 
 <!-- ======= WhatsApp ======= -->
