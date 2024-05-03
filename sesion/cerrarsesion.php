@@ -2,5 +2,5 @@
     //Continuamos la sesión
     session_start();
     session_destroy();
-    header("location:/NiceAdmin/login.php");
+    header("location:/NiceAdmin/login.php?sesioncerrada=true");
 ?>

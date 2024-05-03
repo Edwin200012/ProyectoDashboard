@@ -212,6 +212,44 @@
 
       </section>
 
+<!-- Modal para confirmar mostrar contraseña -->
+<div class="modal fade" id="confirmarMostrarContrasenaModal" tabindex="-1" aria-labelledby="confirmarMostrarContrasenaModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmarMostrarContrasenaModalLabel">Confirmar</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ¿Está seguro de querer mostrar la contraseña? Esto podría ser visible para otras personas.
+      </div>
+      <div class="modal-footer">
+        <button style="background-color: #d33; border-radius: 20px; border: none;" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button style="background-color: #28a745; border-radius: 20px; border: none;" type="button" class="btn btn-primary" id="confirmarMostrarContrasena">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal para confirmar mostrar contraseña confirmacion -->
+<div class="modal fade" id="confirmarMostrarConfirmarContrasenaModal" tabindex="-1" aria-labelledby="confirmarMostrarConfirmarContrasenaModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmarMostrarContrasenaModalLabel">Confirmar</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ¿Está seguro de querer mostrar la contraseña? Esto podría ser visible para otras personas.
+      </div>
+      <div class="modal-footer">
+        <button style="background-color: #d33; border-radius: 20px; border: none;" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button style="background-color: #28a745; border-radius: 20px; border: none;" type="button" class="btn btn-primary" id="confirmarMostrarConfirmarContrasena">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
     </div>
   </main><!-- End #main -->
 
@@ -247,21 +285,89 @@
   <script>
     const botonMostrarOcultarContrasena = document.querySelector('#botonMostrarOcultarContrasena');
     const nuevacontrasena = document.querySelector('#nuevacontrasena');
+    const confirmarMostrarContrasenaBtn = document.querySelector('#confirmarMostrarContrasena');
+    const cancelarMostrarContrasenaBtn = document.querySelector('[data-bs-dismiss="modal"]');
+    const modalElement = document.getElementById('confirmarMostrarContrasenaModal');
+
+    let mostrarContrasena = false;
+
+
     botonMostrarOcultarContrasena.addEventListener('click', function () {
       const type = nuevacontrasena.getAttribute('type') === 'password' ? 'text' : 'password';
-      nuevacontrasena.setAttribute('type', type);
-      this.querySelector('i').classList.toggle('bi-eye');
-      this.querySelector('i').classList.toggle('bi-eye-slash');
+
+      if(type === 'text' && !mostrarContrasena){
+        const confirmarMostrarContrasenaModal = new bootstrap.Modal(modalElement);
+        confirmarMostrarContrasenaModal.show();
+
+        function darClick(event){
+          if (event.target === confirmarMostrarContrasenaBtn) {
+            nuevacontrasena.setAttribute('type', 'text');
+            mostrarContrasena = true;
+            alternarIcono(true);
+          }
+          else if (event.target === cancelarMostrarContrasenaBtn) {
+            nuevacontrasena.setAttribute('type', 'password');
+            mostrarContrasena = false;
+          }
+          confirmarMostrarContrasenaModal.hide();
+          modalElement.removeEventListener('click', darClick);
+        }
+
+        modalElement.addEventListener('click', darClick);
+      } else {
+        nuevacontrasena.setAttribute('type', 'password');
+        mostrarContrasena = false;
+        alternarIcono(false);
+      }
     });
 
+    function alternarIcono(mostrarIcono){
+        const icono = botonMostrarOcultarContrasena.querySelector('i');
+        icono.classList.toggle('bi-eye', mostrarIcono);
+        icono.classList.toggle('bi-eye-slash', !mostrarIcono);
+      }
+
     const botonMostrarOcultarConfirmarContrasena = document.querySelector('#botonMostrarOcultarConfirmarContrasena');
-    const contrasenaconfirmar = document.querySelector('#contrasenaconfirmar');
+    const confirmarContrasena = document.querySelector('#contrasenaconfirmar');
+    const confirmarMostrarConfirmarContrasenaBtn = document.querySelector('#confirmarMostrarConfirmarContrasena');
+    const cancelarMostrarConfirmarContrasenaBtn = document.querySelector('[data-bs-dismiss="modal"]');
+    const modalConfirmarElement = document.getElementById('confirmarMostrarConfirmarContrasenaModal');
+
+    let mostrarConfirmarContrasena = false;
+    
     botonMostrarOcultarConfirmarContrasena.addEventListener ('click', function () {
       const type = contrasenaconfirmar.getAttribute('type') === 'password' ? 'text' : 'password';
-      contrasenaconfirmar.setAttribute('type', type);
-      this.querySelector('i').classList.toggle('bi-eye');
-      this.querySelector('i').classList.toggle('bi-eye-slash');
+
+      if(type === 'text' && !mostrarConfirmarContrasena) {
+        const confirmarMostrarConfirmarContrasenaModal = new bootstrap.Modal(modalConfirmarElement);
+        confirmarMostrarConfirmarContrasenaModal.show();
+
+        function darClickConfirmar(event) {
+          if (event.target === confirmarMostrarConfirmarContrasenaBtn) {
+            confirmarContrasena.setAttribute('type', 'text');
+            mostrarConfirmarContrasena = true;
+            alternarIconoConfirmar(true);
+          }
+          else if (event.target === cancelarMostrarConfirmarContrasenaBtn) {
+            confirmarContrasena.setAttribute('type', 'password');
+            mostrarConfirmarContrasena = false;
+          }
+          confirmarMostrarConfirmarContrasenaModal.hide();
+          modalConfirmarElement.removeEventListener('click', darClickConfirmar);
+        }
+        modalConfirmarElement.addEventListener('click', darClickConfirmar);
+      } else {
+        confirmarContrasena.setAttribute('type', 'password');
+        mostrarConfirmarContrasena = false;
+        alternarIconoConfirmar(false);
+      }
     });
+
+    function alternarIconoConfirmar(mostrarIconoConfirmar) {
+      const iconoConfirmar = botonMostrarOcultarConfirmarContrasena.querySelector('i');
+      iconoConfirmar.classList.toggle('bi-eye', mostrarIconoConfirmar);
+      iconoConfirmar.classList.toggle('bi-eye-slash', !mostrarIconoConfirmar);
+    }
   </script>
 
 <!-- ======= WhatsApp ======= -->

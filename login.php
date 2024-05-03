@@ -108,6 +108,29 @@ if(isset($_POST["enviar"]) ){
   <main>
 
   <?php
+      if(isset($_GET['sesioncerrada'])):
+
+  ?>
+   <div style="margin-top:10px; margin-bottom: -5%; margin-left: 75%; border-radius: 15px;" class="toast show">
+    <div style="background-color: lightcyan; border-radius: 15px 15px 0px 0px;"  class="toast-header">
+    <span class="alert-icon success-icon">&#10004;</span>
+      <strong class="me-auto">Login</strong>
+      <a href="login.php">
+        <button style="font-size: 18px;" type="button" class="btn-close" data-bs-dismiss="toast"></button>
+      </a>
+    </div>
+    <div style="background-color: yellow; border-radius: 0px 0px 15px 15px;" class="toast-body">
+    <p>Sesión cerrada correctamente</p>
+    </div>
+  </div>
+</div>
+
+
+  <?php
+    endif;
+  ?>
+
+  <?php
       if(isset($_GET['buscar'])):
 
   ?>
@@ -233,6 +256,26 @@ if(isset($_POST["enviar"]) ){
 
       </section>
 
+      <!-- Modal para confirmar mostrar contraseña -->
+<div class="modal fade" id="confirmarMostrarContrasenaModal" tabindex="-1" aria-labelledby="confirmarMostrarContrasenaModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmarMostrarContrasenaModalLabel">Confirmar</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ¿Está seguro de querer mostrar la contraseña? Esto podría ser visible para otras personas.
+      </div>
+      <div class="modal-footer">
+        <button style="background-color: #d33; border-radius: 20px; border: none;" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button style="background-color: #28a745; border-radius: 20px; border: none;" type="button" class="btn btn-primary" id="confirmarMostrarContrasena">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
     </div>
   </main><!-- End #main -->
 
@@ -275,14 +318,48 @@ if(isset($_POST["enviar"]) ){
 </script>
 
 <script>
-  const botonMostrarOcultarContrasena = document.querySelector('#botonMostrarOcultarContrasena');
-  const contrasena = document.querySelector('#contrasena');
-  botonMostrarOcultarContrasena.addEventListener('click', function () {
-    const type = contrasena.getAttribute('type') === 'password' ? 'text' : 'password';
-    contrasena.setAttribute('type', type);
-    this.querySelector('i').classList.toggle('bi-eye');
-    this.querySelector('i').classList.toggle('bi-eye-slash');
-  });
+
+const botonMostrarOcultarContrasena = document.querySelector('#botonMostrarOcultarContrasena');
+const contrasena = document.querySelector('#contrasena');
+const confirmarMostrarContrasenaBtn = document.querySelector('#confirmarMostrarContrasena');
+const cancelarMostrarContrasenaBtn = document.querySelector('[data-bs-dismiss="modal"]');
+const modalElement = document.getElementById('confirmarMostrarContrasenaModal');
+
+let mostrarContrasena = false;
+
+botonMostrarOcultarContrasena.addEventListener('click', function () {
+  const type = contrasena.getAttribute('type') === 'password' ? 'text' : 'password';
+
+  if (type === 'text' && !mostrarContrasena) {
+    const confirmarMostrarContrasenaModal = new bootstrap.Modal(modalElement);
+    confirmarMostrarContrasenaModal.show();
+
+    function darClick(event) {
+      if (event.target === confirmarMostrarContrasenaBtn) {
+        contrasena.setAttribute('type', 'text');
+        mostrarContrasena = true;
+        alternarIcono(true);
+      } else if (event.target === cancelarMostrarContrasenaBtn) {
+        contrasena.setAttribute('type', 'password');
+        mostrarContrasena = false;
+      }
+      confirmarMostrarContrasenaModal.hide();
+      modalElement.removeEventListener('click', darClick);
+    }
+
+    modalElement.addEventListener('click', darClick);
+  } else {
+    contrasena.setAttribute('type', 'password');
+    mostrarContrasena = false;
+    alternarIcono(false);
+  }
+});
+
+function alternarIcono(mostrarIcono) {
+  const icono = botonMostrarOcultarContrasena.querySelector('i');
+  icono.classList.toggle('bi-eye', mostrarIcono);
+  icono.classList.toggle('bi-eye-slash', !mostrarIcono);
+}
 
 
 </script>
@@ -291,8 +368,6 @@ if(isset($_POST["enviar"]) ){
 <?php
     include_once("plantilla/whatsappcontrasenaolvidada.php");
 ?>
-
-
 
 </body>
 
