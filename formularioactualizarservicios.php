@@ -57,7 +57,7 @@
         <div class="form-group" style=" margin-left: 1%;">
           <i class="fa-solid fa-dollar-sign" style="color: #74C0FC;"></i>
           <label style="margin-left: .5%;" for="editar_precio_servicios">Precio</label>
-          <input maxlength="10" minlength="1" style="border-radius: 15px;" type="number" class="form-control" id="editar_precio_servicios" name="editar_precio_servicios" min="0">
+          <input maxlength="10" minlength="1" style="border-radius: 15px;" type="number" class="form-control" id="editar_precio_servicios" name="editar_precio_servicios" min="0" step="0.01">
           <div class="invalid-feedback">Por favor, ingrese el precio del servicio.</div>
         </div>
 
