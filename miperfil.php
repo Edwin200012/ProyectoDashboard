@@ -236,7 +236,6 @@
                         <div style="margin-left: 4%;">
                         <button disabled title="Subir imagen de perfil" style="color: #74C0FC; background-color: #FFFFFF; height: 40px; width: 40px;" type="submit" id="botonActualizarImagen" name="botonActualizarImagen">
                             <i class="bi-solid bi-upload"></i>
-                          </a>
                         </button>
                         </div>
 
