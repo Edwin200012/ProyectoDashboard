@@ -40,7 +40,7 @@
                     </p>
                     </div>
                     <div class="col-lg-6">
-                      <h3>Misión</h3>
+                      <h5>Misión</h5>
                       <p>
                       Nuestra misión en Arsha es aprovechar la tecnología para transformar la forma en que las empresas operan y se relacionan con sus clientes. 
                       Estamos dedicados a proporcionar soluciones de software que sean intuitivas, confiables y que impulsen el crecimiento empresarial.
@@ -49,7 +49,7 @@
                      </p>
                     </div>
                   <div class="col-lg-6 pt-4 pt-lg-0">
-                     <h3>Visión</h3>
+                     <h5>Visión</h5>
                       <p>
                       En Arsha, nuestra visión es liderar la vanguardia de la innovación tecnológica, ofreciendo soluciones de software de vanguardia que transformen industrias y mejoren la vida de las personas en todo el mundo.
                       Nos esforzamos por ser reconocidos como el socio preferido para empresas que buscan impulsar su éxito a través de la tecnología, destacando por nuestra dedicación a la excelencia, la innovación constante y la colaboración con nuestros clientes para superar desafíos y alcanzar metas ambiciosas.
