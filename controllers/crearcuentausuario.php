@@ -42,6 +42,9 @@ include_once("../route.php");
                 {
                     header('Location: ../registro.php?registrar=true');      
                 }
+                else if($informacion->registradoCorreo){
+                    header('Location: ../registro.php?noregistrarcorreo=true');
+                }
                 
             else{
                 header('Location: ../registro.php?noregistrar=true');

@@ -104,7 +104,7 @@
     <i class="fa-solid fa-dollar-sign" style="color: #74C0FC;"></i>
     <label style="margin-left: .5%;" for="precio_servicios" class="form-label">Precio</label>
   </div>
-    <input maxlength="10" minlength="1" style="border-radius: 15px;" type="text" class="form-control" id="precio_servicios" name="precio_servicios" required placeholder="Precio">
+    <input maxlength="10" minlength="1" style="border-radius: 15px;" type="number" class="form-control" id="precio_servicios" name="precio_servicios" required placeholder="Precio" min="0" step="0.01">
     <div class="invalid-feedback">Por favor, ingrese el precio del servicio.</div>
   </div>
   </div>

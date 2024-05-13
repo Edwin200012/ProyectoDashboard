@@ -26,8 +26,7 @@
 
 <?php
       if(isset($_GET['actualizacontrasena'])):
-
-  ?>
+?>
 
 <div class="alert alert-success alert-dismissible fade show" role="alert">
     ¡Contraseña actualizada exitosamente!
@@ -38,13 +37,12 @@
 
 <?php
     endif;
-  ?>
+?>
 
 
 <?php
       if(isset($_GET['noactualizacontrasena'])):
-
-  ?>
+?>
 
 <div class="alert alert-danger alert-dismissible fade show" role="alert">
     ¡La contraseña no se actualizó correctamente!
@@ -55,12 +53,12 @@
 
 <?php
     endif;
-  ?>
+?>
 
 <?php
       if(isset($_GET['actualizadatos'])):
+?>
 
-  ?>
   <div class="alert alert-success alert-dismissible fade show" role="alert">
     ¡Datos actualizados exitosamente!
     <a href="miperfil.php">
@@ -70,12 +68,12 @@
 
 <?php
     endif;
-  ?>
+?>
 
 <?php
       if(isset($_GET['actualizaimagen'])):
+?>
 
-  ?>
   <div class="alert alert-success alert-dismissible fade show" role="alert">
     ¡Imagen actualizada exitosamente!
     <a href="miperfil.php">
@@ -85,12 +83,12 @@
 
 <?php
     endif;
-  ?>
+?>
 
 <?php
       if(isset($_GET['resetimagen'])):
+?>
 
-  ?>
   <div class="alert alert-success alert-dismissible fade show" role="alert">
     ¡Imagen restablecida exitosamente!
     <a href="miperfil.php">
@@ -100,12 +98,12 @@
 
 <?php
     endif;
-  ?>
+?>
 
 <?php
       if(isset($_GET['noresetimagen'])):
+?>
 
-  ?>
   <div class="alert alert-success alert-dismissible fade show" role="alert">
     La imagen ya esta restablecida!
     <a href="miperfil.php">
@@ -115,7 +113,23 @@
 
 <?php
     endif;
-  ?>
+?>
+
+  
+<?php
+      if(isset($_GET['noactualizacorreo'])):
+?>
+
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    ¡El correo ingresado ya está en uso!
+    <a href="miperfil.php">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </a>
+  </div>
+
+<?php
+    endif;
+?>
 
     <section class="section profile">
       <div class="row">
@@ -190,7 +204,7 @@
                   </div>
 
                   <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Teléfono</div>
+                    <div class="col-lg-3 col-md-4 label">Teléfono:</div>
                     <div class="col-lg-9 col-md-8"><?php echo $telefonosesion ?></div>
                   </div>
 
@@ -222,7 +236,6 @@
                         <div style="margin-left: 4%;">
                         <button disabled title="Subir imagen de perfil" style="color: #74C0FC; background-color: #FFFFFF; height: 40px; width: 40px;" type="submit" id="botonActualizarImagen" name="botonActualizarImagen">
                             <i class="bi-solid bi-upload"></i>
-                          </a>
                         </button>
                         </div>
 

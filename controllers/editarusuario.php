@@ -83,6 +83,12 @@ $dotenv->load();
 
                     header('Location: ../miperfil.php?actualizadatos=true');
                 }
+                else if($informacion->noactualizacorreo)
+                {   
+                    $this->NotificacionDatosNoActualizadosCorreo();
+                    header('Location: ../miperfil.php?noactualizacorreo=true');
+
+                }
                 
             else{
                 echo $respuesta;
@@ -117,6 +123,42 @@ try {
     $mail->Subject = 'Actualizacion de datos del Usuario: ' . (isset($_SESSION['usuariosesion']) ? $_SESSION['usuariosesion'] : 'Desconocido');
     $mail->Body    = 'Este es un correo electronico para confirmar que tus datos han sido actualizados exitosamente. Si no hiciste estos cambios, por favor contacta a soporte.';
     $mail->AltBody = 'Este es un correo electonico para confirmar que tus datos han sido actualizados exitosamente. Si no hiciste estos cambios, por favor contacta a soporte.';
+
+    $mail->send();
+    echo 'El mensaje ha sido enviado';
+
+    } catch (Exception $e) {
+        echo "El mensaje no pudo ser enviado. Mailer Error: {$mail->ErrorInfo}";
+    }
+
+        }
+
+        //Funcion para enviar notificacion al cambiar contrasena
+function NotificacionDatosNoActualizadosCorreo(){
+
+    $mail = new PHPMailer(true);
+
+try {
+    //Server settings
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = $_ENV['HOST'];                     //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = $_ENV['USERNAME'];                     //SMTP username
+    $mail->Password   = $_ENV['PASSWORD'];                               //SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;            //Enable implicit TLS encryption
+    //$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    $mail->Port       = $_ENV['PORT'];                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+    $mail->setFrom('edwinvazquezcal12@gmail.com', 'Remitente');
+
+    //Añadir un destinatario
+    $mail->addAddress((isset($_SESSION['correosesion']) ? $_SESSION['correosesion'] : 'Desconocido'));
+    //Contenido
+    $mail->isHTML(true);
+    $mail->Subject = 'Actualizacion de datos del Usuario: ' . (isset($_SESSION['usuariosesion']) ? $_SESSION['usuariosesion'] : 'Desconocido');
+    $mail->Body    = 'Este es un correo electronico para informar que hubo un intento de cambio de correo no exitoso. Si no intentaste estos cambios, por favor contacta a soporte.';
+    $mail->AltBody = 'Este es un correo electronico para informar que hubo un intento de cambio de correo no exitoso. Si no intentaste estos cambios, por favor contacta a soporte.';
 
     $mail->send();
     echo 'El mensaje ha sido enviado';

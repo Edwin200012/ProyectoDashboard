@@ -115,6 +115,33 @@
     endif;
   ?>
 
+  
+<?php
+      if(isset($_GET['noregistrarcorreo'])):
+
+  ?>
+
+
+  <div style="margin-top:10px; margin-bottom: -5%; margin-left: 75%; border-radius: 15px;" class="toast show">
+    <div style="background-color: lightcyan; border-radius: 15px 15px 0px 0px;"  class="toast-header">
+    <span class="alert-icon error-icon">&#10007;</span>
+      <strong class="me-auto">Usuario no registrado</strong>
+      <a href="registro.php">
+        <button style="font-size: 18px;" type="button" class="btn-close" data-bs-dismiss="toast"></button>
+      </a>
+    </div>
+    <div style="background-color: yellow; border-radius: 0px 0px 15px 15px;" class="toast-body">
+    <p >El correo ingresado ya está en uso</p>
+    </div>
+  </div>
+</div>
+
+
+
+<?php
+    endif;
+  ?>
+
 
     <div class="container">
 
