@@ -20,6 +20,21 @@
 
 <main id="main" class="main">
 
+<?php
+  if(isset($_GET['datosenviados'])):
+?>
+
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    ¡Datos enviados exitosamente!
+    <a href="acercadenosotros.php">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </a>
+</div>
+
+<?php
+    endif
+?>
+
 <!-- ======= Titulo de inicio ======= -->
 <?php
     $titulo = "Acerca De Nosotros";
