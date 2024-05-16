@@ -31,6 +31,8 @@
             <div class="col-xxl-4 col-md-6">
               <div class="card info-card sales-card">
                 <div class="card-body">
+                  <h5 style="margin-left: 2.8%;" class="card-title">Acerca De Nosotros</span></h5>
+                </div>
 
 <form action="controllers/acercadenosotrosempresa.php" class="row g-3 needs-validation" novalidate method="POST">
 
