@@ -1,8 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
+  <!-- Include SweetAlert library -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome CSS for icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
 <?php
     include_once ("plantilla/head.php");
   ?>
@@ -89,11 +97,82 @@
 </form>
                 </div>
               </div>
-            </div>
-           
+
+  <div style="margin-left: 40%; margin-right: 5%; margin-top: -29%;" >
+    <div class="container mt-4">
+    <!-- Contenedor del input de búsqueda -->
+    <div class="input-group" style="width:30%; margin-left: 70%;">
+        <!-- Input de búsqueda -->
+        <input id="searchInput" style="border-radius: 15px 0px 0px 15px;" type="text" class="form-control" placeholder="Buscar...">
+        <div class="input-group-append">
+            <!-- Icono de búsqueda (Font Awesome) -->
+            <span style="cursor: pointer; border-radius: 0px 15px 15px 0px;" class="input-group-text search-icon"><i class="fas fa-search"></i></span>
+        </div>
+    </div>
+</div>
+
+<!-- Tabla -->
+<table class="table" style="border-radius: 10px; overflow: hidden; box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); margin-top: 1%;">
+      <thead style="background-color: #007bff; color: #fff; border-color: #007bff;">
+        <tr>
+          <th>#</th>
+          <th>Descripción</th>
+          <th>Misión</th>
+          <th>Visión</th>
+          <th>Editar</th>
+          <th>Eliminar</th>
+        </tr>
+      </thead>
+      <tbody id="tBody">
+        <tr style="background-color: #f0faff;">
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
     </section>
 
   </main><!-- End #main -->
+
+  <!-- Script para mostrar los datos del contacto -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      mostrarDatosNosotros();
+    })
+
+    function mostrarDatosNosotros(){
+      jQuery.ajax({
+        url:'controllers/registroacercadenosotros.php',
+        type: 'GET',
+        dataType: 'JSON',
+        success: function (response){
+          $('#tBody').empty();
+          let datos = response.registronosotros
+            datos.forEach((post, i) => {
+              $('#tBody').append('<tr id="'+post.id+'"><td>'+post.id+'</td><td>'+post.descripcion+'</td><td>'+post.mision+'</td><td>'+post.vision+'</td>  <td><a title="Editar Registro" type="button" href="formularioactualizarcontacto.php?idcontacto='+post.id+'" class="btn btn-outline-warning"> <i class="fa-solid fa-pen-to-square" "></i></a></td>  <td><button title="Eliminar Registro" type="button" class="btn btn-outline-danger btneliminar" id="'+post.id+'"> <i class="fas fa-trash"></i> </button></td> </tr>');
+              // $('#tBody').append('<tr id="'+post.id+'"><td>'+post.id+'</td><td>'+post.descripcion+'</td><td>'+post.mision+'</td><td>'+post.vision+'</td> </tr>');
+            });
+        }
+      }).fail(function () {
+        alert("Error");
+      });
+    }
+
+  </script>
+
+
+  <!-- Agrega la CDN de jQuery y Popper.js (necesarios para que funcionen los componentes de Bootstrap) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <!-- Agrega la CDN de Bootstrap (JavaScript) -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
   <!-- ======= WhatsApp ======= -->
 <?php
