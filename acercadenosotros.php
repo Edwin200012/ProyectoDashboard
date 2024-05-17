@@ -43,6 +43,23 @@
     endif
 ?>
 
+
+<?php
+      if(isset($_GET['actualizanosotros'])):
+
+  ?>
+
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    Datos actualizados exitosamente!
+    <a href="acercadenosotros.php">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </a>
+  </div>
+
+<?php
+    endif;
+  ?>
+
 <!-- ======= Titulo de inicio ======= -->
 <?php
     $titulo = "Acerca De Nosotros";
@@ -160,6 +177,65 @@
       }).fail(function () {
         alert("Error");
       });
+    }
+
+    $("#tBody").on("click",".btneliminar",function() {
+            let id = $(this).attr('id');
+            eliminarNosotros(id);
+        });
+    
+    function eliminarNosotros(id){
+      Swal.fire({
+        background: '#f3f4f6',
+        title: 'Confirmar eliminación',
+        text: '¿Desea eliminar el registro #' + id + '?',
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Si, eliminar',
+        cancelButtonText: 'Cancelar',
+        showCloseButton: true,
+        customClass: {
+    confirmButton: 'btn-rounded', // Clase para redondear el botón de confirmar
+    cancelButton: 'btn-rounded' // Clase para redondear el botón de cancelar
+  }
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          //Codigo para eliminar el registro
+          jQuery.ajax({
+          url:'controllers/eliminaracercadenosotros.php',
+          type:'POST',
+          dataType:'JSON',
+          data:{id:id},
+          success: function (response){
+            $('#'+id).remove();
+            swal.fire({
+                  background: '#f3f4f6',                 
+                  title: "Registro Eliminado",
+                  text: "El registro #" + id + " se elimino correctamente.",
+                  icon: "success",
+                  timer: 3000,
+                  showCloseButton: true
+             });
+         }
+        }).fail(function (){
+          alert("Error");
+        });
+
+          } else {
+              swal.fire({
+                  background: '#f3f4f6',
+                  title:"Registro",
+                  text: "El registro #" + id + " no se elimino.",
+                  icon: "warning",
+                  timer: 3000,
+                  showCloseButton: true
+             });
+          }
+     });
+      
     }
 
   </script>

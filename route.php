@@ -36,5 +36,6 @@ class Route{
     static $enviarDatosNosotros = "Empresa/InsertarAcercaDeNosotros";
     static $editarNosotros = "Empresa/EditarAcercaDeNosotros";
     static $mostrarDatosNosotrosPorId = "Empresa/MostrarDatosNosotrosPorId?idnosotros=";
+    static $eliminarNosotros = "Empresa/EliminarNosotros?idnosotros=";
 }
 ?>
