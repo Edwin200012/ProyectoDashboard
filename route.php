@@ -31,5 +31,11 @@ class Route{
     static $editarServicios = "Empresa/EditarServicios";
     static $mostrarDatosServiciosPorId = "Empresa/MostrarDatosServiciosPorId?idservicios=";
     static $eliminarServicios = "Empresa/EliminarServicios?idservicios=";
+    //Acerca De Nosotros
+    static $mostrarDatosNosotros = "Empresa/MostrarDatosAcercaDeNosotros";
+    static $enviarDatosNosotros = "Empresa/InsertarAcercaDeNosotros";
+    static $editarNosotros = "Empresa/EditarAcercaDeNosotros";
+    static $mostrarDatosNosotrosPorId = "Empresa/MostrarDatosNosotrosPorId?idnosotros=";
+    static $eliminarNosotros = "Empresa/EliminarNosotros?idnosotros=";
 }
 ?>
