@@ -34,7 +34,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Editar Datos N°: <?php echo $_GET['idnosotros']?></h5>
-          <a href="contacto.php">
+          <a href="acercadenosotros.php">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
