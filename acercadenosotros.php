@@ -43,6 +43,21 @@
     endif
 ?>
 
+<?php
+      if(isset($_GET['datosnoenviados'])):
+?>
+
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    ¡Los datos no se enviaron correctamente, intenta llenar todos los campos!
+    <a href="acercadenosotros.php">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </a>
+  </div>
+
+<?php
+    endif;
+?>
+
 
 <?php
       if(isset($_GET['actualizanosotros'])):
