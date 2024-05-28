@@ -85,7 +85,7 @@
   <i class="fa-solid fa-building" style="color: #74C0FC;"></i>
     <label style="margin-left: .5%;" for="acercadenosotros" class="form-label">Acerca De Nosotros</label>
   </div>
-    <input minlength="1" style="border-radius: 15px;" type="text" class="form-control" id="acercadenosotros" name="acercadenosotros" required placeholder="Acerca De Nosotros">
+    <textarea minlength="1" style="border-radius: 15px; resize: none; height: 150px; overflow-y: auto;" type="text" class="form-control" id="acercadenosotros" name="acercadenosotros" required placeholder="Acerca De Nosotros" rows="4"> </textarea>
     <div class="invalid-feedback">Por favor, ingrese la información.</div>
   </div>
 
@@ -94,7 +94,7 @@
     <i class="fa-solid fa-rocket" style="color: #74C0FC;"></i>
     <label style="margin-left: .5%;" for="mision" class="form-label">Misión</label>
   </div>
-    <input minlength="1" style="border-radius: 15px;" type="text" class="form-control" id="mision" name="mision" required placeholder="Misión">
+    <textarea minlength="1" style="border-radius: 15px; resize: none; height: 150px; overflow-y: auto;" type="text" class="form-control" id="mision" name="mision" required placeholder="Misión" rows="4"> </textarea>
     <div class="invalid-feedback">Por favor, ingrese la información.</div>
   </div>
 
@@ -103,7 +103,7 @@
     <i class="fa-solid fa-lightbulb" style="color: #74C0FC;"></i>
     <label style="margin-left: .5%;" for="vision" class="form-label">Visión</label>
   </div>
-    <input minlength="1" style="border-radius: 15px;" type="text" class="form-control" id="vision" name="vision" required placeholder="Visión">
+    <textarea minlength="1" style="border-radius: 15px; resize: none; height: 150px; overflow-y: auto;" type="text" class="form-control" id="vision" name="vision" required placeholder="Visión" rows="4"> </textarea>
     <div class="invalid-feedback">Por favor, ingrese la información.</div>
   </div>
   </div>
@@ -115,7 +115,7 @@
                 </div>
               </div>
 
-  <div style="margin-left: 40%; margin-right: 5%; margin-top: -29%;" >
+  <div style="margin-left: 40%; margin-right: 5%; margin-top: -50%;" >
     <div class="container mt-4">
     <!-- Contenedor del input de búsqueda -->
     <div class="input-group" style="width:30%; margin-left: 70%;">
@@ -255,7 +255,7 @@
     include_once("plantilla/whatsapp.php");
 ?>
 
-
+<div style="margin-top: 15%;">
   <!-- ======= Footer ======= -->
   <?php
     include_once ("plantilla/footer.php");

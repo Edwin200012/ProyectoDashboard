@@ -45,21 +45,21 @@
         <div class="form-group" style=" margin-left: 1%;">
           <i class="fa-solid fa-building" style="color: #74C0FC;"></i>
           <label style="margin-left: .5%;" for="editardescripcionnosotros">Descripción</label>
-          <input minlength="1" style="border-radius: 15px;" type="text" class="form-control" id="editardescripcionnosotros" name="editardescripcionnosotros">
+          <textarea minlength="1" style="border-radius: 15px; resize: none; height: 150px; overflow-y: auto;" type="text" class="form-control" id="editardescripcionnosotros" name="editardescripcionnosotros" rows="4"> </textarea>
           <div class="invalid-feedback">Por favor, ingrese la información.</div>
         </div>
 
         <div class="form-group" style=" margin-left: 1%;">
           <i class="fa-solid fa-rocket" style="color: #74C0FC;"></i>
           <label style="margin-left: .5%;" for="editarmisionnosotros">Mision</label>
-          <input minlength="1" style="border-radius: 15px;" type="tel" class="form-control" id="editarmisionnosotros" name="editarmisionnosotros">
+          <textarea minlength="1" style="border-radius: 15px; resize: none; height: 150px; overflow-y: auto;" type="tel" class="form-control" id="editarmisionnosotros" name="editarmisionnosotros" rows="4"> </textarea>
           <div class="invalid-feedback">Por favor, ingrese la información.</div>
         </div>
 
         <div class="form-group" style=" margin-left: 1%;">
           <i class="fa-solid fa-lightbulb" style="color: #74C0FC;"></i>
           <label style="margin-left: .5%;" for="editarvisionnosotros">Visión</label>
-          <input minlength="1" style="border-radius: 15px;" type="text" class="form-control" id="editarvisionnosotros" name="editarvisionnosotros">
+          <textarea minlength="1" style="border-radius: 15px; resize: none; height: 150px; overflow-y: auto;" type="text" class="form-control" id="editarvisionnosotros" name="editarvisionnosotros" rows="4"> </textarea>
           <div class="invalid-feedback">Por favor, ingrese la información.</div>
         </div>
 
