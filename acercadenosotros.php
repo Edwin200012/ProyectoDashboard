@@ -151,6 +151,7 @@
           <th>Descripción</th>
           <th>Misión</th>
           <th>Visión</th>
+          <th>Publicado</th>
           <th>Editar</th>
           <th>Eliminar</th>
         </tr>
@@ -185,7 +186,7 @@
           $('#tBody').empty();
           let datos = response.registronosotros
             datos.forEach((post, i) => {
-              $('#tBody').append('<tr id="'+post.id+'"><td>'+post.id+'</td><td>'+post.descripcion+'</td><td>'+post.mision+'</td><td>'+post.vision+'</td>  <td><a title="Editar Registro" type="button" href="formularioactualizaracercadenosotros.php?idnosotros='+post.id+'" class="btn btn-outline-warning"> <i class="fa-solid fa-pen-to-square" "></i></a></td>  <td><button title="Eliminar Registro" type="button" class="btn btn-outline-danger btneliminar" id="'+post.id+'"> <i class="fas fa-trash"></i> </button></td> </tr>');
+              $('#tBody').append('<tr id="'+post.id+'"><td>'+post.id+'</td><td>'+post.descripcion+'</td><td>'+post.mision+'</td><td>'+post.vision+'</td>  <td>'+ (post.publicado ? '<i class="fas fa-circle text-success"></i>' : '<i class="fas fa-circle text-danger"></i>') +'</td>  <td><a title="Editar Registro" type="button" href="formularioactualizaracercadenosotros.php?idnosotros='+post.id+'" class="btn btn-outline-warning"> <i class="fa-solid fa-pen-to-square" "></i></a></td>  <td><button title="Eliminar Registro" type="button" class="btn btn-outline-danger btneliminar" id="'+post.id+'"> <i class="fas fa-trash"></i> </button></td> </tr>');
               // $('#tBody').append('<tr id="'+post.id+'"><td>'+post.id+'</td><td>'+post.descripcion+'</td><td>'+post.mision+'</td><td>'+post.vision+'</td> </tr>');
             });
         }
