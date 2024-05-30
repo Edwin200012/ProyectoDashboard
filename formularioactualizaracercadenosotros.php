@@ -51,7 +51,7 @@
 
         <div class="form-group" style=" margin-left: 1%;">
           <i class="fa-solid fa-rocket" style="color: #74C0FC;"></i>
-          <label style="margin-left: .5%;" for="editarmisionnosotros">Mision</label>
+          <label style="margin-left: .5%;" for="editarmisionnosotros">Misión</label>
           <textarea minlength="1" style="border-radius: 15px; resize: none; height: 150px; overflow-y: auto;" type="tel" class="form-control" id="editarmisionnosotros" name="editarmisionnosotros" rows="4"> </textarea>
           <div class="invalid-feedback">Por favor, ingrese la información.</div>
         </div>
