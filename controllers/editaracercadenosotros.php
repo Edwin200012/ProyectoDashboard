@@ -8,8 +8,14 @@ include_once("../route.php");
             $descripcion = $_POST["editardescripcionnosotros"];
             $mision = $_POST["editarmisionnosotros"];
             $vision = $_POST["editarvisionnosotros"];
-            // $publicado = $_POST["editarpublicadonosotros"];
-            $publicado = true;
+            $estatuspublicado = $_POST["estatuspublicado"];
+            if ($estatuspublicado == 'on'){
+                $publicado = true;
+            }
+            else
+            {
+                $publicado = false;
+            }
 
 
             $url = Route::$url.Route::$editarNosotros;
@@ -30,6 +36,7 @@ include_once("../route.php");
                 "vision" => $vision,
                 "publicado" => $publicado
             );
+            var_dump($parametros);
 
             curl_setopt($curl, CURLOPT_POSTFIELDS,json_encode($parametros));
             
