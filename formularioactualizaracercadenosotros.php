@@ -33,12 +33,18 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
+        <div>
+
+        
         <h5 class="modal-title" id="exampleModalLabel">Editar Datos N°: <?php echo $_GET['idnosotros']?></h5>
+        <h5>Publicado: <div style="margin-left: 65%; margin-top: -13.65%;" id="mostrarpublicado"> </div> </h5>
+        </div>
           <a href="acercadenosotros.php">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </a>
+          
       
       </div>
       <div class="modal-body">
@@ -112,6 +118,7 @@ $(document).ready(function(){
           document.getElementById('editardescripcionnosotros').value = response[0].descripcion;
           document.getElementById('editarmisionnosotros').value = response[0].mision;
           document.getElementById('editarvisionnosotros').value = response[0].vision;
+          document.getElementById('mostrarpublicado').innerHTML = response[0].publicado ? '<i class="fa-sharp fa-solid fa-circle" style="color: #80ff00;"></i>' : '<i class="fa-sharp fa-solid fa-circle" style="color: #ff0000;"></i>';
         },
         error: function (xhr, status, error) {
           console.error("Error en la solicitud AJAX:", error);
