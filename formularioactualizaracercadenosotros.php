@@ -74,6 +74,10 @@
           <input name="nosotros" id="nosotros" type="hidden" value="<?php echo $_GET['idnosotros']?>"/>
 
       <div class="modal-footer">
+      <div class="checkbox-container">
+        <input type="checkbox" id="publicar" class="checkbox-input">
+        <label for="publicar" class="checkbox-label">Publicar</label>
+    </div>
         <!-- Botones -->
         <a href="acercadenosotros.php" style=" background-color: #dc3545; border-color: #dc3545; border-radius: 20px;" type="button" class="btn btn-secondary btn-modal btn-cerrar" data-dismiss="modal">
             <i class="fas fa-times"></i> Cerrar

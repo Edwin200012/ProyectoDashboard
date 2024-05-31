@@ -8,6 +8,8 @@ include_once("../route.php");
             $descripcion = $_POST["editardescripcionnosotros"];
             $mision = $_POST["editarmisionnosotros"];
             $vision = $_POST["editarvisionnosotros"];
+            // $publicado = $_POST["editarpublicadonosotros"];
+            $publicado = true;
 
 
             $url = Route::$url.Route::$editarNosotros;
@@ -25,7 +27,8 @@ include_once("../route.php");
                 "id" => $id,
                 "descripcion" => $descripcion,
                 "mision" => $mision,
-                "vision" => $vision
+                "vision" => $vision,
+                "publicado" => $publicado
             );
 
             curl_setopt($curl, CURLOPT_POSTFIELDS,json_encode($parametros));
