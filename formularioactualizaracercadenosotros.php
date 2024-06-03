@@ -194,6 +194,7 @@ $(document).ready(function(){
 
           if (estatusPublicado.checked) {
             slider.style.backgroundColor = '#80FF00';
+            estatusPublicado.disabled = true; // Deshabilitar el switch si está en estado ON
           } else {
             slider.style.backgroundColor = '#FF0000';
           }
