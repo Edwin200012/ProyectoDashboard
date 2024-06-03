@@ -188,6 +188,16 @@ $(document).ready(function(){
           document.getElementById('editarmisionnosotros').value = response[0].mision;
           document.getElementById('editarvisionnosotros').value = response[0].vision;
           document.getElementById('mostrarpublicado').innerHTML = response[0].publicado ? '<i class="fa-sharp fa-solid fa-circle" style="color: #80ff00;"></i>' : '<i class="fa-sharp fa-solid fa-circle" style="color: #ff0000;"></i>';
+          var estatusPublicado = document.getElementById('estatuspublicado');
+          var slider = estatusPublicado.nextElementSibling;
+          estatusPublicado.checked = response[0].publicado ? true : false;
+
+          if (estatusPublicado.checked) {
+            slider.style.backgroundColor = '#80FF00';
+          } else {
+            slider.style.backgroundColor = '#FF0000';
+          }
+          estatusPublicado.dispatchEvent(new Event('change'));
         },
         error: function (xhr, status, error) {
           console.error("Error en la solicitud AJAX:", error);
@@ -204,13 +214,10 @@ $(document).ready(function(){
               // Funcionalidad para cuando el switch esté en ON
                 slider.style.backgroundColor = '#80FF00';
                 slider.style.setProperty('--transform-before', 'translateX(26px)');
-                console.log('TRUE');
-                
             } else {
               // Funcionalidad para cuando el switch esté en OFF
                 slider.style.backgroundColor = '#FF0000';
                 slider.style.setProperty('--transform-before', 'translateX(0)');
-                console.log('FALSE');
             }
         });
 
