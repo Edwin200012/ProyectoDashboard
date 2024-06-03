@@ -226,7 +226,20 @@
           dataType:'JSON',
           data:{id:id},
           success: function (response){
-            $('#'+id).remove();
+
+            if(response === "Error al eliminar") {
+              swal.fire({
+                  background: '#f3f4f6',
+                  title:"Registro",
+                  text: "El registro #" + id + " está Publicado y no se puede eliminar.",
+                  icon: "warning",
+                  timer: 3000,
+                  showCloseButton: true
+             });
+            }
+
+            else {
+              $('#'+id).remove();
             swal.fire({
                   background: '#f3f4f6',                 
                   title: "Registro Eliminado",
@@ -234,7 +247,8 @@
                   icon: "success",
                   timer: 3000,
                   showCloseButton: true
-             });
+             }); 
+            }
          }
         }).fail(function (){
           alert("Error");
