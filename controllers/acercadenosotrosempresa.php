@@ -16,7 +16,7 @@ include_once("../route.php");
             $acercadenosotros = $_POST['acercadenosotros'];
             $mision = $_POST['mision'];
             $vision = $_POST['vision'];
-            $publicado = true;
+            $publicado = false;
 
             $url = Route::$url.Route::$enviarDatosNosotros;
 
