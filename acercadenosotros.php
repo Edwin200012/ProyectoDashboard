@@ -231,7 +231,7 @@
               swal.fire({
                   background: '#f3f4f6',
                   title:"Registro",
-                  text: "El registro #" + id + " está Publicado y no se puede eliminar.",
+                  text: "El registro #" + id + " está Publicado, no se puede eliminar.",
                   icon: "warning",
                   timer: 3000,
                   showCloseButton: true
