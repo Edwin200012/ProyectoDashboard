@@ -258,7 +258,7 @@
                   background: '#f3f4f6',
                   title:"Registro",
                   text: "El registro #" + id + " no se elimino.",
-                  icon: "warning",
+                  icon: "error",
                   timer: 3000,
                   showCloseButton: true
                 });
