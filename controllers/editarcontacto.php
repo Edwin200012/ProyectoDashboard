@@ -8,6 +8,14 @@ include_once("../route/route.php");
             $correo = $_POST["editarcorreocontacto"];
             $telefono = $_POST["editartelefonocontacto"];
             $ubicacion = $_POST["editarubicacioncontacto"];
+            $estatuscontactopublicado = $_POST["estatuscontactopublicado"];
+            if ($estatuscontactopublicado == 'on'){
+                $publicado = true;
+            }
+            else
+            {
+                $publicado = false;
+            }
 
 
             $url = Route::$url.Route::$editarContacto;
@@ -25,7 +33,8 @@ include_once("../route/route.php");
                 "id" => $id,
                 "correo" => $correo,
                 "telefono" => $telefono,
-                "ubicacion" => $ubicacion
+                "ubicacion" => $ubicacion,
+                "publicado" => $publicado
             );
 
             curl_setopt($curl, CURLOPT_POSTFIELDS,json_encode($parametros));

@@ -110,8 +110,6 @@ input:checked + .slider:before {
               <span aria-hidden="true">&times;</span>
             </button>
           </a>
-          
-          
       
       </div>
       <div class="modal-body">
