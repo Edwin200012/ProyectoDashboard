@@ -137,6 +137,7 @@
           <th>Correo</th>
           <th>Teléfono</th>
           <th>Ubicación</th>
+          <th>Publicado</th>
           <th>Editar</th>
           <th>Eliminar</th>
         </tr>
@@ -169,10 +170,12 @@
         type: 'GET',
         dataType: 'JSON',
         success: function (response){
+          
           $('#tBody').empty();
           let datos = response.registrocontactos
+          console.log(datos);
             datos.forEach((post, i) => {
-              $('#tBody').append('<tr id="'+post.id+'"><td>'+post.id+'</td><td>'+post.correo+'</td><td>'+post.telefono+'</td><td>'+post.ubicacion+'</td>  <td><a title="Editar Registro" type="button" href="formularioactualizarcontacto.php?idcontacto='+post.id+'" class="btn btn-outline-warning"> <i class="fa-solid fa-pen-to-square" "></i></a></td>  <td><button title="Eliminar Registro" type="button" class="btn btn-outline-danger btneliminar" id="'+post.id+'"> <i class="fas fa-trash"></i> </button></td> </tr>');
+              $('#tBody').append('<tr id="'+post.id+'"><td>'+post.id+'</td><td>'+post.correo+'</td><td>'+post.telefono+'</td><td>'+post.ubicacion+'</td>   <td>'+ (post.publicado ? '<i class="fa-sharp fa-solid fa-circle" style="color: #80ff00;"></i>' : '<i class="fa-sharp fa-solid fa-circle" style="color: #ff0000;"></i>') +'</td>  <td><a title="Editar Registro" type="button" href="formularioactualizarcontacto.php?idcontacto='+post.id+'" class="btn btn-outline-warning"> <i class="fa-solid fa-pen-to-square" "></i></a></td>  <td><button title="Eliminar Registro" type="button" class="btn btn-outline-danger btneliminar" id="'+post.id+'"> <i class="fas fa-trash"></i> </button></td> </tr>');
             });
         }
       }).fail(function () {
