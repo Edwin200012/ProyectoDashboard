@@ -75,7 +75,6 @@ input:checked + .slider:before {
 
 <main id="main" class="main">
 
-
 <form action="controllers/editarcontacto.php" class="row g-3 needs-validation" novalidate method="POST">
 <!-- Modal -->
 <div class="modal fade" id="modalEditarDatosContacto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" show="true" data-keyboard="false">
@@ -147,7 +146,6 @@ input:checked + .slider:before {
         <button style="background-color: #28a745; border-color: #28a745; border-radius: 20px;" type="submit" class="btn btn-primary btn-modal btn-guardar">
             <i class="fas fa-save"></i> Guardar cambios
         </button>
-        
       </div>
     </div>
   </div>
@@ -155,7 +153,6 @@ input:checked + .slider:before {
 </form>
 
   </main><!-- End #main -->
-
 
   <!-- Agrega la CDN de jQuery y Popper.js (necesarios para que funcionen los componentes de Bootstrap) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
