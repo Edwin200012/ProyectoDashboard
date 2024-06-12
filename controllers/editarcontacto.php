@@ -1,13 +1,21 @@
 <?php
 session_start();
 
-include_once("../route.php");
+include_once("../route/route.php");
     class Empresa{
         function EditarContacto(){
             $id = $_POST["contacto"];
             $correo = $_POST["editarcorreocontacto"];
             $telefono = $_POST["editartelefonocontacto"];
             $ubicacion = $_POST["editarubicacioncontacto"];
+            $estatuscontactopublicado = $_POST["estatuscontactopublicado"];
+            if ($estatuscontactopublicado == 'on'){
+                $publicado = true;
+            }
+            else
+            {
+                $publicado = false;
+            }
 
 
             $url = Route::$url.Route::$editarContacto;
@@ -25,7 +33,8 @@ include_once("../route.php");
                 "id" => $id,
                 "correo" => $correo,
                 "telefono" => $telefono,
-                "ubicacion" => $ubicacion
+                "ubicacion" => $ubicacion,
+                "publicado" => $publicado
             );
 
             curl_setopt($curl, CURLOPT_POSTFIELDS,json_encode($parametros));

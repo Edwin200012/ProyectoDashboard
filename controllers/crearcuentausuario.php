@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include_once("../route.php");
+include_once("../route/route.php");
     class Usuario{
         function CrearUsuario(){
             $nombre = $_POST['nombre'];

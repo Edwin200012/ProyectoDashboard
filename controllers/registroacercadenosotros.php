@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("../route.php");
+include_once("../route/route.php");
 
     class Empresa {
         function MostrarDatosNosotros(){

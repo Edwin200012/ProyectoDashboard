@@ -43,6 +43,21 @@
     endif
 ?>
 
+<?php
+      if(isset($_GET['datosnoenviados'])):
+?>
+
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    ¡Los datos no se enviaron correctamente, intenta llenar todos los campos!
+    <a href="acercadenosotros.php">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </a>
+  </div>
+
+<?php
+    endif;
+?>
+
 
 <?php
       if(isset($_GET['actualizanosotros'])):
@@ -85,7 +100,7 @@
   <i class="fa-solid fa-building" style="color: #74C0FC;"></i>
     <label style="margin-left: .5%;" for="acercadenosotros" class="form-label">Acerca De Nosotros</label>
   </div>
-    <input minlength="1" style="border-radius: 15px;" type="text" class="form-control" id="acercadenosotros" name="acercadenosotros" required placeholder="Acerca De Nosotros">
+    <textarea minlength="1" style="border-radius: 15px; resize: none; height: 150px; overflow-y: auto;" type="text" class="form-control" id="acercadenosotros" name="acercadenosotros" required placeholder="Acerca De Nosotros" rows="4"> </textarea>
     <div class="invalid-feedback">Por favor, ingrese la información.</div>
   </div>
 
@@ -94,7 +109,7 @@
     <i class="fa-solid fa-rocket" style="color: #74C0FC;"></i>
     <label style="margin-left: .5%;" for="mision" class="form-label">Misión</label>
   </div>
-    <input minlength="1" style="border-radius: 15px;" type="text" class="form-control" id="mision" name="mision" required placeholder="Misión">
+    <textarea minlength="1" style="border-radius: 15px; resize: none; height: 150px; overflow-y: auto;" type="text" class="form-control" id="mision" name="mision" required placeholder="Misión" rows="4"> </textarea>
     <div class="invalid-feedback">Por favor, ingrese la información.</div>
   </div>
 
@@ -103,7 +118,7 @@
     <i class="fa-solid fa-lightbulb" style="color: #74C0FC;"></i>
     <label style="margin-left: .5%;" for="vision" class="form-label">Visión</label>
   </div>
-    <input minlength="1" style="border-radius: 15px;" type="text" class="form-control" id="vision" name="vision" required placeholder="Visión">
+    <textarea minlength="1" style="border-radius: 15px; resize: none; height: 150px; overflow-y: auto;" type="text" class="form-control" id="vision" name="vision" required placeholder="Visión" rows="4"> </textarea>
     <div class="invalid-feedback">Por favor, ingrese la información.</div>
   </div>
   </div>
@@ -115,7 +130,7 @@
                 </div>
               </div>
 
-  <div style="margin-left: 40%; margin-right: 5%; margin-top: -29%;" >
+  <div style="margin-left: 40%; margin-right: 5%; margin-top: -50%;" >
     <div class="container mt-4">
     <!-- Contenedor del input de búsqueda -->
     <div class="input-group" style="width:30%; margin-left: 70%;">
@@ -136,6 +151,7 @@
           <th>Descripción</th>
           <th>Misión</th>
           <th>Visión</th>
+          <th>Publicado</th>
           <th>Editar</th>
           <th>Eliminar</th>
         </tr>
@@ -170,7 +186,7 @@
           $('#tBody').empty();
           let datos = response.registronosotros
             datos.forEach((post, i) => {
-              $('#tBody').append('<tr id="'+post.id+'"><td>'+post.id+'</td><td>'+post.descripcion+'</td><td>'+post.mision+'</td><td>'+post.vision+'</td>  <td><a title="Editar Registro" type="button" href="formularioactualizaracercadenosotros.php?idnosotros='+post.id+'" class="btn btn-outline-warning"> <i class="fa-solid fa-pen-to-square" "></i></a></td>  <td><button title="Eliminar Registro" type="button" class="btn btn-outline-danger btneliminar" id="'+post.id+'"> <i class="fas fa-trash"></i> </button></td> </tr>');
+              $('#tBody').append('<tr id="'+post.id+'"><td>'+post.id+'</td><td>'+post.descripcion+'</td><td>'+post.mision+'</td><td>'+post.vision+'</td>  <td>'+ (post.publicado ? '<i class="fa-sharp fa-solid fa-circle" style="color: #80ff00;"></i>' : '<i class="fa-sharp fa-solid fa-circle" style="color: #ff0000;"></i>') +'</td>  <td><a title="Editar Registro" type="button" href="formularioactualizaracercadenosotros.php?idnosotros='+post.id+'" class="btn btn-outline-warning"> <i class="fa-solid fa-pen-to-square" "></i></a></td>  <td><button title="Eliminar Registro" type="button" class="btn btn-outline-danger btneliminar" id="'+post.id+'"> <i class="fas fa-trash"></i> </button></td> </tr>');
               // $('#tBody').append('<tr id="'+post.id+'"><td>'+post.id+'</td><td>'+post.descripcion+'</td><td>'+post.mision+'</td><td>'+post.vision+'</td> </tr>');
             });
         }
@@ -210,7 +226,20 @@
           dataType:'JSON',
           data:{id:id},
           success: function (response){
-            $('#'+id).remove();
+
+            if(response === "Error al eliminar") {
+              swal.fire({
+                  background: '#f3f4f6',
+                  title:"Registro",
+                  text: "El registro #" + id + " está Publicado, no se puede eliminar.",
+                  icon: "warning",
+                  timer: 3000,
+                  showCloseButton: true
+             });
+            }
+
+            else {
+              $('#'+id).remove();
             swal.fire({
                   background: '#f3f4f6',                 
                   title: "Registro Eliminado",
@@ -218,7 +247,8 @@
                   icon: "success",
                   timer: 3000,
                   showCloseButton: true
-             });
+             }); 
+            }
          }
         }).fail(function (){
           alert("Error");
@@ -229,7 +259,7 @@
                   background: '#f3f4f6',
                   title:"Registro",
                   text: "El registro #" + id + " no se elimino.",
-                  icon: "warning",
+                  icon: "error",
                   timer: 3000,
                   showCloseButton: true
              });
@@ -250,12 +280,36 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+  
+  <script>
+    // Función para filtrar la tabla según el texto ingresado en la barra de búsqueda
+    $(document).ready(function(){
+      $("#searchInput").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#tBody tr").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+      });
+
+      // Agregar efecto de cambio de color al pasar el mouse sobre las celdas
+      $("#tBody tr").hover(
+        function() {
+          $(this).css("background-color", "#cce5ff");
+        },
+        function() {
+          $(this).css("background-color", "");
+        }
+      );
+    });
+  </script>
+
+
   <!-- ======= WhatsApp ======= -->
 <?php
     include_once("plantilla/whatsapp.php");
 ?>
 
-
+<div style="margin-top: 15%;">
   <!-- ======= Footer ======= -->
   <?php
     include_once ("plantilla/footer.php");

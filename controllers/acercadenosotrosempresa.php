@@ -1,13 +1,22 @@
 <?php
 session_start();
 
-include_once("../route.php");
+include_once("../route/route.php");
 
     class Empresa {
         function Nosotros(){
+            // Validar que los campos no esten vacios
+            if (!isset($_POST['acercadenosotros']) || empty(trim($_POST['acercadenosotros'])) ||
+            !isset($_POST['mision']) || empty(trim($_POST['mision'])) ||
+            !isset($_POST['vision']) || empty(trim($_POST['vision']))) {
+            // Redireccionar si hay campos vacíos
+            header('Location: ../acercadenosotros.php?datosnoenviados=true');
+            exit();
+        }
             $acercadenosotros = $_POST['acercadenosotros'];
             $mision = $_POST['mision'];
             $vision = $_POST['vision'];
+            $publicado = false;
 
             $url = Route::$url.Route::$enviarDatosNosotros;
 
@@ -23,7 +32,8 @@ include_once("../route.php");
             $parametros = array (
                 "descripcion" => $acercadenosotros,
                 "mision" => $mision,
-                "vision" => $vision
+                "vision" => $vision,
+                "publicado" =>$publicado
             );
             var_dump($parametros);
 

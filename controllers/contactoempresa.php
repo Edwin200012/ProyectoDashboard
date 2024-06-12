@@ -1,13 +1,14 @@
 <?php
 session_start();
 
-include_once("../route.php");
+include_once("../route/route.php");
 
     class Empresa {
         function Contacto(){
             $correocontacto = $_POST['correocontacto'];
             $telefonocontacto = $_POST['telefonocontacto'];
             $ubicacioncontacto = $_POST['ubicacioncontacto'];
+            $publicado = false;
 
             $url = Route::$url.Route::$enviarDatosContacto;
 
@@ -23,7 +24,8 @@ include_once("../route.php");
             $parametros = array (
                 "correo" => $correocontacto,
                 "telefono" => $telefonocontacto,
-                "ubicacion" => $ubicacioncontacto
+                "ubicacion" => $ubicacioncontacto,
+                "publicado" =>$publicado
             );
 
             curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($parametros));
